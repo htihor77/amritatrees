@@ -24,8 +24,9 @@ await db.run("INSERT INTO Users (email,username,password,session_id,points,colle
 await db.run("INSERT INTO Users (email,username,password,session_id,points,collected,lat,long) VALUES ('shriramarvinth3012@gmail.com','Shriram','pass1',null,200, 1,null,null)");
 await db.run("INSERT INTO Users (email,username,password,session_id,points,collected,lat,long) VALUES ('rohithhtihor786@gmail.com','Rohith','pass1',null,100, 3,null,null)");
         
-        await db.run("CREATE TABLE TreesAttri (tree_name TEXT PRIMARY KEY, value_points INTEGER, url TEXT)");
-        await db.run("INSERT INTO (tree_name,value_points,url) VALUES ('oak tree', 50, '')")
+        // A-tree-Bute lol xD
+        await db.run("CREATE TABLE aTREEbute (tree_name TEXT PRIMARY KEY, value_points INTEGER, url TEXT)");
+        await db.run("INSERT INTO (tree_name,value_points,url) VALUES ('oak tree', 50, 'https://cdn.britannica.com/92/142292-004-459092B7.jpg'),")
         
         await db.run("CREATE TABLE Inventory (uid INTEGER, tree_name)");
         await db.run("INSERT INTO INVENTORY (uid,tid) VALUES (1,'oak tree'), (1,'neem tree'), (1,'pine tree')")
