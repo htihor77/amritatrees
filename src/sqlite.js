@@ -24,7 +24,8 @@ await db.run("INSERT INTO Users (email,username,password,session_id,points,colle
 await db.run("INSERT INTO Users (email,username,password,session_id,points,collected,lat,long) VALUES ('shriramarvinth3012@gmail.com','Shriram','pass1',null,200, 1,null,null)");
 await db.run("INSERT INTO Users (email,username,password,session_id,points,collected,lat,long) VALUES ('rohithhtihor786@gmail.com','Rohith','pass1',null,100, 3,null,null)");
         
-await db.run("CREATE TABLE Inventory (uid PRIM, tid)")
+        await db.run("CREATE TABLE Inventory (uid INTEGER, tid INTEGER)");
+        await db.run("INSERT INTO INVENTORY (uid,tid) VALUES (1,1), (1,2), (1,3)")
         
       } else {
         console.log("db exists!")

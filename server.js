@@ -29,12 +29,6 @@ fastify.register(require("@fastify/session"), {
     maxAge: 1000 * 60 * 60 * 24 // 24 hours
   }
 });
-
-
-
-
-
-
 fastify.addHook("onRequest", (req, reply, next) => {
   const protocol = req.raw.headers["x-forwarded-proto"].split(",")[0];
   if (protocol === "http") {reply.redirect("https://" + req.hostname + req.url);}
@@ -45,6 +39,7 @@ fastify.addHook("onRequest", (req, reply, next) => {
   }
   next();
 });
+
 
 fastify.get("/", async (request, reply) => {
   const user = request.session.user;
