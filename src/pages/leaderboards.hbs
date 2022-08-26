@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Amrita Trees: Leaderboards</title>
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!--   ios support   -->
+    <link rel="apple-touch-icon"
+        href="https://cdn.glitch.global/330e2628-dd2b-4859-9261-38c9564198ee/icon-72x72.png?v=1655402102312">
+    <link rel="apple-touch-icon"
+        href="https://cdn.glitch.global/330e2628-dd2b-4859-9261-38c9564198ee/icon-128x128.png?v=1655402106767">
+    <link rel="apple-touch-icon"
+        href="https://cdn.glitch.global/330e2628-dd2b-4859-9261-38c9564198ee/icon-192x192.png?v=1655401339942">
+    <meta name="apple-mobile-web-app-status-bar" content="#91b51d">
+    <meta name="theme-color" content="#91b51d">
+<style>
+
+table{
+  display: inline-block;
+  width: min(100%,400px);
+}
+
+th,td{
+  padding:5px;
+  border:2px solid black;
+}
+</style>
+</head>
+<body>
+  <table border="0">
+        <tr>
+          <th colspan="3">Ranked on Points</th>
+        </tr>
+
+      {{#each points}}
+        <tr>
+          <td>{{@index}}</td>
+          <td>{{this.username}}</td>
+          <td>{{this.points}}</td>
+        </tr>
+      {{/each}}
+  </table>
+  
+  <table border="0">
+        <tr>
+          <th colspan="3">Ranked on Trees collected</th>
+        </tr>
+
+      {{#each collected}}
+        <tr>
+          <td>{{@index}}</td>
+          <td>{{this.username}}</td>
+          <td>{{this.collected}}</td>
+        </tr>
+      {{/each}}
+  </table>
+</body>
+</html>

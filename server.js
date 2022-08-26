@@ -32,9 +32,10 @@ fastify.register(require("@fastify/session"), {
 fastify.addHook("onRequest", (req, reply, next) => {
   const protocol = req.raw.headers["x-forwarded-proto"].split(",")[0];
   if (protocol === "http") {reply.redirect("https://" + req.hostname + req.url);}
+
+  console.log(req.url);
   
-  // console.log(req.url, req.session.isAuthenticated);
-  if( req.session.isAuthenticated === undefined && req.url != "/login"){
+  if( req.session.isAuthenticated === undefined && req.url != "/login" && req.url != "/leaderboards"){
     reply.redirect("/login");
   }
   next();
@@ -103,9 +104,10 @@ fastify.get("/inventory", async (request, reply) => {
 });
 
 fastify.get("/leaderboards", async (request, reply) => {
-  const data1 = await db.runQuery1(`SELECT username,points FROM Users SORT BY points`);
-  const data2 = await db.runQuery1(`SELECT username,collected FROM Users SORT BY collected`);
+  const data1 = await db.runQuery1(`SELECT username,points FROM Users ORDER BY points`);
+  const data2 = await db.runQuery1(`SELECT username,collected FROM Users ORDER BY collected`);
   return reply.view("/src/pages/leaderboards.hbs", { points: data1, collected: data2 } );
+  // return reply.type("json").send({ points: data1, collected: data2 });
 });
 
 
