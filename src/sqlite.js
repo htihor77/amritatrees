@@ -17,7 +17,11 @@ dbWrapper
     try {
       if (!exists) {
         console.log("db DOES NOT EXIST!");
-        
+        await db.run("CREATE TABLE Users (uid INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT, user_id TEXT, password TEXT, session_id TEXT, points INTEGER, collected INTEGER, lat REAL, long REAL)");
+        await db.run("INSERT INTO Users (email,username,password,session_id) VALUES ('nandhakumar2058@gmail.com','Nandhu','pass1',,400, 2, , )");
+        await db.run("INSERT INTO Users (email,username,password,session_id) VALUES ('rishikunnath2002@gmail.com','Rishi','pass1',,300, 3, , )");
+        await db.run("INSERT INTO Users (email,username,password,session_id) VALUES ('shriramarvinth3012@gmail.com','Shriram','pass1',,200, 1, , )");
+        await db.run("INSERT INTO Users (email,username,password,session_id) VALUES ('rohithhtihor786@gmail.com','Rohith','pass1',,100, 3, , )");
       } else {
         console.log("db exists!")
       }

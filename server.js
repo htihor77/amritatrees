@@ -57,8 +57,12 @@ fastify.get("/login", async (request, reply) => {
   return reply.view("/src/pages/login.hbs", {msg:""});
 });
 
-fastify.get("/post", async (request, reply) => {
-
+fastify.post("/login", async (request, reply) => {
+  coonsole.log("=================")
+  const username = request.body;
+  const password = request.body;
+  console.log(username,password);
+  return reply.redirect("/");
 });
 
 
