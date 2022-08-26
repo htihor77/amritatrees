@@ -15,7 +15,20 @@ const db = require("./src/" + data.database);
 
 
 
-
+fastify.register(require('@fastify/cookie'), {
+  secret: process.env.COOKIE_SECRET, // for cookies signature
+  parseOptions: {}     // options for parsing cookies
+})
+fastify.register(require("@fastify/session"), {
+  secret: process.env.SESSION_SECRET,
+  saveUninitialized: true, 
+  cookie: {
+    secure:false, 
+    httpOnly: true, 
+    sameSite: false, 
+    maxAge: 1000 * 60 * 5 // 5 mins
+  }
+});
 
 
 
@@ -26,8 +39,8 @@ fastify.addHook("onRequest", (req, reply, next) => {
   const protocol = req.raw.headers["x-forwarded-proto"].split(",")[0];
   if (protocol === "http") {reply.redirect("https://" + req.hostname + req.url);}
   
-  console.log(req.url, req.session);
-  if( req.session === undefined && req.url != "/login"){
+  console.log(req.url, req.session.isAuthenticated);
+  if( req.session.isAuthenticated === undefined && req.url != "/login"){
     reply.redirect("/login");
   }
   next();
@@ -41,7 +54,7 @@ fastify.get("/", async (request, reply) => {
 
 
 fastify.get("/login", async (request, reply) => {
-  reply.send("login");
+  return reply.view("/src/pages/login.hbs", {msg:""});
 });
 
 fastify.get("/post", async (request, reply) => {
