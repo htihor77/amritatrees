@@ -26,7 +26,7 @@ fastify.register(require("@fastify/session"), {
     secure:false, 
     httpOnly: true, 
     sameSite: false, 
-    maxAge: 1000 * 60 * 5 // 5 mins
+    maxAge: 1000 * 60 * 60 * 24 // 24 hours
   }
 });
 
@@ -39,7 +39,7 @@ fastify.addHook("onRequest", (req, reply, next) => {
   const protocol = req.raw.headers["x-forwarded-proto"].split(",")[0];
   if (protocol === "http") {reply.redirect("https://" + req.hostname + req.url);}
   
-  console.log(req.url, req.session.isAuthenticated);
+  // console.log(req.url, req.session.isAuthenticated);
   if( req.session.isAuthenticated === undefined && req.url != "/login"){
     reply.redirect("/login");
   }
@@ -49,14 +49,19 @@ fastify.addHook("onRequest", (req, reply, next) => {
 
 
 fastify.get("/", async (request, reply) => {
-  reply.send("hey");
+  const uid = request.session.uid;
+  await db.ru
+  return reply.view("/src/pages/index.hbs", {user:""});
 });
 
 
 fastify.get("/login", async (request, reply) => {
-  return reply.view("/src/pages/login.hbs", {msg:""});
+  if( request.session.isAuthenticated ){
+    return reply.redirect("/");
+  }else{
+    return reply.view("/src/pages/login.hbs", {msg:""});
+  }
 });
-
 fastify.post("/login", async (request, reply) => {
   console.log("=================")
   const username = request.body.username;
@@ -68,6 +73,8 @@ fastify.post("/login", async (request, reply) => {
     request.session.uid = user.uid;
     request.session.username = user.username;
     request.session.isAuthenticated = true;
+    const sid = request.session.sessionId;
+    await db.runQuery2(`UPDATE Users SET session_id='${sid}' WHERE username='${username}'`);
     
   }else{
     // user does not exist
@@ -76,12 +83,11 @@ fastify.post("/login", async (request, reply) => {
   return reply.redirect("/");
   // return reply.type("json").send(user);
 });
-
-
 fastify.get("/logout", async (request, reply) => {
   console.log(request.session.isAuthenticated);
   if(request.session.isAuthenticated){
     const uid = request.session.uid;
+    request.session.destroy();
     await db.runQuery2(`UPDATE Users SET session_id=null WHERE uid='${uid}'`);
     return reply.type("json").send({success:"user successfully logged out"});
   }else{
