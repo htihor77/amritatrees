@@ -96,17 +96,14 @@ fastify.get("/logout", async (request, reply) => {
 
 fastify.get("/inventory", async (request, reply) => {
   const user = request.session.user;
-  
-  const data1 = await db.runQuery1(`SELECT * FROM Inventory,Atreebutes WHERE Inventory.tree_name=Atreebutes.tree_name AND Inventory.uid=${user.uid}`)
-  console.log(data1);
-  const collected = {
-    tree_name:data[0].tree_name
+  const data = await db.runQuery1(`SELECT * FROM Users WHERE uid=${user.uid}`)
+  const User = {
+    username:data[0].username,
+    points:data[0].points
   }
-  const uncollected = {
-    tree_name:data[0].tree_name
-  }
-  // { unlocked: collected, locked: uncollected }
-  return reply.view("/src/pages/inventory.hbs", {} );
+  const data1 = await db.runQuery1(`SELECT Inventory.tree_name,Atreebutes.url FROM Inventory,Atreebutes WHERE Inventory.uid=${user.uid} AND Inventory.tree_name=Atreebutes.tree_name`)
+  const data2 = await db.runQuery1(`SELECT tree_name,url FROM Atreebutes WHERE tree_name NOT IN (SELECT tree_name FROM Inventory WHERE uid=${user.uid})`);
+  return reply.view("/src/pages/inventory.hbs", { user: User, unlocked: data1, locked: data2 } );
 });
 
 
