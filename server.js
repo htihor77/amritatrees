@@ -46,8 +46,6 @@ fastify.addHook("onRequest", (req, reply, next) => {
   next();
 });
 
-
-
 fastify.get("/", async (request, reply) => {
   const user = request.session.user;
   console.log(request.session.isAuthenticated,user);
@@ -74,10 +72,13 @@ fastify.post("/login", async (request, reply) => {
   const password = request.body.password;
   // console.log(username,password);
   const user = await db.runQuery1(`SELECT * FROM Users WHERE username='${username}' AND password='${password}'`);
+  console.log()
   if( user.length > 0 ){
     // user exists
-    request.session.user = { uid: user.uid, username:user.username};
+    // request.session.user = { uid: user.uid, username:user.username};
+    request.session.user = { name: "max" };
     request.session.isAuthenticated = true;
+    console.log(">>",user.session.user);
     
     const sid = request.session.sessionId;
     await db.runQuery2(`UPDATE Users SET session_id='${sid}' WHERE username='${username}'`);
