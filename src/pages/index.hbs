@@ -22,6 +22,14 @@
   <script src="./js/main_page.js" defer></script>
   <script src="./js/sidebar.js" defer></script>
 
+<style>
+  
+#map{
+  height:calc(100% + 23px);
+}  
+  
+</style>
+  
 </head>
 <body id="body">
   <div id="container">
@@ -41,8 +49,8 @@
     </nav>
     
     <main>
-      <img src="https://cdn.glitch.global/0e9353da-8f9f-4269-b2da-14ee499a8f67/amrita_map.png?v=1659197026240" class="noSelect" id="map">
-      
+<!--       <img src="https://cdn.glitch.global/0e9353da-8f9f-4269-b2da-14ee499a8f67/amrita_map.png?v=1659197026240" class="noSelect" id="map"> -->
+      <div id="map"></div>
       <div id="dropdown-container">
         <div>
           
@@ -115,4 +123,28 @@
     </div>
   </div>
 </body>
+<script>
+function initMap() {
+  
+  let map = new google.maps.Map(document.getElementById("map"),
+    {
+      center: { lat: 10.900016808568687, lng: 76.9028589289025 },
+      zoom: 20,
+      mapId: "350712befbb9be51",
+      mapTypeId: 'satellite',
+    }
+  );
+//   10.900016808568687, 76.9028589289025
+  
+  map.setOptions({
+    draggable: false, 
+    zoomControl: false, 
+    scrollwheel: false, 
+    disableDoubleClickZoom: true,
+    disableDefaultUI: true,
+  });
+
+}
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvqOwdG2V1lAA_O6rI-JR26bxSZQecj-g&map_id=350712befbb9be51&callback=initMap"></script>
 </html>

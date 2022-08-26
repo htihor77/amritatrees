@@ -66,8 +66,8 @@
   position:absolute;
   top:0;
   right:0;
-  width:min(70%,350px);
-  height:min(60%,700px);
+  width:min(50%,350px);
+  height:min(50%,700px);
   
   background-color:gray;
   border-left: solid 2px #323232;
