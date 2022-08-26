@@ -26,7 +26,7 @@ await db.run("INSERT INTO Users (email,username,password,session_id,points,colle
         
         // A-tree-Bute lol xD
         await db.run("CREATE TABLE aTREEbute (tree_name TEXT PRIMARY KEY, value_points INTEGER, url TEXT)");
-        await db.run("INSERT INTO (tree_name,value_points,url) VALUES ('oak tree', 50, 'https://cdn.britannica.com/92/142292-004-459092B7.jpg'),")
+        await db.run("INSERT INTO (tree_name,value_points,url) VALUES ('oak tree', 50, 'https://cdn.britannica.com/92/142292-004-459092B7.jpg'), ('neem tree', 50, 'https://5.imimg.com/data5/SELLER/Default/2021/5/RU/EL/LQ/76591799/neem-tree-500x500.jpg'), ('pine tree', 50, 'https://www.thetreecenter.com/c/uploads/2022/02/Slash_Pine_Tree_1-copy.jpg'), ")
         
         await db.run("CREATE TABLE Inventory (uid INTEGER, tree_name)");
         await db.run("INSERT INTO INVENTORY (uid,tid) VALUES (1,'oak tree'), (1,'neem tree'), (1,'pine tree')")
