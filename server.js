@@ -48,14 +48,13 @@ fastify.addHook("onRequest", (req, reply, next) => {
 
 fastify.get("/", async (request, reply) => {
   const user = request.session.user;
-  console.log(request.session.isAuthenticated,user);
   const data = await db.runQuery1(`SELECT * FROM Users WHERE uid=${user.uid}`)
-  console.log(data);
+  
   const User = {
-    username:"",
-    points:0
+    username:data[0].username,
+    points:data[0].points
   }
-  return reply.view("/src/pages/index.hbs", { user: "" });
+  return reply.view("/src/pages/index.hbs", { user: User });
 });
 
 
@@ -72,14 +71,10 @@ fastify.post("/login", async (request, reply) => {
   const password = request.body.password;
   // console.log(username,password);
   const user = await db.runQuery1(`SELECT * FROM Users WHERE username='${username}' AND password='${password}'`);
-  console.log()
   if( user.length > 0 ){
     // user exists
-    // request.session.user = { uid: user.uid, username:user.username};
-    request.session.user = { name: "max" };
+    request.session.user = { uid: user[0].uid, username: user[0].username };
     request.session.isAuthenticated = true;
-    console.log(">>",user.session.user);
-    
     const sid = request.session.sessionId;
     await db.runQuery2(`UPDATE Users SET session_id='${sid}' WHERE username='${username}'`);
     
@@ -104,6 +99,16 @@ fastify.get("/logout", async (request, reply) => {
 
 
 
+fastify.get("/inventory", async (request, reply) => {
+  const user = request.session.user;
+  const data = await db.runQuery1(`SELECT * FROM Users WHERE uid=${user.uid}`)
+  
+  const User = {
+    username:data[0].username,
+    points:data[0].points
+  }
+  return reply.view("/src/pages/index.hbs", { user: User });
+});
 
 
 
