@@ -1,0 +1,87 @@
+
+#container{
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  display:grid;
+  grid-template-rows: var(--navbarHeight) auto;
+}
+
+#container nav{
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--navbarColor);
+}
+
+#container main{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  
+  background-color:#eeeeee;
+}
+#container main img{
+  width:200%;
+  position:absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+#container #input{
+  width: min(100%,500px);
+  height: 2.5rem;
+  position: absolute;
+  z-index: 0;
+  bottom: 1%;
+  left:50%;
+  transform:translate(-50%,0);
+  border-radius: 25px;
+  border: 2px solid black;
+
+  background-color: rgb(222, 222, 222);
+  opacity: .8;
+  transition: all .3s;
+}
+#container #input:hover{
+  opacity: 1;
+  border: 5px solid black;
+}
+
+/* ##################################### */
+
+
+#bell.active i, #quest.active i{
+  color:yellowgreen;
+}
+
+
+#dropdown-container{
+  display:none;
+  position:absolute;
+  top:0;
+  right:0;
+  width:min(70%,350px);
+  height:min(60%,700px);
+  
+  background-color:gray;
+  border-left: solid 2px #323232;
+  border-bottom: solid 2px #323232;
+  border-bottom-left-radius: 20px;
+}
+
+#dropdown-container > div{
+  --cGap: 6px;
+  width: calc(100% - var(--cGap));
+  height: calc(100% - var(--cGap));
+  margin-top: calc( var(--cGap) / 2);
+  margin-left: calc( var(--cGap) / 2 );
+  
+  border: solid 2px #323232;
+  border-bottom-left-radius: 15px;
+}

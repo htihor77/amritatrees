@@ -50,8 +50,8 @@ fastify.addHook("onRequest", (req, reply, next) => {
 
 fastify.get("/", async (request, reply) => {
   const uid = request.session.uid;
-  await db.ru
-  return reply.view("/src/pages/index.hbs", {user:""});
+  const data = await db.runQuery1(`SELECT * FROM Users WHERE uid='${uid}'`)  
+  return reply.view("/src/pages/index.hbs", { user: {username: data.username, points: data.points} });
 });
 
 

@@ -1,0 +1,166 @@
+
+#sidebar{
+  width: min(100%,var(--sidebarWidth));
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  top:0;
+  left:0;
+
+  overflow-y:auto;
+  
+  transform: translate( calc( -1 * var(--sidebarWidth)), 0);
+
+  display:grid;
+/*   grid-template-rows: var(--navbarHeight) auto auto var(--navbarHeight); */
+  grid-template-rows: var(--navbarHeight) auto min-content var(--navbarHeight);;
+
+  background-color: var(--sidebarColor);
+  transition: all .2s;
+  
+  box-shadow: 5px 0 3px rgba(0,0,0,.2);
+}
+#sidebar.active{
+  transform: translate( 0, 0);
+}
+
+
+#sidebar #settings header{
+  display:grid;
+  width:100%;
+  align-items:center;
+  grid-template-columns: auto min-content auto;
+  gap:10px;
+  
+  padding-left:5px;
+  padding-right:5px;
+}
+
+#sidebar #settings header span{
+  background-color:white;
+  height:3px;
+  border-radius:25px;
+}
+
+#sidebar #settings > div{
+  padding-left:10px;
+  font-size:1.4rem;
+  margin-top:5px;
+  margin-bottom:5px;
+  
+  padding-top:5px;
+  padding-bottom:5px;
+}
+
+
+#sidebar #settings header div{
+  font-size: 1.5em;
+  font-weight:bold;
+}
+
+
+#sidebar #settings > div.toggleable{
+  display:grid;
+  grid-template-columns: auto min-content;
+}
+
+
+/* SWITCH */
+
+.switch {
+  
+  --transitionSpeed: .1s;
+/*   --switchWidth: 60px; */
+/*   --switchHeight: 34px; */
+/*   --knobGap: 4px; */
+  --switchWidth: 50px;
+  --switchHeight: 28px;
+  --knobGap: 3px;
+  
+  --switchColor: #cccccc;
+  --knobColor: white;
+  --shadeColor: yellowgreen;
+  
+  position: relative;
+  display: inline-block;
+  width: var(--switchWidth);
+  height: var(--switchHeight);
+  
+  margin-right:5px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--switchColor);
+  -webkit-transition: var(--transitionSpeed);
+  transition: var(--transitionSpeed);
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: calc( var(--switchHeight) - var(--knobGap) - var(--knobGap) );
+  width: calc( var(--switchHeight) - var(--knobGap) - var(--knobGap) );
+  left: var(--knobGap);
+  bottom: var(--knobGap);
+  background-color: var(--knobColor);
+  -webkit-transition: var(--transitionSpeed);
+  transition: var(--transitionSpeed);
+}
+
+input:checked + .slider {
+  background-color: var(--shadeColor);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--shadeColor);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(calc( var(--switchHeight) - var(--knobGap) - var(--knobGap) ));
+  -ms-transform: translateX(calc( var(--switchHeight) - var(--knobGap) - var(--knobGap) ));
+  transform: translateX(calc( var(--switchHeight) - var(--knobGap) - var(--knobGap) ));
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: var(--switchHeight);
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
+
+
+#sidebar #profile a{
+  display:block;
+  width:80%;
+  margin-left:10%;
+  text-decoration: none;
+  text-align:center;
+  
+  color:white;
+  background-color:yellowgreen;
+  padding:10px;
+  margin-top:20px;
+  margin-bottom:10px;
+  border-radius:35px;
+  transition: .2s;
+}
+
+#sidebar #profile a:active{
+  opacity:.5;
+}
