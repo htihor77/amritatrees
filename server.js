@@ -61,16 +61,33 @@ fastify.post("/login", async (request, reply) => {
   console.log("=================")
   const username = request.body.username;
   const password = request.body.password;
-  console.log(username,password);
+  // console.log(username,password);
   const user = await db.runQuery1(`SELECT * FROM Users WHERE username='${username}' AND password='${password}'`);
-  
-  console.log(user);
-  // return reply.redirect("/");
-  return reply.type("json").send(user);
+  if( user.length > 0 ){
+    // user exists
+    request.session.uid = user.uid;
+    request.session.username = user.username;
+    request.session.isAuthenticated = true;
+    
+  }else{
+    // user does not exist
+    return reply.view("/src/pages/login.hbs", {msg:"User does not exist!"});
+  }
+  return reply.redirect("/");
+  // return reply.type("json").send(user);
 });
 
 
-
+fastify.get("/logout", async (request, reply) => {
+  console.log(request.session.isAuthenticated);
+  if(request.session.isAuthenticated){
+    const uid = request.session.uid;
+    await db.runQuery2(`UPDATE Users SET session_id=null WHERE uid='${uid}'`);
+    return reply.type("json").send({success:"user successfully logged out"});
+  }else{
+    return reply.type("json").send({error:"user not found to logout"});
+  }
+});
 
 
 
