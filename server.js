@@ -35,7 +35,7 @@ fastify.addHook("onRequest", (req, reply, next) => {
 
   console.log(req.url);
   
-  if( req.session.isAuthenticated === undefined && req.url != "/login" && req.url != "/leaderboards"){
+  if( req.session.isAuthenticated === undefined && ["/login","/leaderboards","/css/style.css"].indexOf(req.url) == -1){
     reply.redirect("/login");
   }
   next();
