@@ -102,7 +102,11 @@ fastify.get("/inventory", async (request, reply) => {
   return reply.view("/src/pages/inventory.hbs", { user: data[0], unlocked: data1, locked: data2 } );
 });
 
-
+fastify.get("/leaderboards", async (request, reply) => {
+  const data1 = await db.runQuery1(`SELECT username,points FROM Users SORT BY points`);
+  const data2 = await db.runQuery1(`SELECT username,collected FROM Users SORT BY collected`);
+  return reply.view("/src/pages/leaderboards.hbs", { points: data1, collected: data2 } );
+});
 
 
 
