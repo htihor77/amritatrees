@@ -24,7 +24,14 @@
   float: left;
   width: 50%;
   padding: 10px;
-  height: 300px; /* Should be removed. Only for demonstration */
+/*   height: 300px; */
+  display:flex;
+  justify-content:center;
+}
+
+
+.row{
+  height:calc(100% - 50px);
 }
 
 /* Clear floats after the columns */
@@ -42,8 +49,7 @@
 }
   
 table{
-  display: inline-block;
-  width: min(100%,600px);
+  display:inline-block;
 }
 
 th,td{
@@ -53,7 +59,7 @@ th,td{
 }
   
 .header{
-  font-size:2rem;
+  font-size:1.6rem;
 }
   
 
@@ -76,10 +82,15 @@ th,td{
 </style>
 </head>
 <body>
-  <h1 style="text-align:center;">LEADERBOARDS</h1>
+  <h1 style="text-align:center;padding:5px;padding-top:9px">LEADERBOARDS</h1>
+  
+<div class="row">
+  <div class="column">
+    
+  
   <table border="0">
         <tr>
-          <th class="header" colspan="3">🌟 Ranked on Points 🌟</th>
+          <th class="header" colspan="3">🌟 Ranked on Points 🌟<br>gained</th>
         </tr>
 
         <tr>
@@ -95,11 +106,14 @@ th,td{
           <td>{{this.points}}</td>
         </tr>
       {{/each}}
-  </table>
-  
+  </table>    
+    
+  </div>
+  <div class="column">
+
   <table border="0">
         <tr>
-          <th class="header"  colspan="3">🌳 Ranked on Trees collected 🌳</th>
+          <th class="header"  colspan="3">🌳  Ranked on Trees  🌳<br>collected</th>
         </tr>
 
         <tr>
@@ -116,12 +130,11 @@ th,td{
         </tr>
       {{/each}}
   </table>
+    
+  </div>
+</div>
+
+
 </body>
-  
-<script>
-window.addEventListener('DOMContentLoaded', (event) => {
-  console.log(event);
-});  
-</script>  
   
 </html>
