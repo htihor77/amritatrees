@@ -58,11 +58,15 @@ fastify.get("/login", async (request, reply) => {
 });
 
 fastify.post("/login", async (request, reply) => {
-  coonsole.log("=================")
-  const username = request.body;
-  const password = request.body;
+  console.log("=================")
+  const username = request.body.username;
+  const password = request.body.password;
   console.log(username,password);
-  return reply.redirect("/");
+  const user = await db.runQuery1(`SELECT * FROM Users WHERE username='${username}' AND password='${password}'`);
+  
+  console.log(user);
+  // return reply.redirect("/");
+  return reply.type("json").send(user);
 });
 
 
