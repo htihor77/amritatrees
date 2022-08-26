@@ -97,16 +97,16 @@ fastify.get("/logout", async (request, reply) => {
 fastify.get("/inventory", async (request, reply) => {
   const user = request.session.user;
   
-  const data1 = await db.runQuery1(`SELECT * FROM Users WHERE uid=${user.uid}`)
-  
+  const data1 = await db.runQuery1(`SELECT * FROM Inventory,Atreebutes WHERE Inventory.tree_name=Atreebutes.tree_name AND Inventory.uid=${user.uid}`)
+  console.log(data1);
   const collected = {
     tree_name:data[0].tree_name
   }
   const uncollected = {
     tree_name:data[0].tree_name
   }
-  
-  return reply.view("/src/pages/index.hbs", { unlocked: collected, locked: uncollected });
+  // { unlocked: collected, locked: uncollected }
+  return reply.view("/src/pages/inventory.hbs", {} );
 });
 
 
