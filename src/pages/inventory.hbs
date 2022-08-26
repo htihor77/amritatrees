@@ -45,11 +45,20 @@
 
    <div class="cards-container">
      
-              {{#each items}}
+              {{#each unlocked}}
               <div class="card-1">
                       <figure>
-                          <img src="{{this.img_url}}">
-                          <figcaption>{{this.name}}</figcaption>
+                          <img src="{{this.url}}">
+                          <figcaption>{{this.tree_name}}</figcaption>
+                      </figure>
+              </div>
+              {{/each}}
+     
+              {{#each locked}}
+              <div class="card-1">
+                      <figure>
+                          <img src="{{this.url}}" style="filter: grayscale(100%);">
+                          <figcaption>???</figcaption>
                       </figure>
               </div>
               {{/each}}
@@ -116,7 +125,7 @@
           </div>
           <hr>
           <div class="toggleable">
-            <div>logout</div>
+            <div><a href="./logout">logout</a></div>
             <div><img src="https://cdn.onlinewebfonts.com/svg/img_21244.png" style="width:2rem;padding-right:10px;"></div>
           </div>
           <hr>
