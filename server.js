@@ -104,8 +104,8 @@ fastify.get("/inventory", async (request, reply) => {
 });
 
 fastify.get("/leaderboards", async (request, reply) => {
-  const data1 = await db.runQuery1(`SELECT username,points FROM Users ORDER BY points`);
-  const data2 = await db.runQuery1(`SELECT username,collected FROM Users ORDER BY collected`);
+  const data1 = await db.runQuery1(`SELECT username,points FROM Users ORDER BY points DESC`);
+  const data2 = await db.runQuery1(`SELECT username,collected FROM Users ORDER BY collected DESC`);
   return reply.view("/src/pages/leaderboards.hbs", { points: data1, collected: data2 } );
   // return reply.type("json").send({ points: data1, collected: data2 });
 });
