@@ -19,6 +19,28 @@
     <meta name="theme-color" content="#91b51d">
 <style>
 
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+  
 table{
   display: inline-block;
   width: min(100%,600px);
@@ -29,6 +51,11 @@ th,td{
   border:2px solid white;
   font-size:1.2rem;
 }
+  
+.header{
+  font-size:2rem;
+}
+  
 
 .index{
   position: relative;
@@ -52,13 +79,13 @@ th,td{
   <h1 style="text-align:center;">LEADERBOARDS</h1>
   <table border="0">
         <tr>
-          <th colspan="3">🌟 Ranked on Points 🌟</th>
+          <th class="header" colspan="3">🌟 Ranked on Points 🌟</th>
         </tr>
 
         <tr>
           <th></th>
-          <th>username</th>
-          <th>points</th>
+          <th>Username</th>
+          <th>Points</th>
         </tr>
     
       {{#each points}}
@@ -72,13 +99,13 @@ th,td{
   
   <table border="0">
         <tr>
-          <th colspan="3">🌳 Ranked on Trees collected 🌳</th>
+          <th class="header"  colspan="3">🌳 Ranked on Trees collected 🌳</th>
         </tr>
 
         <tr>
           <th></th>
-          <th>username</th>
-          <th>collected</th>
+          <th>Username</th>
+          <th>Collected</th>
         </tr>
     
       {{#each collected}}
@@ -90,4 +117,11 @@ th,td{
       {{/each}}
   </table>
 </body>
+  
+<script>
+window.addEventListener('DOMContentLoaded', (event) => {
+  console.log(event);
+});  
+</script>  
+  
 </html>
