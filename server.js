@@ -105,6 +105,13 @@ fastify.get("/signup", async (request, reply) => {
   return reply.view("/src/pages/signup.hbs", {msg:""});
 });
 fastify.post("/signup", async (request, reply) => {
+  const email = request.body.email;
+  const username = request.body.username;
+  const password = request.body.password;
+  
+  
+  
+  
   return reply.send("post");
   // return reply.view("/src/pages/signup.hbs", {msg:""});
 });
