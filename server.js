@@ -108,7 +108,7 @@ fastify.get("/inventory", async (request, reply) => {
   const data = await db.runQuery1(`SELECT username,points FROM Users WHERE uid=${user.uid}`)
   const data1 = await db.runQuery1(`SELECT Inventory.tree_name,Atreebutes.url FROM Inventory,Atreebutes WHERE Inventory.uid=${user.uid} AND Inventory.tree_name=Atreebutes.tree_name`)
   const data2 = await db.runQuery1(`SELECT tree_name,url FROM Atreebutes WHERE tree_name NOT IN (SELECT tree_name FROM Inventory WHERE uid=${user.uid})`);
-  return reply.view("/src/pages/inventory.hbs", { user: data[0], unlocked: data1, locked: data2 } );
+  return reply.view("/src/pages/inventory2.hbs", { user: data[0], unlocked: data1, locked: data2 } );
 });
 
 fastify.get("/leaderboards", async (request, reply) => {
