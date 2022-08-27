@@ -63,16 +63,17 @@ fastify.get("/login", async (request, reply) => {
 });
 fastify.post("/login", async (request, reply) => {
   console.log("=================")
-  const username = request.body.username;
+  const userdata = request.body.userdata;
   const password = request.body.password;
   // console.log(username,password);
-  const user = await db.runQuery1(`SELECT * FROM Users WHERE username='${username}' AND password='${password}'`);
+  const user = await db.runQuery1(`SELECT * FROM Users WHERE username='${userdata}' AND password='${password}'`);
+  // const user = await db.runQuery1(`SELECT * FROM Users WHERE email='${userdata}' AND password='${password}'`);
   if( user.length > 0 ){
     // user exists
     request.session.user = { uid: user[0].uid, username: user[0].username };
     request.session.isAuthenticated = true;
     const sid = request.session.sessionId;
-    await db.runQuery2(`UPDATE Users SET session_id='${sid}' WHERE username='${username}'`);
+    await db.runQuery2(`UPDATE Users SET session_id='${sid}' WHERE uid='${user[0].uid}'`);
     
   }else{
     // user does not exist
