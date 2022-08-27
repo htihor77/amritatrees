@@ -250,16 +250,12 @@ input[type="submit"]{
     <form action="/signup" method="post">
         <div class="row">
             <label for="email">Email</label>
-            <input type="email" name="email" autocomplete="off" placeholder="example@gmail.com">
+            <input type="email" name="email" autocomplete="off" placeholder="example@gmail.com" value="{{email}}">
         </div>
       <div class="row">
             <label for="name">Username</label>
-            <input type="text" name="username" autocomplete="off" placeholder="John Doe">
+            <input type="text" name="username" autocomplete="off" placeholder="John Doe" value="{{username}}">
         </div>
-<!--         <div class="row">
-            <label for="age">Age</label>
-            <input type="number" name="age" autocomplete="off" placeholder="20">
-        </div> -->
         <div class="row" style="margin-bottom:10px;">
             <label for="password">Password</label>
             <input type="password" name="password">

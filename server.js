@@ -105,15 +105,28 @@ fastify.get("/signup", async (request, reply) => {
   return reply.view("/src/pages/signup.hbs", {msg:""});
 });
 fastify.post("/signup", async (request, reply) => {
-  const email = request.body.email;
-  const username = request.body.username;
+  let email = request.body.email;
+  let username = request.body.username;
   const password = request.body.password;
   
+  const findEmail = await db.runQuery1(`SELECT * FROM Users WHERE email='${email}'`);
+  const findUsername = await db.runQuery1(`SELECT * FROM Users WHERE username='${username}'`);
+  console.log(email,username,password);
   
+  let msg;
+  if( findEmail.length > 0 ){
+    msg = "Email already exists!";
+    email = "";
+  }else if( findUsername.length > 0 ){
+    msg = "Username already exists";
+    username = "";
+  }else{
+    // new user
+    console.log("new user details");
+  }
   
-  
-  return reply.send("post");
-  // return reply.view("/src/pages/signup.hbs", {msg:""});
+  // return reply.send("post");
+  return reply.view("/src/pages/signup.hbs", {msg:msg, username: username, email:email});
 });
 
 
