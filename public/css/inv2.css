@@ -25,9 +25,11 @@ body{
 }
 
 .card{
-    --w: 180px;
-    border:2px solid black;
-    padding:5px;
+    --w: 200px;
+    border:2px solid white;
+    background-image: linear-gradient(60deg, #242424,yellowgreen);
+    border-radius:15px;
+    padding:1em;
     width: var(--w);
     height: calc(var(--w) + 2rem);
     /* background-color: gray; */
@@ -38,12 +40,18 @@ body{
     width: 100%;
 /*     height: var(--w); */
 }
-.card .img img{height: 100%;width: 100%;border-radius: 50%;object-fit:cover;}
+.card .img img{
+  height: 100%;width: 100%;
+  border-radius: 50%;
+  object-fit:cover;
+  box-shadow: 0px 5px 10px rgb(0 0 0 / 50%);
+}
 .card .label{
     display: flex;
     align-items: center;
     justify-content: center;
-    color:black;
+    color:white;
+    font-size:1.2rem;
 }
 
 header#title{
@@ -64,7 +72,7 @@ header#title{
 
 @media only screen and (max-width: 600px) {
     .card{
-        --w: 150px;
+        --w: 165px;
     }
 }
 
