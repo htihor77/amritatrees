@@ -204,7 +204,7 @@ input[type="submit"]{
         }
 
         .row input::placeholder {
-            color: rgba(255,255,255,0.3);
+            color: rgba(255,255,255,0.4);
         }
 
         button {
@@ -249,13 +249,13 @@ input[type="submit"]{
     <form action="/login" method="post">
         <div class="row">
             <label for="username">Username</label>
-            <input type="text" name="userdata" autocomplete="off" placeholder="Rishi">
+            <input type="text" name="userdata" autocomplete="off" placeholder="John Doe">
         </div>
-        <div class="row">
+        <div class="row" style="margin-bottom:10px;">
             <label for="password">Password</label>
             <input type="password" name="password">
         </div>
-        <span style="display:inline-block;width:100%;color:red;text-align:center;height:1.2rem;">{{ msg }}</span>
+        <span style="display:inline-block;width:100%;color:#b42d20;text-align:center;height:1.2rem;">{{ msg }}</span>
         <button type="submit">Login</button>
     </form>
 </body>

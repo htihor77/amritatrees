@@ -35,7 +35,7 @@ fastify.addHook("onRequest", (req, reply, next) => {
 
   console.log(req.url);
   
-  if( req.session.isAuthenticated === undefined && ["/login","/leaderboards","/css/style.css"].indexOf(req.url) == -1){
+  if( req.session.isAuthenticated === undefined && ["/login","/signup","/leaderboards","/css/style.css"].indexOf(req.url) == -1){
     reply.redirect("/login");
   }
   next();
@@ -94,6 +94,13 @@ fastify.get("/logout", async (request, reply) => {
   }
 });
 
+fastify.get("/signup", async (request, reply) => {
+  return reply.view("/src/pages/signup.hbs", {msg:""});
+});
+fastify.post("/signup", async (request, reply) => {
+  return reply.send("post");
+  // return reply.view("/src/pages/signup.hbs", {msg:""});
+});
 
 
 fastify.get("/inventory", async (request, reply) => {

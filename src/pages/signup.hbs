@@ -141,7 +141,7 @@ input[type="submit"]{
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>login</title>
+      <title>signup</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
@@ -204,7 +204,7 @@ input[type="submit"]{
         }
 
         .row input::placeholder {
-            color: rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.4);
         }
 
         button {
@@ -252,18 +252,18 @@ input[type="submit"]{
             <input type="text" name="email" autocomplete="off" placeholder="email@example.com">
         </div>
       <div class="row">
-            <label for="name">Name</label>
-            <input type="text" name="name" autocomplete="off" placeholder="Jason">
+            <label for="name">Username</label>
+            <input type="text" name="username" autocomplete="off" placeholder="John Doe">
         </div>
-        <div class="row">
+<!--         <div class="row">
             <label for="age">Age</label>
             <input type="number" name="age" autocomplete="off" placeholder="20">
-        </div>
-        <div class="row">
+        </div> -->
+        <div class="row" style="margin-bottom:10px;">
             <label for="password">Password</label>
             <input type="password" name="password">
         </div>
-        <span style="display:inline-block;width:100%;color:red;text-align:center;height:1.2rem;">{{ msg }}</span>
+        <span style="display:inline-block;width:100%;color:#b42d20;text-align:center;height:1.2rem;">{{ msg }}</span>
         <button type="submit">Login</button>
     </form>
 </body>
