@@ -5,12 +5,13 @@ body{
 }
 
 .cards-container{
+    --gap: 55px;
     width: 100%;height: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-content:flex-start;
-    gap:15px;
+    gap:var(--gap);
     font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
 }
 
@@ -25,9 +26,10 @@ body{
 }
 
 .card{
+    --theme-color: yellowgreen;
     --w: 200px;
     border:2px solid white;
-    background-image: linear-gradient(60deg, #242424,yellowgreen);
+    background-image: linear-gradient(60deg, #242424,var(--theme-color));
     border-radius:15px;
     padding:1em;
     width: var(--w);
@@ -71,6 +73,9 @@ header#title{
 
 
 @media only screen and (max-width: 600px) {
+    .cards-container{
+        --gap: 15px;  
+    }
     .card{
         --w: 165px;
     }
