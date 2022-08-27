@@ -26,7 +26,7 @@ function toggleDropdownContainer(){
 function devDisplayCoords(){
   if(navigator.geolocation){
     navigator.geolocation.getCurrentPosition( (pos)=>{
-       $("#development").innerHTML = pos.coords.latitude + "," + pos.coords.longitude + "()";
+       $("#development").innerHTML = pos.coords.latitude + "," + pos.coords.longitude;
     });
   }
 }
