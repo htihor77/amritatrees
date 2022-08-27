@@ -6,7 +6,7 @@
     "scope": "/",
     "start_url": "/",
     "short_name": "atrees",
-    "name": "amrita trees",
+    "name": "amrita trees app",
     "icons": [
         {
             "src": "https://cdn.glitch.global/9d67ff5c-524b-467b-aa2f-2cb422728542/icon-192x192.png?v=1661607334773",
@@ -28,14 +28,5 @@
             "sizes": "512x512",
             "type": "image/png"
         }
-    ],  
-    "capture_links": "existing-client-navigate",
-    "url_handlers" : [
-        {
-            "origin": "https://amritatrees.glitch.me"
-        },
-        {
-            "origin": "https://amritatrees.com"
-        }
-  ]
+    ]
 }

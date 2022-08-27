@@ -35,7 +35,7 @@ fastify.addHook("onRequest", (req, reply, next) => {
 
   console.log(req.url);
   
-  if( req.session.isAuthenticated === undefined && ["/login","/signup","/leaderboards","/css/style.css"].indexOf(req.url) == -1){
+  if( req.session.isAuthenticated === undefined && ["/login","/signup","/leaderboards","/css/style.css","/manifest.json"].indexOf(req.url) == -1){
     reply.redirect("/login");
   }
   next();
@@ -55,6 +55,10 @@ fastify.get("/", async (request, reply) => {
 fastify.get("/serviceworker.js", async (req,reply)=>{
   const buffer = fs.readFileSync('serviceworker.js');
   return reply.type('application/javascript').send(buffer);
+})
+fastify.get("/manifest.json", async (req,reply)=>{
+  const buffer = fs.readFileSync(__dirname+'/public/manifest.json');
+  return reply.type('json').send(buffer);
 })
 
 fastify.get("/login", async (request, reply) => {
