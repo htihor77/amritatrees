@@ -123,6 +123,8 @@ fastify.post("/signup", async (request, reply) => {
   }else{
     // new user
     console.log("new user details");
+    await db.runQuery2(`INSERT INTO Users (email,username,password,points,collected) VALUES ('${email}','${username}','${password}',0,0)'`);
+    return reply.view("/src/pages/login.hbs", {msg:""});
   }
   
   // return reply.send("post");
