@@ -135,7 +135,7 @@ input[type="submit"]{
 </html> -->
 
 
-<!--<html>
+<html>
 
 <head>
       <meta charset="UTF-8">
@@ -245,11 +245,19 @@ input[type="submit"]{
 
 <body>
 
-    <h1>Login</h1>
-    <form action="/login" method="post">
+    <h1>Signup</h1>
+    <form action="/signup" method="post">
         <div class="row">
-            <label for="username">Username</label>
-            <input type="text" name="username" autocomplete="off" placeholder="Rishi">
+            <label for="email">Email</label>
+            <input type="text" name="email" autocomplete="off" placeholder="email@example.com">
+        </div>
+      <div class="row">
+            <label for="name">Name</label>
+            <input type="text" name="name" autocomplete="off" placeholder="Jason">
+        </div>
+        <div class="row">
+            <label for="age">Age</label>
+            <input type="number" name="age" autocomplete="off" placeholder="20">
         </div>
         <div class="row">
             <label for="password">Password</label>
@@ -261,5 +269,3 @@ input[type="submit"]{
 </body>
 
 </html>
-
--->
