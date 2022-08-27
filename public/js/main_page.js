@@ -1,11 +1,3 @@
-
-document.addEventListener("click", e=>{
-  // console.log(e.target.id);
-  // if(e.target.id != "sidebar" && e.target.id != "body"){
-  //   $("#sidebar").classList.remove("active");
-  // }
-});
-
 function set_map_x(e){$("#map").style.left = "-" + e + "px";}
 function set_map_y(e){$("#map").style.top = "-" + e + "px";}
 
@@ -31,3 +23,10 @@ function toggleDropdownContainer(){
   }
 }
 
+function devDisplayCoords(){
+  if(navigator.geolocation){
+    navigator.geolocation.getCurrentPosition( (pos)=>{
+       $("#development").innerHTML = pos.coords.latitude + "," + pos.coords.longitude + "()";
+    });
+  }
+}
