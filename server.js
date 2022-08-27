@@ -52,7 +52,10 @@ fastify.get("/", async (request, reply) => {
   }
   return reply.view("/src/pages/index.hbs", { user: User });
 });
-
+fastify.get("/serviceworker.js", async (req,reply)=>{
+  const buffer = fs.readFileSync('serviceworker.js');
+  return reply.type('application/javascript').send(buffer);
+})
 
 fastify.get("/login", async (request, reply) => {
   if( request.session.isAuthenticated ){
