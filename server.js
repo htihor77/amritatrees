@@ -111,7 +111,7 @@ fastify.post("/signup", async (request, reply) => {
   
   const findEmail = await db.runQuery1(`SELECT * FROM Users WHERE email='${email}'`);
   const findUsername = await db.runQuery1(`SELECT * FROM Users WHERE username='${username}'`);
-  console.log(email,username,password);
+  // console.log(email,username,password);
   
   let msg;
   if( findEmail.length > 0 ){
@@ -123,7 +123,7 @@ fastify.post("/signup", async (request, reply) => {
   }else{
     // new user
     console.log("new user details");
-    await db.runQuery2(`INSERT INTO Users (email,username,password,points,collected) VALUES ('${email}','${username}','${password}',0,0)'`);
+    await db.runQuery2(`INSERT INTO Users (email,username,password,session_id,points,collected,lat,long) VALUES ('${email}','${username}','${password}',null,0, 0,null,null)`);
     return reply.view("/src/pages/login.hbs", {msg:""});
   }
   
