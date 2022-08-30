@@ -73,8 +73,8 @@ fastify.get("/manifest.json", async (req,reply)=>{
 })
 
 fastify.get("/login", async (request, reply) => {
-  const logout = request.query.logout;
-  console.log("logout:",request.query);
+  let params = request.query.raw
+  console.log("logout:",request.query.raw);
   
   if( request.session.isAuthenticated ){
     return reply.redirect("/");

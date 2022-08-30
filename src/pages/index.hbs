@@ -73,7 +73,6 @@ function initMap() {
   );
 //   10.900016808568687, 76.9028589289025
   
-//   11.0168445,76.9558321
   map.setOptions({
     // draggable: false, 
     zoomControl: false, 
@@ -82,6 +81,13 @@ function initMap() {
     disableDefaultUI: true,
   });
 
+  const currPosMarker = new google.maps.Marker({
+    position: { lat: 10.900016808568687, lng: 76.9028589289025 },map,
+    icon:""
+  });
+
+  
+  
   const loop = () => {
     if(navigator.geolocation){navigator.geolocation.getCurrentPosition( (position)=>{
       const pos = {
@@ -89,7 +95,8 @@ function initMap() {
         lng: position.coords.longitude,
       };
       map.setCenter(pos);
-      console.log(pos);
+      const latlng = new google.maps.LatLng(pos.lat, pos.lng);
+      currPosMarker.setPosition(latlng);
     });
     }
   }
