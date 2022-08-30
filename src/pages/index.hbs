@@ -48,7 +48,7 @@
       </div>
       
       
-      <div id="development" style="position:absolute;top:0;right:0;background-color:black;color:white;height:2rem;cursor:pointer;text-align:center;" onclick="devDisplayCoords();">coords: ...</div>
+      <div id="development" style="position:absolute;top:0;right:0;background-color:black;color:white;height:2rem;cursor:pointer;text-align:center;" onclick="navigator.clipboard.writeText(this.innerHTML);">coords: ...</div>
     </main>
     
     {{> sidebar }}
@@ -65,7 +65,7 @@ function initMap() {
   
   let map = new google.maps.Map(document.getElementById("map"),
     {
-      center: { lat: 10.900016808568687, lng: 76.9028589289025 },
+      center: { lat: 11.0168445, lng: 76.9558321 },
       zoom: 20,
       mapId: "350712befbb9be51",
       mapTypeId: 'satellite',
@@ -73,14 +73,26 @@ function initMap() {
   );
 //   10.900016808568687, 76.9028589289025
   
+//   11.0168445,76.9558321
   map.setOptions({
-    draggable: false, 
+    // draggable: false, 
     zoomControl: false, 
-    scrollwheel: false, 
+    // scrollwheel: false, 
     disableDoubleClickZoom: true,
     disableDefaultUI: true,
   });
 
+  const loop = () => {
+    if(navigator.geolocation){navigator.geolocation.getCurrentPosition( (pos)=>{
+            const pos = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude,
+      };
+      map.setCenter(pos);
+    });}
+  }
+  
+  setInterval(loop,1000);
 }
 </script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvqOwdG2V1lAA_O6rI-JR26bxSZQecj-g&map_id=350712befbb9be51&callback=initMap"></script>
