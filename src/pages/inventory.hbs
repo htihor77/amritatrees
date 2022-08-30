@@ -15,16 +15,7 @@
 
 <body>
   
-    <nav class="noSelect">
-      <div style="padding-left:10px;cursor:pointer;" onclick="toggleSidebar()" class="iconContainer"><i class="fas fa-bars" title="menu"></i></div>
-      <div class="iconContainer" style="font-size:x-large;"></div>
-      <div style="padding-right:10px;">
-        <div style="padding-left:10px;cursor:pointer;" onclick="bellClicked(this)" class="iconContainer" id="bell">
-          <i class="fas fa-bell" title="notifications"></i></div>
-        <div style="padding-left:10px;cursor:pointer;" onclick="questsClicked(this)" class="iconContainer" id="quest">
-          <i class="fas fa-scroll" title="quests"></i></div>
-      </div>
-    </nav>
+    {{> navbar}}
   
     <header id="title" class="noSelect">
         INVENTORY

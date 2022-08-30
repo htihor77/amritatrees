@@ -13,6 +13,7 @@ fastify.register(require("@fastify/view"), {
   options: {
     partials:{
       head: "/src/partials/head.handlebars",
+      navbar: "/src/partials/navbar.handlebars",
       sidebar: "/src/partials/sidebar.handlebars",
     }
   },

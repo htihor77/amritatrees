@@ -27,16 +27,7 @@
     <div id="overlay" 
          style="display:none;width:100%;height:100%;position:absolute;top:0;left:0;background-color:rgba(0,0,0,.25);z-index:1;" onclick="clickedOverlay()"></div>
     
-    <nav class="noSelect">
-      <div style="padding-left:10px;cursor:pointer;" onclick="toggleSidebar()" class="iconContainer"><i class="fas fa-bars" title="menu"></i></div>
-      <div class="iconContainer" style="font-size:x-large;"></div>
-      <div style="padding-right:10px;">
-        <div style="padding-left:10px;cursor:pointer;" onclick="bellClicked(this)" class="iconContainer" id="bell">
-          <i class="fas fa-bell" title="notifications"></i></div>
-        <div style="padding-left:10px;cursor:pointer;" onclick="questsClicked(this)" class="iconContainer" id="quest">
-          <i class="fas fa-scroll" title="quests"></i></div>
-      </div>
-    </nav>
+    {{> navbar}}
     
     <main>
 <!--       <img src="https://cdn.glitch.global/0e9353da-8f9f-4269-b2da-14ee499a8f67/amrita_map.png?v=1659197026240" class="noSelect" id="map"> -->
@@ -83,7 +74,7 @@ function initMap() {
 
   const currPosMarker = new google.maps.Marker({
     position: { lat: 10.900016808568687, lng: 76.9028589289025 },map,
-    icon:"https://cdn.glitch.global/9d67ff5c-524b-467b-aa2f-2cb422728542/currPosMarker.png?v=1661892413481"
+    icon:"https://cdn.glitch.global/9d67ff5c-524b-467b-aa2f-2cb422728542/currPosMarker.png?v=1661892594255"
   });
 
   
