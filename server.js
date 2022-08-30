@@ -41,13 +41,18 @@ fastify.register(require("@fastify/session"), {
     maxAge: 1000 * 60 * 60 * 24 // 24 hours
   }
 });
-fastify.addHook("onRequest", (req, reply, next) => {
+fastify.addHook("onRequest", async (req, reply, next) => {
   const protocol = req.raw.headers["x-forwarded-proto"].split(",")[0];
   if (protocol === "http") {reply.redirect("https://" + req.hostname + req.url);}
 
-  console.log(req.url);
+  // console.log(req.url);
+  const sid = req.session.sessionId;
+  console.log("sid:",sid);
+  const data = await db.runQuery1(`SELECT * FROM Users WHERE sid=${sid}`);
+  console.log(data[0]);
   
-  if( req.session.isAuthenticated === undefined && ["/login","/signup","/leaderboards","/css/style.css","/manifest.json"].indexOf(req.url) == -1){
+  
+  if( req.session.isAuthenticated === undefined && ["/login","/signup","/leaderboards","/css/style.css","/manifest.json","/users"].indexOf(req.url) == -1){
     reply.redirect("/login");
   }
   next();
@@ -180,6 +185,12 @@ fastify.get("/check", async (request, reply) => {
   return reply.send("check");
 });
 
+
+
+fastify.get("/users", async (request, reply) => {
+  const users = await db.runQuery1("SELECT * FROM Users");
+  return reply.type("json").send(users);
+});
 
 
 
