@@ -43,6 +43,8 @@ body{
   height:100%;
   align-items:center;
   font-size:1.8rem;
+  text-shadow: 3px -1px yellowgreen;
+  -webkit-text-stroke: 1.5px black;
 }
 
 
