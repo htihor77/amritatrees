@@ -1,251 +1,117 @@
-
 <!DOCTYPE html>
-<!-- <html lang="en">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
+
+  {{> head }}
+  <title>Amrita Trees: SignUp</title>
+
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
-}
-html,
-body{
-    height:100%;
-    width: 100%;
-    position: relative;
-}
-
-body{
-    font-family: Arial, Helvetica, sans-serif;
-    color:white;
-    background-color: black;
-/*     touch-action: none; */
-    padding:4px;
-    padding-top:100px;
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: #302b3f;
+    color: #91b51d;
+    line-height: 1.6;
     display: flex;
-    justify-content: center;
-    /* align-items: center; */
-}
-
-h1{
-    position:fixed;
-    top:25px;
-    height: 20%;
-    z-index: 1;
-    color:yellowgreen;
-}
-
-h2{
-    position:fixed;
-    top:calc(2.4rem + 25px);
-    font-size: 1.2rem;
-    height: 20%;
-    z-index: 1;
-    color:rgb(255, 22, 84);
-    animation: warning 300ms;
-    animation-iteration-count: 3;
-}
-@keyframes warning {
-    0%{
-        transform: scale(1);
-    }
-    50%{
-        transform: scale(1.03);
-    }
-    100%{
-        transform: scale(1);
-    }
-}
-
-#container{
-    position: relative;
-    width: min(450px,100%);
-    height: 300px;
-    background-image: linear-gradient(60deg, #242424,#474747);
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
-input{
+h1 {
+    margin-block: 8px;
+}
+
+form {
+    background-color: rgba(0,0,0,0.5);
+    max-width: 360px;
     width: 100%;
-    padding: 5px;
-    font-size: 1.6rem;
-    letter-spacing: 10px;
-    text-align: center;
+    padding: 48px 32px;
+    border: 1px solid #e1e2f0;
+    border-radius: 4px;
+    box-shadow: 0 0 5px 0 rgba(42, 45, 48, 0.12);
+    transition: all 0.3s ease;
+    padding-bottom:28px;
 }
 
-input::placeholder {
-  color: yellowgreen;
-  opacity:0.5;
+.row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
 }
-  
-input[type="text"],input[type="password"]{
-    font-size: 2rem;
-    color: yellowgreen;
-    background-color: transparent;
+
+.row label {
+    font-size: 13px;
+    color: #8086a9;
+    margin-inline:15px;
+}
+
+.row input {
+    flex: 1;
+    padding: 13px;
+    margin-inline:15px;
+    background-color:#302b3f;
+    border: 1px solid #d6d8e6;
+    color:white;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: all 0.2s ease-out;
+}
+
+.row input:focus {
     outline: none;
-    border:none;
-    border-bottom: 2px solid yellowgreen;
-    width:80%;
-    margin-inline:10%;
+    box-shadow: inset 2px 2px 5px 0 rgba(42, 45, 48, 0.12);
 }
 
-input[type="submit"]{
-    position: absolute;
-    bottom:20px;
-    left: 25%;
-    width: 50%;
-    border-radius: 35px;
-    background-color: transparent;
-    outline: none;
-    border: 2px solid yellowgreen;
-    color:yellowgreen;
-    cursor:pointer;
+.row input::placeholder {
+    color: rgba(255,255,255,0.4);
 }
 
+button {
+    width: calc(100% - 30px);
+    padding: 12px;
+    margin-inline:15px;
+    font-size: 18px;
+    background: #15C39A;
+    color: #fff;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 15px;
+    transition: background 0.2s ease-out;
+}
 
+button:hover {
+    background: #55D3AC;
+}
+
+@media(max-width: 458px) {
+
+    body {
+        margin: 0 18px;
+    }
+
+    form {
+        border: none;
+        box-shadow: none;
+        padding: 15px 0;
+    }
+
+}
 </style>
-</head>
-<body>
-<h1>login</h1>
-<h2>{{ msg }}</h2>
-<div id="container">
-    <form action="/login" method="post" autocomplete="off">
-        <input type="text" 
-        name="username"
-        placeholder="username"
-        maxlength="16"
-        required>
-        <input type="password" 
-        name="password"
-        placeholder="password"
-        maxlength="16"
-        required>
-        <input type="submit" >
-    </form>
-</div>
-</body>
-</html> -->
 
-
-<html>
-
-<head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>signup</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
-
-        @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
-
-        body {
-            font-family: 'Open Sans', sans-serif;
-            background: #302b3f;
-            color: #91b51d;
-            line-height: 1.6;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 0;
-            padding: 0;
-        }
-
-        h1 {
-            margin-block: 8px;
-        }
-
-        form {
-            background-color: rgba(0,0,0,0.5);
-            max-width: 360px;
-            width: 100%;
-            padding: 48px 32px;
-            border: 1px solid #e1e2f0;
-            border-radius: 4px;
-            box-shadow: 0 0 5px 0 rgba(42, 45, 48, 0.12);
-            transition: all 0.3s ease;
-            padding-bottom:28px;
-        }
-
-        .row {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 20px;
-        }
-
-        .row label {
-            font-size: 13px;
-            color: #8086a9;
-            margin-inline:15px;
-        }
-
-        .row input {
-            flex: 1;
-            padding: 13px;
-            margin-inline:15px;
-            background-color:#302b3f;
-            border: 1px solid #d6d8e6;
-            color:white;
-            border-radius: 4px;
-            font-size: 16px;
-            transition: all 0.2s ease-out;
-        }
-
-        .row input:focus {
-            outline: none;
-            box-shadow: inset 2px 2px 5px 0 rgba(42, 45, 48, 0.12);
-        }
-
-        .row input::placeholder {
-            color: rgba(255,255,255,0.4);
-        }
-
-        button {
-            width: calc(100% - 30px);
-            padding: 12px;
-            margin-inline:15px;
-            font-size: 18px;
-            background: #15C39A;
-            color: #fff;
-            border: none;
-            border-radius: 100px;
-            cursor: pointer;
-            font-family: 'Open Sans', sans-serif;
-            margin-top: 15px;
-            transition: background 0.2s ease-out;
-        }
-
-        button:hover {
-            background: #55D3AC;
-        }
-
-        @media(max-width: 458px) {
-
-            body {
-                margin: 0 18px;
-            }
-
-            form {
-                border: none;
-                box-shadow: none;
-                padding: 15px 0;
-            }
-
-        }
-    </style>
-    
 </head>
 
 <body>
 
+    <div id="popup">
+      
+    </div>
+  
     <h1>Signup</h1>
     <form action="/signup" method="post">
         <div class="row">
