@@ -28,7 +28,7 @@ function devDisplayCoords(){
   if(navigator.geolocation){
     navigator.geolocation.getCurrentPosition( (pos)=>{
       $("#development").innerHTML = pos.coords.latitude + "," + pos.coords.longitude;
-       $("#accuracy").innerHTML = pos.coords.accuracy);
+      $("#accuracy").innerHTML = Math.round(pos.coords.accuracy) + "m inacurracy";
     });
   }
 }
