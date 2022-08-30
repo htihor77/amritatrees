@@ -8,7 +8,7 @@ var transporter = nodemailer.createTransport({
   }
 });
 
-export function send_email_text(to, subject, text){
+function send_email_text(to, subject, text){
   const mailOptions = {
     from: 'cb.amritatrees@gmail.com',
     to: to,
@@ -17,11 +17,13 @@ export function send_email_text(to, subject, text){
   };
   
   transporter.sendMail(mailOptions, function(error, info){
-    if (error) {
-      console.log(error);
-    } else {
-      console.log('Email sent: ' + info.response);
-    }
+    if (error) {console.log(error);
+    } else {console.log('Email sent: ' + info.response);}
   }); 
   
+}
+
+
+module.export = {
+  send_email_text
 }
