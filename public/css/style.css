@@ -42,9 +42,9 @@ body{
   display:inline-flex;
   height:100%;
   align-items:center;
-  font-size:1.8rem;
-  text-shadow: 3px -1px yellowgreen;
-  -webkit-text-stroke: 1.5px black;
+  font-size:1.85rem;
+  text-shadow: 0px 0px 2px black;
+  -webkit-text-stroke: 1px yellowgreen;
 }
 
 

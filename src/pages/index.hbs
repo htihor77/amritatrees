@@ -65,7 +65,7 @@ function initMap() {
   
   let map = new google.maps.Map(document.getElementById("map"),
     {
-      center: { lat: 11.0168445, lng: 76.9558321 },
+      center: { lat: 10.900016808568687, lng: 76.9028589289025 },
       zoom: 20,
       mapId: "350712befbb9be51",
       mapTypeId: 'satellite',
@@ -83,13 +83,15 @@ function initMap() {
   });
 
   const loop = () => {
-    if(navigator.geolocation){navigator.geolocation.getCurrentPosition( (pos)=>{
-            const pos = {
+    if(navigator.geolocation){navigator.geolocation.getCurrentPosition( (position)=>{
+      const pos = {
         lat: position.coords.latitude,
         lng: position.coords.longitude,
       };
       map.setCenter(pos);
-    });}
+      console.log(pos);
+    });
+    }
   }
   
   setInterval(loop,1000);

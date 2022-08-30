@@ -73,6 +73,9 @@ fastify.get("/manifest.json", async (req,reply)=>{
 })
 
 fastify.get("/login", async (request, reply) => {
+  const logout = request.query.logout;
+  console.log("logout:",request.query);
+  
   if( request.session.isAuthenticated ){
     return reply.redirect("/");
   }else{
@@ -106,7 +109,7 @@ fastify.get("/logout", async (request, reply) => {
     const uid = request.session.uid;
     request.session.destroy();
     await db.runQuery2(`UPDATE Users SET session_id=null WHERE uid='${uid}'`);
-    return reply.redirect("/login");
+    return reply.redirect("/login?logout=true");
     return reply.type("json").send({success:"user successfully logged out"});
   }else{
     return reply.type("json").send({error:"user not found to logout"});
