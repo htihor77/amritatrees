@@ -3,7 +3,8 @@ const fs = require("fs");
 const path = require("path");
 const fastify = require("fastify")({logger: false,});
 
-const email = require("./send_email");
+// const utils = require("./utils");
+
 
 fastify.register(require("@fastify/static"), {root: path.join(__dirname, "public"),prefix: "/",});
 fastify.register(require("@fastify/formbody"));
@@ -171,7 +172,7 @@ fastify.get("/leaderboards", async (request, reply) => {
 
 
 fastify.get("/leaderboards", async (request, reply) => {
-  email.send_email_text("nandhakumar2058@gmail.com","email subject", "email content stuff, hello!");
+  // utils.send_email_text("nandhakumar2058@gmail.com","email subject", "email content stuff, hello!");
   return reply.send("check");
 });
 
