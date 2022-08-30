@@ -65,7 +65,7 @@ fastify.get("/login", async (request, reply) => {
   if( request.session.isAuthenticated ){
     return reply.redirect("/");
   }else{
-    return reply.view("/src/pages/login.hbs", {msg:""});
+    return reply.view("/src/pages/login.hbs", {});
   }
 });
 fastify.post("/login", async (request, reply) => {
@@ -84,7 +84,7 @@ fastify.post("/login", async (request, reply) => {
     
   }else{
     // user does not exist
-    return reply.view("/src/pages/login.hbs", {msg:"User does not exist!"});
+    return reply.view("/src/pages/login.hbs", {err:"User does not exist!"});
   }
   return reply.redirect("/");
   // return reply.type("json").send(user);
@@ -103,7 +103,7 @@ fastify.get("/logout", async (request, reply) => {
 });
 
 fastify.get("/signup", async (request, reply) => {
-  return reply.view("/src/pages/signup.hbs", {msg:""});
+  return reply.view("/src/pages/signup.hbs", {err:""});
 });
 fastify.post("/signup", async (request, reply) => {
   let email = request.body.email;
