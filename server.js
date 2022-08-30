@@ -41,18 +41,15 @@ fastify.register(require("@fastify/session"), {
     maxAge: 1000 * 60 * 60 * 24 // 24 hours
   }
 });
-fastify.addHook("onRequest", async (req, reply, next) => {
-  const protocol = req.raw.headers["x-forwarded-proto"].split(",")[0];
-  if (protocol === "http") {reply.redirect("https://" + req.hostname + req.url);}
+fastify.addHook("onRequest", (request, reply, next) => {
+  const protocol = request.raw.headers["x-forwarded-proto"].split(",")[0];
+  if (protocol === "http") {reply.redirect("https://" + request.hostname + request.url);}
 
   // console.log(req.url);
-  const sid = req.session.sessionId;
+  const sid = request.session.sessionId;
   console.log("sid:",sid);
-  const data = await db.runQuery1(`SELECT * FROM Users WHERE sid=${sid}`);
-  console.log(data[0]);
   
-  
-  if( req.session.isAuthenticated === undefined && ["/login","/signup","/leaderboards","/css/style.css","/manifest.json","/users"].indexOf(req.url) == -1){
+  if( request.session.isAuthenticated === undefined && ["/login","/signup","/leaderboards","/css/style.css","/manifest.json","/users"].indexOf(request.url) == -1){
     reply.redirect("/login");
   }
   next();
@@ -79,8 +76,7 @@ fastify.get("/manifest.json", async (req,reply)=>{
 })
 
 fastify.get("/login", async (request, reply) => {
-  let params = request.query.raw
-  console.log("logout:",request.query.raw);
+  let params = request.query.raw  
   
   if( request.session.isAuthenticated ){
     return reply.redirect("/");
