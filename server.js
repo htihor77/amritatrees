@@ -95,6 +95,7 @@ fastify.get("/logout", async (request, reply) => {
     const uid = request.session.uid;
     request.session.destroy();
     await db.runQuery2(`UPDATE Users SET session_id=null WHERE uid='${uid}'`);
+    return reply.redirect("/login");
     return reply.type("json").send({success:"user successfully logged out"});
   }else{
     return reply.type("json").send({error:"user not found to logout"});
