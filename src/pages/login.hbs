@@ -108,25 +108,43 @@ button:hover {
 #popup{
   position:fixed;
   height:5rem;
-  width:min(500px,90%);
+  width:min(350px,90%);
   background-color:rgba(255,255,255,0.8);
+  border-radius:15px;
+  display:grid;
+  grid-template-columns:auto 5rem;
   top:5px;
-  right:-500px;
-  
-  animation:enter 2s;
+  right:15px;
+  animation:enter .5s ;
 }
+
+#popup > div:last-child{position:relative;}
   
-@keyframes{
+#popup > div:last-child:before{
+  content:"";
+  position:absolute;
+  height:100%;
+  width:5px;
+  background-color:gray;
+  top:50%;left:50%;
+  transform: translate(-50%,-50%) rotate(45deg);
+}
+
+@keyframes enter{
+  from{
+    right:-500px;
+  }
   to{
-    right:50%:
+    right:0;
   }
 }
 </style>
 </head>
 <body>
 
-    <div id="popup">
-      
+    <div id="popup" style="display:{{ display }}">
+      <div> {{msg}} </div>
+      <div onclick="document.getElementById('popup').remove()"></div>
     </div>
   
     <h1>Login</h1>
