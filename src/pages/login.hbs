@@ -118,18 +118,21 @@ button:hover {
   animation:enter .5s ;
 }
 
-#popup > div:last-child{position:relative;}
+#popup > div:last-child{position:relative;cursor:pointer;}
   
-#popup > div:last-child:before{
+#popup > div:last-child:before,#popup > div:last-child:after{
   content:"";
   position:absolute;
-  height:100%;
+  height:70%;
+  border-radius:50px;
   width:5px;
-  background-color:gray;
+  background-color:#999;
   top:50%;left:50%;
   transform: translate(-50%,-50%) rotate(45deg);
 }
-
+#popup > div:last-child:after{
+   transform: translate(-50%,-50%) rotate(-45deg);
+}  
 @keyframes enter{
   from{
     right:-500px;

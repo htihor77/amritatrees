@@ -136,7 +136,7 @@ fastify.post("/signup", async (request, reply) => {
   }
   
   // return reply.send("post");
-  return reply.view("/src/pages/signup.hbs", {msg:msg, username: username, email:email});
+  return reply.view("/src/pages/signup.hbs", {err:msg, username: username, email:email});
 });
 
 
