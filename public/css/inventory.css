@@ -2,12 +2,8 @@
 
 body{
   height:100%;
-  overflow:scroll;
-  overflow-x:hidden;
   background-color: #302b3f;
-  -webkit-box-shadow: 0 0 5px 3px #000 inset;
-  -moz-box-shadow: 0 0 5px 3px #000 inset;
-  box-shadow: 0 0 5px 3px #000 inset;
+  overflow:hidden;
 }
 
 .cards-container{

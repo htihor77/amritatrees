@@ -31,3 +31,7 @@ function devDisplayCoords(){
     });
   }
 }
+
+setInterval( ()=>{
+  devDisplayCoords();
+},1000);
