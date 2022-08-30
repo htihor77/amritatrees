@@ -35,7 +35,8 @@ await db.run("CREATE TABLE Users (uid INTEGER PRIMARY KEY AUTOINCREMENT, email T
         await db.run("INSERT INTO INVENTORY (uid,tree_name) VALUES (1,'oak tree'), (1,'neem tree'), (1,'pine tree')");
         
         
-        await db.run("CREATE TABLE locations (lid INTEGER PRIMARY KEY AUTOINCREMENT, lat REAL, long REAL )")
+        await db.run("CREATE TABLE locations (lid INTEGER PRIMARY KEY AUTOINCREMENT, lat REAL, long REAL, description TEXT)")
+        
         
         
         
