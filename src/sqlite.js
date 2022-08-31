@@ -29,9 +29,14 @@ await db.run("CREATE TABLE Users (uid INTEGER PRIMARY KEY AUTOINCREMENT, email T
         await db.run("INSERT INTO aTREEbutes (tree_name,value_points,url) VALUES ('oak tree', 50, 'https://cdn.britannica.com/92/142292-004-459092B7.jpg'), ('neem tree', 50, 'https://5.imimg.com/data5/SELLER/Default/2021/5/RU/EL/LQ/76591799/neem-tree-500x500.jpg'), ('pine tree', 50, 'https://www.thetreecenter.com/c/uploads/2022/02/Slash_Pine_Tree_1-copy.jpg'), ('mango tree', 50, 'https://thumbs.dreamstime.com/b/mango-tree-isolate-white-background-mango-tree-isolate-white-108298705.jpg'), ('paradise tree', 100, 'https://1.bp.blogspot.com/-Xyjj17t6RbE/Tj_MlveMSCI/AAAAAAAAA6E/k2AqRAOpX-o/s1600/L1000264.JPG')");
         
         //actually found trees in campus
-        // await db.run("INSERT INTO aTREEbutes (tree_name,value_points,url) VALUES )
+        // await db.run("INSERT INTO aTREEbutes (tree_name,value_points,url) VALUES ('',50,'')");
         await db.run("INSERT INTO aTREEbutes (tree_name,value_points,url) VALUES ('banyan tree',50,'https://cdn.discordapp.com/attachments/1014472011403239484/1014472226621378662/unknown.png')")
+        await db.run("INSERT INTO aTREEbutes (tree_name,value_points,url) VALUES ('ficus elastica',50,'https://cdn.discordapp.com/attachments/1014472011403239484/1014501942363430952/unknown.png')");
+        await db.run("INSERT INTO aTREEbutes (tree_name,value_points,url) VALUES ('weeping fig',50,'')");
+        // await db.run("INSERT INTO aTREEbutes (tree_name,value_points,url) VALUES ('',50,'')");
+        // await db.run("INSERT INTO aTREEbutes (tree_name,value_points,url) VALUES ('',50,'')");
       
+        
         
         await db.run("CREATE TABLE Trees (lid INTEGER PRIMARY KEY AUTOINCREMENT, tree_name TEXT, lat REAL, long REAL, radius INTEGER)")
         await db.run("INSERT INTO Trees (lid,tree_name,lat,long,radius) VALUES ('banyan tree',10.899701, 76.903252, 1)")
