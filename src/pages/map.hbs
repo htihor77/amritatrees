@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  {{> head }}
+  
+  <title>Amrita Trees: Home</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/main_page.css">
+  <link rel="stylesheet" href="./css/sidebar.css">
+  <script src="./js/app.js" defer></script>
+  <script src="./js/main_page.js" defer></script>
+  <script src="./js/sidebar.js" defer></script>
+
+<style>
+  
+#map{
+  height:calc(100% + 23px);
+}  
+  
+</style>
+  
+</head>
+<body id="body">
+  <div id="container">
+    
+    <div id="overlay" style="display:none;width:100%;height:100%;position:absolute;top:0;left:0;background-color:rgba(0,0,0,.25);z-index:1;" onclick="clickedOverlay()"></div>
+    
+    {{> navbar}}
+    
+    <main>
+      <div id="map"></div>
+      <div id="dropdown-container">
+        <div>
+          
+        </div>
+      </div>
+      
+      
+      <div id="development" style="position:absolute;top:0;right:0;background-color:black;color:white;height:2rem;cursor:pointer;text-align:center;" onclick="navigator.clipboard.writeText(this.innerHTML);">coords: ...</div>
+      <div id="accuracy" style="position:absolute;top:2.5rem;right:0;background-color:black;color:white;height:2rem;text-align:center;">accuracy...</div>
+    </main>
+    
+    {{> sidebar }}
+    
+    <div id="input">
+      <div style="width:100%;height:100%;">
+        <input type="text" style="width:100%;height:100%;outline:none;border:none;font-size:1.2rem;padding-inline:10px;background-color:transparent;">
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+function initMap() {
+  
+  let map = new google.maps.Map(document.getElementById("map"),
+    {
+      center: { lat: 10.900016808568687, lng: 76.9028589289025 },
+      zoom: 20,
+      mapId: "350712befbb9be51",
+      mapTypeId: 'satellite',
+    }
+  );
+//   10.900016808568687, 76.9028589289025
+  
+  map.setOptions({
+    // draggable: false, 
+    zoomControl: false, 
+    // scrollwheel: false, 
+    disableDoubleClickZoom: true,
+    disableDefaultUI: true,
+  });
+
+  const currPosMarker = new google.maps.Marker({
+    position: { lat: 10.900016808568687, lng: 76.9028589289025 },map,
+    icon:"https://cdn.glitch.global/9d67ff5c-524b-467b-aa2f-2cb422728542/currPosMarker.png?v=1661892594255"
+  });
+
+  
+  
+  const loop = () => {
+    if(navigator.geolocation){navigator.geolocation.getCurrentPosition( (position)=>{
+      const pos = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude,
+      };
+      map.setCenter(pos);
+      const latlng = new google.maps.LatLng(pos.lat, pos.lng);
+      currPosMarker.setPosition(latlng);
+    });
+    }
+  }
+  
+  setInterval(loop,1000);
+}
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvqOwdG2V1lAA_O6rI-JR26bxSZQecj-g&map_id=350712befbb9be51&callback=initMap"></script>
+</html>

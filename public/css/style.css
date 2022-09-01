@@ -1,10 +1,8 @@
 :root{
-  --navbarHeight: 3rem;
-  --navbarColor: #323232;
+  --bgcolor: #302b3f;
 
   --sidebarWidth:275px;
   --sidebarColor:#323232;
-/*   --sidebarColor:#646464; */
 }
 
 *{
@@ -21,7 +19,7 @@ body{
   background-color: black;  
   color:white;
   
-  overscroll-behavior-y: contain;
+/*   overscroll-behavior-y: contain; */
 }
 
 
@@ -63,12 +61,3 @@ body{
 .noSelect:focus {
     outline: none !important;
 }
-
-
-#devTools{
-  position:fixed;
-  width:200px;height:50px;
-  top:0;right:0;
-  background-color:black;
-}
-

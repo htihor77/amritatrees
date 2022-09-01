@@ -102,7 +102,7 @@ fastify.post("/login", async (request, reply) => {
     // user does not exist
     return reply.view("/src/pages/login.hbs", {err:"User does not exist!"});
   }
-  return reply.redirect("/");
+  return reply.redirect("/map");
   // return reply.type("json").send(user);
 });
 fastify.get("/logout", async (request, reply) => {
@@ -111,8 +111,7 @@ fastify.get("/logout", async (request, reply) => {
     const uid = request.session.uid;
     request.session.destroy();
     await db.runQuery2(`UPDATE Users SET session_id=null WHERE uid='${uid}'`);
-    return reply.redirect("/login?logout=true");
-    return reply.type("json").send({success:"user successfully logged out"});
+    return reply.redirect("/login");
   }else{
     return reply.type("json").send({error:"user not found to logout"});
   }
