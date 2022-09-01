@@ -5,18 +5,16 @@
   position: relative;
 }
 
-#container > .icon{
-  width:2rem;
-  height:2rem;
-  display:inline-block;
+#container .icon{
+  width:2.2rem;
+  height:2.2rem;
+/*   display:inline-block; */
   position: absolute;
   z-index:1;
   top:5px;
   
-  background-color:red;
+  background-color:yellowgreen;
 }
-#container > .icon:first-child{left:5px;}
-#container > .icon:last-child{right:5px;}
 /* ##################################### */
 
 
