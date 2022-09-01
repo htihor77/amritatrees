@@ -4,15 +4,19 @@
   
   {{> head }}
   
-  <title>Amrita Trees: Home</title>
+  <title>Amrita Trees: map</title>
   <link rel="stylesheet" href="./css/style.css">
-  <link rel="stylesheet" href="./css/main_page.css">
+  <link rel="stylesheet" href="./css/map.css">
   <link rel="stylesheet" href="./css/sidebar.css">
   <script src="./js/app.js" defer></script>
-  <script src="./js/main_page.js" defer></script>
+  <script src="./js/map.js" defer></script>
   <script src="./js/sidebar.js" defer></script>
 
 <style>
+
+#mapContainer{
+  height:100%;
+}
   
 #map{
   height:calc(100% + 23px);
@@ -24,30 +28,17 @@
 <body id="body">
   <div id="container">
     
-    <div id="overlay" style="display:none;width:100%;height:100%;position:absolute;top:0;left:0;background-color:rgba(0,0,0,.25);z-index:1;" onclick="clickedOverlay()"></div>
-    
-    {{> navbar}}
-    
-    <main>
+    <div id="overlay" onclick="clickedOverlay()"></div>
+    <div class="icon"></div>    
+    <div class="icon"></div>    
+
+    <div id="mapContainer">
       <div id="map"></div>
-      <div id="dropdown-container">
-        <div>
-          
-        </div>
-      </div>
-      
-      
-      <div id="development" style="position:absolute;top:0;right:0;background-color:black;color:white;height:2rem;cursor:pointer;text-align:center;" onclick="navigator.clipboard.writeText(this.innerHTML);">coords: ...</div>
-      <div id="accuracy" style="position:absolute;top:2.5rem;right:0;background-color:black;color:white;height:2rem;text-align:center;">accuracy...</div>
-    </main>
-    
+    </div>
+
     {{> sidebar }}
     
-    <div id="input">
-      <div style="width:100%;height:100%;">
-        <input type="text" style="width:100%;height:100%;outline:none;border:none;font-size:1.2rem;padding-inline:10px;background-color:transparent;">
-      </div>
-    </div>
+
   </div>
 </body>
 <script>
