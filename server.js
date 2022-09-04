@@ -166,6 +166,11 @@ fastify.get("/leaderboards", async (request, reply) => {
 });
 
 
+fastify.get("/repository", async (request, reply) => {
+  const data = await db.runQuery1("");
+  return reply.view("/src/pages/repository.hbs", { trees: data } );
+});
+
 
 
 
