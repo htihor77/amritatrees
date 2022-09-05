@@ -4,10 +4,11 @@
 
 #sidebar{
   position: fixed;z-index:2;
-  top:0;left:0;
+  top:0;left: calc( -1 * var(--sidebarWidth)) ;
 
-  transform: translateX( calc( -1 * var(--sidebarWidth)) );
-
+/*   transform: translateX( calc( -1 * var(--sidebarWidth)) ); */
+  transition: all .2s;
+  
   height: 100%;overflow-y:auto;
   width: var(--sidebarWidth);
   
@@ -19,7 +20,7 @@
   padding:5px;
   padding-top:15px;
 }
-#sidebar.active{transform: translateX(0);}
+#sidebar.active{transform: translateX(0);left:0;}
 
 #sidebar .settings h1,#sidebar .profile h1,#sidebar .project_problem h1{
   display:grid;
