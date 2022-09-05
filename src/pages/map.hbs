@@ -63,11 +63,15 @@ function initMap() {
     disableDefaultUI: true,
   });
 
-  const currPosMarker = new google.maps.Marker({
-    position: { lat: 10.900016808568687, lng: 76.9028589289025 },map,
-    icon:"https://cdn.glitch.global/9d67ff5c-524b-467b-aa2f-2cb422728542/currPosMarker.png?v=1661892594255"
+  const treePoints = []
+  
+  const treeMarker = new google.maps.Marker({
+    position: { lat: -33.89, lng: 151.274 },
+    map,
+    icon: tree_icon,
+    size: new google.maps.size()
   });
-
+  }
   
   
   const loop = () => {
@@ -83,7 +87,13 @@ function initMap() {
     }
   }
   
-  setInterval(loop,1000);
+  const currPosMarker = new google.maps.Marker({
+    position: { lat: 10.900016808568687, lng: 76.9028589289025 },map,
+    icon:"https://cdn.glitch.global/9d67ff5c-524b-467b-aa2f-2cb422728542/currPosMarker.png?v=1661892594255"
+  });
+
+  
+  // setInterval(loop,1000);
 }
   
   
