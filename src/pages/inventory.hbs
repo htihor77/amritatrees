@@ -25,7 +25,14 @@
         INVENTORY
     </header>
 
-   <div class="cards-container">
+   <div class="cards-container noSelect">
+        {{#each unlocked}}
+            <div class="card">
+                <div class="img"><img src="{{this.url}}"></div>
+                <div class="label">{{this.tree_name}}</div>
+            </div>
+        {{/each}}
+     
         {{#each unlocked}}
             <div class="card">
                 <div class="img"><img src="{{this.url}}"></div>
@@ -39,6 +46,13 @@
                 <div class="label">???</div>
             </div>
         {{/each}}  
+     
+        {{#each locked}}
+            <div class="card" style="--theme-color:white;">
+                <div class="img"><img src="{{this.url}}" style="filter: grayscale(100%);"></div>
+                <div class="label">???</div>
+            </div>
+        {{/each}} 
   </div>
   
     
