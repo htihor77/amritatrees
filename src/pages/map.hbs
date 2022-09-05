@@ -64,12 +64,24 @@ function initMap() {
   });
 
   const treePoints = [
-    ["tree 1", 10.900016808568687, 76.9028589289025, 80]
+    ["tree 1", 10.900016808568687, 76.9028589289025, 80],
+    ["banyan tree",10.899701,76.903252, 80],
   ];
   
-  for(let i=0; i<tre)
-  
-  
+  for(let i=0; i<treePoints.length ;i++){
+    
+    new google.maps.Marker({
+      title: treePoints[i][0],
+      position: { lat: treePoints[i][1], lng: treePoints[i][2] },
+      map,
+      icon: {
+        url: tree_icon_url,
+        scaledSize: new google.maps.Size(treePoints[i][3], treePoints[i][3]),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(treePoints[i][3]/2, treePoints[i][3]/2),
+      }
+    });
+  }
   
   const loop = () => {
     if(navigator.geolocation){navigator.geolocation.getCurrentPosition( (position)=>{
@@ -88,21 +100,8 @@ function initMap() {
     position: { lat: 10.900016808568687, lng: 76.9028589289025 },map,
     icon:"https://cdn.glitch.global/9d67ff5c-524b-467b-aa2f-2cb422728542/currPosMarker.png?v=1661892594255"
   });
-
-  // const size = 80;
-  // const treeicon = 
-  // const treeMarker = new google.maps.Marker({
-  //   position: { lat: 10.900016808568687, lng: 76.9028589289025 },
-  //   map,
-  //   icon: {
-  //     url: tree_icon_url,
-  //     scaledSize: new google.maps.Size(size, size),
-  //     origin: new google.maps.Point(0, 0),
-  //     anchor: new google.maps.Point(size/2, size/2),
-  //   }
-  // });
   
-  // setInterval(loop,1000);
+  setInterval(loop,1000);
 }
   
   
