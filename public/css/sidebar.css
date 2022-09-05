@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Niconne');
 
 #sidebar{
-  position: fixed;z-index:2;
+  position: fixed;z-index:5;
   top:0;left: calc( -1 * var(--sidebarWidth)) ;
 
 /*   transform: translateX( calc( -1 * var(--sidebarWidth)) ); */

@@ -14,8 +14,12 @@
 </head>
 
 <body>
-  
-    {{> navbar}}
+  <div id="container">
+    
+
+    <div id="overlay" onclick="clickedOverlay()"></div>
+    <div class="icon iconContainer" style="left:5px;border-radius:15px;" onclick="toggleSidebar()"><i class="fas fa-list-ul"></i></div>    
+    <div class="icon iconContainer" style="right:5px;border-radius:15px;"><a href="/map"><i class="fas fa-map"></i></a></div> 
   
     <header id="title" class="noSelect">
         INVENTORY
@@ -37,16 +41,10 @@
         {{/each}}  
   </div>
   
-  
-  
-  
-    <div id="overlay" 
-         style="display:none;width:100%;height:100%;position:fixed;top:0;left:0;background-color:rgba(0,0,0,.25);z-index:1;" 
-         onclick="clickedOverlay()"></div>
-  
     
     {{> sidebar }}
     
+  </div>
   
 </body>
 <script>

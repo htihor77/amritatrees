@@ -8,6 +8,6 @@ function devDisplayCoords(){
   }
 }
 
-setInterval( ()=>{
-  devDisplayCoords();
-},1000);
+// setInterval( ()=>{
+//   devDisplayCoords();
+// },1000);
