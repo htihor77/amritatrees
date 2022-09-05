@@ -1,4 +1,4 @@
-    <div id="sidebar" class="noSelect">
+<!--     <div id="sidebar" class="noSelect">
       <div>
         <h1>Profile</h1>
       </div>
@@ -53,4 +53,66 @@
           </div>
           <hr>
         </div>
+    </div> -->
+
+
+  <div id="sidebar" class="noSelect">
+    <div class="profile">
+      <h1 style="padding-left:10px;font-size: 1.4rem;text-transform: uppercase;">
+        <!-- <span></span> -->
+        profile
+        <!-- <span></span> -->
+      </h1>
+      <div class="profileDiv">
+        <div><img src="https://as2.ftcdn.net/v2/jpg/03/49/49/79/1000_F_349497933_Ly4im8BDmHLaLzgyKg2f2yZOvJjBtlw5.jpg" width="80%" style="border-radius:50%;border:solid 3px white;"></div>
+        <div style="width:100%;overflow:hidden;"><span>{{user.username}}</span></div>
+        <div style="width:100%;overflow:hidden;"><span>{{user.points}} points</span></div>
+      </div>
+
+      <div class="defaultOptions">
+        <div><span class="material-symbols-rounded" style="transform:translateY(3px);">leaderboard</span> Leaderboards</div>
+        <div><span class="material-symbols-rounded" style="transform:translateY(3px);">speaker_notes</span> Updates</div>
+        <div><span class="material-symbols-rounded" style="transform:translateY(3px);">help</span> How to Play</div>
+      </div>
     </div>
+
+    <div class="project_problem">
+      <h1><span></span>problem<span></span></h1>
+      <a href="/repository" class="golden"></a>
+    </div>
+
+    <div class="settings">
+      <h1><span></span>settings<span></span></h1>
+      <div class="toggleable">
+        <div><span class="material-symbols-rounded" style="transform:translateY(3px);">volume_up</span> Sounds</div>
+        <div>
+          <label class="switch">
+            <input type="checkbox" checked>
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+      <hr>
+      <div class="toggleable">
+        <div><span class="material-symbols-rounded" style="transform:translateY(3px);">notifications</span> Notifications</div>
+        <div>
+          <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+      <hr>
+      <div>
+        <div><span class="material-symbols-rounded" style="transform:translateY(3px);">info</span> About our app</div>
+      </div>
+      <hr>
+      <div class="toggleable">
+        <div><span class="material-symbols-rounded" style="transform:translateY(3px);">power_rounded</span><a href="./logout" style="text-decoration: none;color:inherit"> Logout</a></div>
+      </div>
+      <hr>
+    </div>
+
+
+
+  </div>

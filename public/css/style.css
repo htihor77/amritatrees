@@ -62,3 +62,8 @@ body{
 .noSelect:focus {
     outline: none !important;
 }
+
+hr{
+  border-width: 0;
+  border-bottom-width: 1px;
+}
