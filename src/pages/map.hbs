@@ -43,48 +43,7 @@
   </div>
 </body>
 <script>
-function initMap() {
-  
-  let map = new google.maps.Map(document.getElementById("map"),
-    {
-      center: { lat: 10.900016808568687, lng: 76.9028589289025 },
-      zoom: 20,
-      mapId: "661dd2cc98d8e9e2",
-      mapTypeId: 'satellite',
-    }
-  );
-//   10.900016808568687, 76.9028589289025
-  
-  map.setOptions({
-    // draggable: false, 
-    zoomControl: false, 
-    // scrollwheel: false, 
-    disableDoubleClickZoom: true,
-    disableDefaultUI: true,
-  });
 
-//   const currPosMarker = new google.maps.Marker({
-//     position: { lat: 10.900016808568687, lng: 76.9028589289025 },map,
-//     icon:"https://cdn.glitch.global/9d67ff5c-524b-467b-aa2f-2cb422728542/currPosMarker.png?v=1661892594255"
-//   });
-
-  
-  
-//   const loop = () => {
-//     if(navigator.geolocation){navigator.geolocation.getCurrentPosition( (position)=>{
-//       const pos = {
-//         lat: position.coords.latitude,
-//         lng: position.coords.longitude,
-//       };
-//       map.setCenter(pos);
-//       const latlng = new google.maps.LatLng(pos.lat, pos.lng);
-//       currPosMarker.setPosition(latlng);
-//     });
-//     }
-//   }
-  
-//   setInterval(loop,1000);
-}
 </script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA554gL9cKaa3KqhS8biWu9p9eDCn31z0Q&map_id=661dd2cc98d8e9e2&callback=initMap"></script>
 </html>

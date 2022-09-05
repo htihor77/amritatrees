@@ -3,7 +3,8 @@
 #container{
   height:100%;
 /*   background-color: #302b3f; */
-  background-color: black;
+/*   background-color: black; */
+  background: linear-gradient(50deg,#323232,#484848);
   overflow:hidden;
 }
 
