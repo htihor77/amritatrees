@@ -63,15 +63,16 @@ function initMap() {
     disableDefaultUI: true,
   });
 
-  const treePoints = []
+//   const treePoints = []
   
   const treeMarker = new google.maps.Marker({
-    position: { lat: -33.89, lng: 151.274 },
+    position: { lat: 10.900016808568687, lng: 76.9028589289025 },
     map,
     icon: tree_icon,
-    size: new google.maps.size()
+    scaledSize: new google.maps.Size(200, 200),
+    origin: new google.maps.Point(0, 0),
+    anchor: new google.maps.Point(0, 0),
   });
-  }
   
   
   const loop = () => {
@@ -97,7 +98,7 @@ function initMap() {
 }
   
   
-const tree_icon = "https://cdn.glitch.global/9d67ff5c-524b-467b-aa2f-2cb422728542/tree-icon.png?v=1662401098072";
+const tree_icon = "https://cdn.glitch.global/9d67ff5c-524b-467b-aa2f-2cb422728542/treeicon.png?v=1662405016088";
 window.initMap = initMap;
 </script>
 
