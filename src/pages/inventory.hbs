@@ -56,7 +56,7 @@
 window.addEventListener("DOMContentLoaded", async ()=>{
   console.log("page loaded");
   const response = await fetch("./inventory?raw=json");
-  const jsonndata = await response.json();
+  const jsondata = await response.json();
   console.log(jsondata);
 
   if(response.ok != true){return;}
@@ -84,7 +84,7 @@ window.addEventListener("DOMContentLoaded", async ()=>{
     card.style.setProperty("--theme-color","white");
     card.innerHTML = `
               <div class="img"><img src="${e.url}" style="filter: grayscale(100%);"></div>
-              <div class="label">${e.tree_name}</div>`
+              <div class="label">???</div>`
     
     $(".cards-container").appendChild(card);
   })
