@@ -22,7 +22,11 @@
 #map{
   height:calc(100% + 23px);
 }  
+
   
+.gm-style-iw-d{
+  color:black;    
+}
 </style>
   
 </head>
@@ -70,18 +74,41 @@ function initMap() {
   ];
   
   for(let i=0; i<treePoints.length ;i++){
+    const tree =  treePoints[i];
     
-    new google.maps.Marker({
-      title: treePoints[i][0],
-      position: { lat: treePoints[i][1], lng: treePoints[i][2] },
+    const infowindow = new google.maps.InfoWindow({
+      content: tree[0],
+    });
+    
+    
+    const marker = new google.maps.Marker({
+      title: tree[0],
+      position: { lat: tree[1], lng: tree[2] },
       map,
       icon: {
         url: tree_icon_url,
-        scaledSize: new google.maps.Size(treePoints[i][3], treePoints[i][3]),
+        scaledSize: new google.maps.Size(tree[3], tree[3]),
         origin: new google.maps.Point(0, 0),
-        anchor: new google.maps.Point(treePoints[i][3]/2, treePoints[i][3]/2),
+        anchor: new google.maps.Point(tree[3]/2, tree[3]/2),
       }
     });
+    
+    
+    marker.addListener("click", () => {
+      infowindow.open({
+        anchor: marker,
+        map,
+        shouldFocus: false,
+      });
+    });
+//     marker.setMap(map);
+    
+//     const infoWindow = new google.maps.InfoWindow({
+//       content: tree[0]
+//     });
+//     marker.addEventListener("click",()=>{
+//       infoWindow.open(map,marker);
+//     })
   }
   
   const loop = () => {
@@ -101,8 +128,9 @@ function initMap() {
     position: { lat: 10.900016808568687, lng: 76.9028589289025 },map,
     icon:"https://cdn.glitch.global/9d67ff5c-524b-467b-aa2f-2cb422728542/currPosMarker.png?v=1661892594255"
   });
+
   
-  setInterval(loop,1000);
+  // setInterval(loop,1000);
 }
   
   
