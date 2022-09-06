@@ -5,6 +5,7 @@ const assets = [
   // "/js/app.js",
   // "/style.css",
   // "/fallback.html"
+  // "/inventory"
 ];
 
 const limitCacheSize = (name, size) => {
