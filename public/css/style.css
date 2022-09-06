@@ -39,10 +39,11 @@ body{
   color:white;
 }
 
-#container .icon object{
-  width:80%;
-  height:80%;
-  color:white;
+.icon object{
+  width:100%;
+  height:100%;
+  transform:scale(0.7);
+  pointer-events:none;
 }
 
 #overlay{
