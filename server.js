@@ -47,7 +47,7 @@ fastify.addHook("onRequest", (request, reply, next) => {
 
   // console.log(req.url);
   const sid = request.session.sessionId;
-  console.log("sid:",sid);
+  // console.log("sid:",sid);
   
   if( request.session.isAuthenticated === undefined && ["/login","/signup","/leaderboards","/css/style.css","/manifest.json","/users"].indexOf(request.url) == -1){
     reply.redirect("/login");
@@ -153,14 +153,18 @@ fastify.post("/signup", async (request, reply) => {
 
 
 fastify.get("/inventory", async (request, reply) => {
-  const params = request.query.raw;
+  const params = request.query.raw ? {}: {};
   console.log(params);
   
   const user = request.session.user;
-  const data = await db.runQuery1(`SELECT username,points FROM Users WHERE uid=${user.uid}`)
-  const data1 = await db.runQuery1(`SELECT Inventory.tree_name,Atreebutes.url FROM Inventory,Atreebutes WHERE Inventory.uid=${user.uid} AND Inventory.tree_name=Atreebutes.tree_name`)
-  const data2 = await db.runQuery1(`SELECT tree_name,url FROM Atreebutes WHERE tree_name NOT IN (SELECT tree_name FROM Inventory WHERE uid=${user.uid})`);
-  return reply.view("/src/pages/inventory.hbs", { user: data[0], unlocked: data1, locked: data2 } );
+  const data = await db.runQuery1(`SELECT username,points FROM Users WHERE uid=${user.uid}`);
+  params.user = data[0];
+  params.unlocked = await db.runQuery1(`SELECT Inventory.tree_name,Atreebutes.url FROM Inventory,Atreebutes WHERE Inventory.uid=${user.uid} AND Inventory.tree_name=Atreebutes.tree_name`)
+  params.locked = await db.runQuery1(`SELECT tree_name,url FROM Atreebutes WHERE tree_name NOT IN (SELECT tree_name FROM Inventory WHERE uid=${user.uid})`);
+  
+  return request.query.raw
+    ? reply.send(params)
+    : reply.view("/src/pages/inventory.hbs", params );
 });
 
 fastify.get("/leaderboards", async (request, reply) => {

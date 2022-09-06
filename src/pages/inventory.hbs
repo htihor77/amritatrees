@@ -65,7 +65,19 @@
 </body>
 <script>
 
-
+window.addEventListener("DOMContentLoaded", async ()=>{
+  console.log("page loaded");
+  const response = await fetch("./inventory?raw=json");
+  const data = await response.json();
+  console.log(data);
+  
+  $(".cards-container").innerHTML = "";
+  data.unlocked.forEach(e=>{
+    
+  })
+})
+  
+  
 </script>
 
 </html>
