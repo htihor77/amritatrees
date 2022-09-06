@@ -38,7 +38,7 @@ fastify.register(require("@fastify/session"), {
     secure:false, 
     httpOnly: true, 
     sameSite: false, 
-    maxAge: 1000 * 60 * 60 * 24 // 24 hours
+    maxAge: 1000 * 60 * 60 * 5 // 2mins
   }
 });
 fastify.addHook("onRequest", (request, reply, next) => {
@@ -83,7 +83,7 @@ fastify.get("/login", async (request, reply) => {
   console.log(data);
   
   if( request.session.isAuthenticated ){
-    return reply.redirect("/");
+    return reply.redirect("/map");
   }else{
     return reply.view("/src/pages/login.hbs", {});
   }
