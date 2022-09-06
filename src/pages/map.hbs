@@ -69,17 +69,16 @@ function initMap() {
   });
 
   const treePoints = [
-    ["tree 1", 10.900016808568687, 76.9028589289025, 80],
-    ["banyan tree",10.899701,76.903252, 80],
+    ["Center", 10.900016808568687, 76.9028589289025, 80],
+    ["Banyan Tree",10.899701,76.903252, 80],
     ["Ficus Elastica",10.899759,76.903345, 80],
+    ["Weeping Fig",10.899498,76.903237,80],
+    // ["Scared Fig",10.899663,76.907571,80] INCORRECT COORDS
+    ["Ficus Microcarpa",10.900323,76.902236,80],
+    ["Neem Tree",10.901405,76.902026,80]
   ];
-  const treeMarkers = []; 
   for(let i=0; i<treePoints.length ;i++){
     const tree =  treePoints[i];
-    
-    const infowindow = new google.maps.InfoWindow({
-      content: tree[0],
-    });
     
     
     const marker = new google.maps.Marker({
@@ -91,14 +90,16 @@ function initMap() {
         scaledSize: new google.maps.Size(tree[3], tree[3]),
         origin: new google.maps.Point(0, 0),
         anchor: new google.maps.Point(tree[3]/2, tree[3]/2),
-      }
+      },
+      animation:google.maps.Animation.DROP
     });
     
-    treeMarkers.push(marker);
+    const infowindow = new google.maps.InfoWindow({
+      content: tree[0],
+    });
+    
     marker.addListener("click", () => {
-      treeMarkers.forEach(e=>{
-        console.log(e);
-      })
+      if (infowindow) {infowindow.close();}
       infowindow.open({
         anchor: marker,
         map,
@@ -106,14 +107,12 @@ function initMap() {
       });
     });
     
-//     marker.setMap(map);
+    marker.setMap(map);
     
-//     const infoWindow = new google.maps.InfoWindow({
+//     const infowindow = new google.maps.InfoWindow({
 //       content: tree[0]
 //     });
-//     marker.addEventListener("click",()=>{
-//       infoWindow.open(map,marker);
-//     })
+
   }
   
   const loop = () => {
