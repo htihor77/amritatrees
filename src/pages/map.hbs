@@ -71,8 +71,9 @@ function initMap() {
   const treePoints = [
     ["tree 1", 10.900016808568687, 76.9028589289025, 80],
     ["banyan tree",10.899701,76.903252, 80],
+    ["Ficus Elastica",10.899759,76.903345, 80],
   ];
-  
+  const treeMarkers = []; 
   for(let i=0; i<treePoints.length ;i++){
     const tree =  treePoints[i];
     
@@ -93,14 +94,18 @@ function initMap() {
       }
     });
     
-    
+    treeMarkers.push(marker);
     marker.addListener("click", () => {
+      treeMarkers.forEach(e=>{
+        console.log(e);
+      })
       infowindow.open({
         anchor: marker,
         map,
         shouldFocus: false,
       });
     });
+    
 //     marker.setMap(map);
     
 //     const infoWindow = new google.maps.InfoWindow({
