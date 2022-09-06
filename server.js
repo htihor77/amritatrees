@@ -78,7 +78,9 @@ fastify.get("/manifest.json", async (req,reply)=>{
 })
 
 fastify.get("/login", async (request, reply) => {
-  let params = request.query.raw  
+  
+  const data = await db.runQuery1(`SELECT session_id FROM Users`);
+  console.log(data);
   
   if( request.session.isAuthenticated ){
     return reply.redirect("/");

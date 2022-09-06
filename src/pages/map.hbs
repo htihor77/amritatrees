@@ -54,11 +54,12 @@ function initMap() {
     {
       center: { lat: 10.900016808568687, lng: 76.9028589289025 },
       zoom: 20,
+      // heading:
+      // tilt:
       mapId: "661dd2cc98d8e9e2",
       mapTypeId: 'satellite',
     }
   );
-//   10.900016808568687, 76.9028589289025
   
   map.setOptions({
     // draggable: false, 
@@ -80,13 +81,9 @@ function initMap() {
     ["Cannon-ball tree",10.902318,76.901079,80]
   ];
   for(let i=0; i<treePoints.length ;i++){
-    const tree =  treePoints[i];
-    
-    
+    const tree =  treePoints[i]; 
     const marker = new google.maps.Marker({
-      title: tree[0],
-      position: { lat: tree[1], lng: tree[2] },
-      map,
+      title: tree[0],position: { lat: tree[1], lng: tree[2] },map,
       icon: {
         url: tree_icon_url,
         scaledSize: new google.maps.Size(tree[3], tree[3]),
