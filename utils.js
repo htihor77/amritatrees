@@ -40,6 +40,6 @@ function measureDistance(lat1, lon1, lat2, lon2){  // generally used geo measure
     return d * 1000; // meters
 }
 const num = 123132;
-modules.export = {
+module.exports = {
   measureDistance,num
 }

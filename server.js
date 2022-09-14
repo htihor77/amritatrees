@@ -85,9 +85,9 @@ fastify.get("/manifest.json", async (req,reply)=>{
 
 fastify.get("/login", async (request, reply) => {
   console.log("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
-  console.log("sid:",request.session.sessionId);
-  const data = await db.runQuery1(`SELECT session_id FROM Users`);
-  console.log(data);
+  // console.log("sid:",request.session.sessionId);
+  // const data = await db.runQuery1(`SELECT session_id FROM Users`);
+  // console.log(data);
   
   if( request.session.isAuthenticated ){
     return reply.redirect("/map");
@@ -217,13 +217,12 @@ fastify.post("/checkinglocation", async (request, reply) => {
   
   const entrance = {lat:10.901853212312897,lng: 76.89603899041079};
   const body = request.body;
-  const data = JSON.parse(body);
-  console.log(data);
+  console.log(body)
   
-  console.log(entrance.lat,entrance.lng, data.lat, data.lng);
-  const distance = utils.measureDistance(entrance.lat,entrance.lng, data.lat, data.lng);
-  
-  return reply.type("json").send({distance: utils.num });
+  console.log(entrance.lat,entrance.lng, body.lat, body.lng);
+  const distance = utils.measureDistance(entrance.lat,entrance.lng, body.lat, body.lng);
+  console.log(distance)
+  return reply.type("json").send({distance: distance });
 });
 
 
