@@ -103,7 +103,7 @@ fastify.post("/login", async (request, reply) => {
   // console.log(username,password);
   const user = await db.runQuery1(`SELECT * FROM Users WHERE username='${userdata}' AND password='${password}'`);
   // const user = await db.runQuery1(`SELECT * FROM Users WHERE email='${userdata}' AND password='${password}'`);
-  if( user.length > 0 ){
+  if( user.length > 0 && userdata.length != 0 && password.length != 0){
     // user exists
     request.session.user = { uid: user[0].uid, username: user[0].username };
     request.session.isAuthenticated = true;
