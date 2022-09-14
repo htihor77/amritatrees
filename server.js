@@ -3,8 +3,7 @@ const fs = require("fs");
 const path = require("path");
 const fastify = require("fastify")({logger: false,});
 
-const utils = require("./utils");
-
+const utils = require("./utils.js");
 
 fastify.register(require("@fastify/static"), {root: path.join(__dirname, "public"),prefix: "/",});
 fastify.register(require("@fastify/formbody"));
@@ -217,13 +216,14 @@ fastify.get("/check", async (request, reply) => {
 fastify.post("/checkinglocation", async (request, reply) => {
   
   const entrance = {lat:10.901853212312897,lng: 76.89603899041079};
-  console.log(request.body["lat"]);
-  const lat = request.body.lat;
-  const long = request.body.lng;
-  console.log(entrance.lat,entrance.lng, lat, long)
-  const distance = utils.measureDistance(entrance.lat,entrance.lng, lat, long);
+  const body = request.body;
+  const data = JSON.parse(body);
+  console.log(data);
   
-  return reply.type("json").send({"distance":utils.num});
+  console.log(entrance.lat,entrance.lng, data.lat, data.lng);
+  const distance = utils.measureDistance(entrance.lat,entrance.lng, data.lat, data.lng);
+  
+  return reply.type("json").send({distance: utils.num });
 });
 
 
