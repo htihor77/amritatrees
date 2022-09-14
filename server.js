@@ -214,11 +214,16 @@ fastify.get("/check", async (request, reply) => {
   return reply.send("check");
 });
 
-fastify.get("/checkinglocation", async (request, reply) => {
-  const body = request.body;
-  console.log("location:",body);
+fastify.post("/checkinglocation", async (request, reply) => {
   
-  return reply.type("json").send({"a":"b"});
+  const entrance = {lat:10.901853212312897,lng: 76.89603899041079};
+  console.log(request.body["lat"]);
+  const lat = request.body.lat;
+  const long = request.body.lng;
+  console.log(entrance.lat,entrance.lng, lat, long)
+  const distance = utils.measureDistance(entrance.lat,entrance.lng, lat, long);
+  
+  return reply.type("json").send({"distance":utils.num});
 });
 
 

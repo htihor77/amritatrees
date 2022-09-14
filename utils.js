@@ -39,8 +39,8 @@ function measureDistance(lat1, lon1, lat2, lon2){  // generally used geo measure
     var d = R * c;
     return d * 1000; // meters
 }
-
+const num = 123132
 module.export = {
-  // send_email_text,
-  measureDistance
+  measureDistance,
+  num
 }
