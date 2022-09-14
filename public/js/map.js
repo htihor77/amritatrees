@@ -2,13 +2,13 @@ function devDisplayCoords(){
   $("#dev").innerHTML = "loading...";
   if(navigator.geolocation){
     navigator.geolocation.getCurrentPosition( (pos)=>{
-      $("#dev").innerHTML = pos.coords.latitude + "," + pos.coords.longitude + "<br>" + Math.round(pos.coords.accuracy) + "m inacurracy";
+      $("#dev").innerHTML = pos.coords.latitude + "," + pos.coords.longitude + "<br>" + Math.round(pos.coords.accuracy) + "meters inacurracy";
     });
   }
 }
 
-// setInterval( ()=>{
-//   devDisplayCoords();
-// },1000);
+setInterval( ()=>{
+  devDisplayCoords();
+},1000);
 
 

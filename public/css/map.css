@@ -34,9 +34,16 @@
 }
 
 #dev{
-  width:50px;
-  height:1rem;
+  width:min-content;
+  height:auto;
   font-size:1rem;
   color:white;
-  bakcground-c
+  background-color:black;
+  font-family:monospace;
+  
+  
+  position:absolute;
+  top:5px;
+  left:50%;
+  transform:translate(-50%,0);
 }
