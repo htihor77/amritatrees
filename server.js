@@ -42,7 +42,7 @@ fastify.register(require("@fastify/session"), {
   }
 });
 fastify.addHook('preHandler', (request, reply, next) => {
-  console.log("preHandler:",request.session.sessionId);
+  // console.log("preHandler:",request.session.sessionId);
   next()
 })
 
@@ -50,7 +50,7 @@ fastify.addHook("onRequest", (request, reply, next) => {
   const protocol = request.raw.headers["x-forwarded-proto"].split(",")[0];
   if (protocol === "http") {reply.redirect("https://" + request.hostname + request.url);}
 
-  console.log("onRequest:",request.url);
+  // console.log("onRequest:",request.url);
   const sid = request.session.sessionId;
   // console.log("sid:",sid);
   
@@ -218,7 +218,7 @@ fastify.get("/checkinglocation", async (request, reply) => {
   const body = request.body;
   console.log("location:",body);
   
-  return reply.type.send({"a":"b"});
+  return reply.type("json").send({"a":"b"});
 });
 
 
