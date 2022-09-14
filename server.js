@@ -199,10 +199,29 @@ fastify.get("/repository", async (request, reply) => {
 
 
 
+
+
+
+
+
+
+
+
+
+
 fastify.get("/check", async (request, reply) => {
   utils.send_email_text("nandhakumar2058@gmail.com","email subject", "email content stuff, hello!");
   return reply.send("check");
 });
+
+fastify.get("/checkinglocation", async (request, reply) => {
+  const body = request.body;
+  console.log(body);
+  
+  return reply.send("check");
+});
+
+
 
 
 
