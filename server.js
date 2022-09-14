@@ -216,9 +216,9 @@ fastify.get("/check", async (request, reply) => {
 
 fastify.get("/checkinglocation", async (request, reply) => {
   const body = request.body;
-  console.log(body);
+  console.log("location:",body);
   
-  return reply.send("check");
+  return reply.type.send({"a":"b"});
 });
 
 

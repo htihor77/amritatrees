@@ -68,7 +68,7 @@ button{
 </body>
 <script>
   
-function checklocation(){
+async function checklocation(){
   let pos = {};
   
   if(navigator.geolocation){
@@ -85,7 +85,7 @@ function checklocation(){
   formData.append('long', pos.long);
     
     
-  let response = await fetch('./checkinglocation', {
+  let response = await fetch('/checkinglocation', {
     method: 'POST',
     body: new FormData(formData)
   });
