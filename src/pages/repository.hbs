@@ -36,19 +36,28 @@
   <div id="container">
     
     <div id="overlay" onclick="clickedOverlay()"></div>
-    <div class="icon iconContainer noSelect" style="left:5px;border-radius:15px;" onclick="toggleSidebar()"><i class="fas fa-list-ul"></i></div>    
-    <div class="icon iconContainer noSelect" style="right:5px;border-radius:15px;"><a href="/inventory"><i class="fas fa-backpack"></i></a></div>    
+    <div class="icon iconContainer noSelect" style="left:5px;border-radius:15px;" onclick="goToMap()"><i class="fas fa-arrow-left"></i></div>        
 
     <div id="mapContainer">
       <div id="map"></div>
     </div>
 
-    {{> sidebar }}
+
     
     <div id="dev"></div>
 
   </div>
 </body>
+  
+<script>
+  
+function goToMap(){
+  location.href = "./map";
+}
+  
+  
+</script>
+  
 <script>
 function initMap() {
   
@@ -59,7 +68,7 @@ function initMap() {
       // heading:
       // tilt:
       mapId: "661dd2cc98d8e9e2",
-      mapTypeId: 'satellite',
+      mapTypeId: 'terrain',
     }
   );
   
