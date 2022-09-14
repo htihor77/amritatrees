@@ -32,19 +32,27 @@
 #treetable{
   --gap: 10px;
   width:min(500px,calc(100% - var(--gap) - var(--gap)));
-  height:500px;
+  height:2.4rem;
   
   background-color:white;
   border: 3px solid white;
   
   
   position:absolute;
-  bottom:0;
   left:var(--gap);
+  bottom:var(--gap);
 }
 
 #treetable.active{
-  background-color:transparent;
+  padding-top:500px;    
+}
+  
+.table{
+  height:100%;
+  width:100%;
+}
+  
+#treetable.active .table{
   height:500px;
 }
   
@@ -63,7 +71,9 @@
 
 
     
-    <div id="treetable"></div>
+    <div id="treetable" onclick="this.classList.toggle('active');">
+      <div class="table"></div>
+    </div>
 
   </div>
 </body>
