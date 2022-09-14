@@ -68,31 +68,27 @@ button{
 </body>
 <script>
   
-async function checklocation(){
+function checklocation(){
   let pos = {};
   
-  if(navigator.geolocation){
-    navigator.geolocation.getCurrentPosition( (position)=>{
-      pos = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude,
-      };
-    });
-  }
+  navigator.geolocation.getCurrentPosition( (position)=>{
+    pos = {
+      lat: position.coords.latitude,
+      lng: position.coords.longitude,
+    };
   
-  const formData = new FormData();
-  formData.append('lat', pos.lat);
-  formData.append('long', pos.long);
-    
-    
-  let response = await fetch('/checkinglocation', {
+  let response = fetch('https://amritatrees.glitch.me/checkinglocation', {
     method: 'POST',
-    body: new FormData(formData)
+    body: JSON.stringify(pos),
+  })
+  .then(res=>res.json())
+  .then(data=>{
+    console.log(data);
   });
   
-//   let result = await response.json();
-//   console.log(result);    
-
+  // let result = await response.json();
+  // console.log(result);    
+  });
 }  
   
   
