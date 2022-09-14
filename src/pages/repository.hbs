@@ -7,12 +7,9 @@
   <title>Amrita Trees: Repository</title>
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/map.css">
-  <link rel="stylesheet" href="./css/sidebar.css">
-  <link rel="stylesheet" href="./css/switch.css">
   
   <script src="./js/app.js" defer></script>
   <script src="./js/map.js" defer></script>
-  <script src="./js/sidebar.js" defer></script>
   
 <style>
 
@@ -30,6 +27,28 @@
   color:black;    
 }
 </style>
+
+<style>
+#treetable{
+  --gap: 10px;
+  width:min(500px,calc(100% - var(--gap) - var(--gap)));
+  height:500px;
+  
+  background-color:white;
+  border: 3px solid white;
+  
+  
+  position:absolute;
+  bottom:0;
+  left:var(--gap);
+}
+
+#treetable.active{
+  background-color:transparent;
+  height:500px;
+}
+  
+</style>
   
 </head>
 <body id="body">
@@ -44,7 +63,7 @@
 
 
     
-    <div id="dev"></div>
+    <div id="treetable"></div>
 
   </div>
 </body>
