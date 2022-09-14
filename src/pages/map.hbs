@@ -31,7 +31,7 @@
 }
   
   
-button{
+#button{
   height:2rem;
   width:100px;
   background-color:red;
@@ -42,7 +42,7 @@ button{
   left:calc(50% - 50px);
 }
   
-button::before {
+#button::before {
   content: attr(data-distance-count);
   position: absolute;
   top: -20px;
@@ -75,7 +75,7 @@ button::before {
     
     <div id="dev"></div>
 
-    <button onclick="checklocation()" data-distance-count="0">CHECK</button>
+    <button id="button" onclick="checklocation()" data-distance-count="0">CHECK</button>
     
   </div>
 </body>
@@ -101,7 +101,7 @@ function checklocation(){
   .then(res=>res.json())
   .then(data=>{
     console.log(data);
-    $("button").setAttribute("data-distance-count",data.distance);
+    $("#button").setAttribute("data-distance-count",data.distance);
   });
   
   // let result = await response.json();
