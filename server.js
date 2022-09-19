@@ -226,9 +226,6 @@ fastify.post("/checkinglocation", async (request, reply) => {
 });
 
 
-
-
-
 fastify.get("/users", async (request, reply) => {
   const users = await db.runQuery1("SELECT * FROM Users");
   return reply.type("json").send(users);
