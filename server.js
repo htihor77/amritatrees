@@ -55,7 +55,7 @@ fastify.addHook("onRequest", (request, reply, next) => {
   
   const valid_urls = ["/login","/signup","/leaderboards","/css/style.css","/manifest.json","/users"];
   const valid_prefix_urls = []
-  if( request.session.isAuthenticated === undefined && valid_urls.indexOf(request.url) == -1 && !request.url.startsWith("/css/") ){
+  if( request.session.isAuthenticated === undefined && valid_urls.indexOf(request.url) == -1 && !request.url.startsWith("/css/" || "/assets/") ){
     reply.redirect("/login");
   }
   next();
@@ -232,7 +232,30 @@ fastify.get("/users", async (request, reply) => {
 });
 
 
-
+fastify.get("/assets/:assetname", async (req, reply) => {
+  const { assetname } = req.params;
+  console.log("params:",assetname);
+  
+  var content = fs.readFileSync('.glitch-assets', 'utf8');
+  var rows = content.split("\n");
+  var assets = rows.map((row) => {
+    try {
+      return JSON.parse(row);
+    } catch (e) {}
+  });
+  assets = assets.filter((asset) => asset);
+  
+  
+  
+  
+  
+  reply.header("Access-Control-Allow-Origin", "*");
+  reply.header("Access-Control-Allow-Methods", "GET");
+  reply.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+  
+  
+  
+});
 
 
 
