@@ -1,353 +1,355 @@
+
+
+
 [
 {
 
-"name":"Sausage tree",
+"title":"Sausage tree",
 "coords":"10.9034619, 76.9023204"
 
 },
 {
-"name":"Child life tree",
+"title":"Child life tree",
 "coords":"10.9034550, 76.9023627"
 
 },
 {
-  "name":"Beech wood ",
+  "title":"Beech wood ",
   "coords":"10.9034566, 76.9023791"
 },
 {
-  "name":"Malabar blackwood",
+  "title":"Malabar blackwood",
   "coords":"10.9034553, 76.9022681"
 },
 {
-  "name":"Indian beach tree",
+  "title":"Indian beach tree",
   "coords":"10.9035732, 76.9022245"
 },
 {
-  "name":"Indian king tree",
+  "title":"Indian king tree",
   "coords":"10.9029736, 76.9018098"
 },
 {
-  "name":"African tulip tree",
+  "title":"African tulip tree",
   "coords":"10.9029391, 76.9018205"
 },
 {
-  "name":"Spanish cherry",
+  "title":"Spanish cherry",
   "coords":"10.9029364, 76.9018497"
 },
 {
-  "name":"Pala indigo plant",
+  "title":"Pala indigo plant",
   "coords":"10.9028406, 76.9019533"
 },
 {
-  "name":"Arjun tree",
+  "title":"Arjun tree",
   "coords":"10.9032183, 76.9016878"
 },
   {
-  "name":"Indian tulip tree",
+  "title":"Indian tulip tree",
   "coords":"10.9030675, 76.9017156"
 },
 {
-  "name":"Big leaf mahogany",
+  "title":"Big leaf mahogany",
   "coords":"10.9031182, 76.9017887"
 },
 {
-  "name":"Yellow trumpet",
+  "title":"Yellow trumpet",
   "coords":"10.9031574, 76.9019315"
 },
 {
-  "name":"Katsagon",
+  "title":"Katsagon",
   "coords":"10.9029012, 76.9020656"
 },
 {
-  "name":"Alo vera Bunch",
+  "title":"Alo vera Bunch",
   "coords":"10.9030619, 76.9020606"
 },
 {
-  "name":"Soapnut",
+  "title":"Soapnut",
   "coords":"10.9030945, 76.9019711"
 },
 {
-  "name":"Spanish cherry",
+  "title":"Spanish cherry",
   "coords":"10.9031412, 76.9019436"
 },
 {
-  "name":"Indian cork tree",
+  "title":"Indian cork tree",
   "coords":"10.9032051,76.9019476"
 },
 {
-  "name":"Fiddle wood",
+  "title":"Fiddle wood",
   "coords":"10.9033753,76.9019573"
 },
 {
-  "name":"Teak",
+  "title":"Teak",
   "coords":"10.9035053, 76.9020613"
 },
 {
-  "name":"Beggers bowl(calabash tree)",
+  "title":"Beggers bowl(calabash tree)",
   "coords":"10.9035047, 76.9019831"
 },
 {
-  "name":"Hill mango",
+  "title":"Hill mango",
   "coords":"10.9036759, 76.9019090"
 },
 {
-  "name":"Indian butter tree",
+  "title":"Indian butter tree",
   "coords":"10.9036021, 76.9016170"
 },
 {
-  "name":"tamarind",
+  "title":"tamarind",
   "coords":"10.9036568, 76.9016572 "
 },
 {
-  "name":"Alo Vera group",
+  "title":"Alo Vera group",
   "coords":"10.9036311, 76.9017488"
 },
 {
-  "name":"Indian mulberry",
+  "title":"Indian mulberry",
   "coords":"10.9035998, 76.9016998"
 },
 {
-  "name":"Sandal",
+  "title":"Sandal",
   "coords":"10.9036670, 76.9015989"
 },
 {
-  "name":"Indian tulip tree",
+  "title":"Indian tulip tree",
   "coords":"10.9039050, 76.9017052"
 },
 {
-  "name":"Jambul,jamun",
+  "title":"Jambul,jamun",
   "coords":"10.9038372, 76.9016301"
 },
 {
-  "name":"Indian mulberry",
+  "title":"Indian mulberry",
   "coords":"10.9037315, 76.9016814"
 },
 {
-  "name":"Indian butter tree",
+  "title":"Indian butter tree",
   "coords":"10.9037605, 76.9017639"
 },
 {
-  "name":"Veppu",
+  "title":"Veppu",
   "coords":"10.9039636, 76.9019982"
 },
 {
-  "name":"Veppu",
+  "title":"Veppu",
   "coords":"10.9038306, 76.9021595"
 },
 {
-  "name":"Three leaved chaste tree",
+  "title":"Three leaved chaste tree",
   "coords":"10.9037002, 76.9021625"
 },
 {
-  "name":"Three leaved chaste tree ",
+  "title":"Three leaved chaste tree ",
   "coords":"10.9037002, 76.9023154"
 },
 {
-  "name":"Pink  trumpet tree",
+  "title":"Pink  trumpet tree",
   "coords":"10.9037068, 76.9023553"
 },
 {
-  "name":"Veppu",
+  "title":"Veppu",
   "coords":"10.9037743, 76.9023409"
 },
 {
-  "name":"Veppu(meliaceae)",
+  "title":"Veppu(meliaceae)",
   "coords":"10.9037911, 76.9021240"
 },
 {
-  "name":"Cannon ball tree",
+  "title":"Cannon ball tree",
   "coords":"10.9037055, 76.9021555"
 },
 {
-  "name":"Chlid life tree",
+  "title":"Chlid life tree",
   "coords":"10.9036976, 76.9020267"
 },
 {
-  "name":"Gold apple",
+  "title":"Gold apple",
   "coords":"10.9038273, 76.9019258"
 },
 {
-  "name":"Yellow trumpet",
+  "title":"Yellow trumpet",
   "coords":"10.9038161, 76.9018618"
 },
 {
-  "name":"Gum Arabic",
+  "title":"Gum Arabic",
   "coords":"10.9041068, 76.9023486"
 },
 {
-  "name":"Red sandalwood",
+  "title":"Red sandalwood",
   "coords":"10.9039429, 76.9024331"
 },
 {
-  "name":"Indian gooseberry",
+  "title":"Indian gooseberry",
   "coords":"10.9041605, 76.9024270 "
 },
 {
-  "name":"Alchorn tree",
+  "title":"Alchorn tree",
   "coords":"10.9041803, 76.9023972"
 },
 {
-  "name":"Bitter albizia",
+  "title":"Bitter albizia",
   "coords":"10.9043626, 76.9024016"
 },
 {
-  "name":"Chebulic myrobalan",
+  "title":"Chebulic myrobalan",
   "coords":"10.9043771, 76.9023385"
 },
 {
-  "name":"Three leaved chase tree",
+  "title":"Three leaved chase tree",
   "coords":"10.9043942, 76.9023543"
 },
 {
-  "name":"indain tulip tree",
+  "title":"indain tulip tree",
   "coords":"10.9044344, 76.9024140"
 },
 {
-  "name":"Indian beech tree",
+  "title":"Indian beech tree",
   "coords":"10.9043281, 76.9024207"
 },
 {
-  "name":"black murdar",
+  "title":"black murdar",
   "coords":"10.9041151, 76.9024220"
 },
 {
-  "name":"arjun tree",
+  "title":"arjun tree",
   "coords":"10.9041348, 76.9023707"
 },
 {
-  "name":"beech wood",
+  "title":"beech wood",
   "coords":"10.9041770, 76.9022695"
 },  
 {
-  "name":"Fala indigo plant",
+  "title":"Fala indigo plant",
   "coords":"10.9043198, 76.9015751"
 },
 {
-  "name":"Lebbreck tree",
+  "title":"Lebbreck tree",
   "coords":"10.9045325, 76.9015553"
 },
 {
-  "name":"neem",
+  "title":"neem",
   "coords":"10.9042415, 76.9014785"
 },
 {
-  "name":"Catpus",
+  "title":"Catpus",
   
   "coords":"10.9035824, 76.8990870"
 },
 {
-  "name":"Mango",
+  "title":"Mango",
   "coords":"10.9034734, 76.8992406"
 },
 {
-  "name":"Mango",
+  "title":"Mango",
   "coords":"10.9038053, 76.8991239"
 },
 {
-  "name":"Neem",
+  "title":"Neem",
   "coords":"10.9040575, 76.8989817"
 },
 {
-  "name":"Neem",
+  "title":"Neem",
   "coords":"10.9040555, 76.8988862"
 },
 {
-  "name":"Mango",
+  "title":"Mango",
   "coords":"10.9039001, 76.8989972"
 },
 {
-  "name":"Mango",
+  "title":"Mango",
   "coords":"10.9038494, 76.8989901"
 },
 {
-  "name":"Mango",
+  "title":"Mango",
   "coords":"10.9038026, 76.8989687"
 },
 {
-  "name":"Mango",
+  "title":"Mango",
   "coords":"10.9037763, 76.8989556"
 },
 {
-  "name":"Lauraceae",
+  "title":"Lauraceae",
   "coords":"10.9035419, 76.8987380"
 },
 {
-  "name":"Lauraceae",
+  "title":"Lauraceae",
   "coords":"10.9035765, 76.8987061"
 },
 {
-  "name":"",
+  "title":"Lauraceae",
+  "coords":"10.9035264, 76.8986854"
+},
+{
+  "title":"Mango",
+  "coords":"10.9035053, 76.8987548 "
+},
+{
+  "title":"Neem",
+  "coords":"10.9036186, 76.8987031"
+},
+{
+  "title":"Mango",
+  "coords":"10.9037075, 76.8985191"
+},
+{
+  "title":"Mango",
+  "coords":"10.9037062, 76.8985965"
+},
+{
+  "title":"Casuarina",
+  "coords":"10.9035205, 76.8981694"
+},
+{
+  "title":"Neem",
+  "coords":"10.9034625, 76.8980993"
+},
+{
+  "title":"",
   "coords":""
 },
 {
-  "name":"",
+  "title":"",
   "coords":""
 },
 {
-  "name":"",
+  "title":"",
   "coords":""
 },
 {
-  "name":"",
+  "title":"",
   "coords":""
 },
 {
-  "name":"",
+  "title":"",
   "coords":""
 },
 {
-  "name":"",
+  "title":"",
   "coords":""
 },
 {
-  "name":"",
+  "title":"",
   "coords":""
 },
 {
-  "name":"",
+  "title":"",
   "coords":""
 },
 {
-  "name":"",
+  "title":"",
   "coords":""
 },
 {
-  "name":"",
+  "title":"",
   "coords":""
 },
 {
-  "name":"",
+  "title":"",
   "coords":""
-},
-{
-  "name":"",
-  "coords":""
-},
-{
-  "name":"",
-  "coords":""
-},
-{
-  "name":"",
-  "coords":""
-},
-{
-  "name":"",
-  "coords":""
-},
-{
-  "name":"",
-  "coords":""
-},
-{
-  "name":"",
-  "coords":""
-},
-{
-  "name":"",
-  "coords":""
-},
-
+}
 
 
 
