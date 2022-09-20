@@ -79,8 +79,20 @@
   "coords":"10.9033753,76.9019573"
 },
 {
-  "name":"",
-  "coords":""
+  "name":"Teak",
+  "coords":"10.9035053, 76.9020613"
+},
+{
+  "name":"Beggers bowl(calabash tree)",
+  "coords":"10.9035047, 76.9019831"
+},
+{
+  "name":"Hill mango",
+  "coords":"10.9036759, 76.9019090"
+},
+{
+  "name":"Indian butter tree",
+  "coords":"10.9036021, 76.9016170"
 },
 {
   "name":"",
@@ -205,15 +217,19 @@
 {
   "name":"",
   "coords":""
+},  
+{
+  "name":"",
+  "coords":""
 },
 {
   "name":"",
   "coords":""
 },
-
-
-
-
+{
+  "name":"",
+  "coords":""
+},
 
 
 ]
