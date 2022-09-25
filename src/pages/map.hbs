@@ -111,7 +111,7 @@ function checklocation(){
   
   
   
-function initMap() {
+async function initMap() {
   
   let map = new google.maps.Map(document.getElementById("map"),
     {
@@ -143,6 +143,15 @@ function initMap() {
     ["Rubber Fig",10.902403,76.901394,80],
     ["Cannon-ball tree",10.902318,76.901079,80]
   ];
+  
+  fetch("https://amritatrees.glitch.me/rohithtrees")
+  .then( data => data.json() )
+  .then( data => {
+    data.forEach( tree => {
+      
+    })
+  });
+  
   for(let i=0; i<treePoints.length ;i++){
     const tree =  treePoints[i]; 
     const marker = new google.maps.Marker({

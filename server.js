@@ -202,6 +202,13 @@ fastify.get("/repository", async (request, reply) => {
 
 
 
+fastify.get("/rohithtrees", async (request, reply) => {
+  const stream = fs.createReadStream(__dirname+'/rohithtrees.json', 'utf8')
+  return reply.type("json")
+    .code(200)
+    .header('Content-Type', 'application/json; charset=utf-8')
+    .send( stream );
+});
 
 
 
