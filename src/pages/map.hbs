@@ -148,7 +148,31 @@ async function initMap() {
   .then( data => data.json() )
   .then( data => {
     data.forEach( tree => {
-      
+      const marker = new google.maps.Marker({
+        title: tree.title ,position: { lat: tree.coords.split(",")[0], lng: tree.coords.split(",")[1] },map,
+        icon: {
+          url: tree_icon_url,
+          // scaledSize: new google.maps.Size(tree[3], tree[3]),
+          origin: new google.maps.Point(0, 0),
+          // anchor: new google.maps.Point(tree[3]/2, tree[3]/2),
+        },
+        animation:google.maps.Animation.DROP
+      });
+
+      const infowindow = new google.maps.InfoWindow({
+        content: tree.title,
+      });
+
+      marker.addListener("click", () => {
+        if (infowindow) {infowindow.close();}
+        infowindow.open({
+          anchor: marker,
+          map,
+          shouldFocus: false,
+        });
+      });
+
+      marker.setMap(map);
     })
   });
   
@@ -205,7 +229,7 @@ async function initMap() {
   });
 
   
-  setInterval(loop,1000);
+  // setInterval(loop,1000);
 }
   
   
