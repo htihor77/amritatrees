@@ -5,7 +5,7 @@ function devDisplayCoords(){
       $("#dev").innerHTML = pos.coords.latitude + "," + pos.coords.longitude + "<br>" + Math.round(pos.coords.accuracy) + "meters inacurracy";
     });
   }
-  checklocation();
+  // checklocation();
 }
 
 setInterval( ()=>{
