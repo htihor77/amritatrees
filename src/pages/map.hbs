@@ -166,10 +166,10 @@ async function initMap() {
       })
       
       const infowindow = new google.maps.InfoWindow({content: tree.title});
-      // marker.addListener("click", () => {
-      //   if (infowindow) {infowindow.close();}
-      //   infowindow.open({anchor: marker,map,shouldFocus: false,});
-      // });
+      marker.addListener("click", () => {
+        if (infowindow) {infowindow.close();}
+        infowindow.open({anchor: marker,map,shouldFocus: false,});
+      });
       
       marker.setMap(map);
       
