@@ -40,10 +40,10 @@ fastify.register(require("@fastify/session"), {
     maxAge: 1000 * 60 * 60 * 24 * 30 * 12 // a year
   }
 });
-fastify.addHook('preHandler', (request, reply, next) => {
-  // console.log("preHandler:",request.session.sessionId);
-  next()
-})
+// fastify.addHook('preHandler', (request, reply, next) => {
+//   // console.log("preHandler:",request.session.sessionId);
+//   next()
+// })
 
 fastify.addHook("onRequest", (request, reply, next) => {
   const protocol = request.raw.headers["x-forwarded-proto"].split(",")[0];
