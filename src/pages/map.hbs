@@ -104,7 +104,7 @@ function checklocation(){
     $("#button").setAttribute("data-distance-count",data.distance);
   });
   
-  let result = await response.json();
+  let result = response.json();
   console.log(result);    
   });
 }  
@@ -144,37 +144,40 @@ async function initMap() {
     ["Cannon-ball tree",10.902318,76.901079,80]
   ];
   
-//   fetch("https://amritatrees.glitch.me/rohithtrees")
-//   .then( data => data.json() )
-//   .then( data => {
-//     data.forEach( tree => {
-//       const marker = new google.maps.Marker({
-//         title: tree.title ,position: { lat: tree.coords.split(",")[0], lng: tree.coords.split(",")[1] },map,
-//         icon: {
-//           url: tree_icon_url,
-//           // scaledSize: new google.maps.Size(tree[3], tree[3]),
-//           origin: new google.maps.Point(0, 0),
-//           // anchor: new google.maps.Point(tree[3]/2, tree[3]/2),
-//         },
-//         animation:google.maps.Animation.DROP
-//       });
+  fetch("https://amritatrees.glitch.me/rohithtrees")
+  .then( data => data.json() )
+  .then( data => {
+    data.forEach( tree => {
+      console.log(tree)
+      
+      const marker = new google.maps.Marker({
+        title: tree.title ,position: { lat: tree.coords.split(",")[0], lng: tree.coords.split(",")[1] },map,
+        icon: {
+          url: tree_icon_url,
+          // scaledSize: new google.maps.Size(tree[3], tree[3]),
+          origin: new google.maps.Point(0, 0),
+          // anchor: new google.maps.Point(tree[3]/2, tree[3]/2),
+        },
+        animation:google.maps.Animation.DROP
+      });
 
-//       const infowindow = new google.maps.InfoWindow({
-//         content: tree.title,
-//       });
+      const infowindow = new google.maps.InfoWindow({
+        content: tree.title,
+      });
 
-//       marker.addListener("click", () => {
-//         if (infowindow) {infowindow.close();}
-//         infowindow.open({
-//           anchor: marker,
-//           map,
-//           shouldFocus: false,
-//         });
-//       });
+      marker.addListener("click", () => {
+        if (infowindow) {infowindow.close();}
+        infowindow.open({
+          anchor: marker,
+          map,
+          shouldFocus: false,
+        });
+      });
 
-//       marker.setMap(map);
-//     })
-//   });
+      marker.setMap(map);
+      
+    })
+  });
   
   for(let i=0; i<treePoints.length ;i++){
     const tree =  treePoints[i]; 
@@ -233,12 +236,11 @@ async function initMap() {
 }
   
   
-const tree_icon_url = "https://cdn.glitch.global/9d67ff5c-524b-467b-aa2f-2cb422728542/treeicon.32png.png?v=1662405399801";
+// const tree_icon_url = "https://cdn.glitch.global/9d67ff5c-524b-467b-aa2f-2cb422728542/treeicon.32png.png?v=1662405399801";
 const tree_icon_url = "https://lh3.googleusercontent.com/fife/AAbDypD-Qz66oyuAmOTBP4YDZHclklLvN_8kC8h-fcWJk20UflOVYQv-wtg7lraWZPaMb-pL96nv1QDnniksgN8TXmPE4O97ew3mf7LssVRaxscjWlOGY2W1DzOqrro7aLyAxtfmbP4FK8IYxZef_JHyQadBRfgHHaIBl3UaW4vrkPPsLRxxmto_G8n8Nq3aa0Vnm8BeEESH8QnlbekYMjvP-9hYqyspgbCEHX2rP6uVUpersr1N6_zAsbRkxbalgbyO1VekvyXIR0GJsQ615v0ULUY2VqMdnBmjsDkNZziHtyBCei2HaCbfL9uTLn6K0hz-0OEyMUsTT8YJS0OS4mPOkrCXBl3dJko7sovBH2nAwz9w6_F_SSqPeYxBij-7b_T64eR0CLxp-40xQ5zjMiJZbShM1-rQLaBdxtim1YtykkvhkJVr8Z5GBpUubq_kKH5QX1bAyQhRse_P4foi450YSYM2Cf-ei44kCTQ2sCR2LVOpZ4fXDxRr9-hi1rnOESAQCkjMamcNjow7bpcA7YSz4dLnDfWrPn4MyHwF_JGAkyQTJnbOkW9fSR_Fxp94Ud9_TQ99GddQvIAbRIbuHF6YFkzYeVFaa78tAasopiYlpwrkzNTy60Ot6dCEIrxVAMPngluA4c02mcq3cUjDml5uVTQ2hkg1uSKRofOtPQmJoMV-ksysC_8mRrtgW3y0rGMSZlG11mgTTMwUv1NaI5sy8prTnVOvqrY8PAxRV6jhd9349JXGb17zZR0bUqKbKPYMbXbP59FgTzhdFTY9t52Goq4DIEhxB9sAc8eMnVjn989yEnys0n2yMCnGQ9FqdDDplTmzmWx4IepresBix-r1m3vCvA_gmAf85aP53hLcfS3ZGG0ogo-kI7rEbrJerOepJBswv7eWz_xagL8jpLdT21X38xYMfH9Y7cMNZbzCNGXRhpzm3zHSqL-BhKtQ49SzxS4UwRzuy5t3SzVr-Fi1P6a-5H4InuWjWhE5FT21Att_7pxqOCfz1AWkEjmZsQIWbWjV4B3_Lz8UsT8koJ3Vs46-13c5q7PB5kuGhHDds3oP26vaPrwwn-n6e2VfMeBplwej-ekaMPqshbt8UV4BvuvrmW1fWFWcwrJS_26Q_IzxaxaaAoDula8ZwW03M6mDnw_MXdqeFS4rabcXrzPtwfGvr9aSllSyTmUNZE7jiURq8RFapKwgxtTC16gkpLpbOqc6vaPs8rstHxJoNQdU75-Itsny0iTu9qvb1fKiKPKVpsFZGFY_YMNKK5Hg373h8mSPByqMNQ8OgkXTca7lNCoQeq8l5V6Bm3GIZEj4kXLnIjgwxWflDfoB5yfldDIKlxktYkZzeEtGbj2ugaTGCxVrqzh5UNMHCDMb6t2NJ5FxKkPJdIlbQ2NrtjTZWluIGVKGpPIW2KvoYtj5UF0aCM2A9NxQ4GR8KaJiji07Nj-BIoAoBSwIcuK41wfQt_sluYQpJFNc0Cj1KFm-1en_63AfyapC07jt-829lysEUG9_-qJjr9zcS5HNDdGD3dnuzVvSTcS4D5BpC6mr-A2VHK3kHBsdGD_JC9ec1-3BYll14WQG6bcEiqBGEz6vqI00CrubcqLIik9f4xlK9TirJ_DVEV0xqMNXPv87uI_L4cRg9zZGNGuZhrYDTlEqiyjNKXi4kpgUo6vxuwPhLgg5O6rSMJIQ4d4raP4=w1919-h954";
 window.initMap = initMap;
 </script>
 
-<!--   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA554gL9cKaa3KqhS8biWu9p9eDCn31z0Q&map_id=661dd2cc98d8e9e2&callback=initMap"></script> -->
 <script async
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA554gL9cKaa3KqhS8biWu9p9eDCn31z0Q&callback=initMap">
 </script>
