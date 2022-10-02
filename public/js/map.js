@@ -181,9 +181,20 @@ async function initMap() {
 
   // resize markers to fit zoom level
   google.maps.event.addListener(map, 'zoom_changed', function() {
-      var zoom = map.getZoom();
-      console.clear();
-      console.log(zoom)
+      
+      const pixelSizeAtZoom0 = 1;
+      const zoom = map.getZoom();
+      const relativePixelSize = Math.round(pixelSizeAtZoom0*Math.pow(2,zoom));
+    
+    
+    
+      setTimeout( ()=>{
+        console.clear();
+        console.log(zoom);
+        console.log(relativePixelSize)
+      }, 50)
+    
+    
   });
   
   const currPosMarker = new google.maps.Marker({
