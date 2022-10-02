@@ -49,7 +49,7 @@ async function initMap() {
   let map = new google.maps.Map(document.getElementById("map"),
     {
       center: { lat: 10.900016808568687, lng: 76.9028589289025 },
-      zoom: 0,
+      zoom: 20,
       mapId: "661dd2cc98d8e9e2",
       mapTypeId: 'satellite',
     }
@@ -208,15 +208,15 @@ async function initMap() {
     
     
     
-      mapMarker.setIcon(
-          new google.maps.MarkerImage(
-              mapMarker.getIcon().url, //marker's same icon graphic
-              null,//size
-              new google.maps.Point(0, 0),
-              new google.maps.Point(mapSize/2, mapSize/2 ),
-              new google.maps.Size(mapSize, mapSize) //changes the scale
-          )
-      );    
+      // mapMarker.setIcon(
+      //     new google.maps.MarkerImage(
+      //         mapMarker.getIcon().url, //marker's same icon graphic
+      //         null,//size
+      //         new google.maps.Point(0, 0),
+      //         new google.maps.Point(mapSize/2, mapSize/2 ),
+      //         new google.maps.Size(mapSize, mapSize) //changes the scale
+      //     )
+      // );    
     
   });
   
@@ -226,29 +226,31 @@ async function initMap() {
     // position: google.maps.ControlPosition.TOP_CENTER,
   });
  
-  // const mapMarker = new google.maps.Marker({
-  //   position: { lat: 10.90370935780691, lng: 76.89921211104604 },map,
-  //       icon: {
-  //         url: mapIcon,
-  //         origin: new google.maps.Point(0, 0),
-  //         anchor: new google.maps.Point(0, 2160),
-  //       },
-  // });
-  
-  
-  const mapImage = new google.maps.MarkerImage(
-    mapIcon,
-    new google.maps.Size(4320,4320), //size
-    new google.maps.Point(0, 0), // origin
-    new google.maps.Point(0, 2160 ), // anchor
-    new google.maps.Size(8,8) //scale
-  );
-    
+  // 10.904444839645889, 76.89907299989305
+  const mapSize = 6480
   const mapMarker = new google.maps.Marker({
-    position: new google.maps.LatLng(10.90370935780691, 76.89921211104604),
-    map: map,
-    icon: mapImage //set the markers icon to the MarkerImage
+    position: { lat: 10.904444839645889, lng: 76.89907299989305 },map,
+      icon: {
+        url: mapIcon,
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(mapSize/2, mapSize/2),
+      },
   });
+  
+  
+//   const mapImage = new google.maps.MarkerImage(
+//     mapIcon,
+//     new google.maps.Size(4320,4320), //size
+//     new google.maps.Point(0, 0), // origin
+//     new google.maps.Point(0, 2160 ), // anchor
+//     new google.maps.Size(8,8) //scale
+//   );
+    
+//   const mapMarker = new google.maps.Marker({
+//     position: new google.maps.LatLng(10.90370935780691, 76.89921211104604),
+//     map: map,
+//     icon: mapImage //set the markers icon to the MarkerImage
+//   });
   
   // setInterval(loop,1000);
 }
@@ -257,5 +259,5 @@ async function initMap() {
 // const tree_icon_url = "https://amritatrees.sirv.com/treeicon32.png";
 const tree_icon_url = "https://cdn.glitch.global/9d67ff5c-524b-467b-aa2f-2cb422728542/treeicon.32png.png?v=1662405399801";
 // const transparent = "https://cdn.glitch.global/9d67ff5c-524b-467b-aa2f-2cb422728542/transparentlayer.png?v=1664718701490";
-const mapIcon = "https://cdn.glitch.global/9d67ff5c-524b-467b-aa2f-2cb422728542/amritamap.png?v=1664719284202"
+const mapIcon = "https://cdn.glitch.global/9d67ff5c-524b-467b-aa2f-2cb422728542/amritamap.png?v=1664724586406"
 window.initMap = initMap;
