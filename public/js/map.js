@@ -180,34 +180,33 @@ async function initMap() {
   
 
   // resize markers to fit zoom level
-  google.maps.event.addListener(map, 'zoom_changed', function() {
+//   google.maps.event.addListener(map, 'zoom_changed', function() {
       
-      const pixelSizeAtZoom0 = 1;
-      const zoom = map.getZoom();
-      let izoom = 20 - zoom;
+//       const pixelSizeAtZoom0 = 1;
+//       const zoom = map.getZoom();
+//       let izoom = 20 - zoom;
     
     
     
-      setTimeout( ()=>{
-        console.clear();
-        console.log(zoom,izoom);
-        console.log(mapSize)
-      }, 50)
+//       setTimeout( ()=>{
+//         console.clear();
+//         console.log(zoom,izoom);
+//         console.log(mapSize)
+//       }, 50)
     
     
     
-      // mapMarker.setIcon(
-      //     new google.maps.MarkerImage(
-      //         mapMarker.getIcon().url, //marker's same icon graphic
-      //         null,//size
-      //         new google.maps.Point(0, 0),
-      //         new google.maps.Point(mapSize/(izoom + 1), mapSize/(izoom + 1) ),
-      //         new google.maps.Size(mapSize, mapSize) //changes the scale
-      //     )
-      // );   
-    mapMarker
+//       // mapMarker.setIcon(
+//       //     new google.maps.MarkerImage(
+//       //         mapMarker.getIcon().url, //marker's same icon graphic
+//       //         null,//size
+//       //         new google.maps.Point(0, 0),
+//       //         new google.maps.Point(mapSize/(izoom + 1), mapSize/(izoom + 1) ),
+//       //         new google.maps.Size(mapSize, mapSize) //changes the scale
+//       //     )
+//       // );   
     
-  });
+//   });
   
   const currPosMarker = new google.maps.Marker({
     position: { lat: 10.900016808568687, lng: 76.9028589289025 },map,
@@ -218,14 +217,14 @@ async function initMap() {
   // 10.904444839645889, 76.89907299989305
   // 10.903717134576203, 76.8992274346881
   const mapSize = 7560
-  const mapMarker = new google.maps.Marker({
-    position: { lat: 10.903717134576203, lng: 76.8992274346881 },map,
-      icon: {
-        url: mapIcon,
-        origin: new google.maps.Point(0, 0),
-        anchor: new google.maps.Point(mapSize/2, mapSize/2),
-      },
-  });
+  // const mapMarker = new google.maps.Marker({
+  //   position: { lat: 10.903717134576203, lng: 76.8992274346881 },map,
+  //     icon: {
+  //       url: mapIcon,
+  //       origin: new google.maps.Point(0, 0),
+  //       anchor: new google.maps.Point(mapSize/2, mapSize/2),
+  //     },
+  // });
   
   
 //   const mapImage = new google.maps.MarkerImage(
