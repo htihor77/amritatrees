@@ -222,15 +222,17 @@ async function initMap() {
   
   const currPosMarker = new google.maps.Marker({
     position: { lat: 10.900016808568687, lng: 76.9028589289025 },map,
-    icon:"https://amritatrees.sirv.com/user_marker.png"
+    icon: tree_icon_url,
+    // position: google.maps.ControlPosition.TOP_CENTER,
   });
  
-  const transparentmarker = new google.maps.Marker({
+  const mapMarker = new google.maps.Marker({
     position: { lat: 10.90370935780691, lng: 76.89921211104604 },map,
-    icon: transparent,
-    origin: new google.maps.Point(0, 50),
-    anchor: new google.maps.Point(0,2160),
+    icon: mapIcon,
+
+    // position: google.maps.ControlPosition.TOP_CENTER,
   });
+  
   
   // setInterval(loop,1000);
 }
@@ -239,5 +241,5 @@ async function initMap() {
 // const tree_icon_url = "https://amritatrees.sirv.com/treeicon32.png";
 const tree_icon_url = "https://cdn.glitch.global/9d67ff5c-524b-467b-aa2f-2cb422728542/treeicon.32png.png?v=1662405399801";
 // const transparent = "https://cdn.glitch.global/9d67ff5c-524b-467b-aa2f-2cb422728542/transparentlayer.png?v=1664718701490";
-const transparent = "https://cdn.glitch.global/9d67ff5c-524b-467b-aa2f-2cb422728542/amritamap.png?v=1664719284202"
+const mapIcon = "https://cdn.glitch.global/9d67ff5c-524b-467b-aa2f-2cb422728542/amritamap.png?v=1664719284202"
 window.initMap = initMap;
