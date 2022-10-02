@@ -184,20 +184,25 @@ async function initMap() {
       
       const pixelSizeAtZoom0 = 1;
       const zoom = map.getZoom();
-    
+      let izoom;
       
       let maxSize = 4320;
     
       
-      let mapSize = maxSize * Math.sqrt(maxSize);
-      
+      let mapSize = maxSize * 0 + 256
+      izoom = 20 - zoom;
+      if( izoom == 0){
+        mapSize = 4320
+      } else {
+        mapSize = maxSize / izoom
+      }
       // const relativePixelSize = Math.round(pixelSizeAtZoom0*Math.pow(2,zoom));
     
     
     
       setTimeout( ()=>{
         console.clear();
-        console.log(zoom);
+        console.log(zoom,izoom);
         console.log(mapSize)
       }, 50)
     
@@ -207,8 +212,8 @@ async function initMap() {
           new google.maps.MarkerImage(
               mapMarker.getIcon().url, //marker's same icon graphic
               null,//size
-              null,//origin
-              null, //anchor
+              new google.maps.Point(0, 0),
+              new google.maps.Point(mapSize/2, mapSize/2 ),
               new google.maps.Size(mapSize, mapSize) //changes the scale
           )
       );    
@@ -233,17 +238,17 @@ async function initMap() {
   
   const mapImage = new google.maps.MarkerImage(
     mapIcon,
-    new google.maps.Size(8,8), //size
-    null, //origin
-    null, //anchor
+    new google.maps.Size(4320,4320), //size
+    new google.maps.Point(0, 0), // origin
+    new google.maps.Point(0, 2160 ), // anchor
     new google.maps.Size(8,8) //scale
-);
+  );
     
   const mapMarker = new google.maps.Marker({
     position: new google.maps.LatLng(10.90370935780691, 76.89921211104604),
     map: map,
     icon: mapImage //set the markers icon to the MarkerImage
-});
+  });
   
   // setInterval(loop,1000);
 }
