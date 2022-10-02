@@ -49,9 +49,7 @@ async function initMap() {
   let map = new google.maps.Map(document.getElementById("map"),
     {
       center: { lat: 10.900016808568687, lng: 76.9028589289025 },
-      zoom: 20,
-      // heading:
-      // tilt:
+      zoom: 0,
       mapId: "661dd2cc98d8e9e2",
       mapTypeId: 'satellite',
     }
@@ -64,18 +62,6 @@ async function initMap() {
     disableDoubleClickZoom: true,
     disableDefaultUI: true,
   });
-
-  const treePoints = [
-    ["Center", 10.900016808568687, 76.9028589289025, 80],
-    ["Banyan Tree",10.899701,76.903252, 80],
-    ["Ficus Elastica",10.899759,76.903345, 80],
-    ["Weeping Fig",10.899498,76.903237,80],
-    // ["Scared Fig",10.899663,76.907571,80] INCORRECT COORDS
-    ["Ficus Microcarpa",10.900323,76.902236,80],
-    ["Neem Tree",10.901405,76.902026,80],
-    ["Rubber Fig",10.902403,76.901394,80],
-    ["Cannon-ball tree",10.902318,76.901079,80]
-  ];
   
   fetch("https://amritatrees.glitch.me/rohithtrees")
   .then( data => data.json() )
@@ -177,35 +163,6 @@ async function initMap() {
     })
   });
   
-//   for(let i=0; i<treePoints.length ;i++){
-//     const tree =  treePoints[i]; 
-//     const marker = new google.maps.Marker({
-//       title: tree[0],position: { lat: tree[1], lng: tree[2] },map,
-//       icon: {
-//         url: tree_icon_url,
-//         scaledSize: new google.maps.Size(tree[3], tree[3]),
-//         origin: new google.maps.Point(0, 0),
-//         anchor: new google.maps.Point(tree[3]/2, tree[3]/2),
-//       },
-//       animation:google.maps.Animation.DROP
-//     });
-    
-//     const infowindow = new google.maps.InfoWindow({
-//       content: tree[0],
-//     });
-    
-//     marker.addListener("click", () => {
-//       if (infowindow) {infowindow.close();}
-//       infowindow.open({
-//         anchor: marker,
-//         map,
-//         shouldFocus: false,
-//       });
-//     });
-    
-//     marker.setMap(map);
-
-//   }
   
   const loop = () => {
     if(navigator.geolocation){navigator.geolocation.getCurrentPosition( (position)=>{
@@ -220,6 +177,29 @@ async function initMap() {
     }
   }
   
+  // resize markers to fit zoom level
+  google.maps.event.addListener(map, 'zoom_changed', function() {
+      var pixelSizeAtZoom0 = 8; //the size of the icon at zoom level 0
+      var maxPixelSize = 350; //restricts the maximum size of the icon, otherwise the browser will choke at higher zoom levels trying to scale an image to millions of pixels
+
+      var zoom = map.getZoom();
+      var relativePixelSize = Math.round(pixelSizeAtZoom0*Math.pow(2,zoom)); // use 2 to the power of current zoom to calculate relative pixel size.  Base of exponent is 2 because relative size should double every time you zoom in
+
+      if(relativePixelSize > maxPixelSize) //restrict the maximum size of the icon
+          relativePixelSize = maxPixelSize;
+
+      //change the size of the icon
+      mapMarker.setIcon(
+          new google.maps.MarkerImage(
+              mapMarker.getIcon().url, //marker's same icon graphic
+              null,//size
+              null,//origin
+              null, //anchor
+              new google.maps.Size(relativePixelSize, relativePixelSize) //changes the scale
+          )
+      );        
+  });
+  
   const currPosMarker = new google.maps.Marker({
     position: { lat: 10.900016808568687, lng: 76.9028589289025 },map,
     icon: tree_icon_url,
@@ -228,8 +208,12 @@ async function initMap() {
  
   const mapMarker = new google.maps.Marker({
     position: { lat: 10.90370935780691, lng: 76.89921211104604 },map,
-    icon: mapIcon,
-
+        icon: {
+          url: mapIcon,
+          // scaledSize: new google.maps.Size(iconSize, iconSize),
+          origin: new google.maps.Point(0, 0),
+          anchor: new google.maps.Point(0, 2160),
+        },
     // position: google.maps.ControlPosition.TOP_CENTER,
   });
   
