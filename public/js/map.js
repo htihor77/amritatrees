@@ -184,16 +184,34 @@ async function initMap() {
       
       const pixelSizeAtZoom0 = 1;
       const zoom = map.getZoom();
-      const relativePixelSize = Math.round(pixelSizeAtZoom0*Math.pow(2,zoom));
+    
+      
+      let maxSize = 4320;
+    
+      
+      let mapSize = maxSize * Math.sqrt(maxSize);
+      
+      // const relativePixelSize = Math.round(pixelSizeAtZoom0*Math.pow(2,zoom));
     
     
     
       setTimeout( ()=>{
         console.clear();
         console.log(zoom);
-        console.log(relativePixelSize)
+        console.log(mapSize)
       }, 50)
     
+    
+    
+      mapMarker.setIcon(
+          new google.maps.MarkerImage(
+              mapMarker.getIcon().url, //marker's same icon graphic
+              null,//size
+              null,//origin
+              null, //anchor
+              new google.maps.Size(mapSize, mapSize) //changes the scale
+          )
+      );    
     
   });
   
