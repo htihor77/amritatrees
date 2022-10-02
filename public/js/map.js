@@ -184,19 +184,7 @@ async function initMap() {
       
       const pixelSizeAtZoom0 = 1;
       const zoom = map.getZoom();
-      let izoom;
-      
-      let maxSize = 4320;
-    
-      
-      let mapSize = maxSize * 0 + 256
-      izoom = 20 - zoom;
-      if( izoom == 0){
-        mapSize = 4320
-      } else {
-        mapSize = maxSize / izoom
-      }
-      // const relativePixelSize = Math.round(pixelSizeAtZoom0*Math.pow(2,zoom));
+      let izoom = 20 - zoom;
     
     
     
@@ -213,10 +201,11 @@ async function initMap() {
       //         mapMarker.getIcon().url, //marker's same icon graphic
       //         null,//size
       //         new google.maps.Point(0, 0),
-      //         new google.maps.Point(mapSize/2, mapSize/2 ),
+      //         new google.maps.Point(mapSize/(izoom + 1), mapSize/(izoom + 1) ),
       //         new google.maps.Size(mapSize, mapSize) //changes the scale
       //     )
-      // );    
+      // );   
+    mapMarker
     
   });
   
@@ -227,9 +216,10 @@ async function initMap() {
   });
  
   // 10.904444839645889, 76.89907299989305
-  const mapSize = 6480
+  // 10.903717134576203, 76.8992274346881
+  const mapSize = 7560
   const mapMarker = new google.maps.Marker({
-    position: { lat: 10.904444839645889, lng: 76.89907299989305 },map,
+    position: { lat: 10.903717134576203, lng: 76.8992274346881 },map,
       icon: {
         url: mapIcon,
         origin: new google.maps.Point(0, 0),
@@ -259,5 +249,5 @@ async function initMap() {
 // const tree_icon_url = "https://amritatrees.sirv.com/treeicon32.png";
 const tree_icon_url = "https://cdn.glitch.global/9d67ff5c-524b-467b-aa2f-2cb422728542/treeicon.32png.png?v=1662405399801";
 // const transparent = "https://cdn.glitch.global/9d67ff5c-524b-467b-aa2f-2cb422728542/transparentlayer.png?v=1664718701490";
-const mapIcon = "https://cdn.glitch.global/9d67ff5c-524b-467b-aa2f-2cb422728542/amritamap.png?v=1664724586406"
+const mapIcon = "https://cdn.glitch.global/9d67ff5c-524b-467b-aa2f-2cb422728542/amritamap.png?v=1664725171814"
 window.initMap = initMap;
