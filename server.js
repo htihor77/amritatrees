@@ -219,7 +219,13 @@ fastify.get("/nandhutrees", async (request, reply) => {
     .send( stream );
 });
 
-
+fastify.get("/rishitrees", async (request, reply) => {
+  const stream = fs.createReadStream(__dirname+'/___rishitrees.json', 'utf8')
+  return reply.type("json")
+    .code(200)
+    .header('Content-Type', 'application/json; charset=utf-8')
+    .send( stream );
+});
 
 
 fastify.get("/check", async (request, reply) => {
@@ -246,30 +252,31 @@ fastify.get("/users", async (request, reply) => {
 });
 
 
-fastify.get("/assets/:assetname", async (req, reply) => {
-  const { assetname } = req.params;
-  console.log("params:",assetname);
+// ughhh im such a dumbass
+// fastify.get("/assets/:assetname", async (req, reply) => {
+//   const { assetname } = req.params;
+//   console.log("params:",assetname);
   
-  var content = fs.readFileSync('.glitch-assets', 'utf8');
-  var rows = content.split("\n");
-  var assets = rows.map((row) => {
-    try {
-      return JSON.parse(row);
-    } catch (e) {}
-  });
-  assets = assets.filter((asset) => asset);
-  
-  
-  
-  
-  
-  reply.header("Access-Control-Allow-Origin", "*");
-  reply.header("Access-Control-Allow-Methods", "GET");
-  reply.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+//   var content = fs.readFileSync('.glitch-assets', 'utf8');
+//   var rows = content.split("\n");
+//   var assets = rows.map((row) => {
+//     try {
+//       return JSON.parse(row);
+//     } catch (e) {}
+//   });
+//   assets = assets.filter((asset) => asset);
   
   
   
-});
+  
+  
+//   reply.header("Access-Control-Allow-Origin", "*");
+//   reply.header("Access-Control-Allow-Methods", "GET");
+//   reply.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+  
+  
+  
+// });
 
 
 
