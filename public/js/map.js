@@ -177,12 +177,31 @@ async function initMap() {
     }
   }
   
+  
+  
+  var mapImage = new google.maps.MarkerImage(
+      mapIcon,
+      new google.maps.Size(4320,4320), //size
+      null, //origin
+      null, //anchor
+      new google.maps.Size(4320,4320) //scale
+  );
+
+  var mapMarker = new google.maps.Marker({
+      position: new google.maps.LatLng(38, -98),
+      map: map,
+      icon: mapImage //set the markers icon to the MarkerImage
+  });
+  
+  
   // resize markers to fit zoom level
   google.maps.event.addListener(map, 'zoom_changed', function() {
-      var pixelSizeAtZoom0 = 8; //the size of the icon at zoom level 0
+      var pixelSizeAtZoom0 = 4320; //the size of the icon at zoom level 0
       var maxPixelSize = 350; //restricts the maximum size of the icon, otherwise the browser will choke at higher zoom levels trying to scale an image to millions of pixels
 
       var zoom = map.getZoom();
+      console.clear();
+      console.log(zoom)
       var relativePixelSize = Math.round(pixelSizeAtZoom0*Math.pow(2,zoom)); // use 2 to the power of current zoom to calculate relative pixel size.  Base of exponent is 2 because relative size should double every time you zoom in
 
       if(relativePixelSize > maxPixelSize) //restrict the maximum size of the icon
@@ -206,16 +225,14 @@ async function initMap() {
     // position: google.maps.ControlPosition.TOP_CENTER,
   });
  
-  const mapMarker = new google.maps.Marker({
-    position: { lat: 10.90370935780691, lng: 76.89921211104604 },map,
-        icon: {
-          url: mapIcon,
-          // scaledSize: new google.maps.Size(iconSize, iconSize),
-          origin: new google.maps.Point(0, 0),
-          anchor: new google.maps.Point(0, 2160),
-        },
-    // position: google.maps.ControlPosition.TOP_CENTER,
-  });
+  // const mapMarker = new google.maps.Marker({
+  //   position: { lat: 10.90370935780691, lng: 76.89921211104604 },map,
+  //       icon: {
+  //         url: mapIcon,
+  //         origin: new google.maps.Point(0, 0),
+  //         anchor: new google.maps.Point(0, 2160),
+  //       },
+  // });
   
   
   // setInterval(loop,1000);
