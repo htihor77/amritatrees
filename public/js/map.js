@@ -245,8 +245,8 @@ async function initMap() {
 }
   
   
-// const tree_icon_url = "https://amritatrees.sirv.com/treeicon32.png";
-const tree_icon_url = "https://cdn.glitch.global/9d67ff5c-524b-467b-aa2f-2cb422728542/treeicon.32png.png?v=1662405399801";
+const tree_icon_url = "https://amritatrees.sirv.com/treeicon32.png";
+// const tree_icon_url = "https://cdn.glitch.global/9d67ff5c-524b-467b-aa2f-2cb422728542/treeicon.32png.png?v=1662405399801";
 // const transparent = "https://cdn.glitch.global/9d67ff5c-524b-467b-aa2f-2cb422728542/transparentlayer.png?v=1664718701490";
 const mapIcon = "https://cdn.glitch.global/9d67ff5c-524b-467b-aa2f-2cb422728542/amritamap.png?v=1664725171814"
 window.initMap = initMap;
