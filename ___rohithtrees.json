@@ -238,11 +238,13 @@
 },
 {
   "title":"Mango",
-  "coords":"10.9034734, 76.8992406"
+  "coords":"10.9034734, 76.8992406",
+    "icon":"https://cdn.discordapp.com/attachments/1027927070191403189/1027934383828643949/mango_tree_icon.png"
 },
 {
   "title":"Mango",
-  "coords":"10.9038053, 76.8991239"
+  "coords":"10.9038053, 76.8991239",
+    "icon":"https://cdn.discordapp.com/attachments/1027927070191403189/1027934383828643949/mango_tree_icon.png"
 },
 {
   "title":"Neem",
@@ -254,19 +256,23 @@
 },
 {
   "title":"Mango",
-  "coords":"10.9039001, 76.8989972"
+  "coords":"10.9039001, 76.8989972",
+    "icon":"https://cdn.discordapp.com/attachments/1027927070191403189/1027934383828643949/mango_tree_icon.png"
 },
 {
   "title":"Mango",
-  "coords":"10.9038494, 76.8989901"
+  "coords":"10.9038494, 76.8989901",
+    "icon":"https://cdn.discordapp.com/attachments/1027927070191403189/1027934383828643949/mango_tree_icon.png"
 },
 {
   "title":"Mango",
-  "coords":"10.9038026, 76.8989687"
+  "coords":"10.9038026, 76.8989687",
+    "icon":"https://cdn.discordapp.com/attachments/1027927070191403189/1027934383828643949/mango_tree_icon.png"
 },
 {
   "title":"Mango",
-  "coords":"10.9037763, 76.8989556"
+  "coords":"10.9037763, 76.8989556",
+    "icon":"https://cdn.discordapp.com/attachments/1027927070191403189/1027934383828643949/mango_tree_icon.png"
 },
 {
   "title":"Lauraceae",
@@ -282,7 +288,8 @@
 },
 {
   "title":"Mango",
-  "coords":"10.9035053, 76.8987548 "
+  "coords":"10.9035053, 76.8987548 ",
+    "icon":"https://cdn.discordapp.com/attachments/1027927070191403189/1027934383828643949/mango_tree_icon.png"
 },
 {
   "title":"Neem",
@@ -290,11 +297,13 @@
 },
 {
   "title":"Mango",
-  "coords":"10.9037075, 76.8985191"
+  "coords":"10.9037075, 76.8985191",
+    "icon":"https://cdn.discordapp.com/attachments/1027927070191403189/1027934383828643949/mango_tree_icon.png"
 },
 {
   "title":"Mango",
-  "coords":"10.9037062, 76.8985965"
+  "coords":"10.9037062, 76.8985965",
+    "icon":"https://cdn.discordapp.com/attachments/1027927070191403189/1027934383828643949/mango_tree_icon.png"
 },
 {
   "title":"Casuarina",
