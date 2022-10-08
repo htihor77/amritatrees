@@ -63,16 +63,50 @@ async function initMap() {
     disableDefaultUI: true,
   });
   
-  fetch("https://amritatrees.glitch.me/trees")
+  fetch("https://amritatrees.glitch.me/rohithtrees")
   .then( data => data.json() )
   .then( data => {
+    console.log("Rohith's count:", data.length)
     data.forEach( tree => {
     // ###########################################################################
       const lat = Number(tree.coords.split(",")[0]);
       const lng = Number(tree.coords.split(",")[1]);
+      const iconSize = 80
+      const marker = new google.maps.Marker({
+        title: tree.title,
+        position: {lat: lat, lng: lng },
+        map,
+        icon: {
+          url: tree_icon_url,
+          scaledSize: new google.maps.Size(iconSize, iconSize),
+          origin: new google.maps.Point(0, 0),
+          anchor: new google.maps.Point(iconSize/2, iconSize/2),
+        },
+      })
       
+      const infowindow = new google.maps.InfoWindow({content: tree.title});
+      marker.addListener("click", () => {
+        if (infowindow) {infowindow.close();}
+        infowindow.open({anchor: marker,map,shouldFocus: false,});
+      });
+      
+      marker.setMap(map);
+      
+    // ########################################################################### 
+    })
+  });
+  
+  fetch("https://amritatrees.glitch.me/nandhutrees")
+  .then( data => data.json() )
+  .then( data => {
+    console.log("Nandhu's count:", data.length)
+    data.forEach( tree => {
+    // ###########################################################################
+      const lat = Number(tree.coords.split(",")[0]);
+      const lng = Number(tree.coords.split(",")[1]);
       const iconSize = 80;
-      let tree_icon = tree.icon || tree_icon_url;
+      let tree_icon = tree.icon || tree_icon_url  
+      // console.log(tree.icon || "no image icon");
       const marker = new google.maps.Marker({
         title: tree.title,
         position: {lat: lat, lng: lng },
@@ -98,6 +132,38 @@ async function initMap() {
   });
   
   
+  fetch("https://amritatrees.glitch.me/rishitrees")
+  .then( data => data.json() )
+  .then( data => {
+    console.log("Rishi's count:", data.length)
+    data.forEach( tree => {
+    // ###########################################################################
+      const lat = Number(tree.coords.split(",")[0]);
+      const lng = Number(tree.coords.split(",")[1]);
+      const iconSize = 80
+      const marker = new google.maps.Marker({
+        title: tree.title,
+        position: {lat: lat, lng: lng },
+        map,
+        icon: {
+          url: tree_icon_url,
+          scaledSize: new google.maps.Size(iconSize, iconSize),
+          origin: new google.maps.Point(0, 0),
+          anchor: new google.maps.Point(iconSize/2, iconSize/2),
+        },
+      })
+      
+      const infowindow = new google.maps.InfoWindow({content: tree.title});
+      marker.addListener("click", () => {
+        if (infowindow) {infowindow.close();}
+        infowindow.open({anchor: marker,map,shouldFocus: false,});
+      });
+      
+      marker.setMap(map);
+      
+    // ########################################################################### 
+    })
+  });
   
   
   const loop = () => {
