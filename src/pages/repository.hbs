@@ -57,6 +57,20 @@
   scroll-snap-type: y mandatory;
   padding-top: calc( 2 * var(--textSize));
   padding-bottom: calc( 2 * var(--textSize));
+  position:relative;
+}
+  
+#treetable:after{
+  content:"";
+  position:absolute;
+  top:50%;
+  left:20px;
+  transform:translate(0,-50%) rotate(45deg);
+  
+  background-color:blue;
+  border: 5px solid black;
+  width:2rem;
+  height:2rem;
 }
   
 #treetable .table::-webkit-scrollbar {width: 2px;}
@@ -76,7 +90,10 @@
   align-items: center;
   justify-content: center;
 }
-  
+
+#treetable .table div:hover{
+  background-color:red;    
+}
 </style>
   
 </head>
@@ -122,11 +139,13 @@
 </body>
   
 <script>
-
+function $(x){return document.querySelector(x);}
+  
 document.querySelectorAll(".table > div").forEach(ele => {
   console.log(ele);
   ele.addEventListener("click", ()=>{
-    eledocument.body.scrollIntoViewIfNeeded()
+    ele.scrollIntoView();
+    $(".table").scrollBy({left:0,top:-16});
   });
   
 })
