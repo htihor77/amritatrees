@@ -30,12 +30,15 @@
 
 <style>
 #treetable{
+  
+  --textSize: 1.5rem;
+  
   --gap: 10px;
   width:min(500px,calc(100% - var(--gap) - var(--gap)));
-  height:2.4rem;
+  height:calc( var(--textSize) * 3 );
   
   background-color:white;
-  border: 3px solid white;
+  border: 3px solid black;
   
   
   position:absolute;
@@ -43,18 +46,6 @@
   bottom:var(--gap);
 }
 
-#treetable.active{
-  padding-top:500px;    
-}
-  
-.table{
-  height:100%;
-  width:100%;
-}
-  
-#treetable.active .table{
-  height:500px;
-}
   
 </style>
   
@@ -62,8 +53,7 @@
 <body id="body">
   <div id="container">
     
-    <div id="overlay" onclick="clickedOverlay()"></div>
-    <div class="icon iconContainer noSelect" style="left:5px;border-radius:15px;" onclick="goToMap()"><i class="fas fa-arrow-left"></i></div>        
+    <div id="overlay" onclick="clickedOverlay()"></div>        
 
     <div id="mapContainer">
       <div id="map"></div>
@@ -71,7 +61,7 @@
 
 
     
-    <div id="treetable" onclick="this.classList.toggle('active');">
+    <div id="treetable">
       <div class="table"></div>
     </div>
 
@@ -80,10 +70,7 @@
   
 <script>
   
-function goToMap(){
-  location.href = "./map";
-}
-  
+
   
 </script>
   
