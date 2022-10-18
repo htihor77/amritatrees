@@ -31,7 +31,7 @@
 <style>
 #treetable{
   
-  --textSize: 1.25rem;
+  --textSize: 1.3rem;
   --heightMultiplier: 5;
   
   --gap: 10px;
@@ -82,6 +82,7 @@
 #treetable .table::-webkit-scrollbar-thumb {background: white;}
   
 #treetable .table div{
+  --outlineWidth: 90%;
   scroll-snap-align: center;
 /*   height: 2.5rem; */
   margin-top: var(--margin);
@@ -89,27 +90,41 @@
   
   color:white;
   
-  font-size: 1.5rem;
+  font-size: calc( var(--textSize) + .4rem );
   display: flex;
   align-items: center;
 /*   justify-content: center; */
   
   position:relative;
   padding-left:20px;
-}
-#treetable .table div span{
-    
-}
   
+}
 #treetable .table div.active:after{
+  
   content:"";
   position:absolute;left:0;top:50%;
   transform:translateY(-50%);
   height:100%;
-  width:90%;
-  border:4px solid white;
+  width: var(--outlineWidth);
+  border:3px solid white;
   border-radius:25px;
 }
+  
+#treetable .table div span{
+  position:absolute;
+  right:calc( 100% - var( --outlineWidth) - 3px);
+  top:0;
+  height:100%;
+  width:calc( var(--textSize) * 1.5);
+  display:none;
+  background-color:blue;
+  border-radius:50%;
+}
+  
+#treetable .table div.active span{
+  display:block;    
+}
+  
 </style>
   
 </head>
