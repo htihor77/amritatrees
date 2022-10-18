@@ -57,18 +57,20 @@
   scroll-snap-type: y mandatory;
   padding-top: calc( 2 * var(--textSize));
   padding-bottom: calc( 2 * var(--textSize));
+  padding-left: 2rem;
   position:relative;
 }
   
 #treetable:after{
+  --borderThickness: 4px;
   content:"";
   position:absolute;
   top:50%;
-  left:20px;
-  transform:translate(0,-50%) rotate(45deg);
+  left:calc(-1rem - var(--borderThickness));
+  transform:translate(0,-50%) rotate(45deg) scale(.75);
   
-  background-color:blue;
-  border: 5px solid black;
+  background-image:linear-gradient(45deg, green, yellowgreen);
+  border: var(--borderThickness) solid black;
   width:2rem;
   height:2rem;
 }
@@ -88,11 +90,16 @@
   font-size: 1.5rem;
   display: flex;
   align-items: center;
-  justify-content: center;
+/*   justify-content: center; */
+  
+  position:relative;
 }
-
-#treetable .table div:hover{
-  background-color:red;    
+#treetable .table div.active:after{
+  content:"";
+  position:absolute;
+  height:100%;
+  width:100%;
+  border:2px solid black;
 }
 </style>
   
@@ -143,9 +150,14 @@ function $(x){return document.querySelector(x);}
   
 document.querySelectorAll(".table > div").forEach(ele => {
   console.log(ele);
+  ele.classList.add("noSelect");
   ele.addEventListener("click", ()=>{
     ele.scrollIntoView();
     $(".table").scrollBy({left:0,top:-16});
+    
+    if( $(".table div.active") ) $(".table div.active").classList.remove("active");
+    ele.classList.add("active");
+    
   });
   
 })
