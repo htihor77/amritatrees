@@ -37,8 +37,8 @@
   --gap: 10px;
   width:min(350px,calc(100% - var(--gap) - var(--gap)));
   height:calc( var(--textSize) * var(--heightMultiplier) );
-  background-color:white;
-  border: 3px solid red;
+  background-color:gray;
+/*   border: 3px solid red; */
   overflow:auto;
   
   position:absolute;
@@ -47,6 +47,7 @@
 }
 
 #treetable .table{
+  --margin: .5rem;
   display:flex;
   flex-direction:column;
   
@@ -54,13 +55,21 @@
   overflow-y:scroll;
   
   scroll-snap-type: y mandatory;
+  padding-top: calc( 2 * var(--textSize));
+  padding-bottom: calc( 2 * var(--textSize));
 }
+  
+#treetable .table::-webkit-scrollbar {width: 2px;}
+#treetable .table::-webkit-scrollbar-track {background: transparent;}
+#treetable .table::-webkit-scrollbar-thumb {background: white;}
   
 #treetable .table div{
   scroll-snap-align: center;
 /*   height: 2.5rem; */
-  margin-block:.5rem;
-  color:black;
+  margin-top: var(--margin);
+  margin-bottom: var(--margin);
+  
+  color:white;
   
   font-size: 1.5rem;
   display: flex;
@@ -113,8 +122,14 @@
 </body>
   
 <script>
-  
 
+document.querySelectorAll(".table > div").forEach(ele => {
+  console.log(ele);
+  ele.addEventListener("click", ()=>{
+    eledocument.body.scrollIntoViewIfNeeded()
+  });
+  
+})
   
 </script>
   
