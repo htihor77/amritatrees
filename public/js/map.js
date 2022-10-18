@@ -63,39 +63,39 @@ async function initMap() {
     disableDefaultUI: true,
   });
   
-//   fetch("https://amritatrees.glitch.me/trees")
-//   .then( data => data.json() )
-//   .then( data => {
-//     data.forEach( tree => {
-//     // ###########################################################################
-//       const lat = Number(tree.coords.split(",")[0]);
-//       const lng = Number(tree.coords.split(",")[1]);
+  fetch("https://amritatrees.glitch.me/trees")
+  .then( data => data.json() )
+  .then( data => {
+    data.forEach( tree => {
+    // ###########################################################################
+      const lat = Number(tree.coords.split(",")[0]);
+      const lng = Number(tree.coords.split(",")[1]);
       
-//       const iconSize = 80;
-//       let tree_icon = tree.icon || tree_icon_url;
-//       const marker = new google.maps.Marker({
-//         title: tree.title,
-//         position: {lat: lat, lng: lng },
-//         map,
-//         icon: {
-//           url: tree_icon,
-//           scaledSize: new google.maps.Size(iconSize, iconSize),
-//           origin: new google.maps.Point(0, 0),
-//           anchor: new google.maps.Point(iconSize/2, iconSize/2),
-//         },
-//       })
+      const iconSize = 80;
+      let tree_icon = tree.icon || tree_icon_url;
+      const marker = new google.maps.Marker({
+        title: tree.title,
+        position: {lat: lat, lng: lng },
+        map,
+        icon: {
+          url: tree_icon,
+          scaledSize: new google.maps.Size(iconSize, iconSize),
+          origin: new google.maps.Point(0, 0),
+          anchor: new google.maps.Point(iconSize/2, iconSize/2),
+        },
+      })
       
-//       const infowindow = new google.maps.InfoWindow({content: tree.title});
-//       marker.addListener("click", () => {
-//         if (infowindow) {infowindow.close();}
-//         infowindow.open({anchor: marker,map,shouldFocus: false,});
-//       });
+      const infowindow = new google.maps.InfoWindow({content: tree.title});
+      marker.addListener("click", () => {
+        if (infowindow) {infowindow.close();}
+        infowindow.open({anchor: marker,map,shouldFocus: false,});
+      });
       
-//       marker.setMap(map);
+      marker.setMap(map);
       
-//     // ########################################################################### 
-//     })
-//   });
+    // ########################################################################### 
+    })
+  });
   
   
   
