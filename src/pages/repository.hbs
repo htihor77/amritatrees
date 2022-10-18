@@ -31,7 +31,7 @@
 <style>
 #treetable{
   
-  --textSize: 1.3rem;
+  --textSize: 1.5rem;
   --heightMultiplier: 4;
   
   --gap: 10px;
@@ -39,7 +39,7 @@
   height:calc( var(--textSize) * var(--heightMultiplier) );
   background-color:white;
   border: 3px solid red;
-  
+  overflow:auto;
   
   position:absolute;
   left:var(--gap);
@@ -47,15 +47,24 @@
 }
 
 #treetable .table{
+  display:flex;
+  flex-direction:column;
+  
   height:100%;
   overflow-y:scroll;
   scroll-snap-type: y mandatory;
   scroll-snap-align: center;
 }
   
-#treetable .table li{
-  font-size: var(--textSize);
+#treetable .table div{
+  height: var(--textSize);
   color:black;
+  flex: 0 0 66%;
+  
+  font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
   
 </style>
@@ -75,34 +84,13 @@
     <div id="treetable">
       <div class="table">
         
-        <li>aaa</li>
-        <li>bbb</li>
-        <li>ccc</li>
-        <li>ddd</li>
-        <li>eee</li>
-        <li>fff</li>
-        
-        <li>aaa</li>
-        <li>bbb</li>
-        <li>ccc</li>
-        <li>ddd</li>
-        <li>eee</li>
-        <li>fff</li>
-        
-        <li>aaa</li>
-        <li>bbb</li>
-        <li>ccc</li>
-        <li>ddd</li>
-        <li>eee</li>
-        <li>fff</li>
-        
-        <li>aaa</li>
-        <li>bbb</li>
-        <li>ccc</li>
-        <li>ddd</li>
-        <li>eee</li>
-        <li>fff</li>
-        
+        <div>aaa</div>
+        <div>bbb</div>
+        <div>ccc</div>
+        <div>ddd</div>
+        <div>eee</div>
+        <div>fff</div>
+
       </div>
     </div>
 
