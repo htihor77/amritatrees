@@ -31,21 +31,28 @@
 <style>
 #treetable{
   
-  --textSize: 1.5rem;
+  --textSize: 1.3rem;
   
   --gap: 10px;
-  width:min(500px,calc(100% - var(--gap) - var(--gap)));
-  height:calc( var(--textSize) * 3 );
+  width:min(350px,calc(100% - var(--gap) - var(--gap)));
+  height:calc( var(--textSize) * 3.2 );
+  line-height:calc( 2 * var(--textSize) );
+  overflow-y:scroll;
+  scroll-snap-type: y mandatory;
   
   background-color:white;
-  border: 3px solid black;
+  border: 3px solid red;
   
   
   position:absolute;
   left:var(--gap);
-  bottom:var(--gap);
+  bottom:calc( 3 * var(--gap) );
 }
 
+#treetable li{
+  font-size: var(--textSize);
+  color:black;
+}
   
 </style>
   
@@ -62,7 +69,16 @@
 
     
     <div id="treetable">
-      <div class="table"></div>
+      <div class="table">
+        
+        <li>aaa</li>
+        <li>bbb</li>
+        <li>ccc</li>
+        <li>ddd</li>
+        <li>eee</li>
+        <li>fff</li>
+        
+      </div>
     </div>
 
   </div>
@@ -81,63 +97,18 @@ function initMap() {
     {
       center: { lat: 10.900016808568687, lng: 76.9028589289025 },
       zoom: 20,
-      // heading:
-      // tilt:
       mapId: "661dd2cc98d8e9e2",
       mapTypeId: 'terrain',
     }
   );
   
   map.setOptions({
-    // draggable: false, 
+    draggable: false, 
     zoomControl: false, 
-    // scrollwheel: false, 
+    scrollwheel: false, 
     disableDoubleClickZoom: true,
     disableDefaultUI: true,
   });
-
-  const treePoints = [
-    ["Center", 10.900016808568687, 76.9028589289025, 80],
-    ["Banyan Tree",10.899701,76.903252, 80],
-    ["Ficus Elastica",10.899759,76.903345, 80],
-    ["Weeping Fig",10.899498,76.903237,80],
-    // ["Scared Fig",10.899663,76.907571,80] INCORRECT COORDS
-    ["Ficus Microcarpa",10.900323,76.902236,80],
-    ["Neem Tree",10.901405,76.902026,80],
-    ["Rubber Fig",10.902403,76.901394,80],
-    ["Cannon-ball tree",10.902318,76.901079,80]
-  ];
-  for(let i=0; i<treePoints.length ;i++){
-    const tree =  treePoints[i]; 
-    const marker = new google.maps.Marker({
-      title: tree[0],position: { lat: tree[1], lng: tree[2] },map,
-      icon: {
-        url: tree_icon_url,
-        scaledSize: new google.maps.Size(tree[3], tree[3]),
-        origin: new google.maps.Point(0, 0),
-        anchor: new google.maps.Point(tree[3]/2, tree[3]/2),
-      },
-      animation:google.maps.Animation.DROP
-    });
-    
-    const infowindow = new google.maps.InfoWindow({
-      content: tree[0],
-    });
-    
-    marker.addListener("click", () => {
-      if (infowindow) {infowindow.close();}
-      infowindow.open({
-        anchor: marker,
-        map,
-        shouldFocus: false,
-      });
-    });
-    
-    marker.setMap(map);
-    
-//     const infowindow = new google.maps.InfoWindow({
-//       content: tree[0]
-//     });
 
   }
   
@@ -168,9 +139,8 @@ const tree_icon_url = "https://cdn.glitch.global/9d67ff5c-524b-467b-aa2f-2cb4227
 window.initMap = initMap;
 </script>
 
-<!--   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA554gL9cKaa3KqhS8biWu9p9eDCn31z0Q&map_id=661dd2cc98d8e9e2&callback=initMap"></script> -->
-<script async
+<!-- <script async
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA554gL9cKaa3KqhS8biWu9p9eDCn31z0Q&callback=initMap">
-</script>
+</script> -->
   
 </html>
