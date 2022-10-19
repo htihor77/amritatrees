@@ -41,7 +41,10 @@
   --gap: 10px;
   width:min(350px,calc(100% - var(--gap) - var(--gap)));
   height:calc( var(--textSize) * var(--heightMultiplier) );
-  background-color:gray;
+  background-image:linear-gradient(-90deg,#323232,#484848);
+  border:3px solid black;
+  border-left:4px solid black;
+  border-right:1px solid black;
   overflow:auto;
   
   position:absolute;
@@ -121,7 +124,7 @@
   height: calc(100% - 6px);
   width: calc( var(--textSize) * 1.5 - 6px);
   display:none;
-  background-color:blue;
+  background-color:yellowgreen;
   border-radius:50%;
 }
   
@@ -182,14 +185,14 @@ function onWheel(e){
 <script>
 console.log("init map");
   
-function createTable(){
+function createTable(map){
   const table = document.createElement("div");
   table.classList = "table noSelect";
   for(let i = 0; i < 15; i++ ){
     const div = document.createElement("div");
     div.innerHTML = Math.floor(Math.random()*1000);
     div.addEventListener("click",()=>{
-      map.setCenter(chicago);
+      // map.setCenter(chicago);
       tableItem(div);
     });
     
@@ -197,8 +200,9 @@ function createTable(){
     span.innerHTML = `<i class="fas fa-info"></i>`;
     span.addEventListener("click",(i)=>{
       console.log("span clicked",i);
+      pos = { lat: Number("10.903"+Math.floor(Math.random() * 10000)), lng: Number("76.89"+Math.floor(Math.random() * 10000)) }
       console.log("10.903"+Math.floor(Math.random() * 10000)+","+" 76.89"+Math.floor(Math.random() * 10000))
-      map.setCenter(chicago);
+      map.setCenter(pos);
     });
     div.appendChild(span);
     
@@ -224,7 +228,7 @@ async function initMap() {
   );
   
   map.setOptions({
-    draggable: false, 
+    // draggable: false, 
     zoomControl: false, 
     scrollwheel: false, 
     disableDoubleClickZoom: true,
@@ -235,7 +239,7 @@ async function initMap() {
   const treetable = document.createElement("div");
   treetable.id = "treetable";
   treetable.style.marginLeft = "var(--gap)";
-  treetable.style.marginBottom = "calc( 3 * var(--gap) )";
+  // treetable.style.marginBottom = "calc( 3 * var(--gap) )";
   const table = createTable(map);
   
   treetable.appendChild(table);
