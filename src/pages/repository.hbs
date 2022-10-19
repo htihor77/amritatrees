@@ -22,8 +22,8 @@
 }
   
 #map{
-  height:calc(100% + 23px);
-/*   height: 100%; */
+/*   height:calc(100% + 23px); */
+  height: 100%;
 }  
 
   
@@ -42,7 +42,6 @@
   width:min(350px,calc(100% - var(--gap) - var(--gap)));
   height:calc( var(--textSize) * var(--heightMultiplier) );
   background-color:gray;
-/*   border: 3px solid red; */
   overflow:auto;
   
   position:absolute;
@@ -194,17 +193,19 @@ function events(){
     search.innerHTML = `<i class="fas fa-info" onclick="tableItemBtn(${id})"></i>`;
 
     ele.appendChild(search)
-    ele.addEventListener("click", ()=>{
-      ele.scrollIntoView();
-      if($(".table").lastElementChild != ele)$(".table").scrollBy({left:0,top:-16});
-
-      if( $(".table div.active") ) $(".table div.active").classList.remove("active");
-      ele.classList.add("active");
-
-    });
+    ele.addEventListener("click", tableItem);
 
   })
 }
+  
+ function tableItem(ele){
+  ele.scrollIntoView();
+  if($(".table").lastElementChild != ele)$(".table").scrollBy({left:0,top:-16});
+
+  if( $(".table div.active") ) $(".table div.active").classList.remove("active");
+  ele.classList.add("active");
+}
+  
 function tableItemBtn(id){
   console.log("span clicked",id);
   console.log("10.903"+Math.floor(Math.random() * 10000)+","+" 76.89"+Math.floor(Math.random() * 10000))
@@ -225,30 +226,30 @@ function createTable(){
   const table = document.createElement("div");
   table.classList = "table noSelect";
   table.innerHTML = `
-        <div>aaa <span><i class="fas fa-info" onclick="tableItemBtn()"></i></span></div>
-        <div>bbb</div>
-        <div>ccc</div>
-        <div>ddd</div>
-        <div>eee</div>
-        <div>fff</div>
-        <div>aaa</div>
-        <div>bbb</div>
-        <div>ccc</div>
-        <div>ddd</div>
-        <div>eee</div>
-        <div>fff</div>
-        <div>aaa</div>
-        <div>bbb</div>
-        <div>ccc</div>
-        <div>ddd</div>
-        <div>eee</div>
-        <div>fff</div>
+        <div onclick="tableItem(this)">aaa <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
+        <div onclick="tableItem(this)">bbb <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
+        <div onclick="tableItem(this)">ccc <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
+        <div onclick="tableItem(this)">ddd <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
+        <div onclick="tableItem(this)">eee <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
+        <div onclick="tableItem(this)">fff <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
+        <div onclick="tableItem(this)">aaa <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
+        <div onclick="tableItem(this)">bbb <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
+        <div onclick="tableItem(this)">ccc <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
+        <div onclick="tableItem(this)">ddd <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
+        <div onclick="tableItem(this)">eee <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
+        <div onclick="tableItem(this)">fff <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
+        <div onclick="tableItem(this)">aaa <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
+        <div onclick="tableItem(this)">bbb <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
+        <div onclick="tableItem(this)">ccc <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
+        <div onclick="tableItem(this)">ddd <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
+        <div onclick="tableItem(this)">eee <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
+        <div onclick="tableItem(this)">fff <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
   `
   
-  table.addEventListener("click", () => {
-    // map.setCenter(chicago);
-    console.log(map)
-  });
+  // table.addEventListener("click", () => {
+  //   // map.setCenter(chicago);
+  //   console.log(map)
+  // });
   
   table.addEventListener("wheel",onWheel);
   
