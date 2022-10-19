@@ -9,10 +9,13 @@
 <!--   <link rel="stylesheet" href="./css/map.css"> -->
   
   <script src="./js/app.js" defer></script>
-<!--   <script src="./js/map.js" defer></script> -->
+  <script src="./js/map.js" defer></script>
   
 <style>
-
+#container{
+  height:100%;
+}
+  
 #mapContainer{
   height:100%;
   overflow:hidden;
@@ -244,9 +247,9 @@ async function initMap() {
   );
   
   map.setOptions({
-    // draggable: false, 
+    draggable: false, 
     zoomControl: false, 
-    // scrollwheel: false, 
+    scrollwheel: false, 
     disableDoubleClickZoom: true,
     disableDefaultUI: true,
   });
@@ -255,9 +258,6 @@ async function initMap() {
   
   
 const tree_icon_url = "https://amritatrees.sirv.com/treeicon32.png";
-// const tree_icon_url = "https://cdn.glitch.global/9d67ff5c-524b-467b-aa2f-2cb422728542/treeicon.32png.png?v=1662405399801";
-// const transparent = "https://cdn.glitch.global/9d67ff5c-524b-467b-aa2f-2cb422728542/transparentlayer.png?v=1664718701490";
-const mapIcon = "https://cdn.glitch.global/9d67ff5c-524b-467b-aa2f-2cb422728542/amritamap.png?v=1664725171814"
 window.initMap = initMap;
 </script>
 
