@@ -184,6 +184,8 @@
 <script>
 function $(x){return document.querySelector(x);}
 
+const chicago = { lat: 41.85, lng: -87.65 };
+  
 function events(){
   document.querySelectorAll(".table > div").forEach((ele,id) => {
     ele.classList.add("noSelect");
@@ -245,7 +247,8 @@ function createTable(){
   `
   
   table.addEventListener("click", () => {
-    map.setCenter({ lat: 41.85, lng: -87.65 });
+    map.setCenter(chicago);
+    console.log(map)
   });
   
   table.addEventListener("wheel",onWheel);
