@@ -112,10 +112,11 @@
   
 #treetable .table div span{
   position:absolute;
-  right:calc( 100% - var( --outlineWidth) - 3px);
-  top:0;
-  height:100%;
-  width:calc( var(--textSize) * 1.5);
+  right:calc( 100% - var( --outlineWidth) - 3px + 3px);
+  top:50%;
+  transform:translateY(-50%);
+  height: calc(100% - 6px);
+  width: calc( var(--textSize) * 1.5 - 6px);
   display:none;
   background-color:blue;
   border-radius:50%;
@@ -125,6 +126,12 @@
   display:block;    
 }
   
+#treetable .table div.active span i{
+  display:flex;
+  width:100%;
+  height:100%;
+  font-size:1rem;
+}
 </style>
   
 </head>
@@ -176,7 +183,7 @@ document.querySelectorAll(".table > div").forEach(ele => {
   // console.log(ele);
   ele.classList.add("noSelect");
   const search = document.createElement("span");
-  
+  search.innerHTML = `<i class="fas fa-info"></i>`
   ele.appendChild(search)
   ele.addEventListener("click", ()=>{
     ele.scrollIntoView();
