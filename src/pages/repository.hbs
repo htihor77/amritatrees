@@ -99,7 +99,7 @@
   padding-left:20px;
   
 }
-#treetable .table div.active:after{
+#treetable .table div.active:before{
   
   content:"";
   position:absolute;left:0;top:50%;
@@ -185,7 +185,7 @@ document.querySelectorAll(".table > div").forEach(ele => {
   // console.log(ele);
   ele.classList.add("noSelect");
   const search = document.createElement("span");
-  search.innerHTML = `<i class="fas fa-info" onclick="tableItemBtn()"></i>`;
+  search.innerHTML = `<i class="fas fa-info" onclick="tableItemBtn(1)"></i>`;
   
   ele.appendChild(search)
   ele.addEventListener("click", ()=>{
@@ -195,11 +195,11 @@ document.querySelectorAll(".table > div").forEach(ele => {
     if( $(".table div.active") ) $(".table div.active").classList.remove("active");
     ele.classList.add("active");
     
-  },t);
+  });
   
 })
   
-function tableItemBtn(){
+function tableItemBtn(id){
   console.log("span clicked");
 }
 function onWheel(e){
