@@ -9,7 +9,7 @@
 <!--   <link rel="stylesheet" href="./css/map.css"> -->
   
   <script src="./js/app.js" defer></script>
-  <script src="./js/map.js" defer></script>
+<!--   <script src="./js/map.js" defer></script> -->
   
 <style>
 #container{
@@ -88,7 +88,7 @@
   --outlineWidth: 90%;
   scroll-snap-align: center;
 /*   height: 2.5rem; */
-  margin-top: var(--margin);
+/*   margin-top: var(--margin); */
   margin-bottom: var(--margin);
   
   color:white;
@@ -149,35 +149,6 @@
       <div id="map"></div>
     </div>
 
-
-    
-<!--     <div id="treetable">
-      <div class="table" onwheel="onWheel(event)">
-        
-        <div>aaa</div>
-        <div>bbb</div>
-        <div>ccc</div>
-        <div>ddd</div>
-        <div>eee</div>
-        <div>fff</div>
-
-        <div>aaa</div>
-        <div>bbb</div>
-        <div>ccc</div>
-        <div>ddd</div>
-        <div>eee</div>
-        <div>fff</div>
-
-        <div>aaa</div>
-        <div>bbb</div>
-        <div>ccc</div>
-        <div>ddd</div>
-        <div>eee</div>
-        <div>fff</div>
-
-      </div>
-    </div>
- -->
   </div>
 </body>
   
@@ -186,19 +157,7 @@ function $(x){return document.querySelector(x);}
 
 const chicago = { lat: 41.85, lng: -87.65 };
   
-function events(){
-  document.querySelectorAll(".table > div").forEach((ele,id) => {
-    ele.classList.add("noSelect");
-    const search = document.createElement("span");
-    search.innerHTML = `<i class="fas fa-info" onclick="tableItemBtn(${id})"></i>`;
-
-    ele.appendChild(search)
-    ele.addEventListener("click", tableItem);
-
-  })
-}
-  
- function tableItem(ele){
+function tableItem(ele){
   ele.scrollIntoView();
   if($(".table").lastElementChild != ele)$(".table").scrollBy({left:0,top:-16});
 
@@ -209,6 +168,7 @@ function events(){
 function tableItemBtn(id){
   console.log("span clicked",id);
   console.log("10.903"+Math.floor(Math.random() * 10000)+","+" 76.89"+Math.floor(Math.random() * 10000))
+  map.setCenter(chicago);
 }
 function onWheel(e){
   if(e.deltaY > 0){$(".table").scrollBy({left:0,top:32, behavior:"smooth"});
@@ -228,37 +188,22 @@ function createTable(){
   for(let i = 0; i < 15; i++ ){
     const div = document.createElement("div");
     div.innerHTML = Math.floor(Math.random()*1000);
-    div.addEventListener("click",()=>{tableItem(div);});
+    div.addEventListener("click",()=>{
+      map.setCenter(chicago);
+      tableItem(div);
+    });
     
     const span = document.createElement("span");
     span.innerHTML = `<i class="fas fa-info"></i>`;
-    span.addEventListener("click",()=>{tableItemBtn(i);});
+    span.addEventListener("click",(i)=>{
+      console.log("span clicked",i);
+      console.log("10.903"+Math.floor(Math.random() * 10000)+","+" 76.89"+Math.floor(Math.random() * 10000))
+      map.setCenter(chicago);
+    });
+    div.appendChild(span);
+    
+    table.appendChild(div);
   }
-  // table.innerHTML = `
-  //       <div onclick="tableItem(this)">aaa <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
-  //       <div onclick="tableItem(this)">bbb <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
-  //       <div onclick="tableItem(this)">ccc <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
-  //       <div onclick="tableItem(this)">ddd <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
-  //       <div onclick="tableItem(this)">eee <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
-  //       <div onclick="tableItem(this)">fff <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
-  //       <div onclick="tableItem(this)">aaa <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
-  //       <div onclick="tableItem(this)">bbb <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
-  //       <div onclick="tableItem(this)">ccc <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
-  //       <div onclick="tableItem(this)">ddd <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
-  //       <div onclick="tableItem(this)">eee <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
-  //       <div onclick="tableItem(this)">fff <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
-  //       <div onclick="tableItem(this)">aaa <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
-  //       <div onclick="tableItem(this)">bbb <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
-  //       <div onclick="tableItem(this)">ccc <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
-  //       <div onclick="tableItem(this)">ddd <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
-  //       <div onclick="tableItem(this)">eee <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
-  //       <div onclick="tableItem(this)">fff <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
-  // `
-  
-  // table.addEventListener("click", () => {
-  //   // map.setCenter(chicago);
-  //   console.log(map)
-  // });
   
   table.addEventListener("wheel",onWheel);
   
@@ -295,11 +240,7 @@ async function initMap() {
   
   treetable.appendChild(table);
   map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(treetable);
-  
-  
-  
-  
-  events();
+
 }
   
 const tree_icon_url = "https://amritatrees.sirv.com/treeicon32.png";
