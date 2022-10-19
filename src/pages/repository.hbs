@@ -23,6 +23,7 @@
   
 #map{
   height:calc(100% + 23px);
+/*   height: 100%; */
 }  
 
   
@@ -46,7 +47,7 @@
   
   position:absolute;
   left:var(--gap);
-/*   bottom:calc( 3 * var(--gap) ); */
+  bottom:calc( 3 * var(--gap) );
   
   border-radius:15px;
 }
@@ -224,30 +225,28 @@ function createTable(){
   const table = document.createElement("div");
   table.classList = "table noSelect";
   table.innerHTML = `
-        <div>aaa</div>
-        <div>bbb</div>
-        <div>ccc</div>
-        <div>ddd</div>
-        <div>eee</div>
-        <div>fff</div>
-
-        <div>aaa</div>
-        <div>bbb</div>
-        <div>ccc</div>
-        <div>ddd</div>
-        <div>eee</div>
-        <div>fff</div>
-
-        <div>aaa</div>
-        <div>bbb</div>
-        <div>ccc</div>
-        <div>ddd</div>
-        <div>eee</div>
-        <div>fff</div>
+        <div>aaa<i class="fas fa-info" onclick="tableItemBtn(${)"></i></div>
+        <div>bbb<i class="fas fa-info" onclick="tableItemBtn(${)"></i></div>
+        <div>ccc<i class="fas fa-info" onclick="tableItemBtn(${)"></i></div>
+        <div>ddd<i class="fas fa-info" onclick="tableItemBtn(${)"></i></div>
+        <div>eee<i class="fas fa-info" onclick="tableItemBtn(${)"></i></div>
+        <div>fff<i class="fas fa-info" onclick="tableItemBtn(${)"></i></div>
+        <div>aaa<i class="fas fa-info" onclick="tableItemBtn(${)"></i></div>
+        <div>bbb<i class="fas fa-info" onclick="tableItemBtn(${)"></i></div>
+        <div>ccc<i class="fas fa-info" onclick="tableItemBtn(${)"></i></div>
+        <div>ddd<i class="fas fa-info" onclick="tableItemBtn(${)"></i></div>
+        <div>eee<i class="fas fa-info" onclick="tableItemBtn(${)"></i></div>
+        <div>fff<i class="fas fa-info" onclick="tableItemBtn(${)"></i></div>
+        <div>aaa<i class="fas fa-info" onclick="tableItemBtn(${)"></i></div>
+        <div>bbb<i class="fas fa-info" onclick="tableItemBtn(${)"></i></div>
+        <div>ccc<i class="fas fa-info" onclick="tableItemBtn(${)"></i></div>
+        <div>ddd<i class="fas fa-info" onclick="tableItemBtn(${)"></i></div>
+        <div>eee<i class="fas fa-info" onclick="tableItemBtn(${)"></i></div>
+        <div>fff<i class="fas fa-info" onclick="tableItemBtn(${)"></i></div>
   `
   
   table.addEventListener("click", () => {
-    map.setCenter(chicago);
+    // map.setCenter(chicago);
     console.log(map)
   });
   
@@ -280,12 +279,18 @@ async function initMap() {
   
   const treetable = document.createElement("div");
   treetable.id = "treetable";
+  treetable.style.marginLeft = "var(--gap)";
+  treetable.style.marginBottom = "calc( 3 * var(--gap) )";
   const table = createTable(map);
   
   treetable.appendChild(table);
   map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(treetable);
-}
   
+  
+  
+  
+  events();
+}
   
 const tree_icon_url = "https://amritatrees.sirv.com/treeicon32.png";
 window.initMap = initMap;
