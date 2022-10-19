@@ -216,6 +216,23 @@ function onWheel(e){
   
 <script>
 console.log("init map");
+  
+function createTable(){
+  const table = document.createElement("div");
+  table.classList = "table";
+  table.style.width = "20px";
+  table.style.height = "20px";
+  table.style.backgroundColor = "red";
+  
+  controlButton.addEventListener("click", () => {
+    map.setCenter(pos);
+  });
+  
+  return table;
+}
+  
+  
+  
 async function initMap() {
   
   let map = new google.maps.Map(document.getElementById("map"),
@@ -234,11 +251,13 @@ async function initMap() {
     disableDoubleClickZoom: true,
     disableDefaultUI: true,
   });
+
   
+  const treetable = document.createElement("div");
+  treetable.id = "treetable";
+  const table = createTable(map);
   
-  
-  
-  
+  treetable.appendChild(table);
   
 }
   
