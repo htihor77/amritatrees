@@ -185,6 +185,7 @@
 function $(x){return document.querySelector(x);}
   
 document.querySelectorAll(".table > div").forEach((ele,id) => {
+  // console.log(ele);
   ele.classList.add("noSelect");
   const search = document.createElement("span");
   search.innerHTML = `<i class="fas fa-info" onclick="tableItemBtn(${id})"></i>`;
@@ -206,8 +207,27 @@ function tableItemBtn(id){
   console.log("10.903"+Math.floor(Math.random() * 10000)+","+" 76.89"+Math.floor(Math.random() * 10000))
 }
 function onWheel(e){
-  if(e.deltaY > 0){$(".table").scrollBy({left:0,top:32, behavior:"smooth"});
-  } else {$(".table").scrollBy({left:0,top:-32, behavior:"smooth"});}
+//   console.log(e);
+  
+//   let d = e.deltaY;
+//   while(d > 0){
+//     $(".table").scrollBy({left:0,top:32, behavior:"smooth"});
+//     d -= 125;
+//   }
+//   while(d < 0){
+//     $(".table").scrollBy({left:0,top:-32, behavior:"smooth"});
+//     d += 125;
+//   }
+  
+  if(e.deltaY > 0){
+    // down
+    // console.log("down");
+    $(".table").scrollBy({left:0,top:32, behavior:"smooth"});
+  } else {
+    // up
+    // console.log("up");
+    $(".table").scrollBy({left:0,top:-32, behavior:"smooth"});
+  }
   e.preventDefault();
 }
   
@@ -234,11 +254,6 @@ async function initMap() {
     disableDoubleClickZoom: true,
     disableDefaultUI: true,
   });
-  
-  
-  
-  
-  
   
 }
   
