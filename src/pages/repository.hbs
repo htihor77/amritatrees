@@ -77,7 +77,7 @@
   height:2rem;
 }
   
-#treetable .table::-webkit-scrollbar {width: 2px;}
+#treetable .table::-webkit-scrollbar {width: 3px;}
 #treetable .table::-webkit-scrollbar-track {background: transparent;}
 #treetable .table::-webkit-scrollbar-thumb {background: white;}
   
@@ -140,7 +140,7 @@
 
     
     <div id="treetable">
-      <div class="table" onwheel="onWheel()">
+      <div class="table" onwheel="onWheel(event)">
         
         <div>aaa</div>
         <div>bbb</div>
@@ -189,8 +189,29 @@ document.querySelectorAll(".table > div").forEach(ele => {
   
 })
   
-function onWheel(a){
+function onWheel(e){
+  console.log(e);
+  let d = e.deltaY;
   
+  while(d > 0){
+    $(".table").scrollBy({left:0,top:32, behavior:"smooth"});
+    d -= 125;
+  }
+  while(d < 0){
+    $(".table").scrollBy({left:0,top:-32, behavior:"smooth"});
+    d += 125;
+  }
+  
+  // if(e.deltaY > 0){
+  //   // down
+  //   console.log("down");
+  //   $(".table").scrollBy({left:0,top:32, behavior:"smooth"});
+  // } else {
+  //   // up
+  //   console.log("up");
+  //   $(".table").scrollBy({left:0,top:-32, behavior:"smooth"});
+  // }
+  e.preventDefault();
 }
   
   
