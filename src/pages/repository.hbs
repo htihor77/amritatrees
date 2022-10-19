@@ -225,26 +225,35 @@ console.log("init map");
 function createTable(){
   const table = document.createElement("div");
   table.classList = "table noSelect";
-  table.innerHTML = `
-        <div onclick="tableItem(this)">aaa <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
-        <div onclick="tableItem(this)">bbb <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
-        <div onclick="tableItem(this)">ccc <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
-        <div onclick="tableItem(this)">ddd <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
-        <div onclick="tableItem(this)">eee <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
-        <div onclick="tableItem(this)">fff <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
-        <div onclick="tableItem(this)">aaa <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
-        <div onclick="tableItem(this)">bbb <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
-        <div onclick="tableItem(this)">ccc <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
-        <div onclick="tableItem(this)">ddd <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
-        <div onclick="tableItem(this)">eee <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
-        <div onclick="tableItem(this)">fff <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
-        <div onclick="tableItem(this)">aaa <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
-        <div onclick="tableItem(this)">bbb <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
-        <div onclick="tableItem(this)">ccc <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
-        <div onclick="tableItem(this)">ddd <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
-        <div onclick="tableItem(this)">eee <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
-        <div onclick="tableItem(this)">fff <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
-  `
+  for(let i = 0; i < 15; i++ ){
+    const div = document.createElement("div");
+    div.innerHTML = Math.floor(Math.random()*1000);
+    div.addEventListener("click",()=>{tableItem(div);});
+    
+    const span = document.createElement("span");
+    span.innerHTML = `<i class="fas fa-info"></i>`;
+    span.addEventListener("click",()=>{tableItemBtn(i);});
+  }
+  // table.innerHTML = `
+  //       <div onclick="tableItem(this)">aaa <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
+  //       <div onclick="tableItem(this)">bbb <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
+  //       <div onclick="tableItem(this)">ccc <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
+  //       <div onclick="tableItem(this)">ddd <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
+  //       <div onclick="tableItem(this)">eee <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
+  //       <div onclick="tableItem(this)">fff <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
+  //       <div onclick="tableItem(this)">aaa <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
+  //       <div onclick="tableItem(this)">bbb <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
+  //       <div onclick="tableItem(this)">ccc <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
+  //       <div onclick="tableItem(this)">ddd <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
+  //       <div onclick="tableItem(this)">eee <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
+  //       <div onclick="tableItem(this)">fff <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
+  //       <div onclick="tableItem(this)">aaa <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
+  //       <div onclick="tableItem(this)">bbb <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
+  //       <div onclick="tableItem(this)">ccc <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
+  //       <div onclick="tableItem(this)">ddd <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
+  //       <div onclick="tableItem(this)">eee <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
+  //       <div onclick="tableItem(this)">fff <span><i class="fas fa-info" onclick="tableItemBtn(0)"></i></span></div>
+  // `
   
   // table.addEventListener("click", () => {
   //   // map.setCenter(chicago);
