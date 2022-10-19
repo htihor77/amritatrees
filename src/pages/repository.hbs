@@ -181,11 +181,11 @@
 <script>
 function $(x){return document.querySelector(x);}
   
-document.querySelectorAll(".table > div").forEach(ele => {
+document.querySelectorAll(".table > div").forEach((ele,id) => {
   // console.log(ele);
   ele.classList.add("noSelect");
   const search = document.createElement("span");
-  search.innerHTML = `<i class="fas fa-info" onclick="tableItemBtn(1)"></i>`;
+  search.innerHTML = `<i class="fas fa-info" onclick="tableItemBtn(${id})"></i>`;
   
   ele.appendChild(search)
   ele.addEventListener("click", ()=>{
@@ -200,7 +200,7 @@ document.querySelectorAll(".table > div").forEach(ele => {
 })
   
 function tableItemBtn(id){
-  console.log("span clicked");
+  console.log("span clicked",id);
 }
 function onWheel(e){
 //   console.log(e);
