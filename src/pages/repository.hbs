@@ -131,6 +131,8 @@
   width:100%;
   height:100%;
   font-size:1rem;
+  align-items: center;
+  justify-content: center;
 }
 </style>
   
@@ -183,7 +185,8 @@ document.querySelectorAll(".table > div").forEach(ele => {
   // console.log(ele);
   ele.classList.add("noSelect");
   const search = document.createElement("span");
-  search.innerHTML = `<i class="fas fa-info"></i>`
+  search.innerHTML = `<i class="fas fa-info" onclick="tableItemBtn()"></i>`;
+  
   ele.appendChild(search)
   ele.addEventListener("click", ()=>{
     ele.scrollIntoView();
@@ -192,10 +195,13 @@ document.querySelectorAll(".table > div").forEach(ele => {
     if( $(".table div.active") ) $(".table div.active").classList.remove("active");
     ele.classList.add("active");
     
-  });
+  },t);
   
 })
   
+function tableItemBtn(){
+  console.log("span clicked");
+}
 function onWheel(e){
 //   console.log(e);
   
