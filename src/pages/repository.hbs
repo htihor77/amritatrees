@@ -45,8 +45,8 @@
   overflow:auto;
   
   position:absolute;
-  left:var(--gap);
-  bottom:calc( 3 * var(--gap) );
+/*   left:var(--gap); */
+/*   bottom:calc( 3 * var(--gap) ); */
   
   border-radius:15px;
 }
@@ -151,7 +151,7 @@
 
 
     
-    <div id="treetable">
+<!--     <div id="treetable">
       <div class="table" onwheel="onWheel(event)">
         
         <div>aaa</div>
@@ -177,30 +177,31 @@
 
       </div>
     </div>
-
+ -->
   </div>
 </body>
   
 <script>
 function $(x){return document.querySelector(x);}
-  
-document.querySelectorAll(".table > div").forEach((ele,id) => {
-  ele.classList.add("noSelect");
-  const search = document.createElement("span");
-  search.innerHTML = `<i class="fas fa-info" onclick="tableItemBtn(${id})"></i>`;
-  
-  ele.appendChild(search)
-  ele.addEventListener("click", ()=>{
-    ele.scrollIntoView();
-    if($(".table").lastElementChild != ele)$(".table").scrollBy({left:0,top:-16});
-    
-    if( $(".table div.active") ) $(".table div.active").classList.remove("active");
-    ele.classList.add("active");
-    
-  });
-  
-})
-  
+
+function events(){
+  document.querySelectorAll(".table > div").forEach((ele,id) => {
+    ele.classList.add("noSelect");
+    const search = document.createElement("span");
+    search.innerHTML = `<i class="fas fa-info" onclick="tableItemBtn(${id})"></i>`;
+
+    ele.appendChild(search)
+    ele.addEventListener("click", ()=>{
+      ele.scrollIntoView();
+      if($(".table").lastElementChild != ele)$(".table").scrollBy({left:0,top:-16});
+
+      if( $(".table div.active") ) $(".table div.active").classList.remove("active");
+      ele.classList.add("active");
+
+    });
+
+  })
+}
 function tableItemBtn(id){
   console.log("span clicked",id);
   console.log("10.903"+Math.floor(Math.random() * 10000)+","+" 76.89"+Math.floor(Math.random() * 10000))
@@ -219,14 +220,35 @@ console.log("init map");
   
 function createTable(){
   const table = document.createElement("div");
-  table.classList = "table";
-  table.style.width = "20px";
-  table.style.height = "20px";
-  table.style.backgroundColor = "red";
+  table.classList = "table noSelect";
+  table.innerHTML = `
+        <div>aaa</div>
+        <div>bbb</div>
+        <div>ccc</div>
+        <div>ddd</div>
+        <div>eee</div>
+        <div>fff</div>
+
+        <div>aaa</div>
+        <div>bbb</div>
+        <div>ccc</div>
+        <div>ddd</div>
+        <div>eee</div>
+        <div>fff</div>
+
+        <div>aaa</div>
+        <div>bbb</div>
+        <div>ccc</div>
+        <div>ddd</div>
+        <div>eee</div>
+        <div>fff</div>
+  `
   
-  controlButton.addEventListener("click", () => {
-    map.setCenter(pos);
+  table.addEventListener("click", () => {
+    map.setCenter({ lat: 41.85, lng: -87.65 });
   });
+  
+  table.addEventListener("wheel",onWheel);
   
   return table;
 }
@@ -258,7 +280,7 @@ async function initMap() {
   const table = createTable(map);
   
   treetable.appendChild(table);
-  
+  map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(treetable);
 }
   
   
