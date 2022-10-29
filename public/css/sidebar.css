@@ -20,6 +20,10 @@
   padding:5px;
   padding-top:15px;
 }
+#sidebar::-webkit-scrollbar{width:1px;}
+#sidebar::-webkit-scrollbar-track {background: transparent;}
+#sidebar::-webkit-scrollbar-thumb {background: black;}
+
 #sidebar.active{transform: translateX(0);left:0;}
 
 #sidebar .settings h1,#sidebar .profile h1,#sidebar .project_problem h1{
