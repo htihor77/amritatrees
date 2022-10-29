@@ -190,17 +190,20 @@ console.log("init map");
 function createTable(map){
   const table = document.createElement("div");
   table.classList = "table noSelect";
-  for(let i = 0; i < 15; i++ ){
-    const div = document.createElement("div");
-    const lat = Number( "10.903"+Math.floor(Math.random() * 10000) );
-    const lng = Number("76.89"+Math.floor(Math.random() * 10000) );
+//   for(let i = 0; i < 15; i++ ){
+//     const div = document.createElement("div");
+//     const lat = Number( "10.903"+Math.floor(Math.random() * 10000) );
+//     const lng = Number("76.89"+Math.floor(Math.random() * 10000) );
     
-    div.innerHTML = `${lat}, ${lng}`;
-    div.addEventListener("click",()=>{
-      // map.setCenter(chicago);
-      tableItem(div);
-    });
-    
+//     div.innerHTML = `${lat}, ${lng}`;
+//     div.addEventListener("click",()=>{
+//       // map.setCenter(chicago);
+//       tableItem(div);
+//     });
+    const response = await fetch("https://amritatrees.glitch.me/treeProps") 
+    console.log(response)
+  
+  
     const span = document.createElement("span");
     span.innerHTML = `<i class="fas fa-info"></i>`;
     span.addEventListener("click",(i)=>{

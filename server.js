@@ -231,7 +231,10 @@ fastify.get("/trees", async (request, reply) => {
   const stream = fs.createReadStream(__dirname+'/___trees.json', 'utf8')
   return reply.type("json").code(200).header('Content-Type', 'application/json; charset=utf-8').send( stream );
 });
-
+fastify.get("/treeProps", async (request, reply) => {
+  const stream = fs.createReadStream(__dirname+'/___treeProps.json', 'utf8')
+  return reply.type("json").code(200).header('Content-Type', 'application/json; charset=utf-8').send( stream );
+});
 
 
 fastify.get("/check", async (request, reply) => {
