@@ -1,0 +1,24 @@
+[
+  {
+    "email":"nandhakumar2058@gmail.com",
+    "verified":0,
+    "username":"nandhu",
+    "password":"pass",
+    "session_id":"",
+    "points":0,
+    "collected":0,
+    "lat":0,
+    "lng":0
+  },
+  {
+    "email":"amritatrees@gmail.com",
+    "verified":1,
+    "username":"root",
+    "password":"root",
+    "session_id":"",
+    "points":0,
+    "collected":0,
+    "lat":0,
+    "lng":0
+  }
+]
