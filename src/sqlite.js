@@ -24,7 +24,7 @@ dbWrapper
         
         const users = JSON.parse(rawUsers);
         // const trees = JSON.parse(rawtrees);
-        // const treeProps = JSON.parse(rawtreeProps);
+        const treeProps = JSON.parse(rawtreeProps);
         
     
         await db.run("CREATE TABLE Users (uid INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT, verified INTEGER, username TEXT, password TEXT, session_id TEXT, points INTEGER, collected INTEGER, lat REAL, lng REAL)");
@@ -35,7 +35,7 @@ dbWrapper
         
         users.forEach(item => {db.run(`INSERT INTO Users (email,verified,username,password,session_id,points,collected,lat,lng) VALUES ('${item.email}', ${item.verified}, '${item.username}', '${item.password}','${item.session_id}',${item.points},${item.collected},${item.lat},${item.lng})`)});
         // trees.forEach(item => {db.run(`INSERT INTO Trees (tree_name,coords) VALUES ('${item.title}', '${item.coords}'`)});
-        // treeProps.forEach(item => {db.run(`INSERT INTO A_TREE_butes (tree_name,scientific_name,origin,link,properties) VALUES ('${item.name}', '${item.scientific_name}', '${item.origin}', '${item.link}', '${item.properties}'`)});
+        treeProps.forEach(item => {db.run(`INSERT INTO A_TREE_butes (tree_name,scientific_name,origin,link,properties) VALUES ('${item.name}', '${item.scientific_name}', '${item.origin}', '${item.link}', '${item.properties}'`)});
         
         
       } else {
