@@ -26,17 +26,17 @@ dbWrapper
         const trees = JSON.parse(rawtrees);
         const treeProps = JSON.parse(rawtreeProps);
         
-        
-        
+    
         await db.run("CREATE TABLE Users (uid INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT, verfied INTEGER, username TEXT, password TEXT, session_id TEXT, points INTEGER, collected INTEGER, lat REAL, lng REAL)");
-        await db.run("CREATE TABLE A_TREE_butes (tree_name TEXT PRIMARY KEY, value_points INTEGER, url TEXT)");
         await db.run("CREATE TABLE Trees (lid INTEGER PRIMARY KEY AUTOINCREMENT, tree_name TEXT, lat REAL, long REAL, radius INTEGER)")
+        await db.run("CREATE TABLE A_TREE_butes (tree_name TEXT PRIMARY KEY, value_points INTEGER, url TEXT)");
         
         await db.run("CREATE TABLE Inventory (uid INTEGER, tree_name)");
         
                      
-        users.forEach(item => {db.run(`INSERT INTO Users (email,verified,username,password,session_id,) VALUES (${item.id}, '${item.text}')`)})
-        
+        users.forEach(item => {db.run(`INSERT INTO Users (email,verified,username,password,session_id,points,collected,lat,lng) VALUES ('${item.email}', ${item.verified}, '${item.username}', '${item.password}','${item.session_id}',${item.points},${item.collected},${item.lat},${item.lng})`)})
+        trees.forEach(item => {db.run(`INSERT INTO Trees (tree_name,coords) VALUES ('${item.title}', '${item.coords}'`)})
+        treeProps.forEach(item => {db.run(`INSERT INTO A_TREE_butes (tree_name,coords) VALUES ('${item.title}', '${item.coords}'`)})
         
         
       } else {

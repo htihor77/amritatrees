@@ -16,9 +16,9 @@
     "username":"root",
     "password":"root",
     "session_id":"",
-    "points":0,
-    "collected":0,
-    "lat":0,
-    "lng":0
+    "points":9999999999,
+    "collected":9999999999,
+    "lat":99.9999999,
+    "lng":99.9999999
   }
 ]
