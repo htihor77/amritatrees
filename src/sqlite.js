@@ -18,45 +18,25 @@ dbWrapper
       if (!exists) {
         console.log("db DOES NOT EXIST!");
         
-        const rawtreeProps = fs.readFileSync("./__treeProps.json");
-        let treeProps = JSON.parse(rawtreeProps);
-        
+        const rawUsers = fs.readFileSync("./__users.json");
         const rawtrees = fs.readFileSync("./__trees.json");
-        let trees = JSON.parse(rawtrees);
+        const rawtreeProps = fs.readFileSync("./__treeProps.json");
+        
+        const users = JSON.parse(rawUsers);
+        const trees = JSON.parse(rawtrees);
+        const treeProps = JSON.parse(rawtreeProps);
         
         // treeProps.forEach(item => {db.run(`INSERT INTO tbl (id,stuff) VALUES (${item.id}, '${item.text}')`)})
         
         
-      await db.run("CREATE TABLE Users (uid INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT, verfied INTEGER, username TEXT, password TEXT, session_id TEXT, points INTEGER, collected INTEGER, lat REAL, lng REAL)");
-        
-        // A-tree-Butes lol xD
-        await db.run("CREATE TABLE aTREEbutes (tree_name TEXT PRIMARY KEY, value_points INTEGER, url TEXT)");
-        await db.run("INSERT INTO aTREEbutes (tree_name,value_points,url) VALUES ('oak tree', 50, 'https://cdn.britannica.com/92/142292-004-459092B7.jpg')");
-        await db.run("INSERT INTO aTREEbutes (tree_name,value_points,url) VALUES ('neem tree', 50, 'https://5.imimg.com/data5/SELLER/Default/2021/5/RU/EL/LQ/76591799/neem-tree-500x500.jpg')");
-        await db.run("INSERT INTO aTREEbutes (tree_name,value_points,url) VALUES ('pine tree', 50, 'https://www.thetreecenter.com/c/uploads/2022/02/Slash_Pine_Tree_1-copy.jpg')");
-        await db.run("INSERT INTO aTREEbutes (tree_name,value_points,url) VALUES ('mango tree', 50, 'https://thumbs.dreamstime.com/b/mango-tree-isolate-white-background-mango-tree-isolate-white-108298705.jpg')");
-        await db.run("INSERT INTO aTREEbutes (tree_name,value_points,url) VALUES ('paradise tree', 100, 'https://1.bp.blogspot.com/-Xyjj17t6RbE/Tj_MlveMSCI/AAAAAAAAA6E/k2AqRAOpX-o/s1600/L1000264.JPG')");
-                     
-        //actually found trees in campus
-        // await db.run("INSERT INTO aTREEbutes (tree_name,value_points,url) VALUES ('',50,'')");
-        await db.run("INSERT INTO aTREEbutes (tree_name,value_points,url) VALUES ('banyan tree',50,'https://cdn.discordapp.com/attachments/1014472011403239484/1014472226621378662/unknown.png')")
-        await db.run("INSERT INTO aTREEbutes (tree_name,value_points,url) VALUES ('ficus elastica',50,'https://cdn.discordapp.com/attachments/1014472011403239484/1014501942363430952/unknown.png')");
-        await db.run("INSERT INTO aTREEbutes (tree_name,value_points,url) VALUES ('weeping fig',50,'')");
-        // await db.run("INSERT INTO aTREEbutes (tree_name,value_points,url) VALUES ('',50,'')");
-        // await db.run("INSERT INTO aTREEbutes (tree_name,value_points,url) VALUES ('',50,'')");
-      
-        
-        
+        await db.run("CREATE TABLE Users (uid INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT, verfied INTEGER, username TEXT, password TEXT, session_id TEXT, points INTEGER, collected INTEGER, lat REAL, lng REAL)");
+        await db.run("CREATE TABLE A_TREE_butes (tree_name TEXT PRIMARY KEY, value_points INTEGER, url TEXT)");
         await db.run("CREATE TABLE Trees (lid INTEGER PRIMARY KEY AUTOINCREMENT, tree_name TEXT, lat REAL, long REAL, radius INTEGER)")
-        await db.run("INSERT INTO Trees (lid,tree_name,lat,long,radius) VALUES ('banyan tree',10.899701, 76.903252, 1)")
-        await db.run("INSERT INTO Trees (lid,tree_name,lat,long,radius) VALUES ('banyan tree',10.899701, 76.903252, 1)")
-        
         
         await db.run("CREATE TABLE Inventory (uid INTEGER, tree_name)");
-        await db.run("INSERT INTO INVENTORY (uid,tree_name) VALUES (1,'oak tree'), (1,'neem tree'), (1,'pine tree')");
         
-        
-        
+        // A-tree-Butes lol xD
+                     
         
         
         
