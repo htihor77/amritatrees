@@ -19,28 +19,32 @@ dbWrapper
         console.log("db DOES NOT EXIST!");
         
         const rawUsers = fs.readFileSync("./__users.json");
-        const rawtrees = fs.readFileSync("./__trees.json");
-        const rawtreeProps = fs.readFileSync("./__treeProps.json");
+        // const rawtrees = fs.readFileSync("./__trees.json");
+        // const rawtreeProps = fs.readFileSync("./__treeProps.json");
         
         const users = JSON.parse(rawUsers);
-        const trees = JSON.parse(rawtrees);
-        const treeProps = JSON.parse(rawtreeProps);
+        // const trees = JSON.parse(rawtrees);
+        // const treeProps = JSON.parse(rawtreeProps);
         
     
-        await db.run("CREATE TABLE Users (uid INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT, verfied INTEGER, username TEXT, password TEXT, session_id TEXT, points INTEGER, collected INTEGER, lat REAL, lng REAL)");
-        await db.run("CREATE TABLE Trees (lid INTEGER PRIMARY KEY AUTOINCREMENT, tree_name TEXT, lat REAL, long REAL, radius INTEGER)")
-        await db.run("CREATE TABLE A_TREE_butes (tree_name TEXT PRIMARY KEY, value_points INTEGER, url TEXT)");
+        await db.run("CREATE TABLE Users (uid INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT, verified INTEGER, username TEXT, password TEXT, session_id TEXT, points INTEGER, collected INTEGER, lat REAL, lng REAL)");
+        await db.run("CREATE TABLE Trees (lid INTEGER PRIMARY KEY AUTOINCREMENT, tree_name TEXT, coords TEXT)")
+        await db.run("CREATE TABLE A_TREE_butes (tree_name TEXT PRIMARY KEY, scientific_name TEXT, origin INTEGER, link TEXT, properties TEXT)");
         
         await db.run("CREATE TABLE Inventory (uid INTEGER, tree_name)");
         
-                     
-        users.forEach(item => {db.run(`INSERT INTO Users (email,verified,username,password,session_id,points,collected,lat,lng) VALUES ('${item.email}', ${item.verified}, '${item.username}', '${item.password}','${item.session_id}',${item.points},${item.collected},${item.lat},${item.lng})`)})
-        trees.forEach(item => {db.run(`INSERT INTO Trees (tree_name,coords) VALUES ('${item.title}', '${item.coords}'`)})
-        treeProps.forEach(item => {db.run(`INSERT INTO A_TREE_butes (tree_name,coords) VALUES ('${item.title}', '${item.coords}'`)})
+        users.forEach(item => {db.run(`INSERT INTO Users (email,verified,username,password,session_id,points,collected,lat,lng) VALUES ('${item.email}', ${item.verified}, '${item.username}', '${item.password}','${item.session_id}',${item.points},${item.collected},${item.lat},${item.lng})`)});
+        // trees.forEach(item => {db.run(`INSERT INTO Trees (tree_name,coords) VALUES ('${item.title}', '${item.coords}'`)});
+        // treeProps.forEach(item => {db.run(`INSERT INTO A_TREE_butes (tree_name,scientific_name,origin,link,properties) VALUES ('${item.name}', '${item.scientific_name}', '${item.origin}', '${item.link}', '${item.properties}'`)});
         
         
       } else {
-        console.log("db exists!")
+        console.log("db exists!");
+        
+        console.log(await db.all("SELECT * FROM Users"));
+        console.log(await db.all("SELECT * FROM Trees"));
+        console.log(await db.all("SELECT * FROM A_TREE_butes"));
+        
       }
     } catch (dbError) {
       console.error(dbError);
