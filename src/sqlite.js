@@ -26,7 +26,6 @@ dbWrapper
         const trees = JSON.parse(rawtrees);
         const treeProps = JSON.parse(rawtreeProps);
         
-        // treeProps.forEach(item => {db.run(`INSERT INTO tbl (id,stuff) VALUES (${item.id}, '${item.text}')`)})
         
         
         await db.run("CREATE TABLE Users (uid INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT, verfied INTEGER, username TEXT, password TEXT, session_id TEXT, points INTEGER, collected INTEGER, lat REAL, lng REAL)");
@@ -35,8 +34,8 @@ dbWrapper
         
         await db.run("CREATE TABLE Inventory (uid INTEGER, tree_name)");
         
-        // A-tree-Butes lol xD
                      
+        users.forEach(item => {db.run(`INSERT INTO Users (email,verified,username,password,session_id,) VALUES (${item.id}, '${item.text}')`)})
         
         
         
