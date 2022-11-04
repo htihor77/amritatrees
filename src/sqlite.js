@@ -34,8 +34,8 @@ dbWrapper
         // await db.run("CREATE TABLE Inventory (uid INTEGER, tree_name)");
         
         users.forEach(item => {db.run(`INSERT INTO Users (email,verified,username,password,session_id,points,collected,lat,lng) VALUES ('${item.email}', ${item.verified}, '${item.username}', '${item.password}','${item.session_id}',${item.points},${item.collected},${item.lat},${item.lng})`)});
-        trees.forEach(item => {db.run(`INSERT INTO Trees (tree_name,coords) VALUES ('${item.title}', '${item.coords}'`)});
-        treeProps.forEach(item => {db.run(`INSERT INTO A_TREE_butes (tree_name,scientific_name,origin,link,properties) VALUES ('${item.name}', '${item.scientific_name}', '${item.origin}', '${item.link}', '${item.properties}'`)});
+        trees.forEach(item => {db.run(`INSERT INTO Trees (tree_name,coords) VALUES ('${item.title}', '${item.coords}')`)});
+        treeProps.forEach(item => {db.run(`INSERT INTO A_TREE_butes (tree_name,scientific_name,origin,link,properties) VALUES ('${item.name}', '${item.scientific_name}', '${item.origin}', '${item.link}', '${item.properties}')`)});
         
         
       } else {
