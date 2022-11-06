@@ -40,10 +40,6 @@ fastify.register(require("@fastify/session"), {
     maxAge: 1000 * 60 * 60 * 24 * 30 * 12 // a year
   }
 });
-// fastify.addHook('preHandler', (request, reply, next) => {
-//   // console.log("preHandler:",request.session.sessionId);
-//   next()
-// })
 
 fastify.addHook("onRequest", (request, reply, next) => {
   const protocol = request.raw.headers["x-forwarded-proto"].split(",")[0];
@@ -55,9 +51,9 @@ fastify.addHook("onRequest", (request, reply, next) => {
   
   const valid_urls = ["/login","/signup","/leaderboards","/css/style.css","/manifest.json","/users"];
   const valid_prefix_urls = []
-  // if( request.session.isAuthenticated === undefined && valid_urls.indexOf(request.url) == -1 && !request.url.startsWith("/css/" || "/assets/") ){
-  //   reply.redirect("/login");
-  // }
+  if( request.session.isAuthenticated === undefined && valid_urls.indexOf(request.url) == -1 && !request.url.startsWith("/css/" || "/assets/") ){
+    reply.redirect("/login");
+  }
   next();
 });
 
@@ -201,30 +197,6 @@ fastify.get("/repository", async (request, reply) => {
 
 
 
-
-// fastify.get("/rohithtrees", async (request, reply) => {
-//   const stream = fs.createReadStream(__dirname+'/___rohithtrees.json', 'utf8')
-//   return reply.type("json")
-//     .code(200)
-//     .header('Content-Type', 'application/json; charset=utf-8')
-//     .send( stream );
-// });
-
-// fastify.get("/nandhutrees", async (request, reply) => {
-//   const stream = fs.createReadStream(__dirname+'/___nandhutrees.json', 'utf8')
-//   return reply.type("json")
-//     .code(200)
-//     .header('Content-Type', 'application/json; charset=utf-8')
-//     .send( stream );
-// });
-
-// fastify.get("/rishitrees", async (request, reply) => {
-//   const stream = fs.createReadStream(__dirname+'/___rishitrees.json', 'utf8')
-//   return reply.type("json")
-//     .code(200)
-//     .header('Content-Type', 'application/json; charset=utf-8')
-//     .send( stream );
-// });
 
 
 fastify.get("/trees", async (request, reply) => {
