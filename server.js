@@ -171,9 +171,10 @@ fastify.get("/inventory", async (request, reply) => {
 });
 
 fastify.get("/treedata", async (request, reply) => {
+  const data = await db.runQuery1("SELECT * FROM Trees, A_TREE_butes WHERE Trees.tree_name LIKE %A_TREE_butes.tree_name% ");
+  console.log(data);
   
-  
-  return reply.send(params)
+  return reply.send(data)
 });
 
 
@@ -186,8 +187,7 @@ fastify.get("/leaderboards", async (request, reply) => {
 
 
 fastify.get("/repository", async (request, reply) => {
-  const data = await db.runQuery1("SELECT * FROM Trees, A_TREE_butes WHERE Trees.title LIKE %A_TREE_butes.name% OR Trees.title LIKE %A_TREE_butes.scientific_name%");
-  console.log(data);
+  const data = await db.runQuery1("");
   return reply.view("/src/pages/repository.hbs", { trees: data } );
 });
 
