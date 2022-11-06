@@ -259,8 +259,8 @@ async function initMap() {
   
   map.setOptions({
     // draggable: false, 
-    zoomControl: false, 
-    scrollwheel: false, 
+    // zoomControl: false, 
+    // scrollwheel: false, 
     disableDoubleClickZoom: true,
     disableDefaultUI: true,
   });
@@ -299,7 +299,20 @@ async function initMap() {
         },
       })
       
-      const infowindow = new google.maps.InfoWindow({content: tree.title});
+      const infowindow = new google.maps.InfoWindow({
+        content: `
+        <div>
+          <h3>${tree.tree_name}</h3>
+          <h4>${tree.scientific_name}</h4>
+          <div>
+            ${tree.origin}
+            <p>
+              ${tree.properties}
+            </p>
+            <a href="${tree.link}" target="_blank">Click to know more!</a>
+          </div>
+        </div>`
+      });
       marker.addListener("click", () => {
         if (infowindow) {infowindow.close();}
         infowindow.open({anchor: marker,map,shouldFocus: false,});
