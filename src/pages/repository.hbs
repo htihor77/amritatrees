@@ -19,13 +19,13 @@
   text-transform: capitalize;
 }
 .treeInfoWindow p{
-  padding-top:5px;
+  padding-top:3px;
   font-style:italic;
 }
 .treeInfoWindow a{
   display:block;
   text-align:center;
-  font-size:1rem;
+  font-size:0.85rem;
   text-decoration:none;
   color:green;
 }
@@ -269,7 +269,7 @@ async function initMap() {
     disableDefaultUI: true,
   });
   
-  let infowindow = null
+  const infoBoxes = []
   
   const treetable = document.createElement("div");
   treetable.id = "treetable";
@@ -292,6 +292,7 @@ async function initMap() {
       
       const iconSize = 80;
       let tree_icon = tree_icon_url;
+      
       const marker = new google.maps.Marker({
         title: tree.title,
         position: {lat: lat, lng: lng },
@@ -303,9 +304,8 @@ async function initMap() {
           anchor: new google.maps.Point(iconSize/2, iconSize/2),
         },
       })
-      
-      infowindow = new google.maps.InfoWindow({
-        content: `
+
+      const infowindow = new google.maps.InfoWindow({content: `
         <div class="treeInfoWindow">
           <h3>${tree.tree_name}</h3>
           <h4>(${tree.scientific_name})</h4>
@@ -316,13 +316,18 @@ async function initMap() {
             </p>
             <a href="${tree.link}" target="_blank">Click here know more!<i class="fas fa-external-link"></i></a>
           </div>
-        </div>`
-      });
+        </div>`});
+      
+      infoBoxes.push(infowindow)
       
       marker.addListener("click", () => {
+        // if (infowindow) {infowindow.close();}
         
-        if (infowindow) {infowindow.close();}
+        // infowindow = new google.maps.InfoWindow({content: contentString});
+        infoBoxes.forEach(infoBox => infoBox.close())
+        
         infowindow.open({anchor: marker,map,shouldFocus: false,});
+        
       });
       
       marker.setMap(map);

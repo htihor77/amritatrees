@@ -48,7 +48,7 @@ self.addEventListener("fetch", (evt)=>{
   if(evt.request.url.indexOf("https://amritatrees.glitch.me") != -1){
     console.log("fetch event", evt.request.url.split("https://amritatrees.glitch.me")[1]);
   }else{
-    console.log("fetch event", evt.request.url);    
+    // console.log("fetch event", evt.request.url);    
   }
     // evt.respondWith(
     //     caches.match(evt.request).then(cacheResponse => {
