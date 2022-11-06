@@ -41,9 +41,9 @@ dbWrapper
       } else {
         console.log("db exists!");
         
-        console.log(await db.all("SELECT * FROM Users"));
-        console.log(await db.all("SELECT * FROM Trees"));
-        console.log(await db.all("SELECT * FROM A_TREE_butes"));
+        // console.log(await db.all("SELECT * FROM Users"));
+        // console.log(await db.all("SELECT * FROM Trees"));
+        // console.log(await db.all("SELECT * FROM A_TREE_butes"));
         
       }
     } catch (dbError) {

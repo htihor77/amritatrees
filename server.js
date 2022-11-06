@@ -171,7 +171,7 @@ fastify.get("/inventory", async (request, reply) => {
 });
 
 fastify.get("/treedata", async (request, reply) => {
-  const data = await db.runQuery1("SELECT * FROM Trees, A_TREE_butes WHERE Trees.tree_name LIKE %A_TREE_butes.tree_name% ");
+  const data = await db.runQuery1("SELECT * FROM Trees, A_TREE_butes WHERE Trees.tree_name LIKE A_TREE_butes.scientific_name");
   console.log(data);
   
   return reply.send(data)
@@ -207,22 +207,6 @@ fastify.get("/db", async (request, reply) => {
 
 
 
-
-
-
-
-
-
-// fastify.get("/trees", async (request, reply) => {
-//   const stream = fs.createReadStream(__dirname+'/___trees.json', 'utf8')
-//   return reply.type("json").code(200).header('Content-Type', 'application/json; charset=utf-8').send( stream );
-// });
-// fastify.get("/treeProps", async (request, reply) => {
-//   const stream = fs.createReadStream(__dirname+'/___treeProps.json', 'utf8')
-//   return reply.type("json").code(200).header('Content-Type', 'application/json; charset=utf-8').send( stream );
-// });
-
-
 // fastify.get("/check", async (request, reply) => {
 //   utils.send_email_text("nandhakumar2058@gmail.com","email subject", "email content stuff, hello!");
 //   return reply.send("check");
@@ -238,39 +222,6 @@ fastify.get("/db", async (request, reply) => {
 //   const distance = utils.measureDistance(entrance.lat,entrance.lng, body.lat, body.lng);
 //   console.log(distance)
 //   return reply.type("json").send({distance: distance });
-// });
-
-
-// fastify.get("/users", async (request, reply) => {
-//   const users = await db.runQuery1("SELECT * FROM Users");
-//   return reply.type("json").send(users);
-// });
-
-
-// ughhh im such a dumbass
-// fastify.get("/assets/:assetname", async (req, reply) => {
-//   const { assetname } = req.params;
-//   console.log("params:",assetname);
-  
-//   var content = fs.readFileSync('.glitch-assets', 'utf8');
-//   var rows = content.split("\n");
-//   var assets = rows.map((row) => {
-//     try {
-//       return JSON.parse(row);
-//     } catch (e) {}
-//   });
-//   assets = assets.filter((asset) => asset);
-  
-  
-  
-  
-  
-//   reply.header("Access-Control-Allow-Origin", "*");
-//   reply.header("Access-Control-Allow-Methods", "GET");
-//   reply.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
-  
-  
-  
 // });
 
 
