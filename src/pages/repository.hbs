@@ -12,6 +12,20 @@
 <!--   <script src="./js/map.js" defer></script> -->
   
 <style>
+  
+  
+.treeInfoWindow h3,.treeInfoWindow h4{
+  text-align:center;
+}
+.treeInfoWindow p{
+  padding-top:5px;
+  font-style:italic;
+}
+.treeInfoWindow a{
+  display:block;
+  text-align:center;
+}
+  
 #container{
   height:100%;
 }
@@ -301,7 +315,7 @@ async function initMap() {
       
       const infowindow = new google.maps.InfoWindow({
         content: `
-        <div>
+        <div class="treeInfoWindow">
           <h3>${tree.tree_name}</h3>
           <h4>${tree.scientific_name}</h4>
           <div>
