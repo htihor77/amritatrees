@@ -170,6 +170,13 @@ fastify.get("/inventory", async (request, reply) => {
     : reply.view("/src/pages/inventory.hbs", params );
 });
 
+fastify.get("/treedata", async (request, reply) => {
+  
+  
+  return reply.send(params)
+});
+
+
 fastify.get("/leaderboards", async (request, reply) => {
   const data1 = await db.runQuery1(`SELECT username,points FROM Users ORDER BY points DESC`);
   const data2 = await db.runQuery1(`SELECT username,collected FROM Users ORDER BY collected DESC`);
