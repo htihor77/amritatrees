@@ -186,58 +186,65 @@ fastify.get("/leaderboards", async (request, reply) => {
 
 
 fastify.get("/repository", async (request, reply) => {
-  const data = await db.runQuery1("");
+  const data = await db.runQuery1("SELECT * FROM Trees, A_TREE_butes WHERE Trees.title LIKE %A_TREE_butes.name% OR Trees.title LIKE %A_TREE_butes.scientific_name%");
+  console.log(data);
   return reply.view("/src/pages/repository.hbs", { trees: data } );
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-fastify.get("/trees", async (request, reply) => {
-  const stream = fs.createReadStream(__dirname+'/___trees.json', 'utf8')
-  return reply.type("json").code(200).header('Content-Type', 'application/json; charset=utf-8').send( stream );
-});
-fastify.get("/treeProps", async (request, reply) => {
-  const stream = fs.createReadStream(__dirname+'/___treeProps.json', 'utf8')
-  return reply.type("json").code(200).header('Content-Type', 'application/json; charset=utf-8').send( stream );
-});
-
-
-fastify.get("/check", async (request, reply) => {
-  utils.send_email_text("nandhakumar2058@gmail.com","email subject", "email content stuff, hello!");
-  return reply.send("check");
-});
-
-fastify.post("/checkinglocation", async (request, reply) => {
+fastify.get("/db", async (request, reply) => {
+  const table = request.query.table;
   
-  const entrance = {lat:10.901853212312897,lng: 76.89603899041079};
-  const body = request.body;
-  console.log(body)
+  const data = await db.runQuery1(`SELECT * FROM ${table}`);
+  return reply.send(data)
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// fastify.get("/trees", async (request, reply) => {
+//   const stream = fs.createReadStream(__dirname+'/___trees.json', 'utf8')
+//   return reply.type("json").code(200).header('Content-Type', 'application/json; charset=utf-8').send( stream );
+// });
+// fastify.get("/treeProps", async (request, reply) => {
+//   const stream = fs.createReadStream(__dirname+'/___treeProps.json', 'utf8')
+//   return reply.type("json").code(200).header('Content-Type', 'application/json; charset=utf-8').send( stream );
+// });
+
+
+// fastify.get("/check", async (request, reply) => {
+//   utils.send_email_text("nandhakumar2058@gmail.com","email subject", "email content stuff, hello!");
+//   return reply.send("check");
+// });
+
+// fastify.post("/checkinglocation", async (request, reply) => {
   
-  console.log(entrance.lat,entrance.lng, body.lat, body.lng);
-  const distance = utils.measureDistance(entrance.lat,entrance.lng, body.lat, body.lng);
-  console.log(distance)
-  return reply.type("json").send({distance: distance });
-});
+//   const entrance = {lat:10.901853212312897,lng: 76.89603899041079};
+//   const body = request.body;
+//   console.log(body)
+  
+//   console.log(entrance.lat,entrance.lng, body.lat, body.lng);
+//   const distance = utils.measureDistance(entrance.lat,entrance.lng, body.lat, body.lng);
+//   console.log(distance)
+//   return reply.type("json").send({distance: distance });
+// });
 
 
-fastify.get("/users", async (request, reply) => {
-  const users = await db.runQuery1("SELECT * FROM Users");
-  return reply.type("json").send(users);
-});
+// fastify.get("/users", async (request, reply) => {
+//   const users = await db.runQuery1("SELECT * FROM Users");
+//   return reply.type("json").send(users);
+// });
 
 
 // ughhh im such a dumbass

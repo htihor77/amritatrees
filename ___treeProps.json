@@ -1,7 +1,7 @@
 [
  {
   "id": 1,
-  "name": "Mango Tree",
+  "name": "Mango",
   "scientific_name": "Mangifera indica",
   "origin": "Myanmar, Bangladesh, and northeastern India",
   "link": "https:\/\/en.wikipedia.org\/wiki\/Mango",
@@ -17,7 +17,7 @@
  },
  {
   "id": 3,
-  "name": "neem ",
+  "name": "Neem",
   "scientific_name": "Azadirachta indica",
   "origin": "assam and burma",
   "link": "https:\/\/en.wikipedia.org\/wiki\/Azadirachta_indica",
@@ -41,7 +41,7 @@
  },
  {
   "id": 6,
-  "name": "Royal palm trees center",
+  "name": "Royal palm",
   "scientific_name": "Roystonea regia",
   "origin": " native to Mexico, parts of Central America and the Caribbean, and southern Florida.",
   "link": "https:\/\/en.wikipedia.org\/wiki\/Roystonea_regia",
@@ -201,7 +201,7 @@
  },
  {
   "id": 26,
-  "name": "jackfruit Tree",
+  "name": "jackfruit",
   "scientific_name": "Artocarpus heterophyllus",
   "origin": "region between the Western Ghats of southern India, all of Bangladesh, Sri Lanka and the rainforests of the Philippines, Indonesia, and Malaysia.",
   "link": "https:\/\/en.wikipedia.org\/wiki\/Jackfruit",
