@@ -9,342 +9,6 @@
 <!--   <link rel="stylesheet" href="./css/map.css"> -->
   
   <script src="./js/app.js" defer></script>
-  <script>
-  const tree_props = [
-    {
-    "id": 1,
-    "name": "Mango Tree",
-    "scientific_name": "Mangifera indica",
-    "origin": "Myanmar, Bangladesh, and northeastern India",
-    "link": "https:\/\/en.wikipedia.org\/wiki\/Mango",
-    "properties": "Various parts of plant are used as a dentrifrice, antiseptic, astringent, diaphoretic, stomachic, vermifuge, tonic, laxative and diuretic and to treat diarrhea, dysentery, anaemia, asthma, bronchitis, cough, hypertension, insomnia, rheumatism, toothache, leucorrhoea, haemorrhage and piles."
-    },
-    {
-    "id": 2,
-    "name": "golden trumpet",
-    "scientific_name": "Allamanda cathartica Plant",
-    "origin": "native to Brazil.",
-    "link": "https:\/\/en.wikipedia.org\/wiki\/Allamanda_cathartica",
-    "properties": "treat liver tumors, jaundice, splenomegaly, and malaria"
-    },
-    {
-    "id": 3,
-    "name": "neem ",
-    "scientific_name": "Azadirachta indica",
-    "origin": "assam and burma",
-    "link": "https:\/\/en.wikipedia.org\/wiki\/Azadirachta_indica",
-    "properties": "treatment of inflammation, infections, fever, skin diseases and dental disorders"
-    },
-    {
-    "id": 4,
-    "name": "Child life tree",
-    "scientific_name": "Drypetes roxburghii",
-    "origin": "Southeast Asia",
-    "link": "https:\/\/en.wikipedia.org\/wiki\/Putranjiva",
-    "properties": "treating of illness, phlegm, skin ailment, aridity and are also helpful in curing rheumatism"
-    },
-    {
-    "id": 5,
-    "name": "Catpus",
-    "scientific_name": "Cactaceae",
-    "origin": "native through most of the length of North and South America, from British Columbia and Alberta southward",
-    "link": "https:\/\/en.wikipedia.org\/wiki\/Cactus",
-    "properties": "reduce inflammation in the body,treating diabetes, high cholesterol, obesity and hangovers."
-    },
-    {
-    "id": 6,
-    "name": "Royal palm trees center",
-    "scientific_name": "Roystonea regia",
-    "origin": " native to Mexico, parts of Central America and the Caribbean, and southern Florida.",
-    "link": "https:\/\/en.wikipedia.org\/wiki\/Roystonea_regia",
-    "properties": " used for thatch, construction timber, and in some forms of so-called traditional medicine"
-    },
-    {
-    "id": 7,
-    "name": "Lebbreck tree",
-    "scientific_name": "Albizia lebbeck",
-    "origin": "tropical Africa, Asia and Northern Australia",
-    "link": "https:\/\/en.wikipedia.org\/wiki\/Albizia_lebbeck",
-    "properties": "prevention of scabies, lung ailments, piles, bronchitis, abdominal tumors, cough and eye disorder"
-    },
-    {
-    "id": 8,
-    "name": "pala indigo plant",
-    "scientific_name": "Wrightia tinctoria",
-    "origin": "India, southeast Asia and Australia",
-    "link": "https:\/\/en.wikipedia.org\/wiki\/Wrightia_tinctoria",
-    "properties": "bark is useful in treatment of diarrhoea, piles, ringworm and other skin diseases"
-    },
-    {
-    "id": 9,
-    "name": "Narra\/Angsana",
-    "scientific_name": "Pterocarpus indicus",
-    "origin": "Native to southeastern Asia, northern&nbsp;Australasia, and the western&nbsp;Pacific Ocean&nbsp;islands( in&nbsp;Cambodia, southernmost&nbsp;China,&nbsp;East Timor,&nbsp;Indonesia,&nbsp;Malaysia,&nbsp;Papua New Guinea, the&nbsp;Philippines, the&nbsp;Ryukyu Islands, the&nbsp;Solomon Islands,&nbsp;Thailand, and&nbsp;Vietnam.)",
-    "link": "https:\/\/en.wikipedia.org\/wiki\/Pterocarpus_indicus",
-    "properties": "primarily used for cabinetwork"
-    },
-    {
-    "id": 10,
-    "name": "beech wood",
-    "scientific_name": "Gmelina arborea",
-    "origin": " Asia, from Pakistan to Sri Lanka, Myanmar, Thailand, Vietnam and southern China",
-    "link": "https:\/\/en.wikipedia.org\/wiki\/Gmelina_arborea",
-    "properties": "astringent, bitter, digestive, cardiotonic, diuretic, laxative and pulmonary and nervine tonic"
-    },
-    {
-    "id": 11,
-    "name": "Indian beech tree",
-    "scientific_name": "Millettia pinnata",
-    "origin": "&nbsp;native to eastern and tropical Asia, Australia, and Pacific islands.",
-    "link": "https:\/\/en.wikipedia.org\/wiki\/Millettia_pinnata",
-    "properties": "used for landscaping as a windbreak or for shade due to the large canopy and showy, fragrant flowers."
-    },
-    {
-    "id": 12,
-    "name": "arjun tree",
-    "scientific_name": "Terminalia arjuna",
-    "origin": "native to India but was introduced into the African continent decades ago",
-    "link": "https:\/\/en.wikipedia.org\/wiki\/Terminalia_arjuna",
-    "properties": "used for anginal pain, hypertension, congestive heart failure, and dyslipidemia"
-    },
-    {
-    "id": 13,
-    "name": "asoka tree",
-    "scientific_name": "Saraca asoca",
-    "origin": "central areas of the Deccan plateau, as well as the middle section of the Western Ghats in the western coastal zone of the Indian subcontinent.",
-    "link": "https:\/\/en.wikipedia.org\/wiki\/Saraca_asoca",
-    "properties": "treatment of uterine, genital, and other reproductive disorders in women, fever, pain, and inflammation."
-    },
-    {
-    "id": 14,
-    "name": "black mundar",
-    "scientific_name": "terminalia crenulata ",
-    "origin": "southern and southeast Asia in India, Nepal, Bangladesh, Myanmar, Thailand, Laos, Cambodia, and Vietnam",
-    "link": "https:\/\/indiabiodiversity.org\/species\/show\/31849",
-    "properties": "The wood is used for furniture, cabinetwork, joinery, paneling, specialty items, boat-building, railroad cross-ties (treated), decorative veneers and for musical instruments "
-    },
-    {
-    "id": 15,
-    "name": "rubber fig",
-    "scientific_name": "Ficus elastica",
-    "origin": "Himalayas to Malaysia, Sumatra and Java",
-    "link": "https:\/\/en.wikipedia.org\/wiki\/Ficus_elastica",
-    "properties": "very helpful with a host of stomach problems such as nausea, general pain or digestive problems."
-    },
-    {
-    "id": 16,
-    "name": "African Tulip Tree",
-    "scientific_name": "Spathodea campanulata",
-    "origin": "indigenous to Africa with a native range that extends along the west coast from Guinea to Angola, and inland across the tropical rainforest region to southern Sudan and Uganda",
-    "link": "https:\/\/en.wikipedia.org\/wiki\/Spathodea",
-    "properties": "epilepsy and convulsion control, against kidney disease, urethritis, and as antidote against animal poisons"
-    },
-    {
-    "id": 17,
-    "name": "Spinous Kino Tree",
-    "scientific_name": "Bridelia retusa",
-    "origin": "base of the Himalayas from Kashmir to Mishmi, southward to Ceylon",
-    "link": "https:\/\/en.wikipedia.org\/wiki\/Bridelia_retusa",
-    "properties": "Root and bark are used as an astringent and used as a liniment with gingelly oil in rheumatic problems"
-    },
-    {
-    "id": 18,
-    "name": "Devil tree",
-    "scientific_name": "Alstonia Scholaris",
-    "origin": "native to southern China, tropical Asia (mainly the Indian subcontinent and Southeast Asia）and Australasia",
-    "link": "https:\/\/en.wikipedia.org\/wiki\/Alstonia_scholaris",
-    "properties": "treatment of malaria, jaundice, gastrointestinal troubles, cancer and in many other ailments."
-    },
-    {
-    "id": 19,
-    "name": "Indian beech tree",
-    "scientific_name": "Millettia pinnata",
-    "origin": "native to eastern and tropical Asia, Australia, and Pacific islands",
-    "link": "https:\/\/en.wikipedia.org\/wiki\/Millettia_pinnata",
-    "properties": "purifying the blood, and cutting earache, hest complaints, chronic fevers and hydrocele. Rheumatic pains, leucoderma, itching, leprosy, ulcers, lumbago, urinary disorders, headaches, chronic fevers and pain in the liver."
-    },
-    {
-    "id": 20,
-    "name": "nux vomica",
-    "scientific_name": "Strychnos nux-vomica",
-    "origin": "native to India and to southeast Asia",
-    "link": "https:\/\/en.wikipedia.org\/wiki\/Strychnos_nux-vomica",
-    "properties": "erectile dysfunction (ED), swelling of the stomach, constipation, anxiety, migraine, and many other conditions"
-    },
-    {
-    "id": 21,
-    "name": "indain tulip tree",
-    "scientific_name": "Thespesia populnea",
-    "origin": " Asian tropics or from the coasts of the Pacific and Indian Oceans",
-    "link": "https:\/\/en.wikipedia.org\/wiki\/Thespesia_populnea",
-    "properties": "treatment of indigestion, dysentery, rheumatism, coughs and fevers"
-    },
-    {
-    "id": 22,
-    "name": "Indian Willow",
-    "scientific_name": "Polyalthia longifolia",
-    "origin": "native to southern India and Sri Lanka",
-    "link": "https:\/\/en.wikipedia.org\/wiki\/Monoon_longifolium",
-    "properties": "treatment of fever, helminthiasis, diabetes and various cardiac problems."
-    },
-    {
-    "id": 23,
-    "name": "Three leaved chase tree",
-    "scientific_name": "Vitex trifolia",
-    "origin": "tropical East Africa as far east as French Polynesia.",
-    "link": "https:\/\/en.wikipedia.org\/wiki\/Vitex_trifolia",
-    "properties": "treat&nbsp;menstrual cycle problems and pain, premenstrual syndrome, and menopause."
-    },
-    {
-    "id": 24,
-    "name": "jamun\/jambul",
-    "scientific_name": "Syzygium cumini",
-    "origin": "native to the Indian subcontinent, adjoining regions of Southeast Asia, including Myanmar, Sri Lanka, and the Andaman Islands.",
-    "link": "https:\/\/en.wikipedia.org\/wiki\/Syzygium_cumini",
-    "properties": "Jamun fruit works miraculously in diabetes"
-    },
-    {
-    "id": 25,
-    "name": "Chebulic myrobalan",
-    "scientific_name": "Terminalia chebula",
-    "origin": "n the Sub Himalayan tracks from Ravi eastwards to West Bengal and Assam, ascending upto the altitude of 1 500 m in the Himalayas. ",
-    "link": "https:\/\/en.wikipedia.org\/wiki\/Terminalia_chebula",
-    "properties": "increase appetite, digestive aid, liver stimulant, stomachic, gastrointestinal prokinetic agent, and mild laxative"
-    },
-    {
-    "id": 26,
-    "name": "jackfruit Tree",
-    "scientific_name": "Artocarpus heterophyllus",
-    "origin": "region between the Western Ghats of southern India, all of Bangladesh, Sri Lanka and the rainforests of the Philippines, Indonesia, and Malaysia.",
-    "link": "https:\/\/en.wikipedia.org\/wiki\/Jackfruit",
-    "properties": "treatment of asthma, prevent ringworm infection, and heal cracking of the feet."
-    },
-    {
-    "id": 27,
-    "name": "Bottle brush",
-    "scientific_name": "Callistemon viminalis",
-    "origin": "endemic to Australia",
-    "link": "https:\/\/en.wikipedia.org\/wiki\/Callistemon",
-    "properties": "treatment of gastro-enteritis, diarrhea and skin infections"
-    },
-    {
-    "id": 30,
-    "name": "Indian almond",
-    "scientific_name": "Terminalia catappa",
-    "origin": "native to Asia, Australia, the Pacific, Madagascar and Seychelles",
-    "link": "https:\/\/en.wikipedia.org\/wiki\/Terminalia_catappa",
-    "properties": "Juice of young leaves are employed in preparation of ointment for leprosy, scabies and also used internally for colic and headache"
-    },
-    {
-    "id": 31,
-    "name": "Fern tree",
-    "scientific_name": "Filicium decipiens",
-    "origin": "found in east Africa, Madagascar, India and Sri Lanka",
-    "link": "https:\/\/en.wikipedia.org\/wiki\/Filicium_decipiens",
-    "properties": "anti-diabetic, anti-fungal, anti-bacterial, anti-inflammatory, antioxidant and mollusicicidal activities."
-    },
-    {
-    "id": 32,
-    "name": "Indian cork tree",
-    "scientific_name": "Millingtonia hortensis",
-    "origin": "native to South Asia and South East Asia",
-    "link": "https:\/\/en.wikipedia.org\/wiki\/Millingtonia",
-    "properties": "antipyretic, sinusitis, cholagogue and tonic in folklore medicine"
-    },
-    {
-    "id": 33,
-    "name": "Cuban pink trumpet tree",
-    "scientific_name": "Tabebuia Heterophylla",
-    "origin": " native to the Caribbean",
-    "link": "https:\/\/en.wikipedia.org\/wiki\/Tabebuia_heterophylla",
-    "properties": "treatment of a plethora of ailments. The bark of the tree has the most medicinal properties"
-    },
-    {
-    "id": 34,
-    "name": "Bitter albizia",
-    "scientific_name": "Albizia amara",
-    "origin": "southern and Eastern Africa, from South Africa to Sudan and Ethiopia.",
-    "link": "https:\/\/en.wikipedia.org\/wiki\/Albizia_amara",
-    "properties": "The leaves and flowers are used for treatment of boils and ulcers. The leaf is also used for treatment of erysipelas. Paste of leaf and rootbark is used to cure both skin diseases and poisonous bites."
-    },
-    {
-    "id": 35,
-    "name": "Alchorn tree"
-    },
-    {
-    "id": 36,
-    "name": "Indian gooseberry",
-    "scientific_name": "Phyllanthus emblica",
-    "origin": "Native to China, Taiwan, the Indian Sub-continent and south-eastern Asia",
-    "link": "https:\/\/en.wikipedia.org\/wiki\/Phyllanthus_emblica",
-    "properties": "treatment of Swelling of the pancreas, Indigestion,Eye problems, Joint pain, Diarrhea,Bloody diarrhea (dysentery), Obesity,Diabetes."
-    },
-    {
-    "id": 37,
-    "name": "Red sandalwood",
-    "scientific_name": "Pterocarpus santalinus",
-    "origin": "endemic to India and can only be found in the southern parts of the Eastern Ghats.",
-    "link": "https:\/\/en.wikipedia.org\/wiki\/Pterocarpus_santalinus",
-    "properties": "treatment of cancer, wounds, digestive tract problems, fluid retention"
-    },
-    {
-    "id": 38,
-    "name": "Gum Arabic",
-    "scientific_name": "Acacia senegal",
-    "origin": "derived from hardened acacia tree sap, harvested in the Sahel region of Africa",
-    "link": "https:\/\/en.wikipedia.org\/wiki\/Gum_arabic",
-    "properties": "treatment of high cholesterol, diabetes, irritable bowel syndrome (IBS), and other conditions"
-    },
-    {
-    "id": 39,
-    "name": "yellow trumpet",
-    "scientific_name": "Costus spectabilis",
-    "origin": "Sierra Leone to Sudan to as far south as Angola and Zimbabwe.",
-    "link": "https:\/\/en.wikipedia.org\/wiki\/Costus_spectabilis",
-    "properties": "&nbsp;treat many illnesses including eye infections and cataract."
-    },
-    {
-    "id": 40,
-    "name": "gold apple",
-    "scientific_name": "Aegle marmelos",
-    "origin": "native across the Indian subcontinent and Southeast Asia, and is cultivated throughout Sri Lanka, Tamilnadu.",
-    "link": "https:\/\/en.wikipedia.org\/wiki\/Aegle_marmelos",
-    "properties": "to treat tuberculosis, leaf juice with honey can prove useful for treating fever and to cure inflammation"
-    },
-    {
-    "id": 41,
-    "name": "cannon ball tree",
-    "scientific_name": "Couroupita guianensis",
-    "origin": "native to northeastern South America",
-    "link": "https:\/\/en.wikipedia.org\/wiki\/Couroupita_guianensis",
-    "properties": "to treat hypertension, tumors, colds, stomachaches, toothaches, and skin conditions"
-    },
-    {
-    "id": 42,
-    "name": "Veppu",
-    "scientific_name": "Meliaceae",
-    "origin": "native to Indomalaya and Australasia.",
-    "link": "https:\/\/en.wikipedia.org\/wiki\/Meliaceae",
-    "properties": "traditional medicine for the treatment of several ailments including fever due to malaria."
-    },
-    {
-    "id": 43,
-    "name": "Pink  trumpet tree",
-    "scientific_name": "Tabebuia rosea",
-    "origin": "northern South America",
-    "link": "https:\/\/en.wikipedia.org\/wiki\/Tabebuia_rosea",
-    "properties": "treating fever, malaria, bacterial and fungal infections, and skin disease"
-    },
-    {
-    "id": 44,
-    "name": "Indian butter tree",
-    "scientific_name": "Diploknema butyracea",
-    "origin": "central, southern, north Indian plains and forests, Nepal, Myanmar and Sri Lanka",
-    "link": "https:\/\/en.wikipedia.org\/wiki\/Diploknema_butyracea",
-    "properties": "mixed with ghee and used as a dressing to relieve burns and skin allergies."
-    }
-]
-  </script>
 <!--   <script src="./js/map.js" defer></script> -->
   
 <style>
@@ -436,7 +100,7 @@
 /*   justify-content: center; */
   
   position:relative;
-  padding-left:20px;
+  padding-left:15px;
   
 /*   overflow:hidden; */
   height: 2rem;
@@ -611,6 +275,42 @@ async function initMap() {
   treetable.appendChild(table);
   map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(treetable);
 
+  
+  fetch("https://amritatrees.glitch.me/treedata")
+  .then( res => res.json() )
+  .then( data => {
+    data.forEach( tree => {
+    // ###########################################################################
+      const coords = tree.coords.split(",")
+      const lat = Number( coords[0] );
+      const lng = Number( coords[1] );
+      
+      const iconSize = 80;
+      let tree_icon = tree_icon_url;
+      const marker = new google.maps.Marker({
+        title: tree.title,
+        position: {lat: lat, lng: lng },
+        map,
+        icon: {
+          url: tree_icon,
+          scaledSize: new google.maps.Size(iconSize, iconSize),
+          origin: new google.maps.Point(0, 0),
+          anchor: new google.maps.Point(iconSize/2, iconSize/2),
+        },
+      })
+      
+      const infowindow = new google.maps.InfoWindow({content: tree.title});
+      marker.addListener("click", () => {
+        if (infowindow) {infowindow.close();}
+        infowindow.open({anchor: marker,map,shouldFocus: false,});
+      });
+      
+      marker.setMap(map);
+      
+    // ########################################################################### 
+    })
+  });
+  
 }
   
 const tree_icon_url = "https://amritatrees.sirv.com/treeicon32.png";
