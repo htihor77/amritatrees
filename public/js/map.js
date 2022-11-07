@@ -13,14 +13,36 @@
 // },1000);
 
 function createUserPrompt(map){
-  const div = document.createElement("div");
-  div.innerHTML = "ADDFASDFJASLDKFJASD;LFKJASDKL;FJA;SLDF"
   
-    
+  function promptClose(m){
+    console.log(m);
+  }
+  
+  
+  const div = document.createElement("div");
+  div.style.display = "flex";
+  div.style.justifyContent = "center";
+  div.style.alignItems = "center";
+  div.style.height = "100%";
+  div.innerHTML = `
+    <p>ADDFASDFJASLDKFJASD;LFKJASDKL;FJA;SLDF</p>
+  `;
+
+  const cbtn = document.createElement("button");
+  cbtn.innerText = "button";
+  cbtn.style.padding = "15px";
+  div.prepend(cbtn);
+  
+  
+  cbtn.addEventListener("click",closePrompt);
   
   return div;
 }
 
+function closePrompt(e){
+  console.log(e)
+  
+}
 
 // ######################################################################################################
 
@@ -77,10 +99,11 @@ async function initMap() {
   
   const userPropmt = document.createElement("div");
   userPropmt.id = "userPropmt";
+  userPropmt.style.display = "none";
   const promptDiv = createUserPrompt(map);
   
   userPropmt.appendChild(promptDiv);
-  map.controls[google.maps.ControlPosition.CENTER].push(userPropmt);
+  map.controls[google.maps.ControlPosition.TOP_LEFT].push(userPropmt);
   
   
   
@@ -108,7 +131,7 @@ async function initMap() {
       })
       
       marker.addListener("click", () => {
-                
+        userPropmt.style.display = "block";
       });
       
       marker.setMap(map);
