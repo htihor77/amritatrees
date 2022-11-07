@@ -26,15 +26,7 @@ function createUserPrompt(map){
   div.style.height = "100%";
   div.innerHTML = `
     <p>ADDFASDFJASLDKFJASD;LFKJASDKL;FJA;SLDF</p>
-  `;
-
-  const cbtn = document.createElement("button");
-  cbtn.innerText = "button";
-  cbtn.style.padding = "15px";
-  div.prepend(cbtn);
-  
-  
-  cbtn.addEventListener("click",closePrompt);
+  `;  
   
   return div;
 }
@@ -102,6 +94,17 @@ async function initMap() {
   userPropmt.style.display = "none";
   const promptDiv = createUserPrompt(map);
   
+  const closeBtn = document.createElement("button");
+  closeBtn.innerText = "button";
+  closeBtn.style.display = "block";
+  closeBtn.style.padding = "15px";
+  
+  closeBtn.addEventListener("click",()=>{
+    userPropmt.style.display = "none";
+  });
+  
+  
+  userPropmt.appendChild(closeBtn);
   userPropmt.appendChild(promptDiv);
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(userPropmt);
   
