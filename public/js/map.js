@@ -60,12 +60,9 @@ function checklocation(){
   })
   .then(res=>res.json())
   .then(data=>{
-    console.log(data);
-    $("#button").setAttribute("data-distance-count",data.distance);
-  });
-  
-  let result = response.json();
-  console.log(result);    
+      console.log(data);
+      $("#button").setAttribute("data-distance-count",data.distance);
+    });   
   });
 }  
   
@@ -90,7 +87,7 @@ async function initMap() {
     disableDefaultUI: true,
   });
   
-  
+  const allMarkers = [];
   
   const userPropmt = document.createElement("div");
   userPropmt.id = "userPropmt";
@@ -117,11 +114,12 @@ async function initMap() {
   fetch("https://amritatrees.glitch.me/db?table=trees")
   .then( data => data.json() )
   .then( data => {
-    data.forEach( tree => {
+    data.forEach( (tree,id) => {
     // ###########################################################################
       const coords = tree.coords.split(",")
       const lat = Number(coords[0]);
       const lng = Number(coords[1]);
+      allMarkers.apppend({lat:lat, lng:lng});
       
       const iconSize = 80;
       let tree_icon = tree.icon || tree_icon_url;
@@ -139,7 +137,7 @@ async function initMap() {
       
       marker.addListener("click", () => {
         // userPropmt.style.display = "block";
-        console.log("clicked", marker.getPosition());
+        console.log("clicked", id);
         checklocation();
       
         marker.setMap(map);
