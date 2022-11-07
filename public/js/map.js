@@ -63,39 +63,38 @@ async function initMap() {
     disableDefaultUI: true,
   });
   
-//   fetch("https://amritatrees.glitch.me/trees")
-//   .then( data => data.json() )
-//   .then( data => {
-//     data.forEach( tree => {
-//     // ###########################################################################
-//       const lat = Number(tree.coords.split(",")[0]);
-//       const lng = Number(tree.coords.split(",")[1]);
+  fetch("https://amritatrees.glitch.me/db?table=trees")
+  .then( data => data.json() )
+  .then( data => {
+    data.forEach( tree => {
+    // ###########################################################################
+      const coords = tree.coords.split(",")
+      const lat = Number(coords[0]);
+      const lng = Number(coords[1]);
       
-//       const iconSize = 80;
-//       let tree_icon = tree.icon || tree_icon_url;
-//       const marker = new google.maps.Marker({
-//         title: tree.title,
-//         position: {lat: lat, lng: lng },
-//         map,
-//         icon: {
-//           url: tree_icon,
-//           scaledSize: new google.maps.Size(iconSize, iconSize),
-//           origin: new google.maps.Point(0, 0),
-//           anchor: new google.maps.Point(iconSize/2, iconSize/2),
-//         },
-//       })
+      const iconSize = 80;
+      let tree_icon = tree.icon || tree_icon_url;
+      const marker = new google.maps.Marker({
+        title: tree.title,
+        position: {lat: lat, lng: lng },
+        map,
+        icon: {
+          url: tree_icon,
+          scaledSize: new google.maps.Size(iconSize, iconSize),
+          origin: new google.maps.Point(0, 0),
+          anchor: new google.maps.Point(iconSize/2, iconSize/2),
+        },
+      })
       
-//       const infowindow = new google.maps.InfoWindow({content: tree.title});
-//       marker.addListener("click", () => {
-//         if (infowindow) {infowindow.close();}
-//         infowindow.open({anchor: marker,map,shouldFocus: false,});
-//       });
+      marker.addListener("click", () => {
+                
+      });
       
-//       marker.setMap(map);
+      marker.setMap(map);
       
-//     // ########################################################################### 
-//     })
-//   });
+    // ########################################################################### 
+    })
+  });
   
   
   
@@ -106,43 +105,13 @@ async function initMap() {
         lat: position.coords.latitude,
         lng: position.coords.longitude,
       };
-      map.setCenter(pos);
+      // map.setCenter(pos);
       const latlng = new google.maps.LatLng(pos.lat, pos.lng);
       currPosMarker.setPosition(latlng);
     });
     }
   }
   
-  
-
-  // resize markers to fit zoom level
-//   google.maps.event.addListener(map, 'zoom_changed', function() {
-      
-//       const pixelSizeAtZoom0 = 1;
-//       const zoom = map.getZoom();
-//       let izoom = 20 - zoom;
-    
-    
-    
-//       setTimeout( ()=>{
-//         console.clear();
-//         console.log(zoom,izoom);
-//         console.log(mapSize)
-//       }, 50)
-    
-    
-    
-//       // mapMarker.setIcon(
-//       //     new google.maps.MarkerImage(
-//       //         mapMarker.getIcon().url, //marker's same icon graphic
-//       //         null,//size
-//       //         new google.maps.Point(0, 0),
-//       //         new google.maps.Point(mapSize/(izoom + 1), mapSize/(izoom + 1) ),
-//       //         new google.maps.Size(mapSize, mapSize) //changes the scale
-//       //     )
-//       // );   
-    
-//   });
   
   const currPosMarker = new google.maps.Marker({
     position: { lat: 10.900016808568687, lng: 76.9028589289025 },map,
@@ -162,22 +131,7 @@ async function initMap() {
   //     },
   // });
   
-  
-//   const mapImage = new google.maps.MarkerImage(
-//     mapIcon,
-//     new google.maps.Size(4320,4320), //size
-//     new google.maps.Point(0, 0), // origin
-//     new google.maps.Point(0, 2160 ), // anchor
-//     new google.maps.Size(8,8) //scale
-//   );
-    
-//   const mapMarker = new google.maps.Marker({
-//     position: new google.maps.LatLng(10.90370935780691, 76.89921211104604),
-//     map: map,
-//     icon: mapImage //set the markers icon to the MarkerImage
-//   });
-  
-  // setInterval(loop,1000);
+  setInterval(loop,1000);
 }
   
   
