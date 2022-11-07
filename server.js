@@ -214,14 +214,16 @@ fastify.get("/db", async (request, reply) => {
 
 fastify.post("/checkinglocation", async (request, reply) => {
   
-  const entrance = {lat:10.901853212312897,lng: 76.89603899041079};
+  // const entrance = {lat:10.901853212312897,lng: 76.89603899041079};
   const body = request.body;
   console.log(body)
+  const pos1 = body.pos1;
+  const pos2 = body.pos2;
   
-  console.log(entrance.lat,entrance.lng, body.lat, body.lng);
-  const distance = utils.measureDistance(entrance.lat,entrance.lng, body.lat, body.lng);
-  console.log(distance)
-  return reply.type("json").send({distance: distance });
+  // console.log(entrance.lat,entrance.lng, body.lat, body.lng);
+  const distance = utils.measureDistance(pos1.lat,pos1.lng, pos2.lat, pos2.lng);
+  // console.log(distance)
+  return reply.type("json").send({distance: distance,  });
 });
 
 

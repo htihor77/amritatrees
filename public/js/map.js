@@ -33,15 +33,8 @@ function createUserPrompt(map){
 
 
 // ######################################################################################################
-function getPositionCmd(){
-  navigator.geolocation.getCurrentPosition( (position)=>{
-    return {
-      lat: position.coords.latitude,
-      lng: position.coords.longitude,
-    };
-  });
-}
-function checklocation(){
+
+function checklocation(pos2){
   let pos = {};
   
   navigator.geolocation.getCurrentPosition( (position)=>{
@@ -56,7 +49,7 @@ function checklocation(){
       accept: 'application.json',
         'Content-Type': 'application/json'
       },
-    body: JSON.stringify(pos),
+    body: JSON.stringify({pos1:pos, pos2: pos2}),
   })
   .then(res=>res.json())
   .then(data=>{
@@ -119,7 +112,7 @@ async function initMap() {
       const coords = tree.coords.split(",")
       const lat = Number(coords[0]);
       const lng = Number(coords[1]);
-      allMarkers.apppend({lat:lat, lng:lng});
+      allMarkers.push({lat:lat, lng:lng});
       
       const iconSize = 80;
       let tree_icon = tree.icon || tree_icon_url;
@@ -138,7 +131,7 @@ async function initMap() {
       marker.addListener("click", () => {
         // userPropmt.style.display = "block";
         console.log("clicked", id);
-        checklocation();
+        checklocation(allMarkers[id]);
       
         marker.setMap(map);
       });
