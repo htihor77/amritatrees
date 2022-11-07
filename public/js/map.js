@@ -139,25 +139,13 @@ async function initMap() {
       
       marker.addListener("click", () => {
         // userPropmt.style.display = "block";
-        let pos = getPositionCmd();
-        
-        let response = fetch('https://amritatrees.glitch.me/checkinglocation', {
-          method: 'POST',
-          headers: {
-            accept: 'application.json',
-              'Content-Type': 'application/json'
-            },
-          body: JSON.stringify(pos),
-        })
-        .then(res=>res.json())
-        .then(data=>{
-          console.log(data);
-        });
+        console.log("clicked", marker.getPosition());
+        checklocation();
       
-      marker.setMap(map);
-      
+        marker.setMap(map);
+      });
     // ########################################################################### 
-    })
+    });
   });
   
   
