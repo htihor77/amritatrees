@@ -177,7 +177,6 @@ fastify.get("/treedata", async (request, reply) => {
   return reply.send(data)
 });
 
-
 fastify.get("/leaderboards", async (request, reply) => {
   const data1 = await db.runQuery1(`SELECT username,points FROM Users ORDER BY points DESC`);
   const data2 = await db.runQuery1(`SELECT username,collected FROM Users ORDER BY collected DESC`);

@@ -50,9 +50,9 @@ function checklocation(pos2){
         'Content-Type': 'application/json'
       },
     body: JSON.stringify({pos1:pos, pos2: pos2}),
-  })
-  .then(res=>res.json())
-  .then(data=>{
+    })
+    .then(res=>res.json())
+    .then(data=>{
       console.log(data);
       $("#button").setAttribute("data-distance-count",data.distance);
     });   
@@ -103,8 +103,7 @@ async function initMap() {
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(userPropmt);
   
   
-  
-  fetch("https://amritatrees.glitch.me/db?table=trees")
+  fetch("https://amritatrees.glitch.me/treedata")
   .then( data => data.json() )
   .then( data => {
     data.forEach( (tree,id) => {
@@ -128,19 +127,32 @@ async function initMap() {
         },
       })
       
+      
+      function toggleBounce() {
+      if (marker.getAnimation() !== null) {
+        marker.setAnimation(null);
+      } else {
+        marker.setAnimation(google.maps.Animation.BOUNCE);
+        setTime
+        }
+      }
+      
+      
       marker.addListener("click", () => {
         // userPropmt.style.display = "block";
         console.log("clicked", id);
+        toggleBounce();
         checklocation(allMarkers[id]);
       
         marker.setMap(map);
       });
+      
+      
+      
     // ########################################################################### 
     });
   });
-  
-  
-  
+
   
   const loop = () => {
     if(navigator.geolocation){navigator.geolocation.getCurrentPosition( (position)=>{
