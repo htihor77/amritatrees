@@ -1,16 +1,26 @@
-function devDisplayCoords(){
-  $("#dev").innerHTML = "loading...";
-  if(navigator.geolocation){
-    navigator.geolocation.getCurrentPosition( (pos)=>{
-      $("#dev").innerHTML = pos.coords.latitude + "," + pos.coords.longitude + "<br>" + Math.round(pos.coords.accuracy) + "meters inacurracy";
-    });
-  }
-  // checklocation();
+// function devDisplayCoords(){
+//   $("#dev").innerHTML = "loading...";
+//   if(navigator.geolocation){
+//     navigator.geolocation.getCurrentPosition( (pos)=>{
+//       $("#dev").innerHTML = pos.coords.latitude + "," + pos.coords.longitude + "<br>" + Math.round(pos.coords.accuracy) + "meters inacurracy";
+//     });
+//   }
+//   // checklocation();
+// }
+
+// setInterval( ()=>{
+//   devDisplayCoords();
+// },1000);
+
+function createUserPrompt(map){
+  const div = document.createElement("div");
+  div.innerHTML = "ADDFASDFJASLDKFJASD;LFKJASDKL;FJA;SLDF"
+  
+    
+  
+  return div;
 }
 
-setInterval( ()=>{
-  devDisplayCoords();
-},1000);
 
 // ######################################################################################################
 
@@ -62,6 +72,17 @@ async function initMap() {
     disableDoubleClickZoom: true,
     disableDefaultUI: true,
   });
+  
+  
+  
+  const userPropmt = document.createElement("div");
+  userPropmt.id = "userPropmt";
+  const promptDiv = createUserPrompt(map);
+  
+  userPropmt.appendChild(promptDiv);
+  map.controls[google.maps.ControlPosition.CENTER].push(userPropmt);
+  
+  
   
   fetch("https://amritatrees.glitch.me/db?table=trees")
   .then( data => data.json() )
