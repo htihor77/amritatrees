@@ -171,18 +171,6 @@ async function initMap() {
     // position: google.maps.ControlPosition.TOP_CENTER,
   });
  
-  // 10.904444839645889, 76.89907299989305
-  // 10.903717134576203, 76.8992274346881
-  const mapSize = 7560
-  // const mapMarker = new google.maps.Marker({
-  //   position: { lat: 10.903717134576203, lng: 76.8992274346881 },map,
-  //     icon: {
-  //       url: mapIcon,
-  //       origin: new google.maps.Point(0, 0),
-  //       anchor: new google.maps.Point(mapSize/2, mapSize/2),
-  //     },
-  // });
-  
   setInterval(loop,1000);
 }
   
