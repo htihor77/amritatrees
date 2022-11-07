@@ -49,7 +49,7 @@ fastify.addHook("onRequest", (request, reply, next) => {
   const sid = request.session.sessionId;
   // console.log("sid:",sid);
   
-  const valid_urls = ["/login","/signup","/leaderboards","/css/style.css","/manifest.json","/users"];
+  const valid_urls = ["/login","/signup","/leaderboards","/css/style.css","/manifest.json", "/"];
   const valid_prefix_urls = []
   if( request.session.isAuthenticated === undefined && valid_urls.indexOf(request.url) == -1 && !request.url.startsWith("/css/" || "/assets/") ){
     reply.redirect("/login");
