@@ -98,6 +98,7 @@ async function initMap() {
   closeBtn.innerText = "button";
   closeBtn.style.display = "block";
   closeBtn.style.padding = "15px";
+  closeBtn.style.marginLeft = "50%";
   
   closeBtn.addEventListener("click",()=>{
     userPropmt.style.display = "none";
