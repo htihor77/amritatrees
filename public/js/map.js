@@ -31,13 +31,16 @@ function createUserPrompt(map){
   return div;
 }
 
-function closePrompt(e){
-  console.log(e)
-  
-}
 
 // ######################################################################################################
-
+function getPositionCmd(){
+  navigator.geolocation.getCurrentPosition( (position)=>{
+    return {
+      lat: position.coords.latitude,
+      lng: position.coords.longitude,
+    };
+  });
+}
 function checklocation(){
   let pos = {};
   
@@ -135,8 +138,21 @@ async function initMap() {
       })
       
       marker.addListener("click", () => {
-        userPropmt.style.display = "block";
-      });
+        // userPropmt.style.display = "block";
+        let pos = getPositionCmd();
+        
+        let response = fetch('https://amritatrees.glitch.me/checkinglocation', {
+          method: 'POST',
+          headers: {
+            accept: 'application.json',
+              'Content-Type': 'application/json'
+            },
+          body: JSON.stringify(pos),
+        })
+        .then(res=>res.json())
+        .then(data=>{
+          console.log(data);
+        });
       
       marker.setMap(map);
       

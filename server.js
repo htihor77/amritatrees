@@ -212,17 +212,17 @@ fastify.get("/db", async (request, reply) => {
 //   return reply.send("check");
 // });
 
-// fastify.post("/checkinglocation", async (request, reply) => {
+fastify.post("/checkinglocation", async (request, reply) => {
   
-//   const entrance = {lat:10.901853212312897,lng: 76.89603899041079};
-//   const body = request.body;
-//   console.log(body)
+  const entrance = {lat:10.901853212312897,lng: 76.89603899041079};
+  const body = request.body;
+  console.log(body)
   
-//   console.log(entrance.lat,entrance.lng, body.lat, body.lng);
-//   const distance = utils.measureDistance(entrance.lat,entrance.lng, body.lat, body.lng);
-//   console.log(distance)
-//   return reply.type("json").send({distance: distance });
-// });
+  console.log(entrance.lat,entrance.lng, body.lat, body.lng);
+  const distance = utils.measureDistance(entrance.lat,entrance.lng, body.lat, body.lng);
+  console.log(distance)
+  return reply.type("json").send({distance: distance });
+});
 
 
 
