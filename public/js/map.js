@@ -133,7 +133,9 @@ async function initMap() {
         marker.setAnimation(null);
       } else {
         marker.setAnimation(google.maps.Animation.BOUNCE);
-        setTime
+        setTimeout( ()=>{
+          marker.setAnimation(null);
+          },500)
         }
       }
       
