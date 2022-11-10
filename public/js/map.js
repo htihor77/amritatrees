@@ -127,7 +127,8 @@ async function initMap() {
           origin: new google.maps.Point(0, 0),
           anchor: new google.maps.Point(iconSize/2, iconSize/2),
         },
-      })
+      });
+      marker.setAnimation(null);
       
       
       function toggleBounce() {
@@ -140,6 +141,7 @@ async function initMap() {
           },500)
         }
       }
+      
       
       
       marker.addListener("click", async () => {
@@ -156,6 +158,12 @@ async function initMap() {
       
     // ########################################################################### 
     });
+    
+    data.forEach(item=>{
+      
+    });
+    
+    
   });
 
   
