@@ -154,15 +154,21 @@ async function initMap() {
         marker.setMap(map);
       });
       
+      const shadowMarker = new google.maps.Marker({
+        title: tree.title,
+        position: {lat: lat, lng: lng },
+        map,
+        icon: {
+          url: tree_icon,
+          scaledSize: new google.maps.Size(iconSize, iconSize),
+          origin: new google.maps.Point(0, 0),
+          anchor: new google.maps.Point(iconSize/2, iconSize/2),
+        },
+      });
       
       
     // ########################################################################### 
-    });
-    
-    data.forEach(item=>{
-      
-    });
-    
+    });  
     
   });
 
