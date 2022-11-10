@@ -155,7 +155,7 @@ async function initMap() {
       });
       
       const shadowMarker = new google.maps.Marker({
-        title: tree.title,
+        title: 'shadow',
         position: {lat: lat, lng: lng },
         map,
         icon: {
@@ -165,7 +165,7 @@ async function initMap() {
           anchor: new google.maps.Point(iconSize/2, iconSize/2),
         },
       });
-      
+      shadowMarker.setMap(map);
       
     // ########################################################################### 
     });  
