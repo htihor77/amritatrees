@@ -48,15 +48,20 @@ function createUserPrompt(map){
 //   });
 // }  
   
-function checklocation(pos2){
+async function checklocation(pos2){
   let pos = {};
-  navigator.geolocation.getCurrentPosition( (position)=>{
-    pos = {
+  await navigator.geolocation.getCurrentPosition( async (position)=>{
+    pos = await {
       lat: position.coords.latitude,
       lng: position.coords.longitude,
       accuracy: Math.round(position.coords.accuracy)
     }
+    // console.log(await pos)
+    
   });
+  // console.log("test")
+  
+  
   // let pos = {
     // lat:10,
     // lng:70
@@ -67,8 +72,8 @@ function checklocation(pos2){
   //                                             body: JSON.stringify({pos1:pos, pos2: pos2})});
   // let data = await res.json();
   
+  return await pos
   
-  return pos;
 }
   
   
