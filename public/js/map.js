@@ -49,15 +49,26 @@ function createUserPrompt(map){
 // }  
   
 async function checklocation(pos2){
-  let pos = navigator.geolocation.getCurrentPosition( (position)=>{
-    return {
+  let pos = {};
+  await navigator.geolocation.getCurrentPosition( (position)=>{
+    pos = {
       lat: position.coords.latitude,
       lng: position.coords.longitude,
       accuracy: Math.round(position.coords.accuracy)
     }
   });
+  // let pos = {
+    // lat:10,
+    // lng:70
+  // }
+  console.log(pos)
+  let res = await fetch("./checkinglocation",{method: 'POST',
+                                              headers: {accept: 'application.json','Content-Type': 'application/json'},
+                                              body: JSON.stringify({pos1:pos, pos2: pos2})});
+  let data = await res.json();
   
-  return pos;
+  
+  return data;
 }
   
   
@@ -142,7 +153,6 @@ async function initMap() {
       });
       marker.setAnimation(null);
       
-      
       function toggleBounce() {
       if (marker.getAnimation() !== null) {
         marker.setAnimation(null);
@@ -152,17 +162,15 @@ async function initMap() {
         }
       }
       
-      
-      
       marker.addListener("click", async() => {
         // userPropmt.style.display = "block";
         console.log("clicked", id);
         toggleBounce();
         
+        // console.log(allMarkers[id])
         let res = await checklocation(allMarkers[id]);
         console.log(res)
 
-        
         marker.setMap(map);
       });
 
