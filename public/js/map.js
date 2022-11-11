@@ -17,33 +17,48 @@ function createUserPrompt(map){
 
 // ######################################################################################################
 
-async function checklocation(pos2){
-  let pos = {};
+// async function checklocation(pos2){
+//   let pos = {};
   
-  navigator.geolocation.getCurrentPosition( (position)=>{
-    pos = {
+//   navigator.geolocation.getCurrentPosition( (position)=>{
+//     pos = {
+//       lat: position.coords.latitude,
+//       lng: position.coords.longitude,
+//       accuracy: Math.round(position.coords.accuracy)
+//     };
+  
+//   const res = await fetch('https://amritatrees.glitch.me/checkinglocation', {
+//     method: 'POST',
+//     headers: {
+//       accept: 'application.json',
+//         'Content-Type': 'application/json'
+//       },
+//     body: JSON.stringify({pos1:pos, pos2: pos2}),
+//     })
+  
+//   const data = await res.json();
+    
+//   return await {distance: data.distance, accuracy: pos.accuracy }
+
+//     // .then(data=>{
+//       // console.log(data);
+//       // $("#button").setAttribute("data-distance-count",data.distance);
+//       // return {distance: data.distance, accuracy: pos.accuracy }
+//     // });   
+//   });
+// }  
+  
+async function checklocation(pos2){
+  let pos = navigator.geolocation.getCurrentPosition( (position)=>{
+    return {
       lat: position.coords.latitude,
       lng: position.coords.longitude,
       accuracy: Math.round(position.coords.accuracy)
-    };
-  
-  fetch('https://amritatrees.glitch.me/checkinglocation', {
-    method: 'POST',
-    headers: {
-      accept: 'application.json',
-        'Content-Type': 'application/json'
-      },
-    body: JSON.stringify({pos1:pos, pos2: pos2}),
-    })
-    .then(res=>res.json())
-    .then(data=>{
-      console.log(data);
-      $("#button").setAttribute("data-distance-count",data.distance);
-      return {distance: data.distance, accuracy: pos.accuracy }
-    });   
+    }
   });
-}  
   
+  return pos;
+}
   
   
 async function initMap() {
@@ -96,84 +111,64 @@ async function initMap() {
   treedata.forEach(item=>{const coords = item.coords.split(",")
       const lat = Number(coords[0]);const lng = Number(coords[1]);
                           
-      
+      const iconSize = 100;
+      const marker = new google.maps.Marker({
+        position: {lat: lat, lng: lng },map,
+        icon: {
+          url: shadow_url,
+          scaledSize: new google.maps.Size(iconSize, iconSize),
+          origin: new google.maps.Point(0, 0),
+          anchor: new google.maps.Point(iconSize/2, iconSize/2),
+        },
+      });
+
   });
   
-//   fetch("https://amritatrees.glitch.me/treedata")
-//   .then( data => data.json() )
-//   .then( data => {
-    
-//     data.forEach(item=>{
-//       const coords = item.coords.split(",")
-//       const lat = Number(coords[0]);
-//       const lng = Number(coords[1]);
+  treedata.forEach((tree,id)=>{const coords = tree.coords.split(",")
+      const lat = Number(coords[0]);const lng = Number(coords[1]);
+      allMarkers.push({lat:lat, lng:lng});
       
-//       const iconSize = 100;
-//       const marker = new google.maps.Marker({
-//         title: 'shadow',
-//         position: {lat: lat, lng: lng },
-//         map,
-//         icon: {
-//           url: shadow_url,
-//           scaledSize: new google.maps.Size(iconSize, iconSize),
-//           origin: new google.maps.Point(0, 0),
-//           anchor: new google.maps.Point(iconSize/2, iconSize/2),
-//         },
-//       });
-//     });
-    
-//     data.forEach( (tree,id) => {
-//     // ###########################################################################
-//       const coords = tree.coords.split(",")
-//       const lat = Number(coords[0]);
-//       const lng = Number(coords[1]);
-//       allMarkers.push({lat:lat, lng:lng});
-      
-//       const iconSize = 80;
-//       const marker = new google.maps.Marker({
-//         title: tree.title,
-//         position: {lat: lat, lng: lng },
-//         map,
-//         icon: {
-//           url: tree_icon_url,
-//           scaledSize: new google.maps.Size(iconSize, iconSize),
-//           origin: new google.maps.Point(0, 0),
-//           anchor: new google.maps.Point(iconSize/2, iconSize/2),
-//         },
-//       });
-//       marker.setAnimation(null);
+      const iconSize = 80;
+      const marker = new google.maps.Marker({
+        title: tree.title,
+        position: {lat: lat, lng: lng },
+        map,
+        icon: {
+          url: tree_icon_url,
+          scaledSize: new google.maps.Size(iconSize, iconSize),
+          origin: new google.maps.Point(0, 0),
+          anchor: new google.maps.Point(iconSize/2, iconSize/2),
+        },
+      });
+      marker.setAnimation(null);
       
       
-//       function toggleBounce() {
-//       if (marker.getAnimation() !== null) {
-//         marker.setAnimation(null);
-//       } else {
-//         marker.setAnimation(google.maps.Animation.BOUNCE);
-//         setTimeout( ()=>{marker.setAnimation(null);},500);
-//         }
-//       }
+      function toggleBounce() {
+      if (marker.getAnimation() !== null) {
+        marker.setAnimation(null);
+      } else {
+        marker.setAnimation(google.maps.Animation.BOUNCE);
+        setTimeout( ()=>{marker.setAnimation(null);},500);
+        }
+      }
       
       
       
-//       marker.addListener("click", async() => {
-//         // userPropmt.style.display = "block";
-//         console.log("clicked", id);
-//         toggleBounce();
+      marker.addListener("click", async() => {
+        // userPropmt.style.display = "block";
+        console.log("clicked", id);
+        toggleBounce();
         
-//         let res = await fetch("./treedata");
-//         let data = await res.json();
-//         console.log(data)
+        let res = await checklocation(allMarkers[id]);
+        console.log(res)
+
         
-//         // let data = await checklocation(allMarkers[id]);
-//         // console.log(data)
-        
-//         marker.setMap(map);
-//       });
-      
-//     // ########################################################################### 
-//     });  
-    
-//   });
+        marker.setMap(map);
+      });
+
+  });
+  
+
 
   
   const loop = () => {
