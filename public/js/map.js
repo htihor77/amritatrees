@@ -34,14 +34,14 @@ function createUserPrompt(map){
 
 // ######################################################################################################
 
-function checklocation(pos2){
+async function checklocation(pos2){
   let pos = {};
   
   navigator.geolocation.getCurrentPosition( (position)=>{
     pos = {
       lat: position.coords.latitude,
       lng: position.coords.longitude,
-      accuracy: Math.round(pos.coords.accuracy)
+      accuracy: Math.round(position.coords.accuracy)
     };
   
   let response = fetch('https://amritatrees.glitch.me/checkinglocation', {
@@ -56,7 +56,7 @@ function checklocation(pos2){
     .then(data=>{
       console.log(data);
       $("#button").setAttribute("data-distance-count",data.distance);
-      return {distance: data.distance, accuracy: pos.coords.accuracy }
+      return {distance: data.distance, accuracy: pos.accuracy }
     });   
   });
 }  
@@ -114,7 +114,7 @@ async function initMap() {
       const lat = Number(coords[0]);
       const lng = Number(coords[1]);
       
-      const iconSize = 80;
+      const iconSize = 100;
       const marker = new google.maps.Marker({
         title: 'shadow',
         position: {lat: lat, lng: lng },
@@ -127,8 +127,6 @@ async function initMap() {
         },
       });
     });
-    
-    
     
     data.forEach( (tree,id) => {
     // ###########################################################################
