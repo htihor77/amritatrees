@@ -47,24 +47,25 @@ function createUserPrompt(map){
 //     // });   
 //   });
 // }  
-  
+
+
 async function checklocation(pos2){
-  let pos = {};
-  await navigator.geolocation.getCurrentPosition( async (position)=>{
-    pos = await {
-      lat: position.coords.latitude,
-      lng: position.coords.longitude,
-      accuracy: Math.round(position.coords.accuracy)
-    }
-    console.log(pos)
+  
+  getLocation()
+    .then( async (location) => {
+    
+    console.log(location)
     let res = await fetch("./checkinglocation",{method: 'POST',
-                                                headers: {accept: 'application.json','Content-Type': 'application/json'},
-                                                body: JSON.stringify({pos1:pos, pos2: pos2})});
+                                                headers: {accept: 'application.json','Content-Type': 'application/json'
+                                                },body: JSON.stringify({pos1:location, pos2: pos2})});
     
     let data = await res.json();
-    console.log(data)
-    return 
+    console.log(">>",await data)
+    
   });
+  
+    
+  
   console.log("before navigator gets location")
   
   
@@ -175,8 +176,10 @@ async function initMap() {
         toggleBounce();
         
         // console.log(allMarkers[id])
-        let res = checklocation(allMarkers[id]);
-        console.log(res)
+        checklocation(allMarkers[id])
+        .then( (res)=>{
+          console.log("RES ",res)
+        })
 
         marker.setMap(map);
       });
