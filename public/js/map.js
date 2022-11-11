@@ -1,24 +1,7 @@
-// function devDisplayCoords(){
-//   $("#dev").innerHTML = "loading...";
-//   if(navigator.geolocation){
-//     navigator.geolocation.getCurrentPosition( (pos)=>{
-//       $("#dev").innerHTML = pos.coords.latitude + "," + pos.coords.longitude + "<br>" + Math.round(pos.coords.accuracy) + "meters inacurracy";
-//     });
-//   }
-//   // checklocation();
-// }
-
-// setInterval( ()=>{
-//   devDisplayCoords();
-// },1000);
-
 function createUserPrompt(map){
   
-  function promptClose(m){
-    console.log(m);
-  }
-  
-  
+  function promptClose(m){console.log(m);}
+
   const div = document.createElement("div");
   div.style.display = "flex";
   div.style.justifyContent = "center";
@@ -44,7 +27,7 @@ async function checklocation(pos2){
       accuracy: Math.round(position.coords.accuracy)
     };
   
-  let response = fetch('https://amritatrees.glitch.me/checkinglocation', {
+  fetch('https://amritatrees.glitch.me/checkinglocation', {
     method: 'POST',
     headers: {
       accept: 'application.json',
@@ -64,6 +47,8 @@ async function checklocation(pos2){
   
   
 async function initMap() {
+  const tree_icon_url = "https://cdn.discordapp.com/attachments/1027927070191403189/1039163926702719086/qmark64.png";
+  const shadow_url = "https://www.transparentpng.com/download/shadow/iuqEeA-shadow-png-pic-controlled-drugs-cabinets-from-pharmacy.png";
   
   let map = new google.maps.Map(document.getElementById("map"),
     {
@@ -105,91 +90,90 @@ async function initMap() {
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(userPropmt);
   
   
-  fetch("https://amritatrees.glitch.me/treedata")
-  .then( data => data.json() )
-  .then( data => {
-    
-    data.forEach(item=>{
-      const coords = item.coords.split(",")
-      const lat = Number(coords[0]);
-      const lng = Number(coords[1]);
+  const treeDataResp = await fetch("./treedata");
+  const treedata = await treeDataResp.json();
+  
+  treedata.forEach(item=>{const coords = item.coords.split(",")
+      const lat = Number(coords[0]);const lng = Number(coords[1]);
+                          
       
-      const iconSize = 100;
-      const marker = new google.maps.Marker({
-        title: 'shadow',
-        position: {lat: lat, lng: lng },
-        map,
-        icon: {
-          url: shadow_url,
-          scaledSize: new google.maps.Size(iconSize, iconSize),
-          origin: new google.maps.Point(0, 0),
-          anchor: new google.maps.Point(iconSize/2, iconSize/2),
-        },
-      });
-    });
-    
-    data.forEach( (tree,id) => {
-    // ###########################################################################
-      const coords = tree.coords.split(",")
-      const lat = Number(coords[0]);
-      const lng = Number(coords[1]);
-      allMarkers.push({lat:lat, lng:lng});
-      
-      const iconSize = 80;
-      let tree_icon = tree.icon || tree_icon_url;
-      const marker = new google.maps.Marker({
-        title: tree.title,
-        position: {lat: lat, lng: lng },
-        map,
-        icon: {
-          url: tree_icon,
-          scaledSize: new google.maps.Size(iconSize, iconSize),
-          origin: new google.maps.Point(0, 0),
-          anchor: new google.maps.Point(iconSize/2, iconSize/2),
-        },
-      });
-      marker.setAnimation(null);
-      
-      
-      function toggleBounce() {
-      if (marker.getAnimation() !== null) {
-        marker.setAnimation(null);
-      } else {
-        marker.setAnimation(google.maps.Animation.BOUNCE);
-        setTimeout( ()=>{
-          marker.setAnimation(null);
-          },500)
-        }
-      }
-      
-      
-      
-      marker.addListener("click", async () => {
-        // userPropmt.style.display = "block";
-        console.log("clicked", id);
-        toggleBounce();
-        let data = await checklocation(allMarkers[id]);
-        console.log(data)
-        
-        marker.setMap(map);
-      });
-      
-      // const shadowMarker = new google.maps.Marker({
-      //   title: 'shadow',
-      //   position: {lat: lat, lng: lng },
-      //   map,
-      //   icon: {
-      //     url: shadow_url,
-      //     scaledSize: new google.maps.Size(iconSize, iconSize),
-      //     origin: new google.maps.Point(0, 0),
-      //     anchor: new google.maps.Point(iconSize/2, iconSize/2 - 10),
-      //   },
-      // });
-      
-    // ########################################################################### 
-    });  
-    
   });
+  
+//   fetch("https://amritatrees.glitch.me/treedata")
+//   .then( data => data.json() )
+//   .then( data => {
+    
+//     data.forEach(item=>{
+//       const coords = item.coords.split(",")
+//       const lat = Number(coords[0]);
+//       const lng = Number(coords[1]);
+      
+//       const iconSize = 100;
+//       const marker = new google.maps.Marker({
+//         title: 'shadow',
+//         position: {lat: lat, lng: lng },
+//         map,
+//         icon: {
+//           url: shadow_url,
+//           scaledSize: new google.maps.Size(iconSize, iconSize),
+//           origin: new google.maps.Point(0, 0),
+//           anchor: new google.maps.Point(iconSize/2, iconSize/2),
+//         },
+//       });
+//     });
+    
+//     data.forEach( (tree,id) => {
+//     // ###########################################################################
+//       const coords = tree.coords.split(",")
+//       const lat = Number(coords[0]);
+//       const lng = Number(coords[1]);
+//       allMarkers.push({lat:lat, lng:lng});
+      
+//       const iconSize = 80;
+//       const marker = new google.maps.Marker({
+//         title: tree.title,
+//         position: {lat: lat, lng: lng },
+//         map,
+//         icon: {
+//           url: tree_icon_url,
+//           scaledSize: new google.maps.Size(iconSize, iconSize),
+//           origin: new google.maps.Point(0, 0),
+//           anchor: new google.maps.Point(iconSize/2, iconSize/2),
+//         },
+//       });
+//       marker.setAnimation(null);
+      
+      
+//       function toggleBounce() {
+//       if (marker.getAnimation() !== null) {
+//         marker.setAnimation(null);
+//       } else {
+//         marker.setAnimation(google.maps.Animation.BOUNCE);
+//         setTimeout( ()=>{marker.setAnimation(null);},500);
+//         }
+//       }
+      
+      
+      
+//       marker.addListener("click", async() => {
+//         // userPropmt.style.display = "block";
+//         console.log("clicked", id);
+//         toggleBounce();
+        
+//         let res = await fetch("./treedata");
+//         let data = await res.json();
+//         console.log(data)
+        
+//         // let data = await checklocation(allMarkers[id]);
+//         // console.log(data)
+        
+//         marker.setMap(map);
+//       });
+      
+//     // ########################################################################### 
+//     });  
+    
+//   });
 
   
   const loop = () => {
@@ -214,12 +198,5 @@ async function initMap() {
  
   setInterval(loop,1000);
 }
-  
-  
-// const tree_icon_url = "https://amritatrees.sirv.com/treeicon32.png";
-const tree_icon_url = "https://cdn.discordapp.com/attachments/1027927070191403189/1039163926702719086/qmark64.png";
-const shadow_url = "https://www.transparentpng.com/download/shadow/iuqEeA-shadow-png-pic-controlled-drugs-cabinets-from-pharmacy.png";
-// const tree_icon_url = "https://cdn.glitch.global/9d67ff5c-524b-467b-aa2f-2cb422728542/treeicon.32png.png?v=1662405399801";
-// const transparent = "https://cdn.glitch.global/9d67ff5c-524b-467b-aa2f-2cb422728542/transparentlayer.png?v=1664718701490";
-const mapIcon = "https://cdn.glitch.global/9d67ff5c-524b-467b-aa2f-2cb422728542/amritamap.png?v=1664725171814"
+
 window.initMap = initMap;
