@@ -56,10 +56,16 @@ async function checklocation(pos2){
       lng: position.coords.longitude,
       accuracy: Math.round(position.coords.accuracy)
     }
-    // console.log(await pos)
+    console.log(pos)
+    let res = await fetch("./checkinglocation",{method: 'POST',
+                                                headers: {accept: 'application.json','Content-Type': 'application/json'},
+                                                body: JSON.stringify({pos1:pos, pos2: pos2})});
     
+    let data = await res.json();
+    console.log(data)
+    return 
   });
-  // console.log("test")
+  console.log("before navigator gets location")
   
   
   // let pos = {
@@ -67,13 +73,9 @@ async function checklocation(pos2){
     // lng:70
   // }
   // console.log(pos)
-  // let res = await fetch("./checkinglocation",{method: 'POST',
-  //                                             headers: {accept: 'application.json','Content-Type': 'application/json'},
-  //                                             body: JSON.stringify({pos1:pos, pos2: pos2})});
-  // let data = await res.json();
   
-  return await pos
-  
+  // console.log(pos)  
+  // return pos
 }
   
   
