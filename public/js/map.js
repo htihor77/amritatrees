@@ -49,34 +49,14 @@ function createUserPrompt(map){
 // }  
 
 
-async function checklocation(pos2){
+async function checklocation(pos1,pos2){
   
-  getLocation()
-    .then( async (location) => {
-    
-    console.log(location)
-    let res = await fetch("./checkinglocation",{method: 'POST',
-                                                headers: {accept: 'application.json','Content-Type': 'application/json'
-                                                },body: JSON.stringify({pos1:location, pos2: pos2})});
-    
+    let res = await fetch("./checkinglocation",
+      {method: 'POST',headers: {accept: 'application.json','Content-Type': 'application/json'},
+        body: JSON.stringify({pos1:location, pos2: pos2})});
+  
     let data = await res.json();
-    console.log(">>",await data)
-    
-  });
-  
-    
-  
-  console.log("before navigator gets location")
-  
-  
-  // let pos = {
-    // lat:10,
-    // lng:70
-  // }
-  // console.log(pos)
-  
-  // console.log(pos)  
-  // return pos
+    return data
 }
   
   
