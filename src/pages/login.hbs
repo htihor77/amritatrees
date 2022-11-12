@@ -170,7 +170,7 @@ function formSubmit(e){
   console.log(e.path[0][1].value);
   e.path[0][1].value = ReverseString(e.path[0][1].value)
   
-  e.preventDefault();
+  // e.preventDefault();
 }
 function ReverseString(str) {
    return str.split('').reverse().join('')
