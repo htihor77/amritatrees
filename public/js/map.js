@@ -156,7 +156,7 @@ async function initMap() {
         toggleBounce();
         
         const pos2 = allMarkers[id];
-        console.log(pos2)
+        // console.log(pos2)
 
         // ###########################################
         
