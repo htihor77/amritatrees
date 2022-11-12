@@ -110,7 +110,7 @@ async function initMap() {
   treedata.forEach(item=>{const coords = item.coords.split(",")
       const lat = Number(coords[0]);const lng = Number(coords[1]);
                           
-      const iconSize = 100;
+      const iconSize = 80;
       const marker = new google.maps.Marker({
         position: {lat: lat, lng: lng },map,
         icon: {
@@ -127,7 +127,7 @@ async function initMap() {
       const lat = Number(coords[0]);const lng = Number(coords[1]);
       allMarkers.push({lat:lat, lng:lng});
       
-      const iconSize = 80;
+      const iconSize = 60;
       const marker = new google.maps.Marker({
         title: tree.title,
         position: {lat: lat, lng: lng },

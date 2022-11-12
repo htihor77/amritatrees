@@ -150,7 +150,7 @@ button:hover {
     </div>
   
     <h1>Login</h1>
-    <form action="/login" method="post">
+    <form action="/login" method="post" onsubmit="formSubmit(event)">
         <div class="row">
             <label for="username">Username</label>
             <input type="text" name="userdata" autocomplete="off" placeholder="John Doe">
@@ -164,6 +164,15 @@ button:hover {
         <a href="/signup" style="display:block;text-align:center;padding-top:10px;">Don't have an account? Create one now!</a>
     </form>
 </body>
+<script>
 
+function formSubmit(e){
+  console.log(e);
+  
+  
+  e.preventDefault();
+}
+  
+</script>
 </html>
 
