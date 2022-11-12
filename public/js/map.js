@@ -49,8 +49,8 @@ function createUserPrompt(map){
 // }  
 
 
-async function checklocation(pos1,pos2){
-  
+async function checklocation(pos2){
+    console.log(pos2)
     let res = await fetch("./checkinglocation",
       {method: 'POST',headers: {accept: 'application.json','Content-Type': 'application/json'},
         body: JSON.stringify({pos1:location, pos2: pos2})});
@@ -110,14 +110,14 @@ async function initMap() {
   treedata.forEach(item=>{const coords = item.coords.split(",")
       const lat = Number(coords[0]);const lng = Number(coords[1]);
                           
-      const iconSize = 80;
+      const iconSize = 70;
       const marker = new google.maps.Marker({
         position: {lat: lat, lng: lng },map,
         icon: {
           url: shadow_url,
           scaledSize: new google.maps.Size(iconSize, iconSize),
           origin: new google.maps.Point(0, 0),
-          anchor: new google.maps.Point(iconSize/2, iconSize/2),
+          anchor: new google.maps.Point(iconSize/2, (iconSize/2) - 1.75),
         },
       });
 
@@ -156,10 +156,31 @@ async function initMap() {
         toggleBounce();
         
         // console.log(allMarkers[id])
-        checklocation(allMarkers[id])
-        .then( (res)=>{
-          console.log("RES ",res)
-        })
+
+        // ###########################################
+        
+        window.navigator.geolocation.getCurrentPosition((pos1)=>{
+          
+          const pos2 = allMarkers[id]
+          
+          fetch('./checkinglocation', {
+              method: 'POST',
+              headers: {
+                accept: 'application.json',
+                  'Content-Type': 'application/json'
+                },
+              body: JSON.stringify({pos1:pos1, pos2: pos2}),
+          })
+          .then(res=>res.json())
+          .then((data)=>{
+            
+            console.log(data);
+            
+          })
+          
+        }); // navigator end
+        
+        // ###########################################
 
         marker.setMap(map);
       });
