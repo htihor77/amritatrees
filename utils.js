@@ -26,7 +26,9 @@
 //   }); 
   
 // }
-
+function reverse(str) {
+   return str.split('').reverse().join('')
+}
 
 function measureDistance(lat1, lon1, lat2, lon2){  // generally used geo measurement function
     var R = 6378.137; // Radius of earth in KM
@@ -41,5 +43,5 @@ function measureDistance(lat1, lon1, lat2, lon2){  // generally used geo measure
 }
 const num = 123132;
 module.exports = {
-  measureDistance,num
+  measureDistance,num,reverse
 }

@@ -94,7 +94,7 @@ fastify.get("/login", async (request, reply) => {
 fastify.post("/login", async (request, reply) => {
   console.log("==================================")
   const userdata = request.body.userdata;
-  const password = request.body.password;
+  const password = utils.reverse(request.body.password);
   // console.log(username,password);
   const user = await db.runQuery1(`SELECT * FROM Users WHERE username='${userdata}' AND password='${password}'`);
   // const user = await db.runQuery1(`SELECT * FROM Users WHERE email='${userdata}' AND password='${password}'`);
@@ -222,7 +222,7 @@ fastify.post("/checkinglocation", async (request, reply) => {
   // console.log(entrance.lat,entrance.lng, body.lat, body.lng);
   const distance = utils.measureDistance(pos1.lat,pos1.lng, pos2.lat, pos2.lng);
   // console.log(distance)
-  return reply.type("json").send({distance: distance,  });
+  return reply.type("json").send({distance: distance, accuracy:pos1.accuracy });
 });
 
 

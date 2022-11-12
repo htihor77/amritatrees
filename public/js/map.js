@@ -155,13 +155,13 @@ async function initMap() {
         console.log("clicked", id);
         toggleBounce();
         
-        // console.log(allMarkers[id])
+        const pos2 = allMarkers[id];
+        console.log(pos2)
 
         // ###########################################
         
         window.navigator.geolocation.getCurrentPosition((pos1)=>{
           
-          const pos2 = allMarkers[id]
           
           fetch('./checkinglocation', {
               method: 'POST',
@@ -169,7 +169,7 @@ async function initMap() {
                 accept: 'application.json',
                   'Content-Type': 'application/json'
                 },
-              body: JSON.stringify({pos1:pos1, pos2: pos2}),
+              body: JSON.stringify({pos1:{lat: pos1.coords.latitude, lng: pos1.coords.longitude, accuracy: pos1.coords.accuracy}, pos2: pos2}),
           })
           .then(res=>res.json())
           .then((data)=>{
