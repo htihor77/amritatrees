@@ -41,8 +41,8 @@
   background-color:rgba(0,0,0,0.15);
   color:white;  
   
-/*   touch-action:none;
-  pointer-events:none; */
+  touch-action:none;
+  pointer-events:none;
 }
 
 #userPrompt *{
@@ -72,7 +72,7 @@
   overflow-y:auto;
   transition: all 200ms;
 }
-#userPrompt .content.active{
+#userPrompt.active .content{
   bottom:0;
   top:default;
 }

@@ -43,7 +43,6 @@ async function submitAnswer(q,ans){
     let data = await res.json();
     console.log(data)
     if(data.correct){
-      //https://media.tenor.com/0AVbKGY_MxMAAAAM/check-mark-verified.gif
       document.getElementById("loader").style.backgroundImage = "url('https://media.tenor.com/0AVbKGY_MxMAAAAM/check-mark-verified.gif')";
     } else {
       document.getElementById("loader").style.backgroundImage = "url('https://media.tenor.com/zzZZwwmB-6YAAAAM/warning.gif')";
@@ -81,7 +80,7 @@ async function initMap() {
   
   const userPrompt = document.createElement("div");
   userPrompt.id = "userPrompt";
-  userPrompt.style.display = "none";
+  // userPrompt.style.display = "none";
   const promptDiv = createUserPrompt(map);
   
   userPrompt.addEventListener("pointerdown",(e)=>{
