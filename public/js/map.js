@@ -34,15 +34,25 @@ async function checklocation(pos2){
 async function submitAnswer(q,ans){
     document.getElementById("loader").style.display = "block";
     let res = await fetch("./checkinganswer",
-      {method: 'POST',headers: {accept: 'application.json','Content-Type': 'application/json'},
+      {
+        method: 'POST',
+        headers: {accept: 'application.json','Content-Type': 'application/json'},
         body: JSON.stringify({q:q, ans:ans})
       });
   
     let data = await res.json();
-    // return data
-  if(data.correct){
-    document.getElementById("loader").style.display = "none";
-  }    
+    console.log(data)
+    if(data.correct){
+      //https://media.tenor.com/0AVbKGY_MxMAAAAM/check-mark-verified.gif
+      document.getElementById("loader").style.backgroundImage = "url('https://media.tenor.com/0AVbKGY_MxMAAAAM/check-mark-verified.gif')";
+    } else {
+      document.getElementById("loader").style.backgroundImage = "url('https://media.tenor.com/zzZZwwmB-6YAAAAM/warning.gif')";
+      document.getElementById("loader").style.display = "none";
+    } 
+  
+    setTimeout(()=>{
+      document.getElementById("loader").style.display = "none";
+    },1500);
   
 }
 
