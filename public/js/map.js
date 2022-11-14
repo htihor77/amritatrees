@@ -146,16 +146,18 @@ async function initMap() {
             console.log(data);
             userPropmt.querySelector(".content").innerHTML = "";
             
-            if(data.distance < 300 && data.accuracy < 100 ){
+            if(data.distance < 300 && data.accuracy < 100 || true){
               
               const quiz = document.createElement("div");
               quiz.innerHTML = data.quiz;
+              quiz.classList = "question"
               
               const options = document.createElement("div");
+              options.classList = "optionsWrapper";
               const q_opts = data.options.split(",");
               let optsContent = ""
               q_opts.forEach(item=>{
-                optsContent += "<span>"+item+"</span>";
+                optsContent += "<span class='ques_options'>"+item+"</span>";
               })
               
               options.innerHTML = `${optsContent}`; 

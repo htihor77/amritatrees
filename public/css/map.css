@@ -71,6 +71,7 @@
   width:100%;
   
   display:flex;
+  flex-direction:column;
   justify-content:center;
   align-items:center;
   
@@ -102,3 +103,29 @@
   background-color:#4b4b4b;
 }
 
+#userPropmt .content .question{
+  width:80%;
+  left:10%;
+  
+  height:2rem;
+  font-size:1.5rem;
+  
+  border:2px solid gold;
+  border-radius:25px;
+  
+  
+  text-align:center;
+}
+
+#userPropmt .content .optionsWrapper {
+  display:flex;
+  flex-wrap:wrap;
+  width:100%;
+}
+
+#userPropmt .content .optionsWrapper .ques_options{
+  display:block;
+  width:50%;
+  height:1.5rem;
+  font-size:1.2rem;
+}
