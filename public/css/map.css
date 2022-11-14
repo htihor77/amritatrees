@@ -126,3 +126,15 @@
   border-radius:25px;
   border:2px solid gray;
 }
+
+#loader{
+  --size: 70px;
+  background-image:url("https://i.gifer.com/origin/b4/b4d657e7ef262b88eb5f7ac021edda87.gif");
+  background-size:var(--size) var(--size);
+  height:var(--size);
+  width:var(--size);
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+}

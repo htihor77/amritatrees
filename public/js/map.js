@@ -32,13 +32,18 @@ async function checklocation(pos2){
   
   
 async function submitAnswer(q,ans){
+    document.getElementById("loader").style.display = "block";
     let res = await fetch("./checkinganswer",
       {method: 'POST',headers: {accept: 'application.json','Content-Type': 'application/json'},
         body: JSON.stringify({q:q, ans:ans})
       });
   
     let data = await res.json();
-    return data
+    // return data
+  if(data.correct){
+    document.getElementById("loader").style.display = "none";
+  }    
+  
 }
 
 
@@ -76,18 +81,13 @@ async function initMap() {
     }
   });
   
-//   const closeBtn = document.createElement("button");
-//   closeBtn.innerText = "button";
-//   closeBtn.style.display = "block";
-//   closeBtn.style.padding = "15px";
-//   closeBtn.style.marginLeft = "50%";
-  
-//   closeBtn.addEventListener("click",()=>{
-//     userPropmt.style.display = "none";
-//   });
+  const loader = document.createElement("div");
+  loader.id = "loader";
+  loader.style.display = "none";
   
   
-  // userPropmt.appendChild(closeBtn);
+  
+  userPrompt.appendChild(loader);
   userPrompt.appendChild(promptDiv);
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(userPrompt);
   
@@ -178,7 +178,7 @@ async function initMap() {
               const q_opts = data.options.split(",");
               let optsContent = ""
               q_opts.forEach(item=>{
-                optsContent += `<span class='ques_options noSelect' onclick='submitAnswer(${q_id},${item})'>item</span>`;
+                optsContent += `<span class='ques_options noSelect' onclick='submitAnswer(${q_id},"${item}")'>${item}</span>`;
               })
               
               options.innerHTML = `${optsContent}`; 

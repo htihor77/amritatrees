@@ -227,15 +227,13 @@ fastify.post("/checkinglocation", async (request, reply) => {
 
 fastify.post("/checkinganswer", async (request, reply) => {
   
+  // const entrance = {lat:10.901853212312897,lng: 76.89603899041079};
   const body = request.body;
-  console.log(body)
-  const pos1 = body.pos1;
-  const pos2 = body.pos2;
+  const q = body.q;
+  const ans = body.ans;  
+  console.log(q,ans)
   
-  // console.log(entrance.lat,entrance.lng, body.lat, body.lng);
-  const distance = utils.measureDistance(pos1.lat,pos1.lng, pos2.lat, pos2.lng);
-  // console.log(distance)
-  return reply.type("json").send({distance: distance, accuracy:pos1.accuracy, quiz_id:1 , quiz:"This plant is native to?", options:"Brazil, Argentina, Puerto Rico, India" });
+  return reply.type("json").send({"correct":true});
 });
 
 
