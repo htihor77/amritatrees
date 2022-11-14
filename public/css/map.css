@@ -33,7 +33,7 @@
   border-bottom-left-radius: 15px;
 }
 
-#userPropmt{
+#userPrompt{
   width:100%;
   height:100%;
   position:relative;
@@ -45,12 +45,12 @@
   pointer-events:none; */
 }
 
-#userPropmt *{
+#userPrompt *{
   touch-action:all;
   pointer-events:all;
 }
 
-#userPropmt .content{
+#userPrompt .content{
   height:25%;
   width:100%;
   
@@ -72,11 +72,11 @@
   overflow-y:auto;
 }
 
-#userPropmt .content::-webkit-scrollbar {width: 3px;}
-#userPropmt .content::-webkit-scrollbar-track {margin-top:20px;background: transparent;}
-#userPropmt .content::-webkit-scrollbar-thumb {background: white;}
+#userPrompt .content::-webkit-scrollbar {width: 3px;}
+#userPrompt .content::-webkit-scrollbar-track {margin-top:20px;background: transparent;}
+#userPrompt .content::-webkit-scrollbar-thumb {background: white;}
 
-#userPropmt .content .randomBar{
+#userPrompt .content .randomBar{
   position:absolute;
   top:10px;
   left:50%;
@@ -89,7 +89,7 @@
   background-color:#4b4b4b;
 }
 
-#userPropmt .content .question{
+#userPrompt .content .question{
   width:80%;
   left:10%;
   
@@ -105,13 +105,13 @@
   text-align:center;
 }
 
-#userPropmt .content .optionsWrapper {
+#userPrompt .content .optionsWrapper {
   display:flex;
   flex-wrap:wrap;
   width:100%;
 }
 
-#userPropmt .content .optionsWrapper .ques_options{
+#userPrompt .content .optionsWrapper .ques_options{
   display:block;
   width:calc(50% - 40px);
   height:2rem;

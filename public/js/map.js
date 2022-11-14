@@ -31,6 +31,17 @@ async function checklocation(pos2){
 }
   
   
+async function submitAnswer(q,ans){
+    let res = await fetch("./checkinganswer",
+      {method: 'POST',headers: {accept: 'application.json','Content-Type': 'application/json'},
+        body: JSON.stringify({q:q, ans:ans})
+      });
+  
+    let data = await res.json();
+    return data
+}
+
+
 async function initMap() {
   const tree_icon_url = "https://cdn.discordapp.com/attachments/1027927070191403189/1039163926702719086/qmark64.png";
   const shadow_url = "https://www.transparentpng.com/download/shadow/iuqEeA-shadow-png-pic-controlled-drugs-cabinets-from-pharmacy.png";
@@ -59,7 +70,7 @@ async function initMap() {
   userPrompt.style.display = "none";
   const promptDiv = createUserPrompt(map);
   
-  userPrompt.addEventListener("click",(e)=>{
+  userPrompt.addEventListener("pointerdown",(e)=>{
     if(e.path[0].id == "userPrompt"){
       userPrompt.style.display = "none";
     }
@@ -128,10 +139,11 @@ async function initMap() {
       }
       
       marker.addListener("click", () => {
-        userPropmt.style.display = "block";
+        userPrompt.style.display = "block";
         console.log("clicked", id);
         toggleBounce();
         
+        map.setCenter(allMarkers[id])
         const pos2 = allMarkers[id];
         // console.log(pos2)
 
@@ -159,13 +171,14 @@ async function initMap() {
               const quiz = document.createElement("div");
               quiz.innerHTML = data.quiz;
               quiz.classList = "question noSelect"
+              const q_id = data.quiz_id;
               
               const options = document.createElement("div");
               options.classList = "optionsWrapper noSelect";
               const q_opts = data.options.split(",");
               let optsContent = ""
               q_opts.forEach(item=>{
-                optsContent += "<span class='ques_options noSelect'>"+item+"</span>";
+                optsContent += `<span class='ques_options noSelect' onclick='submitAnswer(${q_id},${item})'>item</span>`;
               })
               
               options.innerHTML = `${optsContent}`; 
