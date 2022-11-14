@@ -47,7 +47,6 @@ async function submitAnswer(q,ans){
       document.getElementById("loader").style.backgroundImage = "url('https://media.tenor.com/0AVbKGY_MxMAAAAM/check-mark-verified.gif')";
     } else {
       document.getElementById("loader").style.backgroundImage = "url('https://media.tenor.com/zzZZwwmB-6YAAAAM/warning.gif')";
-      document.getElementById("loader").style.display = "none";
     } 
   
     setTimeout(()=>{

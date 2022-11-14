@@ -233,7 +233,7 @@ fastify.post("/checkinganswer", async (request, reply) => {
   const ans = body.ans;  
   console.log(q,ans)
   
-  return reply.type("json").send({"correct":true});
+  return reply.type("json").send({"correct":[true,false][Math.floor(Math.random()*2)] });
 });
 
 
