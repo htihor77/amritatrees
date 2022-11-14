@@ -38,11 +38,12 @@
   height:100%;
   position:relative;
   
-  background-color:rgba(0,0,0,0.15);
+  background-color:rgba(0,0,0,0.05);
   color:white;  
   
-/*   touch-action:none;
-  pointer-events:none; */
+  touch-action:none;
+  pointer-events:none;
+  opacity:0;
 }
 
 #userPrompt *{
@@ -64,8 +65,8 @@
   border-top-right-radius:25px;
   
   position:absolute;
-  bottom:0;
-  left:0;  
+  bottom:-25%;
+  left:0;
   
   padding-top:10px;
 
@@ -76,8 +77,15 @@
 #userPrompt .content::-webkit-scrollbar-track {margin-top:20px;background: transparent;}
 #userPrompt .content::-webkit-scrollbar-thumb {background: white;}
 
-#userPrompt.active .content{
-  bottom:-25%;
+#userPrompt.active{
+  touch-action:auto;
+  pointer-events:all;
+  opacity:1;
+  transition: all .4s;
+}
+
+#userPrompt.active .content {
+  bottom:0;
   transition: all .2s;
 }
 

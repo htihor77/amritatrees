@@ -80,13 +80,13 @@ async function initMap() {
   
   const userPrompt = document.createElement("div");
   userPrompt.id = "userPrompt";
-  userPrompt.style.display = "none";
+  // userPrompt.style.opacity = 1;
   const promptDiv = createUserPrompt(map);
   
   userPrompt.addEventListener("pointerdown",(e)=>{
     if(e.path[0].id == "userPrompt"){
-      userPrompt.style.display = "none";
-      userPrompt.classList.remove("active")
+      // userPrompt.style.opacity = 0;
+      userPrompt.classList.remove("active");
     }
   });
   
@@ -148,8 +148,8 @@ async function initMap() {
       }
       
       marker.addListener("click", () => {
-        userPrompt.style.display = "block";
-        userPrompt.classList.add("active")
+        // userPrompt.style.opacity = 1;
+        userPrompt.classList.add("active");
         console.log("clicked", id);
         toggleBounce();
         
