@@ -3,12 +3,12 @@ function createUserPrompt(map){
   function promptClose(m){console.log(m);}
 
   const div = document.createElement("div");
-  // div.classList = "content";
+  div.classList = "content";
   // div.style.display = "flex";
   // div.style.justifyContent = "center";
   // div.style.alignItems = "center";
   // div.style.height = "100%";
-  // div.innerHTML = ``;  
+  div.innerHTML = ``;  
   
   return div;
 }
