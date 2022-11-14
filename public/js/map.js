@@ -4,12 +4,11 @@ function createUserPrompt(map){
 
   const div = document.createElement("div");
   div.classList = "content";
-  div.onscroll = (e)=>{
-    const ele = e.path[0]
-    console.log("scrolling",ele.scrollTop)
-    
-    
-  }
+  // div.onscroll = (e)=>{
+    // const ele = e.path[0]
+    // console.log("scrolling",ele.scrollTop)
+    // document.getElementById("userPropmt").style.height = "calc( 25% + " + ele.scrollTop + "px )";
+  // }
   div.innerHTML = `
     <div style="height:800px;"></div>
   `;  
