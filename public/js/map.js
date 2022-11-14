@@ -32,6 +32,7 @@ async function checklocation(pos2){
   
   
 async function submitAnswer(q,ans){
+    $("#userPrompt").classList.remove("active");
     document.getElementById("loader").style.display = "block";
     let res = await fetch("./checkinganswer",
       {
@@ -43,9 +44,9 @@ async function submitAnswer(q,ans){
     let data = await res.json();
     console.log(data)
     if(data.correct){
-      document.getElementById("loader").style.backgroundImage = "url('https://media.tenor.com/0AVbKGY_MxMAAAAM/check-mark-verified.gif')";
+      document.getElementById("loader").style.backgroundImage = "url('https://image.similarpng.com/very-thumbnail/2021/12/Green-check-mark-on-transparent-background-PNG.png')";
     } else {
-      document.getElementById("loader").style.backgroundImage = "url('https://media.tenor.com/zzZZwwmB-6YAAAAM/warning.gif')";
+      document.getElementById("loader").style.backgroundImage = "url('https://i.pinimg.com/originals/d0/17/47/d01747c4285afa4e7a6e8656c9cd60cb.png')";
     } 
   
     setTimeout(()=>{
