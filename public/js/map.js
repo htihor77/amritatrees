@@ -54,25 +54,31 @@ async function initMap() {
   
   const allMarkers = [];
   
-  const userPropmt = document.createElement("div");
-  userPropmt.id = "userPropmt";
-  userPropmt.style.display = "none";
+  const userPrompt = document.createElement("div");
+  userPrompt.id = "userPrompt";
+  userPrompt.style.display = "none";
   const promptDiv = createUserPrompt(map);
   
-  const closeBtn = document.createElement("button");
-  closeBtn.innerText = "button";
-  closeBtn.style.display = "block";
-  closeBtn.style.padding = "15px";
-  closeBtn.style.marginLeft = "50%";
-  
-  closeBtn.addEventListener("click",()=>{
-    userPropmt.style.display = "none";
+  userPrompt.addEventListener("click",(e)=>{
+    if(e.path[0].id == "userPrompt"){
+      userPrompt.style.display = "none";
+    }
   });
   
+//   const closeBtn = document.createElement("button");
+//   closeBtn.innerText = "button";
+//   closeBtn.style.display = "block";
+//   closeBtn.style.padding = "15px";
+//   closeBtn.style.marginLeft = "50%";
   
-  userPropmt.appendChild(closeBtn);
-  userPropmt.appendChild(promptDiv);
-  map.controls[google.maps.ControlPosition.TOP_LEFT].push(userPropmt);
+//   closeBtn.addEventListener("click",()=>{
+//     userPropmt.style.display = "none";
+//   });
+  
+  
+  // userPropmt.appendChild(closeBtn);
+  userPrompt.appendChild(promptDiv);
+  map.controls[google.maps.ControlPosition.TOP_LEFT].push(userPrompt);
   
   
   const treeDataResp = await fetch("./treedata");
@@ -146,7 +152,7 @@ async function initMap() {
           .then((data)=>{
             
             console.log(data);
-            userPropmt.querySelector(".content").innerHTML = `<span class="randomBar"></span>`;
+            userPrompt.querySelector(".content").innerHTML = `<span class="randomBar"></span>`;
             
             if(data.distance < 300 && data.accuracy < 100 || true){
               
@@ -164,11 +170,11 @@ async function initMap() {
               
               options.innerHTML = `${optsContent}`; 
                             
-              userPropmt.querySelector(".content").appendChild(quiz)
-              userPropmt.querySelector(".content").appendChild(options)
+              userPrompt.querySelector(".content").appendChild(quiz)
+              userPrompt.querySelector(".content").appendChild(options)
               
             }else{
-              userPropmt.querySelector(".content").innerHTML = `<p> distance: ${data.distance} <br> accuracy: ${data.accuracy}</p>`;
+              userPrompt.querySelector(".content").innerHTML = `<p> distance: ${data.distance} <br> accuracy: ${data.accuracy}</p>`;
             }
             
           })
