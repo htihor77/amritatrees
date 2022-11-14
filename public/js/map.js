@@ -3,50 +3,18 @@ function createUserPrompt(map){
   function promptClose(m){console.log(m);}
 
   const div = document.createElement("div");
-  div.style.display = "flex";
-  div.style.justifyContent = "center";
-  div.style.alignItems = "center";
-  div.style.height = "100%";
-  div.innerHTML = `
-    <p>ADDFASDFJASLDKFJASD;LFKJASDKL;FJA;SLDF</p>
-  `;  
+  // div.classList = "content";
+  // div.style.display = "flex";
+  // div.style.justifyContent = "center";
+  // div.style.alignItems = "center";
+  // div.style.height = "100%";
+  // div.innerHTML = ``;  
   
   return div;
 }
 
 
 // ######################################################################################################
-
-// async function checklocation(pos2){
-//   let pos = {};
-  
-//   navigator.geolocation.getCurrentPosition( (position)=>{
-//     pos = {
-//       lat: position.coords.latitude,
-//       lng: position.coords.longitude,
-//       accuracy: Math.round(position.coords.accuracy)
-//     };
-  
-//   const res = await fetch('https://amritatrees.glitch.me/checkinglocation', {
-//     method: 'POST',
-//     headers: {
-//       accept: 'application.json',
-//         'Content-Type': 'application/json'
-//       },
-//     body: JSON.stringify({pos1:pos, pos2: pos2}),
-//     })
-  
-//   const data = await res.json();
-    
-//   return await {distance: data.distance, accuracy: pos.accuracy }
-
-//     // .then(data=>{
-//       // console.log(data);
-//       // $("#button").setAttribute("data-distance-count",data.distance);
-//       // return {distance: data.distance, accuracy: pos.accuracy }
-//     // });   
-//   });
-// }  
 
 
 async function checklocation(pos2){
@@ -151,7 +119,7 @@ async function initMap() {
       }
       
       marker.addListener("click", () => {
-        // userPropmt.style.display = "block";
+        userPropmt.style.display = "block";
         console.log("clicked", id);
         toggleBounce();
         
@@ -175,7 +143,7 @@ async function initMap() {
           .then((data)=>{
             
             console.log(data);
-            
+            // userPropmt.querySelector(".content").innerHTML = `<p> distance: ${data.distance} <br> accuracy: ${data.accuracy}</p>`;
           })
           
         }); // navigator end
