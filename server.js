@@ -222,7 +222,7 @@ fastify.post("/checkinglocation", async (request, reply) => {
   // console.log(entrance.lat,entrance.lng, body.lat, body.lng);
   const distance = utils.measureDistance(pos1.lat,pos1.lng, pos2.lat, pos2.lng);
   // console.log(distance)
-  return reply.type("json").send({distance: distance, accuracy:pos1.accuracy });
+  return reply.type("json").send({distance: distance, accuracy:pos1.accuracy, quiz:"This plant is native to?", options:"Brazil, Argentina, Puerto Rico, India" });
 });
 
 

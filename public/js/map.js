@@ -9,9 +9,7 @@ function createUserPrompt(map){
     // console.log("scrolling",ele.scrollTop)
     // document.getElementById("userPropmt").style.height = "calc( 25% + " + ele.scrollTop + "px )";
   // }
-  div.innerHTML = `
-    <div style="height:800px;"></div>
-  `;  
+  div.innerHTML = ``;  
   
   return div;
 }
@@ -146,7 +144,29 @@ async function initMap() {
           .then((data)=>{
             
             console.log(data);
-            // userPropmt.querySelector(".content").innerHTML = `<p> distance: ${data.distance} <br> accuracy: ${data.accuracy}</p>`;
+            userPropmt.querySelector(".content").innerHTML = "";
+            
+            if(data.distance < 300 && data.accuracy < 100 ){
+              
+              const quiz = document.createElement("div");
+              quiz.innerHTML = data.quiz;
+              
+              const options = document.createElement("div");
+              const q_opts = data.options.split(",");
+              let optsContent = ""
+              q_opts.forEach(item=>{
+                optsContent += "<span>"+item+"</span>";
+              })
+              
+              options.innerHTML = `${optsContent}`; 
+                            
+              userPropmt.querySelector(".content").appendChild(quiz)
+              userPropmt.querySelector(".content").appendChild(options)
+              
+            }else{
+              userPropmt.querySelector(".content").innerHTML = `<p> distance: ${data.distance} <br> accuracy: ${data.accuracy}</p>`;
+            }
+            
           })
           
         }); // navigator end
