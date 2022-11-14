@@ -9,7 +9,9 @@ function createUserPrompt(map){
     // console.log("scrolling",ele.scrollTop)
     // document.getElementById("userPropmt").style.height = "calc( 25% + " + ele.scrollTop + "px )";
   // }
-  div.innerHTML = ``;  
+  div.innerHTML = `
+    <span class="randomBar"></span>
+  `;  
   
   return div;
 }
@@ -144,20 +146,20 @@ async function initMap() {
           .then((data)=>{
             
             console.log(data);
-            userPropmt.querySelector(".content").innerHTML = "";
+            userPropmt.querySelector(".content").innerHTML = `<span class="randomBar"></span>`;
             
             if(data.distance < 300 && data.accuracy < 100 || true){
               
               const quiz = document.createElement("div");
               quiz.innerHTML = data.quiz;
-              quiz.classList = "question"
+              quiz.classList = "question noSelect"
               
               const options = document.createElement("div");
-              options.classList = "optionsWrapper";
+              options.classList = "optionsWrapper noSelect";
               const q_opts = data.options.split(",");
               let optsContent = ""
               q_opts.forEach(item=>{
-                optsContent += "<span class='ques_options'>"+item+"</span>";
+                optsContent += "<span class='ques_options noSelect'>"+item+"</span>";
               })
               
               options.innerHTML = `${optsContent}`; 
