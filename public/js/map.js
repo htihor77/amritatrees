@@ -180,7 +180,7 @@ async function initMap() {
             if(data.distance < 300 && data.accuracy < 100 || true){
               
               const quiz = document.createElement("div");
-              quiz.innerHTML = `<span style="color:#5dbc48;-webkit-text-stroke: 1px black;">Q</span>  ${data.quiz}`;
+              quiz.innerHTML = `<span class="qsymbol">Q.</span><span class="qcontent">${data.quiz}<span>`;
               quiz.classList = "question noSelect"
               const q_id = data.quiz_id;
               
