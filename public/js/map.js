@@ -191,7 +191,7 @@ async function initMap() {
               
               const prefix = ["a","b","c","d"];
               q_opts.forEach((item,id)=>{
-                optsContent += `<span class='ques_options noSelect' onclick='submitAnswer(${q_id},"${item}")'>${prefix[id]}. ${item}</span>`;
+                optsContent += `<span class='ques_options noSelect' onclick='submitAnswer(${q_id},"${item}")' abcd='${prefix[id]}'>${item}</span>`;
               })
               
               options.innerHTML = `${optsContent}`; 
