@@ -180,7 +180,7 @@ async function initMap() {
             if(data.distance < 300 && data.accuracy < 100 || true){
               
               const quiz = document.createElement("div");
-              quiz.innerHTML = data.quiz;
+              quiz.innerHTML = `<span style="color:#5dbc48;-webkit-text-stroke: 1px black;">Q</span>  ${data.quiz}`;
               quiz.classList = "question noSelect"
               const q_id = data.quiz_id;
               
@@ -188,8 +188,10 @@ async function initMap() {
               options.classList = "optionsWrapper noSelect";
               const q_opts = data.options.split(",");
               let optsContent = ""
-              q_opts.forEach(item=>{
-                optsContent += `<span class='ques_options noSelect' onclick='submitAnswer(${q_id},"${item}")'>${item}</span>`;
+              
+              const prefix = ["a","b","c","d"];
+              q_opts.forEach((item,id)=>{
+                optsContent += `<span class='ques_options noSelect' onclick='submitAnswer(${q_id},"${item}")'>${prefix[id]}. ${item}</span>`;
               })
               
               options.innerHTML = `${optsContent}`; 
