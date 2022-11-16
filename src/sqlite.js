@@ -21,6 +21,7 @@ dbWrapper
         const rawtrees = fs.readFileSync("./___trees.json");
         const rawUsers = fs.readFileSync("./___users.json");
         const rawtreeProps = fs.readFileSync("./___treeProps.json");
+        const rawtreeProps = fs.readFileSync("./___treeProps.json");
         
         const users = JSON.parse(rawUsers);
         const trees = JSON.parse(rawtrees);
