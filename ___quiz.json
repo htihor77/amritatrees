@@ -2,6 +2,15 @@
   {
     "quiz_id":0,
     "tree": "",
-    
+    "question":"",
+    "options":"",
+    "answers":""    
+  },
+  {
+    "quiz_id":2,
+    "tree": "Allamanda Cathartica",
+    "question":"What is its max height is?",
+    "options":"10 feet, 12 feet, 17 feet, 20 feet",
+    "answers":"20 feet"    
   }
 ]
