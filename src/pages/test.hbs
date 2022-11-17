@@ -1,3 +1,117 @@
-db?table=Trees""---treedatsa2// // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  {{> head }}
+  
+  <title>Amrita Trees: Repository</title>
+  <link rel="stylesheet" href="./css/style.css">
+<!--   <link rel="stylesheet" href="./css/map.css"> -->
+  
+  <script src="./js/app.js" defer></script>
+<!--   <script src="./js/map.js" defer></script> -->
+  
+<style>
+  
+#container{
+  height:100%;
+}
+  
+#mapContainer{
+  height:100%;
+  overflow:hidden;
+}
+  
+#map{
+/*   height:calc(100% + 23px); */
+  height: 100%;
+}  
+
+  
+.gm-style-iw-d{
+  color:black;    
+}
+</style>
+
+</head>
+<body id="body">
+  <div id="container">
+    
+    <div id="overlay" onclick="clickedOverlay()"></div>        
+
+    <div id="mapContainer">
+      <div id="map"></div>
+    </div>
+
+  </div>
+</body>
+  
+<script>
+function $(x){return document.querySelector(x);}
+</script>
+  
+<script>
+console.log("init map");
   
   
+async function initMap() {
+  
+  let map = new google.maps.Map(document.getElementById("map"),
+    {
+      center: { lat: 10.900016808568687, lng: 76.9028589289025 },
+      zoom: 20,
+      mapId: "661dd2cc98d8e9e2",
+      mapTypeId: 'satellite',
+    }
+  );
+  
+  map.setOptions({
+    // draggable: false, 
+    // zoomControl: false, 
+    // scrollwheel: false, 
+    disableDoubleClickZoom: true,
+    disableDefaultUI: true,
+  });
+
+  
+  fetch("https://amritatrees.glitch.me/db?table=Trees")
+  .then( res => res.json() )
+  .then( data => {
+    data.forEach( tree => {
+    // ###########################################################################
+      if ( tree.title)
+      const coords = tree.coords.split(",")
+      const lat = Number( coords[0] );
+      const lng = Number( coords[1] );
+      
+      const iconSize = 80;
+      let tree_icon = tree_icon_url;
+      const marker = new google.maps.Marker({
+        title: "aaa",
+        position: {lat: lat, lng: lng },
+        map,
+        icon: {
+          url: tree_icon,
+          scaledSize: new google.maps.Size(iconSize, iconSize),
+          origin: new google.maps.Point(0, 0),
+          anchor: new google.maps.Point(iconSize/2, iconSize/2),
+        },
+      })
+      
+      marker.setMap(map);
+    // ########################################################################### 
+    })
+  });
+  
+}
+  
+// const tree_icon_url = "https://amritatrees.sirv.com/treeicon32.png";
+const tree_icon_url = "https://cdn.discordapp.com/attachments/1027927070191403189/1039165618617860146/betterTree.png";
+window.initMap = initMap;
+</script>
+
+<script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA554gL9cKaa3KqhS8biWu9p9eDCn31z0Q&callback=initMap">
+</script>
+  
+</html>

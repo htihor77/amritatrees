@@ -199,8 +199,7 @@ fastify.get("/db", async (request, reply) => {
 
 
 fastify.get("/test", async (request, reply) => {
-  const data = await db.runQuery1("");
-  return reply.view("/src/pages/test.hbs", { trees: data } );
+  return reply.view("/src/pages/test.hbs", { } );
 });
 
 
