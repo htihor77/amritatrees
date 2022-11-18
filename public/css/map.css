@@ -172,15 +172,17 @@
 }
 #userPrompt .content .optionsWrapper .ques_options:after{
   content: ' ' attr(abcd) '. '; 
+  text-transform:uppercase;
   position:absolute;
   display:flex;
   align-items:center;
   justify-content:center;
   
   top:50%;transform:translateY(-50%);
-  left:-1px;
-  width:30px;
-  aspect-ratio: 1 / 1;
+  left:0px;
+  height:100%;
+  width:26px;
+/*   aspect-ratio: 1 / 1; */
   background-color:inherit;
   border-radius:50%;
 }
