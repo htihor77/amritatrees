@@ -122,7 +122,7 @@
 }
 
 #userPrompt .content .question{
-  width:80%;
+  width:90%;
   left:10%;
   
   height:2rem;
@@ -137,7 +137,7 @@
   text-align:center;
 }
 
-#userPrompt .content .question:after{
+#userPrompt .content:after{
   content:"";
   background-image:url("https://cdn.discordapp.com/attachments/1027927070191403189/1039163926702719086/qmark64.png");
   width:60px;
@@ -155,7 +155,8 @@
   font-weight: 600;
   -webkit-text-stroke: 2px black;
   color:white;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+/*   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+  font-family:monospace;
 }
 #userPrompt .content .question .qcontent{
   vertical-align:bottom;
@@ -164,7 +165,7 @@
 #userPrompt .content .optionsWrapper {
   display:flex;
   flex-wrap:wrap;
-  width:80%;
+  width:90%;
   justify-content:space-between;
 }
 
@@ -183,8 +184,8 @@
   border-radius:25px;
   border:3px solid gray;
 }
-#userPrompt .content .optionsWrapper .ques_options:after{
-  content: ' ' attr(abcd) '. '; 
+#userPrompt .content .optionsWrapper .ques_options:before{
+  content: ' ' attr(abcd) ' '; 
   text-transform:uppercase;
   position:absolute;
   display:flex;
@@ -196,7 +197,8 @@
   height:100%;
   width:26px;
 /*   aspect-ratio: 1 / 1; */
-  background-color:inherit;
+  background-color:green;
+  color:white;
   border-radius:50%;
 }
 
