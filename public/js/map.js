@@ -11,22 +11,15 @@ function createUserPrompt(map){
   // }
   div.innerHTML = `
     <!-- <span class="randomBar"></span> -->
-    abc<br>
-    abc<br>
-    abc<br>
-    abc<br>
-    abc<br>
-    abc<br>
-    abc<br>
-    abc<br>
-    abc<br>
-    abc<br>
-    abc<br>
-    abc<br>
-    abc<br>
-    abc<br>
-    abc<br>
-    abc<br>
+    <div class="question"><span class="qsymbol">Q: </span><span class="qcontent">asdhfk jhdsakljfh asdkjfh akdshf askldjhf lakjsdhf lakdhfalkh ajksh klads kljah kahs<span></div>
+    
+    <div class="optionsWrapper">
+      <span class='ques_options noSelect' abcd='a'>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span>
+      <span class='ques_options noSelect' abcd='b'>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span>
+      <span class='ques_options noSelect' abcd='c'>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span>
+      <span class='ques_options noSelect' abcd='d'>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span>
+    </div>
+    
   `;  
   
   return div;
