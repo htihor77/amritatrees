@@ -229,7 +229,7 @@ fastify.post("/checkinglocation", async (request, reply) => {
   // console.log(entrance.lat,entrance.lng, body.lat, body.lng);
   const distance = utils.measureDistance(pos1.lat,pos1.lng, pos2.lat, pos2.lng);
   // console.log(distance)
-  return reply.type("json").send({distance: distance, accuracy:pos1.accuracy, quiz_id:1 , quiz:"This plant is native to? this is going to be a raelly long question to check the sizing issue in the content bo", options:"Brazil, Argentina, Puerto Rico, India" });
+  return reply.type("json").send({distance: distance, accuracy:pos1.accuracy, quiz_id:1 , quiz:"This plant is native to? this is going to be a raelly long question to check the sizing issue in the content body of the div", options:"Brazil the answeres, Argentina  also need to be quite, Puerto Rico to , India" });
 });
 
 fastify.post("/checkinganswer", async (request, reply) => {
