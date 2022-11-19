@@ -220,7 +220,7 @@
 #userPrompt .content{
   width:100%;
   min-height: 185px;
-  max-height: 45%;
+  max-height: 55%;
   position:absolute;
   bottom:0;left:0;
   
@@ -230,6 +230,7 @@
   
   overflow:auto;
   padding-top:10px;
+  padding-bottom: 30px;
 /*   background-image:linear-gradient(320deg,#377041,#bfd156,#5dbc48,#b0cd54,#213825); */
 /*   background-image: linear-gradient(320deg,#377041,rgb(233 254 109 / 70%),#5dbc48,rgb(207 241 99 / 80%),#213825); */
 }
@@ -240,7 +241,9 @@
 
 
 #userPrompt .question{
-  width:100%;
+  --padding:10px;
+  width:calc(100% - var(--padding));
+  padding-left: var(--padding);
   font-size:1.5rem;
   font-weight:600;
   text-align:center;
@@ -256,14 +259,16 @@
 
 #userPrompt .optionsWrapper .ques_options{
   position:relative;
-  font-size:1.2rem;
+  font-size:1.5rem;
   width:90%;
   
   overflow-wrap: break-word;
-  padding-left:30px;
+  padding-left:25px;
+  padding-right:15px;
   
-  border:2px solid white;
+  border:1px solid white;
   border-radius:15px;
+  margin-top: 10px;
 } 
 
 #userPrompt .optionsWrapper .ques_options:before{
@@ -275,7 +280,14 @@
   justify-content:center;
   
 /*   top:50%;transform:translateY(-50%); */
-  left:0px;
-  height:100%;
+  top:-10px;
+  left:-10px;
+  
+  font-size:1.2rem;
+  height:1.2rem;
+  aspect-ratio: 1 / 1;
+  
   border-radius:50%;
+  background-color:yellowgreen;
+  border:1px solid black;
 }

@@ -14,10 +14,10 @@ function createUserPrompt(map){
     <div class="question"><span class="qsymbol">Q: </span><span class="qcontent">asdhfk jhdsakljfh asdkjfh akdshf askldjhf lakjsdhf lakdhfalkh ajksh klads kljah kahs<span></div>
     
     <div class="optionsWrapper">
-      <span class='ques_options noSelect' abcd='a'>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbb</span>
-      <span class='ques_options noSelect' abcd='b'>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaccccccccccc</span>
-      <span class='ques_options noSelect' abcd='c'>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaddddddddddddd</span>
-      <span class='ques_options noSelect' abcd='d'>aaaaaaaaaaaaaaaaaaaaaaaeeeeeeeeeeeeeeeeeeee</span>
+      <span class='ques_options noSelect' abcd='a'>aaaaaaaaaa</span>
+      <span class='ques_options noSelect' abcd='b'>aaaaaaaaaaa</span>
+      <span class='ques_options noSelect' abcd='c'>aaaaaaaaaaa</span>
+      <span class='ques_options noSelect' abcd='d'>aaaaaaaaaaa</span>
     </div>
     
   `;  
