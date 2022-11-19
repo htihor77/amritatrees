@@ -10,7 +10,23 @@ function createUserPrompt(map){
     // document.getElementById("userPropmt").style.height = "calc( 25% + " + ele.scrollTop + "px )";
   // }
   div.innerHTML = `
-    <span class="randomBar"></span>
+    <!-- <span class="randomBar"></span> -->
+    abc<br>
+    abc<br>
+    abc<br>
+    abc<br>
+    abc<br>
+    abc<br>
+    abc<br>
+    abc<br>
+    abc<br>
+    abc<br>
+    abc<br>
+    abc<br>
+    abc<br>
+    abc<br>
+    abc<br>
+    abc<br>
   `;  
   
   return div;
@@ -91,13 +107,13 @@ async function initMap() {
     }
   });
   
-  const loader = document.createElement("div");
-  loader.id = "loader";
-  loader.style.display = "none";
+  // const loader = document.createElement("div");
+  // loader.id = "loader";
+  // loader.style.display = "none";
+  // userPrompt.appendChild(loader);
   
   
   
-  userPrompt.appendChild(loader);
   userPrompt.appendChild(promptDiv);
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(userPrompt);
   
@@ -175,7 +191,7 @@ async function initMap() {
           .then((data)=>{
             
             console.log(data);
-            userPrompt.querySelector(".content").innerHTML = `<span class="randomBar"></span>`;
+            userPrompt.querySelector(".content").innerHTML = `<!-- <span class="randomBar"></span> -->`;
             
             if(data.distance < 300 && data.accuracy < 100 || true){
               
