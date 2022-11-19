@@ -239,10 +239,43 @@
 #userPrompt .content::-webkit-scrollbar-thumb {background: white;}
 
 
-#userPrompt .content .question{
+#userPrompt .question{
   width:100%;
   font-size:1.5rem;
   font-weight:600;
   text-align:center;
 }
 
+#userPrompt .optionsWrapper{
+  width:100%;
+  height:100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#userPrompt .optionsWrapper .ques_options{
+  position:relative;
+  font-size:1.2rem;
+  width:90%;
+  
+  overflow-wrap: break-word;
+  padding-left:30px;
+  
+  border:2px solid white;
+  border-radius:15px;
+} 
+
+#userPrompt .optionsWrapper .ques_options:before{
+  content: ' ' attr(abcd) ' '; 
+  text-transform:uppercase;
+  position:absolute;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  
+/*   top:50%;transform:translateY(-50%); */
+  left:0px;
+  height:100%;
+  border-radius:50%;
+}
