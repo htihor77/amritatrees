@@ -247,6 +247,7 @@
   font-size:1.5rem;
   font-weight:600;
   text-align:center;
+  margin-bottom:10px;
 }
 
 #userPrompt .optionsWrapper{
@@ -255,13 +256,16 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  flex-direction: row;
+  gap:10px;
+  row-gap:10px;
 }
 
 #userPrompt .optionsWrapper .ques_options{
   position:relative;
   font-size:1.5rem;
   max-width:90%;
-  min-width:30%;
+  min-width:35%;
   
   overflow-wrap: break-word;
   padding-left:25px;
@@ -270,7 +274,6 @@
   
   border:1px solid white;
   border-radius:10px;
-  margin-top: 10px;
 } 
 
 #userPrompt .optionsWrapper .ques_options:before{
