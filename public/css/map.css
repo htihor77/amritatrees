@@ -233,6 +233,8 @@
   padding-bottom: 30px;
 /*   background-image:linear-gradient(320deg,#377041,#bfd156,#5dbc48,#b0cd54,#213825); */
 /*   background-image: linear-gradient(320deg,#377041,rgb(233 254 109 / 70%),#5dbc48,rgb(207 241 99 / 80%),#213825); */
+  background-size: 400% 400%;
+  animation: lavalamp 7s ease infinite;
 }
 
 #userPrompt .content::-webkit-scrollbar {width: 3px;}
@@ -264,15 +266,16 @@
 #userPrompt .optionsWrapper .ques_options{
   position:relative;
   font-size:1.5rem;
+  line-height:1.5;
   max-width:90%;
-  min-width:35%;
+  min-width:45%;
   
   overflow-wrap: break-word;
-  padding-left:25px;
-  padding-right:15px;
+  padding-left:30px;
+  padding-right:3px;
   text-align:center;
   
-  border:1px solid white;
+  border:2px solid white;
   border-radius:10px;
 } 
 
@@ -286,13 +289,48 @@
   
   top:50%;transform:translateY(-50%);
 /*   top:50%; */
-  left:4px;
+  left:3px;
   
-  font-size:1.2rem;
+  font-size:1.1rem;
   height:1.4rem;
   aspect-ratio: 1 / 1;
   
   border-radius:50%;
   background-color:yellowgreen;
   border:1px solid black;
+  color:black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes lavalamp{
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
