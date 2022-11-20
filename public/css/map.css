@@ -284,12 +284,12 @@
   align-items:center;
   justify-content:center;
   
-/*   top:50%;transform:translateY(-50%); */
-  top:-10px;
-  left:-10px;
+  top:50%;transform:translateY(-50%);
+/*   top:50%; */
+  left:4px;
   
   font-size:1.2rem;
-  height:1.2rem;
+  height:1.4rem;
   aspect-ratio: 1 / 1;
   
   border-radius:50%;
