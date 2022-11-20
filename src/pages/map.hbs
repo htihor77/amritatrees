@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/map.css">
   <link rel="stylesheet" href="./css/sidebar.css">
+  <link rel="stylesheet" href="./css/invbar.css">
   <link rel="stylesheet" href="./css/switch.css">
   
   <script src="./js/app.js" defer></script>
@@ -65,14 +66,15 @@
     
     <div id="overlay" onclick="clickedOverlay()"></div>
     <div class="icon iconContainer noSelect" style="left:5px;border-radius:15px;" onclick="toggleSidebar()"><i class="fas fa-list-ul"></i></div>    
-    <div class="icon iconContainer noSelect" style="right:5px;border-radius:15px;"><a href="/inventory"><i class="fas fa-backpack"></i></a></div>    
+    <div class="icon iconContainer noSelect" style="right:5px;border-radius:15px;" onclick="toggleInventorybar()"><i class="fas fa-backpack"></i></div>    
 
     <div id="mapContainer">
       <div id="map"></div>
     </div>
 
     {{> sidebar }}
-
+    
+    {{> invbar }}
     
   </div>
 </body>

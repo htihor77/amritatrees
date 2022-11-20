@@ -11,4 +11,5 @@ function toggleSidebar(){
 function clickedOverlay(e){
   $("#overlay").style.display = "none";
   $('#sidebar').classList.remove('active');
+  $('#invbar').classList.remove('active');
 }
