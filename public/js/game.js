@@ -108,19 +108,15 @@ async function initMap() {
           `;
           
           let max_width = 0;
-          let max_height = 0;
+          let max_height = 999;
           userPrompt.querySelector(".content").classList.add("active");
           document.querySelectorAll(".option").forEach( item => {
-            
-            if( item.offsetWidth > max_width){
-              max_width = item.offsetWidth;
-              item.style.width = max_width + "px";
-            }
-            if( item.offsetHeight > max_height){
-              max_height = item.offsetHeight;
-              item.style.height = max_height + "px";
-            }
-            
+            if( item.offsetWidth > max_width){max_width = item.offsetWidth;}
+            if( item.offsetHeight < max_height){max_height = item.offsetHeight;}
+          });
+          document.querySelectorAll(".option").forEach( item => { 
+            item.style.width = max_width + "px";
+            item.style.height = max_height + "px";
           });
           
         });
