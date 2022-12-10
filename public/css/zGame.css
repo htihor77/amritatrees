@@ -49,11 +49,60 @@
 #userPrompt .content::-webkit-scrollbar-track {margin-top:20px;background: transparent;}
 #userPrompt .content::-webkit-scrollbar-thumb {background: white;}
 
-#userPrompt .content .question{
+/* #userPrompt .content .question{
   --padding:10px;
   width:calc(100% - var(--padding));
   padding-left: var(--padding);
   font-size:1.5rem;font-weight:600;
   text-align:center;
   margin-bottom:10px;
+} */
+
+
+#quiz{
+  font-size:1.5rem;
+  font-weight:600;
+  text-align:center;
+  padding:5px;
+}
+
+#options{
+  padding-bottom:15px;
+   
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: row;
+}
+
+#options > span{
+  position:relative;
+  font-size:1.25rem;
+  
+  padding-left:30px;padding-right:3px;
+  
+  border:2px solid white;
+  border-radius:10px;
+}
+
+#options > span:before{
+  content: ' ' attr(abcd) ' '; 
+  text-transform:uppercase;
+  position:absolute;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  
+  top:50%;transform:translateY(-50%);
+/*   top:50%; */
+  left:3px;
+  
+  font-size:1.1rem;
+  height:1.4rem;
+  aspect-ratio: 1 / 1;
+  
+  border-radius:50%;
+  background-color:yellowgreen;
+  border:1px solid black;
+  color:black;
 }

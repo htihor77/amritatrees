@@ -87,11 +87,15 @@ async function initMap() {
           const QUESTION = data.quiz;
           const OPTIONS = data.options
                           .split(",")
-                          .map( (item,id) => { "<span class='option noSelect'>" + item + ""
+                          .map( (item,id) => {
+                            return `<span 
+                              class='option noSelect'
+                              abcd='${ ["a","b","c","d"][id] }'>
+                              ${item}
                             </span>`
-                          });
-          console.log(OPTIONS)
-          
+                          })
+                          .join("");
+
           console.log("ask question");
           userPrompt.querySelector(".content").innerHTML = `
             <div id="quiz">
