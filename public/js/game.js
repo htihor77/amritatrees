@@ -1,7 +1,7 @@
 function createUserTopbar(map){
   const div = document.createElement("div");
   div.classList = "topbar"
-  div.innerHTML = `<div class="iconDiv"><i class="fas fa-plus" style="transform:rotate(45deg);" title="close" onclick="closePrompt()"></i></div>`
+  div.innerHTML = `<div class="iconDiv" onclick="closePrompt()"><i class="fas fa-plus" style="transform:rotate(45deg);" title="close"></i></div>`
   return div;
 }
 
@@ -77,6 +77,7 @@ async function initMap() {
           if( dist < DISTANCE_THRESHOLD && pos1.coords.accuracy < DISTANCE_THRESHOLD){
             map.setCenter( { lng: allMarkers[id].lng, lat: allMarkers[id].lat - 0.0001 });
             toggleBounce();
+            document.querySelector("#userPrompt .content").classList.add("active");
           }else{
             console.log("cannot ask question");            
             return;
@@ -143,7 +144,7 @@ async function initMap() {
     const date = new Date();
     document.querySelector(".navbar .textDiv").innerHTML = `
       <p>${ ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"][date.getDay()] }</p>
-      <p>${date.getHours()}<span class="blink">:</span>${date.getMinutes()}</p>
+      <p>${date.getHours() > 9 ? date.getHours() : "0" + date.getHours() }<span style="animation: blink 1s;">:</span>${date.getMinutes() > 9 ? date.getMinutes() : "0" + date.getMinutes()}</p>
     `
     
   }
@@ -168,9 +169,10 @@ async function submitAnswer(q,ans){
     let data = await res.json();
     console.log(data)
     if(data.correct){
-      console.log("correct")
+      console.log("correct");
     } else {
-      console.log("not correct")
+      console.log("not correct");
+      
     }
     
   },500);
