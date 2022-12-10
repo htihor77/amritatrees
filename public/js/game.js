@@ -26,7 +26,7 @@ function createUserPrompt(map){
 async function initMap() {
   const tree_icon_url = "https://cdn.discordapp.com/attachments/1027927070191403189/1039163926702719086/qmark64.png";
   const shadow_url = "https://www.transparentpng.com/download/shadow/iuqEeA-shadow-png-pic-controlled-drugs-cabinets-from-pharmacy.png";
-  let map = new google.maps.Map(document.getElementById("map"),{center: { lat: 10.900016808568687, lng: 76.9028589289025 },zoom: 20,mapId: "661dd2cc98d8e9e2",mapTypeId: 'satellite',});
+  let map = new google.maps.Map(document.getElementById("map"),{center: { lat: 10.900016808568687, lng: 76.9028589289025 },zoom: 10,mapId: "661dd2cc98d8e9e2",mapTypeId: 'satellite',});
   
   map.setOptions({zoomControl: false, disableDoubleClickZoom: true,disableDefaultUI: true,
     // draggable: false, 
@@ -64,12 +64,13 @@ async function initMap() {
   
       marker.addListener("click", () => {
         const pos2 = allMarkers[id]
-        const DISTANCE_THRESHOLD = 300;
+        const DISTANCE_THRESHOLD = 10000000;
         userPrompt.classList.add("active");
         
         window.navigator.geolocation.getCurrentPosition(async (pos1)=>{
-          const dist = measureDistance( pos1.coords.latitude, pos1.coords.longitude, pos2.lat, pos2.lng )
+          const dist = 0 || measureDistance( pos1.coords.latitude, pos1.coords.longitude, pos2.lat, pos2.lng )
           const ACCURACY = pos1.coords.accuracy;
+          
           
           if( dist < DISTANCE_THRESHOLD && pos1.coords.accuracy < DISTANCE_THRESHOLD){
             map.setCenter(allMarkers[id]);
@@ -90,7 +91,7 @@ async function initMap() {
                           .map( (item,id) => {
                             return `<span 
                               class='option noSelect'
-                              abcd='${ ["a","b","c","d"][id] }'>
+                              abcd='${["a","b","c","d"][id]}'>
                               ${item}
                             </span>`
                           })
@@ -105,6 +106,22 @@ async function initMap() {
               ${OPTIONS}
             </div>
           `;
+          
+          let max_width = 0;
+          let max_height = 0;
+          userPrompt.querySelector(".content").classList.add("active");
+          document.querySelectorAll(".option").forEach( item => {
+            
+            if( item.offsetWidth > max_width){
+              max_width = item.offsetWidth;
+              item.style.width = max_width + "px";
+            }
+            if( item.offsetHeight > max_height){
+              max_height = item.offsetHeight;
+              item.style.height = max_height + "px";
+            }
+            
+          });
           
         });
       });

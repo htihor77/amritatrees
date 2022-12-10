@@ -47,8 +47,8 @@
 }
 
 #userPrompt .content.active{
-  bottom:0;
   top:auto !important;
+  bottom:0;
 }
 
 #userPrompt .content::-webkit-scrollbar {width: 3px;}
