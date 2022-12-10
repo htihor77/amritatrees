@@ -10,9 +10,22 @@
   grid-template-columns:var(--h) auto var(--h);
 }
 
+#container .navbar > div{
+  padding:5px;
+}
+
+#container .navbar .iconDiv{
+  --p:10px;
+  padding:var(--p);
+  height:100%;width:100%;
+  background-color:#323232;
+  border-radius:15px;
+  
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
 
 #container .navbar i{
-  --p:10px;
-  font-size:calc( var(--h) - 2 * var(--p) );
-  padding:var(--p);
+  font-size:calc( var(--h) - 4 * var(--p) );
 }
