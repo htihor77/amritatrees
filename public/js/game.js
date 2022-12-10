@@ -71,7 +71,7 @@ async function initMap() {
           
           
           if( dist < DISTANCE_THRESHOLD && pos1.coords.accuracy < DISTANCE_THRESHOLD){
-            map.setCenter( { lat: allMarkers[id].lat, lng: allMarkers[id].lng + 0.01 });
+            map.setCenter( { lng: allMarkers[id].lng, lat: allMarkers[id].lat - 0.0001 });
             toggleBounce();
           }else{
             console.log("cannot ask question");            
@@ -133,7 +133,7 @@ async function initMap() {
       const pos = {lat: position.coords.latitude,lng: position.coords.longitude,};
       const latlng = new google.maps.LatLng(pos.lat, pos.lng);currPosMarker.setPosition(latlng);
       let promptOpen = document.querySelector("#userPrompt").classList.contains("active");
-      if ( !promptOpen )  map.setCenter(pos);
+      // if ( !promptOpen )  map.setCenter(pos);
     });}
     
     const date = new Date();
@@ -156,6 +156,8 @@ async function initMap() {
 window.initMap = initMap;
 
 async function submitAnswer(q,ans){
+  await setTimeout( async ()=>{
+    
     document.querySelector("#userPrompt .content").classList.remove("active");
     let res = await fetch("./checkinganswer",{method: 'POST',headers: {accept: 'application.json','Content-Type': 'application/json'},body: JSON.stringify({q:q, ans:ans})});
   
@@ -166,8 +168,9 @@ async function submitAnswer(q,ans){
     } else {
       console.log("not correct")
     }
+    
+  },500);
 }
-
 
 function measureDistance(lat1, lon1, lat2, lon2){  // generally used geo measurement function
     var R = 6378.137; // Radius of earth in KM
@@ -180,3 +183,6 @@ function measureDistance(lat1, lon1, lat2, lon2){  // generally used geo measure
     var d = R * c;
     return d * 1000; // meters
 }
+
+
+
