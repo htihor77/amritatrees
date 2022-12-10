@@ -23,3 +23,17 @@
 #container .navbar .textDiv{flex-direction:column;}
 
 #container .navbar i{font-size:calc( 3 * var(--h) / 5 );}
+
+
+#actionbar{
+  position:absolute;
+  top:100%;
+  left:0;
+  width:100%;
+  max-height:3rem;
+  pointer-events:none;
+  
+  display:flex;flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}

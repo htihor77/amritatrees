@@ -95,7 +95,7 @@ async function initMap() {
                             return `<span 
                               class='option noSelect'
                               abcd='${["a","b","c","d"][id]}'
-                              onclick='submitAnswer(${QUIZ_ID},"${item}")'>
+                              onclick='submitAnswer(''${QUIZ_ID},"${item}")'>
                               ${item}
                             </span>`
                           })
@@ -168,20 +168,25 @@ async function submitAnswer(q,ans){
   
     let data = await res.json();
     console.log(data)
+    const msg = document.createElement("p");
     if(data.correct){
       console.log("correct");
       confetti();
       confetti();
       document.querySelector("#userPrompt").classList.remove("active");
       document.querySelector(".navbar").classList.add("active");
+      msg.innerText = "You unlocked a new tree!";
       
     } else {
       console.log("not correct");
       navigator.vibrate([250,50,250]);
       document.querySelector("#userPrompt").classList.remove("active");
       document.querySelector(".navbar").classList.add("active");
+      msg.innerText = "Incorrect answer, better luck next time!";
       
     }
+    
+    $("#actionbar").appendChild(msg)
     
   },500);
 }
