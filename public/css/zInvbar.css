@@ -31,5 +31,18 @@
 #invbar .top .textDiv{flex-direction:column;}
 #invbar .top .textDiv span{
   
+  font-family: 'Anton', sans-serif;
+  font-size: 2.5rem;
+  
+  color: white;
+  text-shadow: 4px 0 yellowgreen;
+  -webkit-text-stroke: 2px black;
 }
 #invbar .top i{font-size:calc( 3 * var(--h) / 5 );}
+
+#invbar .inventory{
+  width:100%;
+  height:100%;
+  padding:5px;
+  padding-top:4rem;  
+} 
