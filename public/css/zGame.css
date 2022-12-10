@@ -34,8 +34,9 @@
 }
 /* QUESTION CARD */
 #userPrompt .content{
+  
   width:100%;min-height: 185px;max-height: 55%;
-  position:absolute;bottom:0;left:0;
+  position:absolute;top:100%;left:0;
   border-top-left-radius:25px;border-top-right-radius:25px;
   overflow:auto;
   padding-top:10px;padding-bottom: 30px;
@@ -45,64 +46,44 @@
   background-image: linear-gradient(320deg,rgb(55 112 65 / 80%),rgb(233 254 109 / 70%),#5dbc48,rgb(207 241 99 / 80%),rgb(33 56 37 / 80%));
 }
 
+#userPrompt .content.active{
+  bottom:0;
+  top:auto !important;
+}
+
 #userPrompt .content::-webkit-scrollbar {width: 3px;}
 #userPrompt .content::-webkit-scrollbar-track {margin-top:20px;background: transparent;}
 #userPrompt .content::-webkit-scrollbar-thumb {background: white;}
 
-/* #userPrompt .content .question{
-  --padding:10px;
-  width:calc(100% - var(--padding));
-  padding-left: var(--padding);
-  font-size:1.5rem;font-weight:600;
-  text-align:center;
-  margin-bottom:10px;
-} */
-
-
 #quiz{
-  font-size:1.5rem;
-  font-weight:600;
-  text-align:center;
-  padding:5px;
+  font-size:1.5rem;font-weight:600;
+  text-align:center;padding:5px;
 }
 
 #options{
   padding-bottom:15px;
    
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: flex;flex-wrap: wrap;
   flex-direction: row;
+  justify-content: center;
 }
 
 #options > span{
   position:relative;
-  font-size:1.25rem;
+  font-size:1.35rem;line-height:1.35;
   
   padding-left:30px;padding-right:3px;
-  
-  border:2px solid white;
-  border-radius:10px;
+  border:2px solid white;border-radius:10px;
 }
 
 #options > span:before{
   content: ' ' attr(abcd) ' '; 
-  text-transform:uppercase;
-  position:absolute;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  text-transform:uppercase;position:absolute;
+  display:flex;align-items:center;justify-content:center;
   
-  top:50%;transform:translateY(-50%);
-/*   top:50%; */
-  left:3px;
+  top:50%;left:3px;transform:translateY(-50%);
   
-  font-size:1.1rem;
-  height:1.4rem;
-  aspect-ratio: 1 / 1;
-  
-  border-radius:50%;
-  background-color:yellowgreen;
-  border:1px solid black;
-  color:black;
+  font-size:1.1rem;height:1.4rem;aspect-ratio: 1 / 1;
+  border-radius:50%;border:1px solid black;
+  background-color:yellowgreen;color:black;
 }
