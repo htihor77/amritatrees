@@ -95,7 +95,7 @@ async function initMap() {
                             return `<span 
                               class='option noSelect'
                               abcd='${["a","b","c","d"][id]}'
-                              onclick='submitAnswer(''${QUIZ_ID},"${item}")'>
+                              onclick='submitAnswer("${QUIZ_ID}","${item}")'>
                               ${item}
                             </span>`
                           })
@@ -187,6 +187,10 @@ async function submitAnswer(q,ans){
     }
     
     $("#actionbar").appendChild(msg)
+    setTimeout( () =>{
+      msg.remove();
+    },5000)
+    
     
   },500);
 }
