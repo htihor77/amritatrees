@@ -61,16 +61,23 @@ fastify.addHook("onRequest", (request, reply, next) => {
 fastify.get("/", async (request, reply) => {
   return reply.view("/src/pages/index.hbs", {});
 });
-fastify.get("/map", async (request, reply) => {
-  const user = request.session.user;
-  const data = await db.runQuery1(`SELECT * FROM Users WHERE uid=${user.uid}`)
+// fastify.get("/map", async (request, reply) => {
+//   const user = request.session.user;
+//   const data = await db.runQuery1(`SELECT * FROM Users WHERE uid=${user.uid}`)
   
-  const User = {
-    username:data[0].username,
-    points:data[0].points
-  }
-return reply.view("/src/pages/map.hbs", { user: User });
+//   const User = {
+//     username:data[0].username,
+//     points:data[0].points
+//   }
+// return reply.view("/src/pages/map.hbs", { user: User });
+// });
+fastify.get("/game", async (request, reply) => {
+  const user = request.session.user;
+  const data = await db.runQuery1(`SELECT * FROM Users WHERE uid=${user.uid}`)  
+  const User = {username:data[0].username,points:data[0].points}
+  return reply.view("/src/page/game.hbs", { user: User });
 });
+
 fastify.get("/serviceworker.js", async (req,reply)=>{
   const buffer = fs.readFileSync('serviceworker.js');
   return reply.type('application/javascript').send(buffer);
@@ -110,7 +117,8 @@ fastify.post("/login", async (request, reply) => {
     // user does not exist
     return reply.view("/src/pages/login.hbs", {err:"User does not exist!"});
   }
-  return reply.redirect("/map");
+  // return reply.redirect("/map");
+  return reply.redirect("/game");
   // return reply.type("json").send(user);
 });
 fastify.get("/logout", async (request, reply) => {
