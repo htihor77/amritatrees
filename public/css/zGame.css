@@ -107,3 +107,26 @@
   border:2px solid black;
   transition:0s;
 }
+
+
+#userPrompt .topbar{
+  --h:3rem;
+  --m: 5px;
+  height:var(--h);
+  width:100%;
+  position:absolute;z-index:1;
+  top:var(--m);left:0;
+  
+  display:grid;
+  padding-left:var(--m);
+  padding-right:var(--m);
+}
+
+#container .topbar .iconDiv{
+  background-color:#323232;border-radius:15px;
+  height:100%;width:var(--h);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+#container .topbar i{font-size:calc( 3 * var(--h) / 5 );}

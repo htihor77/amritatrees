@@ -1,9 +1,8 @@
 function createUserTopbar(map){
-  return `
-  <div id="topbar">
-      <div class="iconDiv"><i class="fas fa-backpack" title="inventory"></i></div>
-  </div>
-  `
+  const div = document.createElement("div");
+  div.classList = "topbar"
+  div.innerHTML = `<div class="iconDiv"><i class="fas fa-location-circle" title="skip"></i></div>`
+  return div;
 }
 
 function createUserPrompt(map){
