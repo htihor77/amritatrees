@@ -1,22 +1,20 @@
 
 #container .navbar{
   --h:3rem;
+  --m: 5px;
   height:var(--h);
   width:100%;
   position:absolute;z-index:1;
-  top:0;left:0;
+  top:var(--m);left:0;
   
   display:grid;
   grid-template-columns:var(--h) auto var(--h);
+  padding-left:var(--m);
+  padding-right:var(--m);
 }
 
-#container .navbar > div{
-  padding:5px;
-}
 
 #container .navbar .iconDiv{
-  --p:10px;
-  padding:var(--p);
   height:100%;width:100%;
   background-color:#323232;
   border-radius:15px;
@@ -26,6 +24,8 @@
   align-items:center;
 }
 
+#container .navbar .textDiv
+
 #container .navbar i{
-  font-size:calc( var(--h) - 4 * var(--p) );
+  font-size:calc( 3 * var(--h) / 5 );
 }
