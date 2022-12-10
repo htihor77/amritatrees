@@ -261,16 +261,20 @@
   flex-direction: row;
   gap:10px;
   row-gap:10px;
+/*   padding:5px; */
 }
 
 #userPrompt .optionsWrapper .ques_options{
   position:relative;
   font-size:1.5rem;
   line-height:1.5;
-  max-width:90%;
+  max-width:40%;
   min-width:45%;
   
   overflow-wrap: break-word;
+  overflow: hidden;
+  white-space: pre;
+  
   padding-left:30px;
   padding-right:3px;
   text-align:center;
