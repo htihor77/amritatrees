@@ -170,8 +170,16 @@ async function submitAnswer(q,ans){
     console.log(data)
     if(data.correct){
       console.log("correct");
+      confetti();
+      confetti();
+      document.querySelector("#userPrompt").classList.remove("active");
+      document.querySelector(".navbar").classList.add("active");
+      
     } else {
       console.log("not correct");
+      navigator.vibrate([250,50,250]);
+      document.querySelector("#userPrompt").classList.remove("active");
+      document.querySelector(".navbar").classList.add("active");
       
     }
     
