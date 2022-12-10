@@ -17,7 +17,7 @@ function createUserPrompt(map){
 async function initMap() {
   const tree_icon_url = "https://cdn.discordapp.com/attachments/1027927070191403189/1039163926702719086/qmark64.png";
   const shadow_url = "https://www.transparentpng.com/download/shadow/iuqEeA-shadow-png-pic-controlled-drugs-cabinets-from-pharmacy.png";
-  
+  let promptOpen = false;
   let map = new google.maps.Map(document.getElementById("map"),{center: { lat: 10.900016808568687, lng: 76.9028589289025 },zoom: 20,mapId: "661dd2cc98d8e9e2",mapTypeId: 'satellite',});
   
   map.setOptions({zoomControl: false, disableDoubleClickZoom: true,disableDefaultUI: true,
@@ -59,16 +59,17 @@ async function initMap() {
   
       marker.addListener("click", () => {
         const pos2 = allMarkers[id]
-        const DISTANCE_THRESHOLD = 100;
+        const DISTANCE_THRESHOLD = 300;
         
         window.navigator.geolocation.getCurrentPosition(async (pos1)=>{
           const dist = measureDistance( pos1.coords.latitude, pos1.coords.longitude, pos2.lat, pos2.lng )
-          const ACCURACY = data.accuracy;
+          const ACCURACY = pos1.coords.accuracy;
           
           if( dist < DISTANCE_THRESHOLD && pos1.coords.accuracy < DISTANCE_THRESHOLD){
             map.setCenter(allMarkers[id]);
             toggleBounce();
           }else{
+            console.log("cannot ask question");            
             return;
           }
           
@@ -80,7 +81,6 @@ async function initMap() {
           const QUESTION = data.quiz;
           const OPTIONS = data.options.split(",");
 
-          if ( DISTANCE > DISTANCE_THRESHOLD || ACCURACY > DISTANCE_THRESHOLD || true ){console.log("cannot ask question");return;}
           console.log("ask question");
           
           
@@ -94,7 +94,7 @@ async function initMap() {
     if(navigator.geolocation){navigator.geolocation.getCurrentPosition( (position)=>{
       const pos = {lat: position.coords.latitude,lng: position.coords.longitude,};
       const latlng = new google.maps.LatLng(pos.lat, pos.lng);currPosMarker.setPosition(latlng);
-      // map.setCenter(pos);
+      if ( !promptOpen )  map.setCenter(pos);
   });}}
   
   const currPosMarker = new google.maps.Marker({
