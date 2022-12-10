@@ -1,40 +1,25 @@
 function createUserTopbar(map){
   const div = document.createElement("div");
   div.classList = "topbar"
-  div.innerHTML = `<div class="iconDiv"><i class="fas fa-location-circle" title="skip"></i></div>`
+  div.innerHTML = `<div class="iconDiv"><i class="fas fa-location-circle" title="close" onclick="closePrompt()"></i></div>`
   return div;
 }
 
 function createUserPrompt(map){
-  function promptClose(m){console.log("close prompt",m);}
   const div = document.createElement("div");
   div.classList = "content";
-  // div.innerHTML = `
-  //   <!-- <span class="randomBar"></span> -->
-  //   <div class="question"><span class="qsymbol">Q: </span><span class="qcontent">asdhfk jhdsakljfh asdkjfh akdshf askldjhf lakjsdhf lakdhfalkh ajksh klads kljah kahs<span></div>
-  //   <div class="optionsWrapper">
-  //     <span class='ques_options noSelect' abcd='a'>aaaaaaaaaaa</span>
-  //     <span class='ques_options noSelect' abcd='b'>aaaaaaaaaaa</span>
-  //     <span class='ques_options noSelect' abcd='c'>aaaaaaaaaaa</span>
-  //     <span class='ques_options noSelect' abcd='d'>aaaaaaaaaaa</span>
-  //   </div>
-  // `;
-  div.innerHTML = `
-    hey
-    <br>
-    sup
-    <br>
-    i wanna die
-    <br>
-    lol
-  `
   return div;
+}
+
+function closePrompt(){
+  document.querySelector("#userPrompt").classList.remove("active")
+  document.querySelector(".navbar").classList.add("active")
 }
 
 async function initMap() {
   const tree_icon_url = "https://cdn.discordapp.com/attachments/1027927070191403189/1039163926702719086/qmark64.png";
   const shadow_url = "https://www.transparentpng.com/download/shadow/iuqEeA-shadow-png-pic-controlled-drugs-cabinets-from-pharmacy.png";
-  let map = new google.maps.Map(document.getElementById("map"),{center: { lat: 10.900016808568687, lng: 76.9028589289025 },zoom: 10,mapId: "661dd2cc98d8e9e2",mapTypeId: 'satellite',});
+  let map = new google.maps.Map(document.getElementById("map"),{center: { lat: 10.900016808568687, lng: 76.9028589289025 },zoom: 20,mapId: "661dd2cc98d8e9e2",mapTypeId: 'satellite',});
   
   map.setOptions({zoomControl: false, disableDoubleClickZoom: true,disableDefaultUI: true,
     // draggable: false, 
@@ -86,7 +71,7 @@ async function initMap() {
           
           
           if( dist < DISTANCE_THRESHOLD && pos1.coords.accuracy < DISTANCE_THRESHOLD){
-            map.setCenter(allMarkers[id]);
+            map.setCenter( { lat: allMarkers[id].lat, lng: allMarkers[id].lng + 0.01 });
             toggleBounce();
           }else{
             console.log("cannot ask question");            
@@ -142,12 +127,22 @@ async function initMap() {
   
   
   const loop = () => {
+    
+    
     if(navigator.geolocation){navigator.geolocation.getCurrentPosition( (position)=>{
       const pos = {lat: position.coords.latitude,lng: position.coords.longitude,};
       const latlng = new google.maps.LatLng(pos.lat, pos.lng);currPosMarker.setPosition(latlng);
       let promptOpen = document.querySelector("#userPrompt").classList.contains("active");
       if ( !promptOpen )  map.setCenter(pos);
-  });}}
+    });}
+    
+    const date = new Date();
+    document.querySelector(".navbar .textDiv").innerHTML = `
+      <p>${ ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"][date.getDay()] }</p>
+      <p>${date.getHours()}<span class="blink">:<span>${date.getMinutes()}</p>
+    `
+    
+  }
   
   const currPosMarker = new google.maps.Marker({
     position: { lat: 10.900016808568687, lng: 76.9028589289025 },map,

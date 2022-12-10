@@ -120,6 +120,7 @@
   display:grid;
   padding-left:var(--m);
   padding-right:var(--m);
+  justify-content:end;
 }
 
 #container .topbar .iconDiv{
