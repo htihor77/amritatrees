@@ -1,4 +1,18 @@
 
 #container .navbar{
-    
+  --h:3rem;
+  height:var(--h);
+  width:100%;
+  position:absolute;z-index:1;
+  top:0;left:0;
+  
+  display:grid;
+  grid-template-columns:var(--h) auto var(--h);
+}
+
+
+#container .navbar i{
+  --p:10px;
+  font-size:calc( var(--h) - 2 * var(--p) );
+  padding:var(--p);
 }
