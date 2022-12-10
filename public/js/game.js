@@ -2,22 +2,30 @@ function createUserPrompt(map){
   function promptClose(m){console.log("close prompt",m);}
   const div = document.createElement("div");
   div.classList = "content";
+  // div.innerHTML = `
+  //   <!-- <span class="randomBar"></span> -->
+  //   <div class="question"><span class="qsymbol">Q: </span><span class="qcontent">asdhfk jhdsakljfh asdkjfh akdshf askldjhf lakjsdhf lakdhfalkh ajksh klads kljah kahs<span></div>
+  //   <div class="optionsWrapper">
+  //     <span class='ques_options noSelect' abcd='a'>aaaaaaaaaaa</span>
+  //     <span class='ques_options noSelect' abcd='b'>aaaaaaaaaaa</span>
+  //     <span class='ques_options noSelect' abcd='c'>aaaaaaaaaaa</span>
+  //     <span class='ques_options noSelect' abcd='d'>aaaaaaaaaaa</span>
+  //   </div>
+  // `;
   div.innerHTML = `
-    <!-- <span class="randomBar"></span> -->
-    <div class="question"><span class="qsymbol">Q: </span><span class="qcontent">asdhfk jhdsakljfh asdkjfh akdshf askldjhf lakjsdhf lakdhfalkh ajksh klads kljah kahs<span></div>
-    <div class="optionsWrapper">
-      <span class='ques_options noSelect' abcd='a'>aaaaaaaaaaa</span>
-      <span class='ques_options noSelect' abcd='b'>aaaaaaaaaaa</span>
-      <span class='ques_options noSelect' abcd='c'>aaaaaaaaaaa</span>
-      <span class='ques_options noSelect' abcd='d'>aaaaaaaaaaa</span>
-    </div>
-  `;  
+    hey
+    <br>
+    sup
+    <br>
+    i wanna die
+    <br>
+    lol
+  `
   return div;
 }
 async function initMap() {
   const tree_icon_url = "https://cdn.discordapp.com/attachments/1027927070191403189/1039163926702719086/qmark64.png";
   const shadow_url = "https://www.transparentpng.com/download/shadow/iuqEeA-shadow-png-pic-controlled-drugs-cabinets-from-pharmacy.png";
-  let promptOpen = false;
   let map = new google.maps.Map(document.getElementById("map"),{center: { lat: 10.900016808568687, lng: 76.9028589289025 },zoom: 20,mapId: "661dd2cc98d8e9e2",mapTypeId: 'satellite',});
   
   map.setOptions({zoomControl: false, disableDoubleClickZoom: true,disableDefaultUI: true,
@@ -25,7 +33,11 @@ async function initMap() {
     // scrollwheel: false, 
   });
   
-  const allMarkers = []; 
+  const allMarkers = [];
+  
+  const userPrompt = document.createElement("div");userPrompt.id = "userPrompt";
+  const promptDiv = createUserPrompt(map);userPrompt.appendChild(promptDiv);
+  map.controls[google.maps.ControlPosition.TOP_LEFT].push(userPrompt);
   
   // FETCH TREES  
   const treedata = await fetch("./treedata");
@@ -60,6 +72,7 @@ async function initMap() {
       marker.addListener("click", () => {
         const pos2 = allMarkers[id]
         const DISTANCE_THRESHOLD = 300;
+        userPrompt.classList.add("active");
         
         window.navigator.geolocation.getCurrentPosition(async (pos1)=>{
           const dist = measureDistance( pos1.coords.latitude, pos1.coords.longitude, pos2.lat, pos2.lng )
@@ -94,6 +107,7 @@ async function initMap() {
     if(navigator.geolocation){navigator.geolocation.getCurrentPosition( (position)=>{
       const pos = {lat: position.coords.latitude,lng: position.coords.longitude,};
       const latlng = new google.maps.LatLng(pos.lat, pos.lng);currPosMarker.setPosition(latlng);
+      let promptOpen = document.querySelector("#userPrompt").classList.contains("active");
       if ( !promptOpen )  map.setCenter(pos);
   });}}
   

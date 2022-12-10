@@ -1,5 +1,5 @@
-
 #container .navbar{
+  display:none;
   --h:3rem;
   --m: 5px;
   height:var(--h);
@@ -7,11 +7,11 @@
   position:absolute;z-index:1;
   top:var(--m);left:0;
   
-  display:grid;
   grid-template-columns:var(--h) auto var(--h);
   padding-left:var(--m);
   padding-right:var(--m);
 }
+#container .navbar.active{display:grid;}
 
 #container .navbar > div > div{
   height:100%;width:100%;

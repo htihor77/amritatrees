@@ -29,6 +29,9 @@
   width:100%;height:100%; 
   background-color:rgba(0,0,0,0.5);
 }
+#userPrompt.active{
+  display:block;
+}
 /* QUESTION CARD */
 #userPrompt .content{
   width:100%;min-height: 185px;max-height: 55%;
