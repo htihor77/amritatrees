@@ -94,7 +94,8 @@ fastify.get("/login", async (request, reply) => {
   // console.log(data);
   
   if( request.session.isAuthenticated ){
-    return reply.redirect("/map");
+    // return reply.redirect("/map");
+    return reply.redirect("/game");
   }else{
     return reply.view("/src/pages/login.hbs", {});
   }

@@ -91,7 +91,8 @@ async function initMap() {
                           .map( (item,id) => {
                             return `<span 
                               class='option noSelect'
-                              abcd='${["a","b","c","d"][id]}'>
+                              abcd='${["a","b","c","d"][id]}'
+                              onclick='submitAnswer(${QUIZ_ID},"${item}")'>
                               ${item}
                             </span>`
                           })
@@ -102,13 +103,13 @@ async function initMap() {
             <div id="quiz">
               <span class="qsymbol">Q:</span><span class="qcontent">${QUESTION}<span>
             </div>
-            <div id="options">
+            <div id="options" class="noSelect">
               ${OPTIONS}
             </div>
           `;
           
           let max_width = 0;
-          let max_height = 999;
+          let min_height = 999;
           userPrompt.querySelector(".content").classList.add("active");
           document.querySelectorAll(".option").forEach( item => {
             if( item.offsetWidth > max_width){max_width = item.offsetWidth;}
