@@ -13,19 +13,13 @@
   padding-right:var(--m);
 }
 
-
-#container .navbar .iconDiv{
+#container .navbar > div > div{
   height:100%;width:100%;
-  background-color:#323232;
-  border-radius:15px;
-  
   display:flex;
   justify-content:center;
   align-items:center;
 }
+#container .navbar .iconDiv{background-color:#323232;border-radius:15px;}
+#container .navbar .textDiv{flex-direction:column;}
 
-#container .navbar .textDiv
-
-#container .navbar i{
-  font-size:calc( 3 * var(--h) / 5 );
-}
+#container .navbar i{font-size:calc( 3 * var(--h) / 5 );}
