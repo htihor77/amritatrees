@@ -59,15 +59,8 @@ async function initMap() {
       const iconSize = 60;
       const marker = new google.maps.Marker({title: tree.title,position: {lat: lat, lng: lng },map,icon: {url: tree_icon_url,scaledSize: new google.maps.Size(iconSize, iconSize),origin: new google.maps.Point(0, 0),anchor: new google.maps.Point(iconSize/2, iconSize/2),},});
       marker.setAnimation(null);
+      function toggleBounce() {if (marker.getAnimation() !== null) {marker.setAnimation(null);} else {marker.setAnimation(google.maps.Animation.BOUNCE);setTimeout( ()=>{marker.setAnimation(null);},500);}}
       
-      function toggleBounce() {
-      if (marker.getAnimation() !== null) {
-        marker.setAnimation(null);
-      } else {
-        marker.setAnimation(google.maps.Animation.BOUNCE);
-        setTimeout( ()=>{marker.setAnimation(null);},500);
-        }
-      }
   
       marker.addListener("click", () => {
         const pos2 = allMarkers[id]
@@ -95,7 +88,9 @@ async function initMap() {
           const OPTIONS = data.options.split(",");
 
           console.log("ask question");
+          userPrompt.querySelector(".content").innerHTML = `
           
+          `;
           
         });
       });
