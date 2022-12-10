@@ -85,8 +85,13 @@ async function initMap() {
           const DISTANCE = data.distance;
           const QUIZ_ID = data.quiz_id;
           const QUESTION = data.quiz;
-          const OPTIONS = data.options.split(",");
-
+          const OPTIONS = data.options
+                          .split(",")
+                          .map( (item,id) => { "<span class='option noSelect'>" + item + ""
+                            </span>`
+                          });
+          console.log(OPTIONS)
+          
           console.log("ask question");
           userPrompt.querySelector(".content").innerHTML = `
             <div id="quiz">
