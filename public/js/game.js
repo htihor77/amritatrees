@@ -1,7 +1,7 @@
 function createUserTopbar(map){
   const div = document.createElement("div");
   div.classList = "topbar"
-  div.innerHTML = `<div class="iconDiv"><i class="fas fa-location-circle" title="close" onclick="closePrompt()"></i></div>`
+  div.innerHTML = `<div class="iconDiv"><i class="fas fa-plus" style="transform:rotate(45deg);" title="close" onclick="closePrompt()"></i></div>`
   return div;
 }
 
@@ -12,8 +12,12 @@ function createUserPrompt(map){
 }
 
 function closePrompt(){
-  document.querySelector("#userPrompt").classList.remove("active")
-  document.querySelector(".navbar").classList.add("active")
+  
+  document.querySelector("#userPrompt .content").classList.remove("active");
+  setTimeout( ()=>{
+    document.querySelector("#userPrompt").classList.remove("active");
+    document.querySelector(".navbar").classList.add("active");
+  },200)
 }
 
 async function initMap() {
