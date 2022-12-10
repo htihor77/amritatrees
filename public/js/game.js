@@ -1,3 +1,11 @@
+function createUserTopbar(map){
+  return `
+  <div id="topbar">
+      <div class="iconDiv"><i class="fas fa-backpack" title="inventory"></i></div>
+  </div>
+  `
+}
+
 function createUserPrompt(map){
   function promptClose(m){console.log("close prompt",m);}
   const div = document.createElement("div");
@@ -23,6 +31,7 @@ function createUserPrompt(map){
   `
   return div;
 }
+
 async function initMap() {
   const tree_icon_url = "https://cdn.discordapp.com/attachments/1027927070191403189/1039163926702719086/qmark64.png";
   const shadow_url = "https://www.transparentpng.com/download/shadow/iuqEeA-shadow-png-pic-controlled-drugs-cabinets-from-pharmacy.png";
@@ -36,6 +45,8 @@ async function initMap() {
   const allMarkers = [];
   
   const userPrompt = document.createElement("div");userPrompt.id = "userPrompt";
+  
+  const topbarDiv = createUserTopbar(map);userPrompt.appendChild(topbarDiv);
   const promptDiv = createUserPrompt(map);userPrompt.appendChild(promptDiv);
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(userPrompt);
   
@@ -149,6 +160,20 @@ async function initMap() {
 }
 
 window.initMap = initMap;
+
+async function submitAnswer(q,ans){
+    document.querySelector("#userPrompt .content").classList.remove("active");
+    let res = await fetch("./checkinganswer",{method: 'POST',headers: {accept: 'application.json','Content-Type': 'application/json'},body: JSON.stringify({q:q, ans:ans})});
+  
+    let data = await res.json();
+    console.log(data)
+    if(data.correct){
+      console.log("correct")
+    } else {
+      console.log("not correct")
+    }
+}
+
 
 function measureDistance(lat1, lon1, lat2, lon2){  // generally used geo measurement function
     var R = 6378.137; // Radius of earth in KM
