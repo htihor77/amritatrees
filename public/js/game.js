@@ -89,7 +89,12 @@ async function initMap() {
 
           console.log("ask question");
           userPrompt.querySelector(".content").innerHTML = `
-          
+            <div id="quiz">
+              <span class="qsymbol">Q:</span><span class="qcontent">${QUESTION}<span>
+            </div>
+            <div id="options">
+              ${OPTIONS}
+            </div>
           `;
           
         });
