@@ -27,7 +27,7 @@
 #userPrompt{
   display:none;
   width:100%;height:100%; 
-  background-color:rgba(0,0,0,0.5);
+  background-color:rgba(0,0,0,0.0);
 }
 #userPrompt.active{
   display:block;
@@ -44,11 +44,20 @@
   background-size: 400% 400%;
   animation: lavalamp 10s ease infinite;
   background-image: linear-gradient(320deg,rgb(55 112 65 / 80%),rgb(233 254 109 / 70%),#5dbc48,rgb(207 241 99 / 80%),rgb(33 56 37 / 80%));
+  
+  transition: bottom,top 200ms;
+}
+
+@keyframes lavalamp{
+	0% {background-position: 20% 50%;}
+	50% {background-position: 80% 50%;}
+	100% {background-position: 20% 50%;}
 }
 
 #userPrompt .content.active{
   top:auto !important;
   bottom:0;
+  transition: bottom,top 200ms;
 }
 
 #userPrompt .content::-webkit-scrollbar {width: 3px;}

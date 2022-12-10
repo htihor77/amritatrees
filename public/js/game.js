@@ -139,7 +139,7 @@ async function initMap() {
     const date = new Date();
     document.querySelector(".navbar .textDiv").innerHTML = `
       <p>${ ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"][date.getDay()] }</p>
-      <p>${date.getHours()}<span class="blink">:<span>${date.getMinutes()}</p>
+      <p>${date.getHours()}<span class="blink">:</span>${date.getMinutes()}</p>
     `
     
   }
