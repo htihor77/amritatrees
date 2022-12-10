@@ -14,8 +14,6 @@ function createUserPrompt(map){
   `;  
   return div;
 }
-
-
 async function initMap() {
   const tree_icon_url = "https://cdn.discordapp.com/attachments/1027927070191403189/1039163926702719086/qmark64.png";
   const shadow_url = "https://www.transparentpng.com/download/shadow/iuqEeA-shadow-png-pic-controlled-drugs-cabinets-from-pharmacy.png";
@@ -26,27 +24,52 @@ async function initMap() {
     // draggable: false, 
     // scrollwheel: false, 
   });
-  
   const allMarkers = []; 
   
   
+  // FETCH TREES  
+  const treeDataResp = await fetch("./treedata");
+  const TREES_ARRAY = await treeDataResp.json();
   
+  // SPANW TREE SHADOWS
+  TREES_ARRAY.forEach(item=>{
+    const iconSize = 70;
+    const coords = item.coords.split(",")
+    const lat = Number(coords[0]);const lng = Number(coords[1]);                      
+      const marker = new google.maps.Marker({position: {lat: lat, lng: lng },map,icon: {url: shadow_url,scaledSize: new google.maps.Size(iconSize, iconSize),origin: new google.maps.Point(0, 0),anchor: new google.maps.Point(iconSize/2, (iconSize/2) - 1.75),},});
+  });
   
+  // SPANW TREE (QUESTION MARKS)
+  TREES_ARRAY.forEach((tree,id)=>{const coords = tree.coords.split(",")
+      const lat = Number(coords[0]);const lng = Number(coords[1]);
+      allMarkers.push({lat:lat, lng:lng});
+      
+      const iconSize = 60;
+      const marker = new google.maps.Marker({title: tree.title,position: {lat: lat, lng: lng },map,icon: {url: tree_icon_url,scaledSize: new google.maps.Size(iconSize, iconSize),origin: new google.maps.Point(0, 0),anchor: new google.maps.Point(iconSize/2, iconSize/2),},});
+      marker.setAnimation(null);
+      
+      function toggleBounce() {
+      if (marker.getAnimation() !== null) {
+        marker.setAnimation(null);
+      } else {
+        marker.setAnimation(google.maps.Animation.BOUNCE);
+        setTimeout( ()=>{marker.setAnimation(null);},500);
+        }
+      }
   
-  
-  
-  
+      marker.addListener("click", () => {
+        toggleBounce();
+      });
+  });
   
   
   
   const loop = () => {
     if(navigator.geolocation){navigator.geolocation.getCurrentPosition( (position)=>{
       const pos = {lat: position.coords.latitude,lng: position.coords.longitude,};
-      // map.setCenter(pos);
       const latlng = new google.maps.LatLng(pos.lat, pos.lng);currPosMarker.setPosition(latlng);
-    });
-    }
-  }
+      // map.setCenter(pos);
+  });}}
   
   const currPosMarker = new google.maps.Marker({
     position: { lat: 10.900016808568687, lng: 76.9028589289025 },map,
