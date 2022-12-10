@@ -24,12 +24,12 @@ async function initMap() {
     // draggable: false, 
     // scrollwheel: false, 
   });
+  
   const allMarkers = []; 
   
-  
   // FETCH TREES  
-  const treeDataResp = await fetch("./treedata");
-  const TREES_ARRAY = await treeDataResp.json();
+  const treedata = await fetch("./treedata");
+  const TREES_ARRAY = await treedata.json();
   
   // SPANW TREE SHADOWS
   TREES_ARRAY.forEach(item=>{
@@ -59,6 +59,18 @@ async function initMap() {
   
       marker.addListener("click", () => {
         toggleBounce();
+        map.setCenter(allMarkers[id]);
+        const pos2 = allMarkers[id]
+        window.navigator.geolocation.getCurrentPosition(async (pos1)=>{
+          
+          const locationResp = await fetch('./checkinglocation', {method: 'POST',headers: {accept: 'application.json','Content-Type': 'application/json'},body: JSON.stringify({pos1:{lat: pos1.coords.latitude, lng: pos1.coords.longitude, accuracy: pos1.coords.accuracy}, pos2: pos2}),});
+          const data = await locationResp.json();
+
+          const QUIZ_ID = data.quiz_id;
+          const QUESTION = data.quiz;
+          const OPTIONS = data.options.split(",")
+          
+        });
       });
   });
   
