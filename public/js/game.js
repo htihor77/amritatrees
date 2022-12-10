@@ -58,17 +58,31 @@ async function initMap() {
       }
   
       marker.addListener("click", () => {
-        toggleBounce();
-        map.setCenter(allMarkers[id]);
         const pos2 = allMarkers[id]
+        const DISTANCE_THRESHOLD = 100;
+        
         window.navigator.geolocation.getCurrentPosition(async (pos1)=>{
+          const dist = measureDistance( pos1.coords.latitude, pos1.coords.longitude, pos2.lat, pos2.lng )
+          const ACCURACY = data.accuracy;
           
-          const locationResp = await fetch('./checkinglocation', {method: 'POST',headers: {accept: 'application.json','Content-Type': 'application/json'},body: JSON.stringify({pos1:{lat: pos1.coords.latitude, lng: pos1.coords.longitude, accuracy: pos1.coords.accuracy}, pos2: pos2}),});
+          if( dist < DISTANCE_THRESHOLD && pos1.coords.accuracy < DISTANCE_THRESHOLD){
+            map.setCenter(allMarkers[id]);
+            toggleBounce();
+          }else{
+            return;
+          }
+          
+          const locationResp = await fetch('./checkinglocation', {method: 'POST',headers: {accept: 'application.json','Content-Type': 'application/json'},body: JSON.stringify({pos1:{lat: pos1.coords.latitude, lng: pos1.coords.longitude}, pos2: pos2}),});
           const data = await locationResp.json();
 
+          const DISTANCE = data.distance;
           const QUIZ_ID = data.quiz_id;
           const QUESTION = data.quiz;
-          const OPTIONS = data.options.split(",")
+          const OPTIONS = data.options.split(",");
+
+          if ( DISTANCE > DISTANCE_THRESHOLD || ACCURACY > DISTANCE_THRESHOLD || true ){console.log("cannot ask question");return;}
+          console.log("ask question");
+          
           
         });
       });
@@ -93,3 +107,15 @@ async function initMap() {
 }
 
 window.initMap = initMap;
+
+function measureDistance(lat1, lon1, lat2, lon2){  // generally used geo measurement function
+    var R = 6378.137; // Radius of earth in KM
+    var dLat = lat2 * Math.PI / 180 - lat1 * Math.PI / 180;
+    var dLon = lon2 * Math.PI / 180 - lon1 * Math.PI / 180;
+    var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+    Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+    Math.sin(dLon/2) * Math.sin(dLon/2);
+    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+    var d = R * c;
+    return d * 1000; // meters
+}
