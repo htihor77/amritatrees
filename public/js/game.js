@@ -66,7 +66,10 @@ async function initMap() {
         const pos2 = allMarkers[id]
         const DISTANCE_THRESHOLD = 10000000;
         userPrompt.classList.add("active");
+        document.querySelector(".navbar").classList.remove("active");
         
+        // CLICKING MARKER
+        // Fetching QUESTION & Checking ANSWER
         window.navigator.geolocation.getCurrentPosition(async (pos1)=>{
           const dist = 0 || measureDistance( pos1.coords.latitude, pos1.coords.longitude, pos2.lat, pos2.lng )
           const ACCURACY = pos1.coords.accuracy;
@@ -113,12 +116,14 @@ async function initMap() {
           userPrompt.querySelector(".content").classList.add("active");
           document.querySelectorAll(".option").forEach( item => {
             if( item.offsetWidth > max_width){max_width = item.offsetWidth;}
-            if( item.offsetHeight < max_height){max_height = item.offsetHeight;}
+            if( item.offsetHeight < min_height){min_height = item.offsetHeight;}
           });
           document.querySelectorAll(".option").forEach( item => { 
             item.style.width = max_width + "px";
-            item.style.height = max_height + "px";
+            item.style.height = min_height + "px";
           });
+          
+          
           
         });
       });
