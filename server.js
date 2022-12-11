@@ -169,7 +169,7 @@ fastify.get("/inventory", async (request, reply) => {
   const params = request.query.raw ? {}: {};
   console.log(params);
   
-  const user = request.session.user;  
+  const user = request.session.user;
   const data = await db.runQuery1(`SELECT username,points FROM Users WHERE uid=${user.uid}`);
   params.user = data[0];
   // params.unlocked = await db.runQuery1(`SELECT Inventory.tree_name,Atreebutes.url FROM Inventory,Atreebutes WHERE Inventory.uid=${user.uid} AND Inventory.tree_name=Atreebutes.tree_name`)
