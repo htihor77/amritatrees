@@ -237,7 +237,26 @@ fastify.post("/checkinglocation", async (request, reply) => {
   console.log(body)
   const pos1 = body.pos1;
   const pos2 = body.pos2;
+
+  const treeCoords1 = pos2.lat + ", " + pos2.lng;
+  const treeCoords2 = pos2.lat + "0, " + pos2.lng;
+  const treeCoords3 = pos2.lat + ", " + pos2.lng + "0";
+  const treeCoords4 = pos2.lat + "0, " + pos2.lng + "0";
   
+  
+  console.log(treeCoords1);
+  console.log(treeCoords2);
+  console.log(treeCoords3);
+  console.log(treeCoords4);
+  
+  const treeArr1 = await db.runQuery1(`SELECT * FROM Trees WHERE coords='${treeCoords1}'`)
+  const treeArr2 = await db.runQuery1(`SELECT * FROM Trees WHERE coords='${treeCoords2}'`)
+  const treeArr3 = await db.runQuery1(`SELECT * FROM Trees WHERE coords='${treeCoords3}'`)
+  const treeArr4 = await db.runQuery1(`SELECT * FROM Trees WHERE coords='${treeCoords4}'`)
+  console.log(treeArr1);
+  console.log(treeArr2);
+  console.log(treeArr3);
+  console.log(treeArr4);
   // console.log(entrance.lat,entrance.lng, body.lat, body.lng);
   const distance = utils.measureDistance(pos1.lat,pos1.lng, pos2.lat, pos2.lng);
   // console.log(distance)
