@@ -6,9 +6,11 @@
 /*   background-image: url("https://st3.depositphotos.com/3356059/19074/i/600/depositphotos_190742898-stock-photo-abstract-grey-polygonal-background.jpg"); */
 /*   background-repeat: no-repeat; */
 /*   background-size: auto; */
+  transition:all .2s;
 }
 #invbar.active{
   right:0;
+  transition:all .2s;
 }
 
 #invbar .top{

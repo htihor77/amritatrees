@@ -1,4 +1,3 @@
-
 function toggleSidebar(){
   $('#sidebar').classList.toggle('active');
   if( $('#sidebar').classList.contains("active") ){
@@ -11,5 +10,5 @@ function toggleSidebar(){
 function clickedOverlay(e){
   $("#overlay").style.display = "none";
   $('#sidebar').classList.remove('active');
-  $('#invbar').classList.remove('active');
+  // $('#invbar').classList.remove('active');
 }
