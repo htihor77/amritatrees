@@ -35,7 +35,7 @@ dbWrapper
         await db.run("CREATE TABLE Trees (lid INTEGER PRIMARY KEY AUTOINCREMENT, tree_name TEXT, coords TEXT)")
         await db.run("CREATE TABLE A_TREE_butes (tree_name TEXT PRIMARY KEY, scientific_name TEXT, origin INTEGER, link TEXT, properties TEXT, url TEXT DEFAULT 'https://cdn.discordapp.com/attachments/1027927070191403189/1039165618617860146/betterTree.png')");
         await db.run("CREATE TABLE Quiz(qid INTEGER PRIMARY KEY, tree_name TEXT, question TEXT, options TEXT, answers TEXT)");
-        await db.run("CREATE TABLE Inventory(username TEXT, tree_id INTEGER)");
+        await db.run("CREATE TABLE Inventory(username TEXT, tree_name TEXT)");
         
         // await db.run("CREATE TABLE Inventory (uid INTEGER, tree_name)");
         
@@ -43,7 +43,7 @@ dbWrapper
         trees.forEach(item => {db.run(`INSERT INTO Trees (tree_name,coords) VALUES ('${item.title}', '${item.coords}')`)});
         treeProps.forEach(item => {db.run(`INSERT INTO A_TREE_butes (tree_name,scientific_name,origin,link,properties) VALUES ('${item.name}', '${item.scientific_name}', '${item.origin}', '${item.link}', '${item.properties}')`)});
         quiz.forEach(item => {db.run(`INSERT INTO Quiz (quiz_id,tree_name,question,options,answers) VALUES (${item.quiz_id},'${item.tree}', '${item.questions}', '${item.options}', '${item.answers}')`)});
-        inventory.forEach(item => {db.run(`INSERT INTO Inventory (username,tree_id) VALUES (${item.username},'${item.tree_id}')`)});
+        inventory.forEach(item => {db.run(`INSERT INTO Inventory (username,tree_name) VALUES ('${item.username}','${item.tree_name}')`)});
         
       } else {
         console.log("db exists!");
