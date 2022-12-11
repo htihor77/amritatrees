@@ -183,7 +183,9 @@ fastify.get("/inventory", async (request, reply) => {
 });
 
 fastify.get("/treedata", async (request, reply) => {
-  const data = await db.runQuery1("SELECT A_TREE_butes.tree_name,A_TREE_butes.scientific_name,A_TREE_butes.origin,A_TREE_butes.link,A_TREE_butes.properties,Trees.coords FROM Trees,A_TREE_butes WHERE Trees.tree_name LIKE A_TREE_butes.scientific_name OR Trees.tree_name LIKE A_TREE_butes.tree_name");
+  const data = await db.runQuery1(`SELECT A_TREE_butes.tree_name,A_TREE_butes.scientific_name,A_TREE_butes.origin,A_TREE_butes.link,A_TREE_butes.properties,Trees.coords 
+  FROM Trees,A_TREE_butes 
+  WHERE Trees.tree_name LIKE A_TREE_butes.scientific_name OR Trees.tree_name LIKE A_TREE_butes.tree_name`);
   // console.log(data);
   
   return reply.send(data)
@@ -266,6 +268,9 @@ fastify.post("/checkinglocation", async (request, reply) => {
 
 fastify.post("/checkinganswer", async (request, reply) => {
   
+    const userdata = request.session.user;
+    const UserArr = await db.runQuery1(`SELECT username,points FROM Users WHERE uid=${userdata.uid}`);
+    const user = UserArr[0];
   // const entrance = {lat:10.901853212312897,lng: 76.89603899041079};
   const body = request.body;
   const q = Number(body.q);
@@ -281,10 +286,11 @@ fastify.post("/checkinganswer", async (request, reply) => {
   
   if( quiz.answer == ans ){
     true_or_false = true;
-    const userdata = request.session.user;
-    const UserArr = await db.runQuery1(`SELECT username,points FROM Users WHERE uid=${userdata.uid}`);
-    const user = UserArr[0];
+    const val = await db.runQuery1(`SELECT EXISTS(SELECT 1 FROM Inventory WHERE tree_name='${quiz.tree_name}');`)
+    console.log(val);
     await db.runQuery2(`INSERT INTO Inventory (username, tree_name) VALUES ('${user.username}', '${quiz.tree_name}')`)
+  }else{
+    
   }
   
   return reply.type("json").send({"correct": true_or_false });
