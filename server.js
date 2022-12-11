@@ -253,7 +253,7 @@ fastify.post("/checkinglocation", async (request, reply) => {
   
   const tree = treeArr1[0] ||  treeArr2[0] || treeArr3[0] || treeArr4[0]
   
-  // console.log(tree);
+  console.log(tree);
   
   const QuizArr = await db.runQuery1(`SELECT * FROM Quiz WHERE tree_name='${tree.tree_name}'`)
   
