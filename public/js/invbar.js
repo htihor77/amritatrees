@@ -1,5 +1,6 @@
 function toggleInventorybar(){
   $("#invbar").classList.toggle('active');
+  fetchInventoryItems();
 }
 
 
