@@ -44,10 +44,10 @@
 
 #actionbar{
   position:absolute;
-  top:calc(100% + 25px);
+  top:calc(100% + 15px);
   left:0;
   width:100%;
-  max-height:5rem;
+  max-height:6rem;
   pointer-events:none;
   
   display:flex;flex-direction:column;

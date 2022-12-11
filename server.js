@@ -268,9 +268,10 @@ fastify.post("/checkinganswer", async (request, reply) => {
   
   // const entrance = {lat:10.901853212312897,lng: 76.89603899041079};
   const body = request.body;
-  const q = body.q;
-  const ans = body.ans.strip();
-  console.log(q,ans)
+  const q = Number(body.q);
+  const ans = body.ans.trim();
+  console.log(q)
+  console.log(ans)
 
   const QuizArr = await db.runQuery1(`SELECT * FROM Quiz WHERE quiz_id=${q}`)
   const quiz = QuizArr[0];
@@ -280,7 +281,11 @@ fastify.post("/checkinganswer", async (request, reply) => {
   
   if( quiz.answer == ans ){
     true_or_false = true;
-  }  
+    const userdata = request.session.user;
+    const UserArr = await db.runQuery1(`SELECT username,points FROM Users WHERE uid=${userdata.uid}`);
+    const user = UserArr[0];
+    await db.runQuery2(`INSERT INTO Inventory (username, tree_name) VALUES ('${user.username}', '${quiz.tree_name}')`)
+  }
   
   return reply.type("json").send({"correct": true_or_false });
 });
