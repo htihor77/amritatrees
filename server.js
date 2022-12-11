@@ -172,7 +172,8 @@ fastify.get("/inventory", async (request, reply) => {
   const user = request.session.user;
   const data = await db.runQuery1(`SELECT username,points FROM Users WHERE uid=${user.uid}`);
   params.user = data[0];
-  params.unlocked = await db.runQuery1(`SELECT Inventory.tree_name,Atreebutes.url FROM Inventory,Atreebutes WHERE Inventory.uid=${user.uid} AND Inventory.tree_name=Atreebutes.tree_name`)
+  // params.unlocked = await db.runQuery1(`SELECT Inventory.tree_name,Atreebutes.url FROM Inventory,Atreebutes WHERE Inventory.uid=${user.uid} AND Inventory.tree_name=Atreebutes.tree_name`)
+  params.unlocked = await db.runQuery1(`SELECT Inventory.tree_name,A_TREE_butes.url FROM Inventory,A_TREE_butes WHERE Inventory.uid=${user.uid} AND Inventory.tree_id=A_TREE_butes.tree_id`)
   params.locked = await db.runQuery1(`SELECT tree_name,url FROM Atreebutes WHERE tree_name NOT IN (SELECT tree_name FROM Inventory WHERE uid=${user.uid})`);
   
   return request.query.raw

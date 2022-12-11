@@ -28,12 +28,12 @@ dbWrapper
         const trees = JSON.parse(rawtrees);
         const treeProps = JSON.parse(rawtreeProps);
         const quiz = JSON.parse(rawQuiz);
-        const inventory = JSON.parse(inventory);
+        const inventory = JSON.parse(rawInventory);
         
     
         await db.run("CREATE TABLE Users (uid INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT, verified INTEGER, username TEXT, password TEXT, session_id TEXT, points INTEGER, collected INTEGER, lat REAL, lng REAL)");
         await db.run("CREATE TABLE Trees (lid INTEGER PRIMARY KEY AUTOINCREMENT, tree_name TEXT, coords TEXT)")
-        await db.run("CREATE TABLE A_TREE_butes (tree_name TEXT PRIMARY KEY, scientific_name TEXT, origin INTEGER, link TEXT, properties TEXT)");
+        await db.run("CREATE TABLE A_TREE_butes (tree_name TEXT PRIMARY KEY, scientific_name TEXT, origin INTEGER, link TEXT, properties TEXT, url TEXT DEFAULT 'https://cdn.discordapp.com/attachments/1027927070191403189/1039165618617860146/betterTree.png')");
         await db.run("CREATE TABLE Quiz(qid INTEGER PRIMARY KEY, tree_name TEXT, question TEXT, options TEXT, answers TEXT)");
         await db.run("CREATE TABLE Inventory(username TEXT, tree_id INTEGER)");
         

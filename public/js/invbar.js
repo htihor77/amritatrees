@@ -1,6 +1,7 @@
 function toggleInventorybar(){
   $("#invbar").classList.toggle('active');
-  fetchInventoryItems();
+  
+  if ( $("#invbar").classList.contains("active") ) fetchInventoryItems();
 }
 
 
