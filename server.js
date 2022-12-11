@@ -252,11 +252,16 @@ fastify.post("/checkinglocation", async (request, reply) => {
   const tree = treeArr1[0] ||  treeArr2[0] || treeArr3[0] || treeArr4[0]
   
   console.log(tree);
+  
   const QuizArr = await db.runQuery1(`SELECT * FROM Quiz WHERE tree_name='${tree.tree_name}'`)
+  
   console.log(QuizArr)
+  const index = Math.floor(Math.random() * QuizArr.length)
+  const quiz = QuizArr[index]
+  console.log(quiz)
   
   const distance = utils.measureDistance(pos1.lat,pos1.lng, pos2.lat, pos2.lng);
-  return reply.type("json").send({distance: distance, quiz_id:1 , quiz:"This plant is native to? this is going to be a raelly long question to check the sizing issue in the content body of the div", options:"Brazil the answeres, Argentina  also need to be quite, Puerto Rico to , India" });
+  return reply.type("json").send({distance: distance, quiz_id: quiz.quiz_id , quiz: quiz.question , options: quiz.options });
 });
 
 fastify.post("/checkinganswer", async (request, reply) => {
