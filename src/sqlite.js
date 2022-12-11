@@ -34,7 +34,7 @@ dbWrapper
         await db.run("CREATE TABLE Users (uid INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT, verified INTEGER, username TEXT, password TEXT, session_id TEXT, points INTEGER, collected INTEGER, lat REAL, lng REAL)");
         await db.run("CREATE TABLE Trees (lid INTEGER PRIMARY KEY AUTOINCREMENT, tree_name TEXT, coords TEXT)")
         await db.run("CREATE TABLE A_TREE_butes (tree_name TEXT PRIMARY KEY, scientific_name TEXT, origin INTEGER, link TEXT, properties TEXT, url TEXT DEFAULT 'https://cdn.discordapp.com/attachments/1027927070191403189/1039165618617860146/betterTree.png')");
-        await db.run("CREATE TABLE Quiz(qid INTEGER PRIMARY KEY, tree_name TEXT, question TEXT, options TEXT, answers TEXT)");
+        await db.run("CREATE TABLE Quiz(quiz_id INTEGER PRIMARY KEY, tree_name TEXT, question TEXT, options TEXT, answers TEXT)");
         await db.run("CREATE TABLE Inventory(username TEXT, tree_name TEXT)");
         
         // await db.run("CREATE TABLE Inventory (uid INTEGER, tree_name)");
@@ -51,6 +51,7 @@ dbWrapper
         // console.log(await db.all("SELECT * FROM Users"));
         // console.log(await db.all("SELECT * FROM Trees"));
         // console.log(await db.all("SELECT * FROM A_TREE_butes"));
+        console.log(await db.all("SELECT * FROM Quiz"));
         
       }
     } catch (dbError) {
