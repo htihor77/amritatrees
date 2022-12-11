@@ -286,9 +286,13 @@ fastify.post("/checkinganswer", async (request, reply) => {
   
   if( quiz.answer == ans ){
     true_or_false = true;
-    const val = await db.runQuery1(`SELECT EXISTS(SELECT 1 FROM Inventory WHERE tree_name='${quiz.tree_name}');`)
-    console.log(val);
-    await db.runQuery2(`INSERT INTO Inventory (username, tree_name) VALUES ('${user.username}', '${quiz.tree_name}')`)
+    const val = await db.runQuery1(`SELECT EXISTS(SELECT 1 FROM Inventory WHERE tree_name='${quiz.tree_name}' LIMIT 1);`)
+    const available = Object.values(val[0])[0];
+    
+    if( available == 0 ){
+      await db.runQuery2(`INSERT INTO Inventory (username, tree_name) VALUES ('${user.username}', '${quiz.tree_name}')`)
+    }
+    
   }else{
     
   }
