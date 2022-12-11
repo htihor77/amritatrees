@@ -2,9 +2,10 @@
   display:block;position:absolute;z-index:2;
   width:100%;height:100%;
   top:0;right:-100%;  
-/*   background-image:linear-gradient(-45deg,#9cfaad,#42d7a9,#00a59e);   */
-  background-image: url("https://media.istockphoto.com/id/941910040/vector/low-poly-orange-red-gradient-background.jpg?s=612x612&w=0&k=20&c=cHa5O1mt11SHFQFYWxhpc0EXj_tq1pPS8cMlhvz2G1s=");
-  background-size: 100% 100%;
+  background-image:linear-gradient(-45deg,#323232,#646464,#242424);  
+/*   background-image: url("https://st3.depositphotos.com/3356059/19074/i/600/depositphotos_190742898-stock-photo-abstract-grey-polygonal-background.jpg"); */
+/*   background-repeat: no-repeat; */
+/*   background-size: auto; */
 }
 #invbar.active{
   right:0;
