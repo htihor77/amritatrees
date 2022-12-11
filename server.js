@@ -244,23 +244,19 @@ fastify.post("/checkinglocation", async (request, reply) => {
   const treeCoords4 = pos2.lat + "0, " + pos2.lng + "0";
   
   
-  console.log(treeCoords1);
-  console.log(treeCoords2);
-  console.log(treeCoords3);
-  console.log(treeCoords4);
-  
   const treeArr1 = await db.runQuery1(`SELECT * FROM Trees WHERE coords='${treeCoords1}'`)
   const treeArr2 = await db.runQuery1(`SELECT * FROM Trees WHERE coords='${treeCoords2}'`)
   const treeArr3 = await db.runQuery1(`SELECT * FROM Trees WHERE coords='${treeCoords3}'`)
   const treeArr4 = await db.runQuery1(`SELECT * FROM Trees WHERE coords='${treeCoords4}'`)
-  console.log(treeArr1);
-  console.log(treeArr2);
-  console.log(treeArr3);
-  console.log(treeArr4);
-  // console.log(entrance.lat,entrance.lng, body.lat, body.lng);
+  
+  const tree = treeArr1[0] ||  treeArr2[0] || treeArr3[0] || treeArr4[0]
+  
+  console.log(tree.tree_name);
+  const QuizArr = await db.runQuery1(`SELECT * FROM Quiz`)
+  console.log(QuizArr)
+  
   const distance = utils.measureDistance(pos1.lat,pos1.lng, pos2.lat, pos2.lng);
-  // console.log(distance)
-  return reply.type("json").send({distance: distance, accuracy:pos1.accuracy, quiz_id:1 , quiz:"This plant is native to? this is going to be a raelly long question to check the sizing issue in the content body of the div", options:"Brazil the answeres, Argentina  also need to be quite, Puerto Rico to , India" });
+  return reply.type("json").send({distance: distance, quiz_id:1 , quiz:"This plant is native to? this is going to be a raelly long question to check the sizing issue in the content body of the div", options:"Brazil the answeres, Argentina  also need to be quite, Puerto Rico to , India" });
 });
 
 fastify.post("/checkinganswer", async (request, reply) => {
