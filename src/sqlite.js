@@ -51,7 +51,7 @@ dbWrapper
         // console.log(await db.all("SELECT * FROM Users"));
         // console.log(await db.all("SELECT * FROM Trees"));
         // console.log(await db.all("SELECT * FROM A_TREE_butes"));
-        console.log(await db.all("SELECT * FROM Quiz"));
+        // console.log(await db.all("SELECT * FROM Quiz"));
         
       }
     } catch (dbError) {

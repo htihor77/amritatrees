@@ -184,7 +184,7 @@ fastify.get("/inventory", async (request, reply) => {
 
 fastify.get("/treedata", async (request, reply) => {
   const data = await db.runQuery1("SELECT A_TREE_butes.tree_name,A_TREE_butes.scientific_name,A_TREE_butes.origin,A_TREE_butes.link,A_TREE_butes.properties,Trees.coords FROM Trees,A_TREE_butes WHERE Trees.tree_name LIKE A_TREE_butes.scientific_name OR Trees.tree_name LIKE A_TREE_butes.tree_name");
-  console.log(data);
+  // console.log(data);
   
   return reply.send(data)
 });
@@ -217,7 +217,7 @@ fastify.get("/test", async (request, reply) => {
 
 fastify.get("/treedata2", async (request, reply) => {
   const data = await db.runQuery1("SELECT * FROM Trees");
-  console.log(data);
+  // console.log(data);
   
   return reply.send(data)
 });
@@ -234,7 +234,7 @@ fastify.post("/checkinglocation", async (request, reply) => {
   
   // const entrance = {lat:10.901853212312897,lng: 76.89603899041079};
   const body = request.body;
-  console.log(body)
+  // console.log(body)
   const pos1 = body.pos1;
   const pos2 = body.pos2;
 
@@ -251,14 +251,14 @@ fastify.post("/checkinglocation", async (request, reply) => {
   
   const tree = treeArr1[0] ||  treeArr2[0] || treeArr3[0] || treeArr4[0]
   
-  console.log(tree);
+  // console.log(tree);
   
   const QuizArr = await db.runQuery1(`SELECT * FROM Quiz WHERE tree_name='${tree.tree_name}'`)
   
-  console.log(QuizArr)
+  // console.log(QuizArr)
   const index = Math.floor(Math.random() * QuizArr.length)
   const quiz = QuizArr[index]
-  console.log(quiz)
+  // console.log(quiz)
   
   const distance = utils.measureDistance(pos1.lat,pos1.lng, pos2.lat, pos2.lng);
   return reply.type("json").send({distance: distance, quiz_id: quiz.quiz_id , quiz: quiz.question , options: quiz.options });
@@ -269,13 +269,15 @@ fastify.post("/checkinganswer", async (request, reply) => {
   // const entrance = {lat:10.901853212312897,lng: 76.89603899041079};
   const body = request.body;
   const q = body.q;
-  const ans = body.ans;
+  const ans = body.ans.strip();
   console.log(q,ans)
 
   const QuizArr = await db.runQuery1(`SELECT * FROM Quiz WHERE quiz_id=${q}`)
   const quiz = QuizArr[0];
   
   let true_or_false = false;
+  console.log(quiz);
+  
   if( quiz.answer == ans ){
     true_or_false = true;
   }  
