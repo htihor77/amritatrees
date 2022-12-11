@@ -24,9 +24,14 @@
 }
 #container .navbar .iconDiv{background-color:#323232;border-radius:15px;}
 #container .navbar .textDiv{flex-direction:column;
-font-family: "Press Start 2P";
-font-size:1.2rem;
-color:white;
+  font-family: "Press Start 2P";
+  font-size:1.2rem;
+  color:white;
+  -webkit-text-stroke:1px black;
+}
+#container .navbar .textDiv .time{
+/*   font-family: monospace; */
+  font-size:1rem;
 }
 
 #container .navbar i{font-size:calc( 3 * var(--h) / 5 );}

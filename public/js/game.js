@@ -148,13 +148,14 @@ async function initMap() {
     const suffix = hrs > 12 ? "pm" : "am";
     hrs = hrs > 12 ? hrs - 12 : hrs;
     
-    document.querySelector(".navbar .textDiv").innerHTML = `
-      <p>${day}</p>
-      <p>${hrs}<span style="animation: blink 1s;">:</span>${mins}${suffix}</p>
-    `
+    // document.querySelector(".navbar .textDiv").innerHTML = `
+    //   <p>${day}</p>
+    //   <p>${hrs}${mins}${suffix}</p>
+    // `
+    
     document.querySelector(".navbar .textDiv p.day").innerHTML = day
     document.querySelector(".navbar .textDiv p.time .hrs").innerHTML = hrs
-    document.querySelector(".navbar .textDiv p.time .mins").innerHTML = mins + " " + suffix;
+    document.querySelector(".navbar .textDiv p.time .mins").innerHTML = mins + "" + suffix;
     
   }
   
