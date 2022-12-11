@@ -142,14 +142,19 @@ async function initMap() {
     });}
     
     const date = new Date();
-    const hrs = date.getHours()
-    const suffix = date ? 
+    const day = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"][date.getDay()]
+    let hrs = date.getHours();
+    const mins = date.getMinutes();
+    const suffix = hrs > 12 ? "pm" : "am";
+    hrs = hrs > 12 ? hrs - 12 : hrs;
+    
     document.querySelector(".navbar .textDiv").innerHTML = `
-      <p>${ ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"][date.getDay()] }</p>
-      <p>${date.getHours() > 9 ? date.getHours() : "0" + date.getHours() }
-      <span style="animation: blink 1s;">:</span>
-      ${date.getMinutes() > 9 ? date.getMinutes() : "0" + date.getMinutes()} ${suffix}</p>
+      <p>${day}</p>
+      <p>${hrs}<span style="animation: blink 1s;">:</span>${mins}${suffix}</p>
     `
+    document.querySelector(".navbar .textDiv p.day").innerHTML = day
+    document.querySelector(".navbar .textDiv p.time .hrs").innerHTML = hrs
+    document.querySelector(".navbar .textDiv p.time .mins").innerHTML = mins + " " + suffix;
     
   }
   
