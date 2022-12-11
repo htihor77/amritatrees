@@ -142,9 +142,13 @@ async function initMap() {
     });}
     
     const date = new Date();
+    const hrs = date.getHours()
+    const suffix = date ? 
     document.querySelector(".navbar .textDiv").innerHTML = `
       <p>${ ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"][date.getDay()] }</p>
-      <p>${date.getHours() > 9 ? date.getHours() : "0" + date.getHours() }<span style="animation: blink 1s;">:</span>${date.getMinutes() > 9 ? date.getMinutes() : "0" + date.getMinutes()}</p>
+      <p>${date.getHours() > 9 ? date.getHours() : "0" + date.getHours() }
+      <span style="animation: blink 1s;">:</span>
+      ${date.getMinutes() > 9 ? date.getMinutes() : "0" + date.getMinutes()} ${suffix}</p>
     `
     
   }
