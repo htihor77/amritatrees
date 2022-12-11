@@ -1,11 +1,8 @@
 [
-  {"username":"nandhu","tree_id":1},
-  {"username":"nandhu","tree_id":2},
-  {"username":"nandhu","tree_id":3},
-  {"username":"nandhu","tree_id":4},
-  {"username":"nandhu","tree_id":5},
-  {"username":"root","tree_id":10},
-  {"username":"root","tree_id":11},
-  {"username":"root","tree_id":12},
-  {"username":"root","tree_id":13}
+  {"username":"nandhu","tree_name":"Mango tree"},
+  {"username":"nandhu","tree_name":"golden trumpet"},
+  {"username":"nandhu","tree_name":"Neem"},
+  {"username":"nandhu","tree_name":"Child life tree"},
+  {"username":"nandhu","tree_name":"Catpus"},
+  {"username":"root","tree_name":"Chebulic myrobalan"}
 ]
