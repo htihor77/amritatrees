@@ -182,7 +182,7 @@ async function submitAnswer(q,ans){
       navigator.vibrate([250,50,250]);
       document.querySelector("#userPrompt").classList.remove("active");
       document.querySelector(".navbar").classList.add("active");
-      msg.innerText = "Incorrect answer, better luck next time!";
+      msg.innerText = "Incorrect answer ☹!";
       
     }
     
