@@ -194,7 +194,9 @@ async function submitAnswer(q,ans){
       document.querySelector("#userPrompt").classList.remove("active");
       document.querySelector(".navbar").classList.add("active");
       msg.innerText = "Incorrect answer ☹!";
-      
+      document.querySelector("#mapContainer").classList.add("shake");
+      setTimeout( () =>{document.querySelector("#mapContainer").classList.remove("shake");},500);
+    
     }
     
     $("#actionbar").appendChild(msg)

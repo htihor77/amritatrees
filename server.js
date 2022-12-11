@@ -269,10 +269,18 @@ fastify.post("/checkinganswer", async (request, reply) => {
   // const entrance = {lat:10.901853212312897,lng: 76.89603899041079};
   const body = request.body;
   const q = body.q;
-  const ans = body.ans;  
+  const ans = body.ans;
   console.log(q,ans)
+
+  const QuizArr = await db.runQuery1(`SELECT * FROM Quiz WHERE quiz_id=${q}`)
+  const quiz = QuizArr[0];
   
-  return reply.type("json").send({"correct":[true,false][Math.floor(Math.random()*2)] });
+  let true_or_false = false;
+  if( quiz.answer == ans ){
+    true_or_false = true;
+  }  
+  
+  return reply.type("json").send({"correct": true_or_false });
 });
 
 

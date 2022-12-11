@@ -20,6 +20,16 @@
 /* MAP CONTAINER */
 
 #mapContainer{height:100%;overflow:hidden;}
+
+#mapContainer.shake{
+  animation: shake 100ms;
+  animation-iteration-count: 5;
+}
+@keyframes shake{
+	0% {transform:rotate(1deg);}
+	100% {transform:rotate(-1deg);}
+}
+
 #map{height:calc(100% + 23px);}
 .gm-style-iw-d{color:black;}
 
@@ -99,7 +109,7 @@
   padding-right:3px;
   border:2px solid white;border-radius:10px;
   
-  min-width: 40%;
+  min-width: 50% !important;
   
   overflow: hidden;
   white-space: nowrap;
