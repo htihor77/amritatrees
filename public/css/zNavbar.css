@@ -30,10 +30,13 @@
 }
 #container .navbar .textDiv .day{
   -webkit-text-stroke:1px black;
+  padding-bottom:4px;
 }
 #container .navbar .textDiv .time{
-/*   font-family: monospace; */
-  font-size:.8rem;
+  font-size:.9rem;
+  border:1px solid white;
+  padding:3px;
+  border-radius:15px;
 }
 
 #container .navbar i{font-size:calc( 3 * var(--h) / 5 );}
