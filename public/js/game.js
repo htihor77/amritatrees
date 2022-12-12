@@ -146,8 +146,8 @@ async function initMap() {
     let hrs = date.getHours();
     let mins = date.getMinutes();
     const suffix = hrs > 12 ? "pm" : "am";
-    hrs = hrs > 12 ? hrs - 12 : "0" + hrs;
-    mins = mins > 12 ? mins : "0" + mins;
+    hrs = hrs > 9 ? hrs : "0" + hrs;
+    mins = mins > 9 ? mins : "0" + mins;
     
     // document.querySelector(".navbar .textDiv").innerHTML = `
     //   <p>${day}</p>
