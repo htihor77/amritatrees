@@ -184,8 +184,9 @@ fastify.get("/inventory", async (request, reply) => {
 
 fastify.get("/treedata", async (request, reply) => {
   const data = await db.runQuery1(`SELECT A_TREE_butes.tree_name,A_TREE_butes.scientific_name,A_TREE_butes.origin,A_TREE_butes.link,A_TREE_butes.properties,Trees.coords 
-  FROM Trees,A_TREE_butes 
-  WHERE Trees.tree_name LIKE A_TREE_butes.scientific_name OR Trees.tree_name LIKE A_TREE_butes.tree_name`);
+  FROM Trees,A_TREE_butes, Quiz 
+  WHERE Trees.tree_name LIKE A_TREE_butes.scientific_name OR Trees.tree_name LIKE A_TREE_butes.tree_name
+  AMD Quiz.`);
   // console.log(data);
   
   return reply.send(data)
