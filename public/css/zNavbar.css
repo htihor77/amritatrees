@@ -59,7 +59,7 @@
   font-size:1.2rem;
   text-decoration:underline;
   font-family:monospace;
-  
+  text-align:center;
   animation: logsDisappear 4s ease-in forwards;
 }
 @keyframes logsDisappear{

@@ -78,6 +78,7 @@ async function initMap() {
             map.setCenter( { lng: allMarkers[id].lng, lat: allMarkers[id].lat - 0.0001 });
             toggleBounce();
             document.querySelector("#userPrompt .content").classList.add("active");
+            document.querySelector("#userPrompt .content").innerHTML = "";
           }else{
             console.log("cannot ask question");            
             return;
@@ -187,7 +188,9 @@ async function submitAnswer(q,ans){
       confetti();
       document.querySelector("#userPrompt").classList.remove("active");
       document.querySelector(".navbar").classList.add("active");
-      msg.innerText = "You unlocked a new tree!" + `(${data.tree})`;
+      // msg.innerText = "You unlocked a new tree!" + `(${data.tree})`;
+      msg.innerHTML = `<p>You unlocked a new tree!</p>
+      <p>(${data.tree})</p>`;
       
     } else {
       console.log("not correct");
