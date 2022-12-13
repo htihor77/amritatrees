@@ -65,7 +65,7 @@ fastify.get("/", async (request, reply) => {
   let signIn_url = "signup"
   if( request.session.isAuthenticated ){
     console.log("user authenticated");
-    loginBtn = "GAME MAP";
+    loginBtn = "GAME";
     signIn_msg = "LOGOUT";
     signIn_url = "logout";
   }
