@@ -21,7 +21,7 @@ async function fetchInventoryItems(){
   
   $(".cards-container").innerHTML = "";
   data.unlocked.forEach(e=>{
-    console.log(e);
+    // console.log(e);
     const card = document.createElement("div");
     card.classList = "card";
     card.innerHTML = `
@@ -32,7 +32,7 @@ async function fetchInventoryItems(){
   })
   
   data.locked.forEach(e=>{
-    console.log(e);
+    // console.log(e);
     const card = document.createElement("div");
     card.classList = "card";
     card.style.setProperty("--theme-color","white");
