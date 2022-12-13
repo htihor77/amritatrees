@@ -187,7 +187,7 @@ async function submitAnswer(q,ans){
       confetti();
       document.querySelector("#userPrompt").classList.remove("active");
       document.querySelector(".navbar").classList.add("active");
-      msg.innerText = "You unlocked a new tree!";
+      msg.innerText = "You unlocked a new tree!" + `(${data.tree})`;
       
     } else {
       console.log("not correct");

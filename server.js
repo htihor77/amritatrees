@@ -59,7 +59,10 @@ fastify.addHook("onRequest", (request, reply, next) => {
 });
 
 fastify.get("/", async (request, reply) => {
-  return reply.view("/src/pages/index.hbs", {});
+  
+  const loginBtn = "LOGIN"
+  
+  return reply.view("/src/pages/index.hbs", {login: loginBtn});
 });
 // fastify.get("/map", async (request, reply) => {
 //   const user = request.session.user;
@@ -267,7 +270,7 @@ fastify.post("/checkinglocation", async (request, reply) => {
 });
 
 fastify.post("/checkinganswer", async (request, reply) => {
-  
+  let tree = ""
     const userdata = request.session.user;
     const UserArr = await db.runQuery1(`SELECT username,points FROM Users WHERE uid=${userdata.uid}`);
     const user = UserArr[0];
@@ -288,6 +291,7 @@ fastify.post("/checkinganswer", async (request, reply) => {
     true_or_false = true;
     const val = await db.runQuery1(`SELECT EXISTS(SELECT 1 FROM Inventory WHERE tree_name='${quiz.tree_name}' LIMIT 1);`)
     const available = Object.values(val[0])[0];
+    tree = quiz.tree_name;
     
     if( available == 0 ){
       await db.runQuery2(`INSERT INTO Inventory (username, tree_name) VALUES ('${user.username}', '${quiz.tree_name}')`)
@@ -297,7 +301,7 @@ fastify.post("/checkinganswer", async (request, reply) => {
     
   }
   
-  return reply.type("json").send({"correct": true_or_false });
+  return reply.type("json").send({"correct": true_or_false, "tree": tree });
 });
 
 
