@@ -60,9 +60,16 @@ fastify.addHook("onRequest", (request, reply, next) => {
 
 fastify.get("/", async (request, reply) => {
   
-  const loginBtn = "LOGIN"
-  
-  return reply.view("/src/pages/index.hbs", {login: loginBtn});
+  let loginBtn = "LOGIN"
+  let signIn_msg = "SIGNUP"
+  let signIn_url = "signup"
+  if( request.session.isAuthenticated ){
+    console.log("user authenticated");
+    loginBtn = "GAME MAP";
+    signIn_msg = "LOGOUT";
+    signIn_url = "logout";
+  }
+  return reply.view("/src/pages/index.hbs", {loginBtn: loginBtn, signIn: { msg: signIn_msg, url: signIn_url } });
 });
 // fastify.get("/map", async (request, reply) => {
 //   const user = request.session.user;
