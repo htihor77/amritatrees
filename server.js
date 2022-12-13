@@ -299,13 +299,15 @@ fastify.post("/checkinganswer", async (request, reply) => {
     const val = await db.runQuery1(`SELECT EXISTS(SELECT 1 FROM Inventory WHERE tree_name='${quiz.tree_name}' LIMIT 1);`)
     const available = Object.values(val[0])[0];
     tree = quiz.tree_name;
-    
-    if( available == 0 ){
+    console.log("available:",available)
+    if( available == "0" ){
+      console.log("add tree into user inventory");
       await db.runQuery2(`INSERT INTO Inventory (username, tree_name) VALUES ('${user.username}', '${quiz.tree_name}')`)
+      console.log(await db.runQuery1(`SELECT * FROM Inventory WHERE username='${user.username}'`))
     }
     
   }else{
-    
+    console.log("add cooldown for that user for",quiz.tree_name);
   }
   
   return reply.type("json").send({"correct": true_or_false, "tree": tree });
