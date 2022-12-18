@@ -307,7 +307,7 @@ fastify.post("/checkinganswer", async (request, reply) => {
       console.log(await db.runQuery1(`SELECT * FROM Inventory WHERE username='${user.username}'`));
       
       points = 10;
-      await db.runQuery2(`UPDATE User SET points=points+${points} WHERE username='${user.username}'`);
+      await db.runQuery2(`UPDATE Users SET points=points+${points} WHERE username='${user.username}'`);
       
       
     }

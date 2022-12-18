@@ -192,6 +192,9 @@ async function submitAnswer(q,ans){
       msg.innerHTML = `<p>You unlocked a new tree!</p>
       <p>(${data.tree})</p>`;
       
+      let pts = Number($(".pointsSpan").innerText.split("points")[0]);
+      $(".pointsSpan").innerText = pts + data.points + " points";
+      
     } else {
       console.log("not correct");
       navigator.vibrate([250,50,250]);
