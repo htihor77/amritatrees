@@ -85,7 +85,7 @@ fastify.get("/game", async (request, reply) => {
   const user = request.session.user;
   const data = await db.runQuery1(`SELECT * FROM Users WHERE uid=${user.uid}`)  
   const User = {username:data[0].username,points:data[0].points}
-  return reply.view("/src/page/game.hbs", { user: User });
+  return reply.view("/src/pages/game.hbs", { user: User });
 });
 
 fastify.get("/serviceworker.js", async (req,reply)=>{

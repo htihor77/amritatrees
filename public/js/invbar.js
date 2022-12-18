@@ -15,12 +15,10 @@ async function fetchInventoryItems(){
 
   if(response.ok != true){return;}
   
-  const old_data = JSON.parse(localStorage.getItem("inventoryData"));
+  const old_data = JSON.parse(localStorage.getItem("inventoryData")) || [];
   
   console.log(old_data.unlocked)
   console.log(jsondata.unlocked)
-  const unique_items = getDifference(old_data.unlocked, jsondata.unlocked)
-  console.log(unique_items)
   
   localStorage.setItem("inventoryData", JSON.stringify(jsondata) );
   const data = JSON.parse(localStorage.getItem("inventoryData"));
