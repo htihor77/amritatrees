@@ -69,11 +69,38 @@ function bird(){
   span.classList = "bird";
   span.style.backgroundImage = `url(${bird_url})`;
   
-  const x1 = 
-  span.style.
+  // const randomnumber = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
+  let unit = ""
+  if ( window.innerWidth > window.innerHeight ) {
+    unit = "120vw";
+  } else {
+    unit = "120vh";
+  }
+  
+  let degrees = Math.floor(Math.random() * 360);
+  const radians = degrees * ( Math.PI / 180 );  
+  console.log(unit,degrees,radians);
+  
+  span.style.setProperty("--direction",degrees+"deg");
+  
+  
+  // span.style.setProperty("--x1",);
+  // span.style.setProperty("--y1",);
+  
   $("#container").appendChild(span);
 }
   
+  
+function angle(cx, cy, ex, ey) {
+  var dy = ey - cy;
+  var dx = ex - cx;
+  var distance = Math.sqrt( dx*dx + dy*dy );
+  var theta = Math.atan2(dy, dx); // range (-PI, PI]
+  theta *= 180 / Math.PI; // rads to degs, range (-180, 180]
+  theta += 90; // So, 0 starts from Top Middle
+  if (theta < 0) theta = 360 + theta; // range [0, 360)
+  return theta;
+}
 </script>
   
 </html>
