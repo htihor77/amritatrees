@@ -285,6 +285,7 @@ fastify.post("/checkinganswer", async (request, reply) => {
   const body = request.body;
   const q = Number(body.q);
   const ans = body.ans.trim();
+  let points = 0;
   console.log(q)
   console.log(ans)
 
@@ -303,14 +304,19 @@ fastify.post("/checkinganswer", async (request, reply) => {
     if( available == "0" ){
       console.log("add tree into user inventory");
       await db.runQuery2(`INSERT INTO Inventory (username, tree_name) VALUES ('${user.username}', '${quiz.tree_name}')`)
-      console.log(await db.runQuery1(`SELECT * FROM Inventory WHERE username='${user.username}'`))
+      console.log(await db.runQuery1(`SELECT * FROM Inventory WHERE username='${user.username}'`));
+      
+      points = 10;
+      await db.runQuery2(`UPDATE User SET points=points+${points} WHERE username='${user.username}'`);
+      
+      
     }
     
   }else{
     console.log("add cooldown for that user for",quiz.tree_name);
   }
   
-  return reply.type("json").send({"correct": true_or_false, "tree": tree });
+  return reply.type("json").send({"correct": true_or_false, "tree": tree, "points": points});
 });
 
 
