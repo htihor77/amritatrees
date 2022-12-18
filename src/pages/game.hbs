@@ -63,6 +63,13 @@ function confetti(){
   
 }
   
+const bird_url = "https://cdn.discordapp.com/attachments/1027927070191403189/1053936660582236240/bird_transparent.png";
+function bird(){
+  const span = document.createElement("span")
+  span.classList = "bird";
+  span.style.backgroundImage = `url(${bird_url})`;
+  $("#container").appendChild(span)
+}
   
 </script>
   
