@@ -12,7 +12,7 @@
   --x2:0%;
   --y2:0%;
   
-  --direction:45deg;
+  --direction:0deg;
   
   position:absolute;z-index:10;
   height:50px;width:50px;
@@ -21,7 +21,9 @@
   pointer-events:none;
   touch-action:none;
   transform: rotate(var(--direction));
-  animation: fly 2s forwards;
+  animation: fly 5s forwards ease;
+  
+  
   
 }
 @keyframes fly{

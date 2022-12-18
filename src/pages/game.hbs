@@ -72,35 +72,30 @@ function bird(){
   // const randomnumber = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
   let unit = ""
   if ( window.innerWidth > window.innerHeight ) {
-    unit = "120vw";
+    unit = "vw";
   } else {
-    unit = "120vh";
+    unit = "vh";
   }
   
   let degrees = Math.floor(Math.random() * 360);
   const radians = degrees * ( Math.PI / 180 );  
-  console.log(unit,degrees,radians);
   
-  span.style.setProperty("--direction",degrees+"deg");
+  const x = Math.cos(radians) * 120;
+  const y = Math.sin(radians) * 120;
+  span.style.setProperty("--direction",degrees-90+"deg");
   
   
-  // span.style.setProperty("--x1",);
-  // span.style.setProperty("--y1",);
+  span.style.setProperty("--x1", 50 + x + unit);
+  span.style.setProperty("--y1", 50 + y + unit);
+  
+  span.style.setProperty("--x2", - 50 - x + unit);
+  span.style.setProperty("--y2", - 50 - y + unit);
+
+  console.log(x + unit,y + unit)
   
   $("#container").appendChild(span);
 }
-  
-  
-function angle(cx, cy, ex, ey) {
-  var dy = ey - cy;
-  var dx = ex - cx;
-  var distance = Math.sqrt( dx*dx + dy*dy );
-  var theta = Math.atan2(dy, dx); // range (-PI, PI]
-  theta *= 180 / Math.PI; // rads to degs, range (-180, 180]
-  theta += 90; // So, 0 starts from Top Middle
-  if (theta < 0) theta = 360 + theta; // range [0, 360)
-  return theta;
-}
+
 </script>
   
 </html>
