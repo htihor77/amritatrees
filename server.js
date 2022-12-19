@@ -269,7 +269,7 @@ fastify.post("/checkinglocation", async (request, reply) => {
   
   console.log(tree);
   
-  const QuizArr = await db.runQuery1(`SELECT * FROM Quiz WHERE tree_name='${tree.tree_name}'`)
+  const QuizArr = await db.runQuery1(`SELECT * FROM Quiz WHERE scientific_name='${tree.scientific_name}'`)
   
   console.log(QuizArr)
   
@@ -308,7 +308,7 @@ fastify.post("/checkinganswer", async (request, reply) => {
     console.log("available:",available)
     if( available == "0" ){
       console.log("add tree into user inventory");
-      await db.runQuery2(`INSERT INTO Inventory (username, tree_name) VALUES ('${user.username}', '${quiz.scientific_name}')`)
+      await db.runQuery2(`INSERT INTO Inventory (username, scientific_name) VALUES ('${user.username}', '${quiz.scientific_name}')`)
       console.log(await db.runQuery1(`SELECT * FROM Inventory WHERE username='${user.username}'`));
       
       points = 10;
