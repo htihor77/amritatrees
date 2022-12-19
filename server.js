@@ -198,7 +198,8 @@ fastify.get("/inventory", async (request, reply) => {
 fastify.get("/treedata", async (request, reply) => {
   const data = await db.runQuery1(`SELECT DISTINCT A_TREE_butes.tree_name,A_TREE_butes.scientific_name,A_TREE_butes.origin,A_TREE_butes.link,A_TREE_butes.properties,Trees.coords 
   FROM Trees,A_TREE_butes, Quiz
-  WHERE Trees.tree_name LIKE A_TREE_butes.scientific_name OR Trees.tree_name LIKE A_TREE_butes.tree_name AND A_TREE_butes.tree_name=Quiz.tree_name`);
+  WHERE Trees.tree_name LIKE A_TREE_butes.scientific_name OR Trees.tree_name LIKE A_TREE_butes.tree_name 
+  AND A_TREE_butes.scientific_name=Quiz.scientific_name`);
   // console.log(data);
   
   return reply.send(data)
@@ -301,13 +302,13 @@ fastify.post("/checkinganswer", async (request, reply) => {
   
   if( quiz.answer == ans ){
     true_or_false = true;
-    const val = await db.runQuery1(`SELECT EXISTS(SELECT 1 FROM Inventory WHERE tree_name='${quiz.tree_name}' LIMIT 1);`)
+    const val = await db.runQuery1(`SELECT EXISTS(SELECT 1 FROM Inventory WHERE scientific_name='${quiz.scientific_name}' LIMIT 1);`)
     const available = Object.values(val[0])[0];
     tree = quiz.tree_name;
     console.log("available:",available)
     if( available == "0" ){
       console.log("add tree into user inventory");
-      await db.runQuery2(`INSERT INTO Inventory (username, tree_name) VALUES ('${user.username}', '${quiz.tree_name}')`)
+      await db.runQuery2(`INSERT INTO Inventory (username, tree_name) VALUES ('${user.username}', '${quiz.scientific_name}')`)
       console.log(await db.runQuery1(`SELECT * FROM Inventory WHERE username='${user.username}'`));
       
       points = 10;

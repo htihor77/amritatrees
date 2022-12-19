@@ -33,7 +33,7 @@ dbWrapper
     
         await db.run("CREATE TABLE Users (uid INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT, verified INTEGER, username TEXT, password TEXT, session_id TEXT, points INTEGER, collected INTEGER, lat REAL, lng REAL)");
         await db.run("CREATE TABLE Trees (lid INTEGER PRIMARY KEY AUTOINCREMENT, tree_name TEXT, coords TEXT)")
-        await db.run("CREATE TABLE A_TREE_butes (tree_name TEXT PRIMARY KEY, scientific_name TEXT, origin INTEGER, link TEXT, properties TEXT, points INTEGER DEFAULT 8, url TEXT DEFAULT 'https://cdn.discordapp.com/attachments/1027927070191403189/1039165618617860146/betterTree.png')");
+        await db.run("CREATE TABLE A_TREE_butes (tree_name TEXT PRIMARY KEY, scientific_name TEXT, origin INTEGER, link TEXT, properties TEXT, points INTEGER DEFAULT 10, url TEXT DEFAULT 'https://cdn.discordapp.com/attachments/1027927070191403189/1039165618617860146/betterTree.png')");
         await db.run("CREATE TABLE Quiz(quiz_id INTEGER PRIMARY KEY, tree_name TEXT, question TEXT, options TEXT, answer TEXT)");
         await db.run("CREATE TABLE Inventory(username TEXT, tree_name TEXT)");
         
@@ -41,8 +41,8 @@ dbWrapper
         
         users.forEach(item => {db.run(`INSERT INTO Users (email,verified,username,password,session_id,points,collected,lat,lng) VALUES ('${item.email}', ${item.verified}, '${item.username}', '${item.password}','${item.session_id}',${item.points},${item.collected},${item.lat},${item.lng})`)});
         trees.forEach(item => {db.run(`INSERT INTO Trees (tree_name,coords) VALUES ('${item.title}', '${item.coords}')`)});
-        treeProps.forEach(item => {db.run(`INSERT INTO A_TREE_butes (tree_name,scientific_name,origin,link,properties) VALUES ('${item.name}', '${item.scientific_name}', '${item.origin}', '${item.link}', '${item.properties}')`)});
-        quiz.forEach(item => {db.run(`INSERT INTO Quiz (quiz_id,tree_name,question,options,answer) VALUES (${item.quiz_id},'${item.tree}', '${item.question}', '${item.options}', '${item.answer}')`)});
+        treeProps.forEach(item => {db.run(`INSERT INTO A_TREE_butes (tree_name,scientific_name,origin,link,properties) VALUES ('${item.name}', '${item.scientific_name}', '${item.origin}', '${item.wikipedia_link}', '${item.properties}')`)});
+        quiz.forEach(item => {db.run(`INSERT INTO Quiz (quiz_id,scientific_name,question,options,answer) VALUES (${item.quiz_id},'${item.scientific_name}', '${item.question}', '${item.options}', '${item.answer}')`)});
         inventory.forEach(item => {db.run(`INSERT INTO Inventory (username,tree_name) VALUES ('${item.username}','${item.tree_name}')`)});
         
       } else {
