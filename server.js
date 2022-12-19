@@ -246,7 +246,7 @@ fastify.post("/checkinglocation", async (request, reply) => {
   
   // const entrance = {lat:10.901853212312897,lng: 76.89603899041079};
   const body = request.body;
-  // console.log(body)
+  console.log(body)
   const pos1 = body.pos1;
   const pos2 = body.pos2;
 
@@ -267,7 +267,8 @@ fastify.post("/checkinglocation", async (request, reply) => {
   
   const QuizArr = await db.runQuery1(`SELECT * FROM Quiz WHERE tree_name='${tree.tree_name}'`)
   
-  // console.log(QuizArr)
+  console.log(QuizArr)
+  
   const index = Math.floor(Math.random() * QuizArr.length)
   const quiz = QuizArr[index]
   // console.log(quiz)
