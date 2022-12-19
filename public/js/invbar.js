@@ -19,6 +19,8 @@ async function fetchInventoryItems(){
   
   console.log(old_data.unlocked)
   console.log(jsondata.unlocked)
+  const new_data = old_data.unlocked.filter(({ tree_name: id1 }) => !jsondata.unlocked.some(({ tree_name: id2 }) => id2 === id1));
+  console.log(new_data)
   
   localStorage.setItem("inventoryData", JSON.stringify(jsondata) );
   const data = JSON.parse(localStorage.getItem("inventoryData"));
