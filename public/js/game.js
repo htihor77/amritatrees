@@ -95,7 +95,7 @@ async function initMap() {
                           .map( (item,id) => {
                             return `<span 
                               class='option noSelect'
-                              abcd='${["a","b","c","d"][id]}'
+                              abcd='${["a","b","c","d","e "][id]}'
                               onclick='submitAnswer("${QUIZ_ID}","${item}")'>
                               ${item}
                             </span>`
