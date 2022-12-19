@@ -309,7 +309,7 @@ fastify.post("/checkinganswer", async (request, reply) => {
       
       points = 10;
       await db.runQuery2(`UPDATE Users SET points=points+${points} WHERE username='${user.username}'`);
-      
+      await db.runQuery2(`UPDATE Users SET collected=collected+1 WHERE username='${user.username}'`);
       
     }
     
