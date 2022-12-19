@@ -1,12 +1,8 @@
 [
     {
       "quiz_id": 1,
-      "Scientific_Name": "Allamanda cathartica",
-      "question": "Allamanda Cathartica plant is native to?",
-      "options": "Brazil, Argentina, Puerto Rico, India",
-      "answer": "Brazil"
-    },
-    {
+      "Scientific_Name": "                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           cathartica",
+      "question": "Allamanda Cathartica plant is native to?", 
       "quiz_id": 2,
       "Scientific_Name": "Allamanda cathartica",
       "question": "Allamanda Cathartica max height is?",
