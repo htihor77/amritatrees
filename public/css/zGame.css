@@ -76,7 +76,7 @@
 /* QUESTION CARD */
 #userPrompt .content{
   
-  width:100%;min-height: 185px;max-height: 55%;
+  width:100%;min-height: 200px;max-height: 55%;
   position:absolute;
   
   bottom:-100%;left:0;
