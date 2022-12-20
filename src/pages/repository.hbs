@@ -217,7 +217,7 @@ function createTable(map){
   const icons = ["🎄","🌴","🌲","🌳"];
   
   
-  fetch("./treedata")
+  fetch("./treerepo")
   .then(res=>res.json())
   .then(treeProps=>{
     console.log(treeProps);
@@ -287,6 +287,7 @@ async function initMap() {
   .then( data => {
     data.forEach( tree => {
     // ###########################################################################
+      
       const coords = tree.coords.split(",")
       const lat = Number( coords[0] );
       const lng = Number( coords[1] );
