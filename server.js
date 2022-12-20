@@ -229,7 +229,8 @@ fastify.get("/db", async (request, reply) => {
 
 
 fastify.get("/test", async (request, reply) => {
-  const data = await db.runQuery1("SELECT * FROM A_TREE_butes, Quiz WHERE Quiz.scientific_name=A_TREE_butes.scientific_name")
+  // SELECT tree_name,url FROM A_TREE_butes WHERE tree_name NOT IN (SELECT tree_name FROM Inventory WHERE username='${user.username}')
+  const data = await db.runQuery1("SELECT * FROM A_TREE_butes WHERE scientific_name IN (SELECT scientific_name )")
   return reply.send(data).type("json")
   // return reply.view("/src/pages/test.hbs", { } );
 });
