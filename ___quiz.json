@@ -1,136 +1,140 @@
 [
     {
       "quiz_id": 1,
-      "Scientific_Name": "                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           cathartica",
-      "question": "Allamanda Cathartica plant is native to?", 
+      "scientific_name": "Allamanda cathartica",
+      "question": "Allamanda Cathartica plant is native to?",
+      "options": "Brazil, Argentina, Puerto Rico, India",
+      "answer": "Brazil"
+    },
+    {
       "quiz_id": 2,
-      "Scientific_Name": "Allamanda cathartica",
+      "scientific_name": "Allamanda cathartica",
       "question": "Allamanda Cathartica max height is?",
       "options": "10 feet, 12 feet, 17 feet, 20 feet",
       "answer": "20 feet"
     },
     {
       "quiz_id": 3,
-      "Scientific_Name": "Roystonea regia",
+      "scientific_name": "Roystonea regia",
       "question": "Royal palm plant is native to?",
       "options": "Brazil, Mexico, Japan, Canada",
       "answer": "Mexico"
     },
     {
       "quiz_id": 4,
-      "Scientific_Name": "Roystonea regia",
+      "scientific_name": "Roystonea regia",
       "question": "Royal palm was first discovered by?",
       "options": "William Bartram, Albert Einstein, Jeff Bezos,Orator F. Cook",
       "answer": "Orator F. Cook"
     },
     {
       "quiz_id": 5,
-      "Scientific_Name": "Bismarckia nobilis",
+      "scientific_name": "Bismarckia nobilis",
       "question": "Bismarckia nobilis plant is native to?",
       "options": "Sudan, Nigeria, Madagascar, France",
       "answer": "Madagascar"
     },
     {
       "quiz_id": 6,
-      "Scientific_Name": "Bismarckia nobilis",
+      "scientific_name": "Bismarckia nobilis",
       "question": "When should these trees be pruned?",
       "options": "Summer, Fall, Anytime of the year, January-March",
       "answer": "Anytime of the year"
     },
     {
       "quiz_id": 7,
-      "Scientific_Name": "Cocos nucifera",
+      "scientific_name": "Cocos nucifera",
       "question": "Coconut tree is famous in which state of India?",
       "options": "Kerala,Tamil Nadu,Andhra Pradesh,telangana",
       "answer": "Kerala"
     },
     {
       "quiz_id": 8,
-      "Scientific_Name": "Borassus",
+      "scientific_name": "Borassus",
       "question": "Asian palmyra palm tree is famous in which state of India?",
       "options": "Kerala,Tamil Nadu,Andhra Pradesh,telangana",
       "answer": "Tamil Nadu"
     },
     {
       "quiz_id": 9,
-      "Scientific_Name": "Azadirachta indica",
+      "scientific_name": "Azadirachta indica",
       "question": "Neem tree is famous in which state of India?",
       "options": "Kerala,Tamil Nadu,Andhra Pradesh,telangana",
       "answer": "Andhra Pradesh"
     },
     {
       "quiz_id": 10,
-      "Scientific_Name": "Jand",
+      "scientific_name": "Jand",
       "question": "Jand tree is famous in which state of India?",
       "options": "Kerala,Tamil Nadu,Andhra Pradesh,telangana",
       "answer": "telangana"
     },
     {
       "quiz_id": 11,
-      "Scientific_Name": "Indian sandalwood",
+      "scientific_name": "Indian sandalwood",
       "question": "Indian sandalwood is famous in which state of India?",
       "options": "karnataka,maharashtra,punjab,puducherry",
       "answer": "karnataka"
     },
     {
       "quiz_id": 12,
-      "Scientific_Name": "Mangifera indica",
+      "scientific_name": "Mangifera indica",
       "question": "Indian sandalwood is famous in which state of India?",
       "options": "karnataka,maharashtra,punjab,puducherry",
       "answer": "maharashtra"
     },
     {
       "quiz_id": 13,
-      "Scientific_Name": "Indian rosewood",
+      "scientific_name": "Indian rosewood",
       "question": "Indian rosewood is famous in which state of India?",
       "options": "karnataka,maharashtra,punjab,puducherry",
       "answer": "punjab"
     },
     {
       "quiz_id": 14,
-      "Scientific_Name": "Indian bael",
+      "scientific_name": "Indian bael",
       "question": "Indian bael is famous in which state of India?",
       "options": "karnataka,maharashtra,punjab,puducherry",
       "answer": "puducherry"
     },
     {
       "quiz_id": 15,
-      "Scientific_Name": "\r\nAzadirachta indica",
+      "scientific_name": "Azadirachta indica",
       "question": "Neem oil has applicaition in the pharmaceutical?",
       "options": "True,False",
       "answer": "True "
     },
     {
       "quiz_id": 16,
-      "Scientific_Name": "\r\nAzadirachta indica",
+      "scientific_name": "Azadirachta indica",
       "question": "Neem oil can be used as a pesticide to control the proliferation of some species of insect and mites",
       "options": "True,False",
       "answer": "True "
     },
     {
       "quiz_id": 17,
-      "Scientific_Name": "Mangifera indica",
+      "scientific_name": "Mangifera indica",
       "question": "The tree is evergreen, often reaching 15–18 metres (50–60 feet) in height and attaining great age",
       "options": "Mango tree ,Indian bael,Jand,Royal palm",
       "answer": "Mango Tree"
     },
     {
       "quiz_id": 18,
-      "Scientific_Name": "Mangifera indica",
+      "scientific_name": "Mangifera indica",
       "question": "This trees fruit is the national fruit of not one but three countries?",
       "options": "Mango tree ,Indian bael,Jand,Royal palm",
       "answer": "Mango Tree"
     },
     {
       "quiz_id": 19,
-      "Scientific_Name": "Mangifera indica",
+      "scientific_name": "Mangifera indica",
       "question": "This tree is considered holy within the Buddhist faith",
       "options": "Mango tree ,Indian bael,Jand,Royal palm",
       "answer": "Mango Tree"
     },
     {
       "quiz_id": 20,
-      "Scientific_Name": "Mangifera indica",
+      "scientific_name": "Mangifera indica",
       "question": "How many mango tree are located near library aprox?",
       "options": 50100150125,
       "answer": 50,
@@ -138,7 +142,7 @@
     },
     {
       "quiz_id": 21,
-      "Scientific_Name": "Mangifera indica",
+      "scientific_name": "Mangifera indica",
       "question": "How many years mango trees can remain in production for ?",
       "options": "5,10,40,20",
       "answer": 20,
@@ -146,21 +150,21 @@
     },
     {
       "quiz_id": 22,
-      "Scientific_Name": "Putranjiva Roxburghii",
+      "scientific_name": "Putranjiva Roxburghii",
       "question": "This is an evergreen tree up to 15m high with drooping branches?",
       "options": "Mango tree ,Indian bael,Jand,Child life tree",
       "answer": "Child life tree"
     },
     {
       "quiz_id": 23,
-      "Scientific_Name": "Terminalia arjuna",
+      "scientific_name": "Terminalia arjuna",
       "question": "Name the fruit which is widely used and consumed in ayurveda, it comes from arjun tree?",
       "options": "Mango,Arjuna,Apple,Orange",
       "answer": "Arjuna"
     },
     {
       "quiz_id": 24,
-      "Scientific_Name": "Terminalia arjuna",
+      "scientific_name": "Terminalia arjuna",
       "question": "This is tree that belong to the genus Terminalia located in our campus?",
       "options": "Mango tree ,Indian bael,Jand,Arjuna tree",
       "answer": "Arjuna Tree",
@@ -168,21 +172,21 @@
     },
     {
       "quiz_id": 25,
-      "Scientific_Name": "Terminalia arjuna",
+      "scientific_name": "Terminalia arjuna",
       "question": " Flower of arjuna will appear in?",
       "options": "sep-nov,jan-mar,nov-dec,aug-oct",
       "answer": "sep-nov"
     },
     {
       "quiz_id": 26,
-      "Scientific_Name": "Terminalia arjuna",
+      "scientific_name": "Terminalia arjuna",
       "question": "Arujna flower is well known for?",
       "options": "cardiac tonic cork,Licorice ,Ephedra,Arnica ",
       "answer": "cardiac tonic cork"
     },
     {
       "quiz_id": 27,
-      "Scientific_Name": "Millingtonia hortensis",
+      "scientific_name": "Millingtonia hortensis",
       "question": "In which national park indian cork tree found most?",
       "options": "Sultanpur,Bandipur,Bhadra,Corbett",
       "answer": "Sultanpur",
@@ -190,91 +194,91 @@
     },
     {
       "quiz_id": 28,
-      "Scientific_Name": "Millingtonia hortensis",
+      "scientific_name": "Millingtonia hortensis",
       "question": "How many years is taken for cork tree for harvesting?",
       "options": "12,15,25,40",
       "answer": 40
     },
     {
       "quiz_id": 29,
-      "Scientific_Name": "Millingtonia hortensis",
+      "scientific_name": "Millingtonia hortensis",
       "question": "Cork tree's leaves are also used as a cheap substitute for?",
       "options": "tobacco,Alcohol,cocaine,wine",
       "answer": "tobacco"
     },
     {
       "quiz_id": 30,
-      "Scientific_Name": "Allamanda cathartica",
+      "scientific_name": "Allamanda cathartica",
       "question": "Allamanda cathartica, commonly called",
       "options": "Golden trumpet,Mangifera indica,Pink trumpet,pink poui",
       "answer": "Golden trumpet"
     },
     {
       "quiz_id": 31,
-      "Scientific_Name": "Allamanda cathartica",
+      "scientific_name": "Allamanda cathartica",
       "question": "Flower color of allamanda cathartica plant?",
       "options": "yellow,pink,green.red",
       "answer": "yellow"
     },
     {
       "quiz_id": 32,
-      "Scientific_Name": "Allamanda cathartica",
+      "scientific_name": "Allamanda cathartica",
       "question": "Are Allamanda seeds poisonous?",
       "options": "yes,no",
       "answer": "yes"
     },
     {
       "quiz_id": 33,
-      "Scientific_Name": "Aloe arborescens",
+      "scientific_name": "Aloe arborescens",
       "question": "Aloe Vera is a _____ that grows in hot, dry climates",
       "options": "cactus-like plant,Haworthia,Stapelia,Agave",
       "answer": "cactus-like plant"
     },
     {
       "quiz_id": 34,
-      "Scientific_Name": "Aloe arborescens",
+      "scientific_name": "Aloe arborescens",
       "question": "Aloe is a cactus-like plant that grows in _____. ",
       "options": "dry climates,cool climates,Polar climates,Temperate climates",
       "answer": "dry climates"
     },
     {
       "quiz_id": 35,
-      "Scientific_Name": "Aloe arborescens",
+      "scientific_name": "Aloe arborescens",
       "question": "This plants gel is widely known to relieve sunburn and help heal wounds",
       "options": "Aloe Vera,Tusli,cactus,lily",
       "answer": "Aloe Vera"
     },
     {
       "quiz_id": 36,
-      "Scientific_Name": "Aloe arborescens",
+      "scientific_name": "Aloe arborescens",
       "question": "_____ is a stemless or very short-stemmed plant growing to 60–100 centimetres",
       "options": "Aloe Vera,Tusli,cactus,lily",
       "answer": "Aloe Vera"
     },
     {
       "quiz_id": 37,
-      "Scientific_Name": "Aloe arborescens",
+      "scientific_name": "Aloe arborescens",
       "question": "Aloe vera is a stemless or very short-stemmed plant growing to ______ tall",
       "options": "60-100,100-120,30-40,25-50",
       "answer": "60-100"
     },
     {
       "quiz_id": 38,
-      "Scientific_Name": "Tabebuia rosea",
+      "scientific_name": "Tabebuia rosea",
       "question": "Tabebuia rosea, also called ______.",
       "options": "Golden trumpet,Mangifera indica,Pink trumpet,tekoma",
       "answer": "pink poui"
     },
     {
       "quiz_id": 39,
-      "Scientific_Name": "Tabebuia rosea",
+      "scientific_name": "Tabebuia rosea",
       "question": "Rosy trumpet tree is a neotropical tree that grows up to ___ m and can reach a diameter at breast height of up to 100 cm",
       "options": "30,20,25,15",
       "answer": 30
     },
     {
       "quiz_id": 40,
-      "Scientific_Name": "Tabebuia rosea",
+      "scientific_name": "Tabebuia rosea",
       "question": "Rosy trumpet tree is a neotropical tree that grows up to 30 m and can reach a diameter at breast height of up to__cm.",
       "options": "100,50,65,30,60",
       "answer": 100
@@ -291,7 +295,7 @@
       "scientific_name": "Tabebuia rosea",
       "question": "Pink trumpet trees can be found at both the Zoo and Safari Park.",
       "options": "True,False",
-      "answer": true
+      "answer": "True "
     },
     {
       "quiz_id": 43,
