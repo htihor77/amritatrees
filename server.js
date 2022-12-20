@@ -50,7 +50,7 @@ fastify.addHook("onRequest", (request, reply, next) => {
   const sid = request.session.sessionId;
   // console.log("sid:",sid);
   
-  const valid_urls = ["/login","/signup","/leaderboards","/css/style.css","/manifest.json", "/"];
+  const valid_urls = ["/login","/signup","/leaderboards","/css/style.css","/manifest.json", "/", "/test"];
   const valid_prefix_urls = []
   if( request.session.isAuthenticated === undefined && valid_urls.indexOf(request.url) == -1 && !request.url.startsWith("/css/" || "/assets/") ){
     reply.redirect("/login");
@@ -229,7 +229,9 @@ fastify.get("/db", async (request, reply) => {
 
 
 fastify.get("/test", async (request, reply) => {
-  return reply.view("/src/pages/test.hbs", { } );
+  const data = await db.runQuery1("SELECT * FROM A_TREE_butes, Quiz WHERE Quiz.scientific_name=A_TREE_butes.scientific_name")
+  return reply.send(data).type("json")
+  // return reply.view("/src/pages/test.hbs", { } );
 });
 
 
