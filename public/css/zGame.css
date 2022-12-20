@@ -4,6 +4,14 @@
   position: relative;
 }
 
+#containerSquare{
+  pointer-events:none;
+  display:none;
+  position:absolute;
+  height: max(100vw,100vh);
+  width: max(100vw,100vh);
+  transform: translate( calc( -1 * max(100vw,100vh) ) , calc( -1 * max(100vw,100vh) ) )
+}
 /* bird */
 .bird{
   --x1:100%;
@@ -21,7 +29,7 @@
   pointer-events:none;
   touch-action:none;
   transform: rotate(var(--direction));
-  animation: fly 5s forwards ease;
+/*   animation: fly 5s forwards ease; */
   
   
   
