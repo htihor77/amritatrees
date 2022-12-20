@@ -5,12 +5,17 @@
 }
 
 #containerSquare{
+  --size1: 120vw;
+  --size2: 120vw
   pointer-events:none;
-  display:none;
-  position:absolute;
+/*   display:none; */
+  background-color:rgba(255,255,255,0.15);
+  
+  position:absolute;top: 0;left: 0;
+  
   height: max(100vw,100vh);
   width: max(100vw,100vh);
-  transform: translate( calc( -1 * max(100vw,100vh) ) , calc( -1 * max(100vw,100vh) ) )
+/*   transform: translate( calc( -0.5 * max(100vw,100vh) ) , calc( -0.5 * max(100vw,100vh) ) ) */
 }
 /* bird */
 .bird{
@@ -36,12 +41,12 @@
 }
 @keyframes fly{
   0%{
-    left: var(--x1);
-    top: var(--y1);
+    left: calc( var(--x1) * max(100vw,100vh) );
+    top: calc( var(--y1) * max(100vw,100vh) );
   }
   100%{
-    left: var(--x2);
-    top: var(--y2);
+    left: calc( var(--x2) * max(100vw,100vh) );
+    top: calc( var(--y2) * max(100vw,100vh) );
   }
 }
 
