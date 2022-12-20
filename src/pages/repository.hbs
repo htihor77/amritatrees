@@ -282,7 +282,7 @@ async function initMap() {
   map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(treetable);
 
   
-  fetch("https://amritatrees.glitch.me/treedata")
+  fetch("./treerepo")
   .then( res => res.json() )
   .then( data => {
     data.forEach( tree => {

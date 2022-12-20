@@ -200,13 +200,17 @@ fastify.get("/treedata", async (request, reply) => {
   // FROM Trees,A_TREE_butes
   // WHERE A_TREE_butes.scientific_name=Trees.tree_name`);
   
-  const data = await db.runQuery1(`SELECT * FROM A_TREE_butes, Trees WHERE scientific_name IN (SELECT scientific_name FROM Quiz)`);
+  const data = await db.runQuery1(`SELECT * FROM A_TREE_butes, Trees, Quiz WHERE Trees.scientific_name=A_TREE_butes.scientific_name AND Trees.scientific_name=Quiz.scientific_name`);
   
   // , Quiz
   // WHERE A_TREE_butes.scientific_name=Quiz.scientific_name`);
   // WHERE Trees.tree_name LIKE A_TREE_butes.scientific_name OR Trees.tree_name LIKE A_TREE_butes.tree_name `);
   // console.log(data);
   
+  return reply.send(data)
+});
+fastify.get("/treerepo", async (request, reply) => {
+  const data = await db.runQuery1(`SELECT DISTINCT Trees.scientific_name FROM A_TREE_butes, Trees WHERE Trees.scientific_name=A_TREE_butes.scientific_name`);
   return reply.send(data)
 });
 
