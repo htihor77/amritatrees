@@ -29,7 +29,7 @@
     {
       "id": 4,
       "name": "Child life tree",
-      "scientific_name": "Drypetes roxburghii",
+      "scientific_name": "Putranjiva roxburghii",
       "origin": "Southeast Asia",
       "wikipedia_link": "https://en.wikipedia.org/wiki/Putranjiva",
       "properties": "treating of illness, phlegm, skin ailment, aridity and are also helpful in curing rheumatism",
@@ -199,7 +199,7 @@
     },
     {
       "id": 23,
-      "name": "Three leaved chase tree",
+      "name": "Three leaved chaste tree",
       "scientific_name": "Vitex trifolia",
       "origin": "tropical East Africa as far east as French Polynesia.",
       "wikipedia_link": "https://en.wikipedia.org/wiki/Vitex_trifolia",
@@ -208,7 +208,7 @@
     },
     {
       "id": 24,
-      "name": "Jamun/Jambul",
+      "name": "Java Plum",
       "scientific_name": "Syzygium cumini",
       "origin": "native to the Indian subcontinent, adjoining regions of Southeast Asia, including Myanmar, Sri Lanka, and the Andaman Islands.",
       "wikipedia_link": "https://en.wikipedia.org/wiki/Syzygium_cumini",
@@ -367,5 +367,14 @@
       "wikipedia_link": "https://en.wikipedia.org/wiki/Diploknema_butyracea",
       "properties": "mixed with ghee and used as a dressing to relieve burns and skin allergies.",
       "points": 0
+    },
+    {
+      "id": 45,
+      "name": "Bismarck palm",
+      "scientific_name": "Bismarckia nobilis",
+      "origin": "in the palm family endemic to western and northern Madagascar where they grow in open grassland",
+      "wikipedia_link": "https://en.wikipedia.org/wiki/Bismarckia",
+      "properties": "The palm tree is mostly used for landscaping purposes. The tree works as a good focal point in a yard or landscape",
+      "points": 0
     }
-]
+  ]

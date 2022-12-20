@@ -200,7 +200,7 @@ fastify.get("/treedata", async (request, reply) => {
   // FROM Trees,A_TREE_butes
   // WHERE A_TREE_butes.scientific_name=Trees.tree_name`);
   
-  const data = await db.runQuery1(`SELECT * FROM A_TREE_butes WHERE scientific_name IN (SELECT scientific_name FROM Quiz)`);
+  const data = await db.runQuery1(`SELECT * FROM A_TREE_butes, Trees WHERE scientific_name IN (SELECT scientific_name FROM Quiz)`);
   
   // , Quiz
   // WHERE A_TREE_butes.scientific_name=Quiz.scientific_name`);
