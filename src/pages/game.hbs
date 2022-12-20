@@ -97,12 +97,40 @@ function bird(){
 }
 
  function b(){
-   const d = 120;
-   for (let i=0; i<360; i+=1){
+  const noise = 10;
+  const speed = 10;
+  const d = 50;
+  let unit = ""
+  if ( window.innerWidth > window.innerHeight ) {unit = "vw";
+  } else {unit = "vh";}
+   
+   
+   for (let i=0; i<360; i+=20){
+     
+  const span = document.createElement("span")
+  span.classList = "bird";
+  span.style.backgroundImage = `url(${bird_url})`;
+     
+     
        const r = i * ( Math.PI / 180 );
        const x = Math.cos(r) * d;
        const y = Math.sin(r) * d;
+       console.log(x,y)
+     
+  span.style.setProperty("--direction",i-90+"deg");
+  span.style.setProperty("--speed",speed);
+     
+  span.style.setProperty("--x1", 50 + noise + x + unit);
+  span.style.setProperty("--y1", 50 + noise + y + unit);
+     
+  span.style.setProperty("--x2", -(50 + noise + x) + unit);
+  span.style.setProperty("--y2", -(50 + noise + y) + unit);
+     
+  $("#container").appendChild(span);
+  setTimeout( ()=>{span.remove();},5000);
+     
      }
+   
    }
 </script>
   
