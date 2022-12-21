@@ -84,7 +84,7 @@
       "id": 10,
       "name": "beech wood",
       "scientific_name": "Gmelina arborea",
-      "origin": " Asia, from Pakistan to Sri Lanka, Myanmar, Thailand, Vietnam and southern China",
+      "origin": "Asia, from Pakistan to Sri Lanka, Myanmar, Thailand, Vietnam and southern China",
       "wikipedia_link": "https://en.wikipedia.org/wiki/Gmelina_arborea",
       "properties": "astringent, bitter, digestive, cardiotonic, diuretic, laxative and pulmonary and nervine tonic",
       "points": 0
@@ -163,11 +163,11 @@
     },
     {
       "id": 19,
-      "name": "Indian beech tree",
-      "scientific_name": "Millettia pinnata",
-      "origin": "native to eastern and tropical Asia, Australia, and Pacific islands",
-      "wikipedia_link": "https://en.wikipedia.org/wiki/Millettia_pinnata",
-      "properties": "purifying the blood, and cutting earache, hest complaints, chronic fevers and hydrocele. Rheumatic pains, leucoderma, itching, leprosy, ulcers, lumbago, urinary disorders, headaches, chronic fevers and pain in the liver.",
+      "name": "Flame of the forest",
+      "scientific_name": "Butea monosperma",
+      "origin": "humid lowland forested areas of India and Sri Lanka.",
+      "wikipedia_link": "https://en.wikipedia.org/wiki/Butea_monosperma",
+      "properties": "anti-diarrheal, anthelmintic, anti-diabetic, anti-stress, hepatoprotective, antifungal, astringent, aphrodisiac, laxative, anti-inflammatory and antioxidant qualities",
       "points": 0
     },
     {
@@ -181,7 +181,7 @@
     },
     {
       "id": 21,
-      "name": "indain tulip tree",
+      "name": "indian tulip tree",
       "scientific_name": "Thespesia populnea",
       "origin": " Asian tropics or from the coasts of the Pacific and Indian Oceans",
       "wikipedia_link": "https://en.wikipedia.org/wiki/Thespesia_populnea",
@@ -377,4 +377,4 @@
       "properties": "The palm tree is mostly used for landscaping purposes. The tree works as a good focal point in a yard or landscape",
       "points": 0
     }
-  ]
+]
