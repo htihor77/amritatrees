@@ -183,12 +183,8 @@ fastify.get("/inventory", async (request, reply) => {
   const data = await db.runQuery1(`SELECT username,points FROM Users WHERE uid=${user.uid}`);
   params.user = data[0];
   console.log(user.username)  
-  // params.unlocked = await db.runQuery1(`SELECT Inventory.tree_name,Atreebutes.url FROM Inventory,Atreebutes WHERE Inventory.uid=${user.uid} AND Inventory.tree_name=Atreebutes.tree_name`)
-  params.unlocked = await db.runQuery1(`SELECT Inventory.tree_name,A_TREE_butes.url FROM Inventory, A_TREE_butes WHERE Inventory.username='${user.username}' AND Inventory.tree_name=A_TREE_butes.tree_name`)
-  console.log(">>",params.unlocked)
-  // console.log(">>", await db.runQuery1(`SELECT * FROM Inventory,A_TREE_butes WHERE Inventory.username='${user.username}' AND A_TREE_butes.tree_name=Inventory.tree_name`) )
-  
-  params.locked = await db.runQuery1(`SELECT tree_name,url FROM A_TREE_butes WHERE tree_name NOT IN (SELECT tree_name FROM Inventory WHERE username='${user.username}')`);
+  params.unlocked = await db.runQuery1(`SELECT Inventory.scientific_name,A_TREE_butes.url FROM Inventory, A_TREE_butes WHERE Inventory.username='${user.username}' AND Inventory.scientific_name=A_TREE_butes.scientific_name`)
+  params.locked = await db.runQuery1(`SELECT scientific_name,url FROM A_TREE_butes WHERE scientific_name NOT IN (SELECT scientific_name FROM Inventory WHERE username='${user.username}')`);
   
   return request.query.raw
     ? reply.send(params)

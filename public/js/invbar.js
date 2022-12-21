@@ -15,8 +15,14 @@ async function fetchInventoryItems(){
 
   if(response.ok != true){return;}
   
+  const unlocked = respdata.unlocked;
+  const locked = respdata.locked;
+  const old_unlocked = JSON.parse(localStorage.getItem("inventoryData")) || [];
+  localStorage.setItem("inventoryData", JSON.stringify(unlocked) );
   
-//   const old_data = JSON.parse(localStorage.getItem("inventoryData")) || [];
+  console.log(old_unlocked,unlocked)
+  const newly_unlocked = unlocked.filter(({ scientific_name: id1 }) => !old_unlocked.some(({ scientific_name: id2 }) => id2 === id1));
+  console.log("new", newly_unlocked)
   
 //   console.log(old_data.unlocked)
 //   console.log(jsondata.unlocked)
@@ -29,7 +35,20 @@ async function fetchInventoryItems(){
   
   
   $(".cards-container").innerHTML = "";
-  jsondata.unlocked.forEach(e=>{
+  
+  newly_unlocked.forEach(e=>{
+    // console.log(e);
+    const card = document.createElement("div");
+    card.classList = "card";
+    card.style.setProperty("--theme-color","#f9c04d");
+    card.innerHTML = `
+              <div class="img"><img src="${e.url}"></div>
+              <div class="label">${e.scientific_name}</div>`
+    
+    $(".cards-container").appendChild(card);
+  })
+  
+  old_unlocked.forEach(e=>{
     // console.log(e);
     const card = document.createElement("div");
     card.classList = "card";
@@ -39,7 +58,7 @@ async function fetchInventoryItems(){
     
     $(".cards-container").appendChild(card);
   })
-  jsondata.locked.forEach(e=>{
+  locked.forEach(e=>{
     // console.log(e);
     const card = document.createElement("div");
     card.classList = "card";
