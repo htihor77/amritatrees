@@ -9,7 +9,7 @@
   --size2: 120vh;
   --size: max( var(--size1), var(--size2) );
   pointer-events:none;
-/*   display:none; */
+  display:none;
   background-color:rgba(255,255,255,0.15);
   
   position:absolute;
