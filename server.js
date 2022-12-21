@@ -248,8 +248,11 @@ fastify.get("/test", async (request, reply) => {
   // const data = await db.runQuery1("SELECT * FROM Trees WHERE scientific_name IN (SELECT DISTINCT scientific_name FROM Quiz)")
   // const data = await db.runQuery1("SELECT * FROM Trees INNER JOIN A_TREE_butes ON Trees.scientific_name = A_TREE_butes.scientific_name")
   // const data = await db.runQuery1(`SELECT A_TREE_butes.scientific_name FROM A_TREE_butes,Trees WHERE A_TREE_butes.scientific_name=Trees.scientific_name`)
-  // const data = await db.runQuery1(`SELECT * FROM Trees WHERE scientific_name IN (SELECT DISTINCT FROM A_TREE_butes WHERE A_TREE_butes.scientific_name=Trees.scientific_name)`)
-  const data = await db.runQuery1(`SELECT DISTINCT A_TREE_butes.scientific_name WHERE A_TREE_butes.scientific_name=Trees.scientific_name`)
+  // const data = await db.runQuery1(`SELECT * FROM Trees WHERE scientific_name IN (SELECT DISTINCT A_TREE_butes.scientific_name FROM A_TREE_butes,Trees WHERE A_TREE_butes.scientific_name=Trees.scientific_name)`)
+  
+  // const data = await db.runQuery1(`SELECT DISTINCT A_TREE_butes.scientific_name FROM A_TREE_butes,Trees WHERE A_TREE_butes.scientific_name=Trees.scientific_name`)
+  const data = await db.runQuery1(``)
+  
   return reply.send(data).type("json")
   // return reply.view("/src/pages/test.hbs", { } );
 });
