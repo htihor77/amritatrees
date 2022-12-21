@@ -62,7 +62,9 @@ async function initMap() {
       
   
       marker.addListener("click", () => {
+        console.log("marker clicked")
         const pos2 = allMarkers[id]
+        console.log(pos2)
         const DISTANCE_THRESHOLD = 10000000;
         userPrompt.classList.add("active");
         document.querySelector(".navbar").classList.remove("active");
@@ -72,7 +74,7 @@ async function initMap() {
         window.navigator.geolocation.getCurrentPosition(async (pos1)=>{
           const dist = 0 || measureDistance( pos1.coords.latitude, pos1.coords.longitude, pos2.lat, pos2.lng )
           const ACCURACY = pos1.coords.accuracy;
-          
+          console.log("ACCURACY",ACCURACY)
           
           if( dist < DISTANCE_THRESHOLD && pos1.coords.accuracy < DISTANCE_THRESHOLD){
             map.setCenter( { lng: allMarkers[id].lng, lat: allMarkers[id].lat - 0.0001 });
