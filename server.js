@@ -215,7 +215,7 @@ fastify.get("/treerepo", async (request, reply) => {
   return reply.send(data)
 });
 fastify.get("/treerepo_namelist", async (request, reply) => {
-  const data = await db.runQuery1(`SELECT DISTINCT scientific_name, FROM Trees WHERE scientific_name IN (SELECT scientific_name FROM A_TREE_butes) ORDER BY scientific_name`);
+  const data = await db.runQuery1(`SELECT DISTINCT scientific_name,coords FROM Trees WHERE scientific_name IN (SELECT scientific_name FROM A_TREE_butes) ORDER BY scientific_name`);
   return reply.send(data)
 });
 
@@ -246,7 +246,9 @@ fastify.get("/test", async (request, reply) => {
   // SELECT tree_name,url FROM A_TREE_butes WHERE tree_name NOT IN (SELECT tree_name FROM Inventory WHERE username='${user.username}')
   // const data = await db.runQuery1("SELECT DISTINCT scientific_name FROM Quiz")
   // const data = await db.runQuery1("SELECT * FROM Trees WHERE scientific_name IN (SELECT DISTINCT scientific_name FROM Quiz)")
-  const data = await db.runQuery1("SELECT * FROM Trees INNER JOIN A_TREE_butes ON Trees.scientific_name = A_TREE_butes.scientific_name")
+  // const data = await db.runQuery1("SELECT * FROM Trees INNER JOIN A_TREE_butes ON Trees.scientific_name = A_TREE_butes.scientific_name")
+  // const data = await db.runQuery1(`SELECT A_TREE_butes.scientific_name FROM A_TREE_butes,Trees WHERE A_TREE_butes.scientific_name=Trees.scientific_name`)
+  const data = await db.runQuery1(`SELECT * FROM A_TREE_butes LEFT JOIN Trees ON Trees.scientific_name=A_TREE_butes.scientific_name`)
   return reply.send(data).type("json")
   // return reply.view("/src/pages/test.hbs", { } );
 });
