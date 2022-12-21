@@ -23,6 +23,8 @@ body{
   background-image:url("https://www.onlygfx.com/wp-content/uploads/2019/06/6-leaf-pattern-3-1.png");
   background-repeat: repeat;
   background-size:170px;
+  
+  display:flex;
 }
 
 nav{
@@ -73,9 +75,13 @@ body .container{
   
 }
   
-.container div{
+.container > div{
   margin-bottom:10px;
 }
+  
+  .box{
+    display:inline;
+  }
   
 </style>
 </head>
@@ -96,10 +102,18 @@ body .container{
   
   <div class="container">
     <div style="width:100%;padding:10px;background-color:white;">
-      <img src="https://intranet.cb.amrita.edu/sites/default/files/Intranet-Logo_1.png" style="width:100%;max-width:400px;">
       
       <div class="box">
-        <img src="https://cdn.discordapp.com/attachments/1027927070191403189/1055253800941789234/campus.png">        
+      <img src="https://intranet.cb.amrita.edu/sites/default/files/Intranet-Logo_1.png" style="width:100%;">
+      </div>
+      
+      <div class="box">
+        <img src="https://cdn.discordapp.com/attachments/1027927070191403189/1055253800941789234/campus.png" width="50%">        
+      </div>
+      
+      <div class="box">
+        <p>Who doesn’t love trees?</p>
+        <p>Trees are a big part of our lives, and Amrita is full of them. This is an interactive online repository of all the trees, our contribution to one of the best things about this campus.</p>
       </div>
       
     </div>
