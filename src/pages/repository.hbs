@@ -224,20 +224,25 @@ function createTable(map){
     
     treeProps.forEach((tree,id) => {
       
-      const coords = tree.coords.split(",")
-      const lat = Number( coords[0] );
-      const lng = Number( coords[1] );
+      if( tree.coords ){
+        
+        const coords = tree.coords.split(",")
+        const lat = Number( coords[0] );
+        const lng = Number( coords[1] );
 
-      const div = document.createElement("div");
+        const div = document.createElement("div");
 
-      div.innerHTML = tree.scientific_name;
-      div.addEventListener("click",()=>{
-        pos = { lat: lat, lng:lng }
-        map.setCenter(pos);
-        tableItem(div);
-      });
+        div.innerHTML = tree.scientific_name;
+        div.addEventListener("click",()=>{
+          pos = { lat: lat, lng:lng }
+          map.setCenter(pos);
+          tableItem(div);
+        });
 
-      table.appendChild(div);
+        table.appendChild(div);
+      
+      }
+      
     });
     
   });
