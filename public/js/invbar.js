@@ -10,35 +10,36 @@ function toggleInventorybar(){
 async function fetchInventoryItems(){
   console.log("page loaded");
   const response = await fetch("./inventory?raw=json");
-  const jsondata = await response.json();
-  console.log(jsondata);
+  const respdata = await response.json();
+  console.log(respdata);
 
   if(response.ok != true){return;}
   
-  const old_data = JSON.parse(localStorage.getItem("inventoryData")) || [];
   
-  console.log(old_data.unlocked)
-  console.log(jsondata.unlocked)
-  const new_data = old_data.unlocked.filter(({ tree_name: id1 }) => !jsondata.unlocked.some(({ tree_name: id2 }) => id2 === id1));
-  console.log(new_data)
+//   const old_data = JSON.parse(localStorage.getItem("inventoryData")) || [];
   
-  localStorage.setItem("inventoryData", JSON.stringify(jsondata) );
-  const data = JSON.parse(localStorage.getItem("inventoryData"));
+//   console.log(old_data.unlocked)
+//   console.log(jsondata.unlocked)
+//   const new_data = old_data.unlocked.filter(({ scientific_name: id1 }) => !jsondata.unlocked.some(({ scientific_name: id2 }) => id2 === id1));
+//   console.log(new_data)
+  
+//   localStorage.setItem("inventoryData", JSON.stringify(jsondata.unlocked) );
+//   const data = JSON.parse(localStorage.getItem("inventoryData"));
+  
   
   
   $(".cards-container").innerHTML = "";
-  data.unlocked.forEach(e=>{
+  jsondata.unlocked.forEach(e=>{
     // console.log(e);
     const card = document.createElement("div");
     card.classList = "card";
     card.innerHTML = `
               <div class="img"><img src="${e.url}"></div>
-              <div class="label">${e.tree_name}</div>`
+              <div class="label">${e.scientific_name}</div>`
     
     $(".cards-container").appendChild(card);
   })
-  
-  data.locked.forEach(e=>{
+  jsondata.locked.forEach(e=>{
     // console.log(e);
     const card = document.createElement("div");
     card.classList = "card";
@@ -49,6 +50,7 @@ async function fetchInventoryItems(){
     
     $(".cards-container").appendChild(card);
   })
+  
 }
 
 

@@ -27,7 +27,6 @@ dbWrapper
         const users = JSON.parse(rawUsers);
         const trees = JSON.parse(rawtrees);
         const treeProps = JSON.parse(rawtreeProps);
-        console.log(">>",treeProps)
         const quiz = JSON.parse(rawQuiz);
         const inventory = JSON.parse(rawInventory);
         
@@ -38,11 +37,10 @@ dbWrapper
         await db.run("CREATE TABLE Quiz(quiz_id INTEGER PRIMARY KEY, scientific_name TEXT, question TEXT, options TEXT, answer TEXT)");
         await db.run("CREATE TABLE Inventory(username TEXT, scientific_name TEXT)");
         
-        // await db.run("CREATE TABLE Inventory (uid INTEGER, tree_name)");
         
         users.forEach(item => {db.run(`INSERT INTO Users (email,verified,username,password,session_id,points,collected,lat,lng) VALUES ('${item.email}', ${item.verified}, '${item.username}', '${item.password}','${item.session_id}',${item.points},${item.collected},${item.lat},${item.lng})`)});
         trees.forEach(item => {db.run(`INSERT INTO Trees (scientific_name,coords) VALUES ('${item.scientific_name}', '${item.coords}')`)});
-        // treeProps.forEach(item => {db.run(`INSERT INTO A_TREE_butes (tree_name,scientific_name,origin,link,properties) VALUES ('${item.name}', '${item.scientific_name}', '${item.origin}', '${item.wikipedia_link}', '${item.properties}')`)});
+        treeProps.forEach(item => {db.run(`INSERT INTO A_TREE_butes (tree_name,scientific_name,origin,link,properties) VALUES ('${item.name}', '${item.scientific_name}', '${item.origin}', '${item.wikipedia_link}', '${item.properties}')`)});
         quiz.forEach(item => {db.run(`INSERT INTO Quiz (quiz_id,scientific_name,question,options,answer) VALUES (${item.quiz_id},'${item.scientific_name}', '${item.question}', '${item.options}', '${item.answer}')`)});
         inventory.forEach(item => {db.run(`INSERT INTO Inventory (username,scientific_name) VALUES ('${item.username}','${item.scientific_name}')`)});
         
@@ -51,7 +49,7 @@ dbWrapper
         
         // console.log(await db.all("SELECT * FROM Users"));
         // console.log(await db.all("SELECT * FROM Trees"));
-        console.log(await db.all("SELECT * FROM A_TREE_butes"));
+        // console.log(await db.all("SELECT * FROM A_TREE_butes"));
         // console.log(await db.all("SELECT * FROM Quiz"));
         
       }
