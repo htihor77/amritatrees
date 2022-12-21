@@ -210,7 +210,7 @@ fastify.get("/treedata", async (request, reply) => {
   return reply.send(data)
 });
 fastify.get("/treerepo", async (request, reply) => {
-  const data = await db.runQuery1(`SELECT DISTINCT A_TREE_butes.scientific_name FROM A_TREE_butes, Trees WHERE Trees.scientific_name=A_TREE_butes.scientific_name`);
+  const data = await db.runQuery1(`SELECT A_TREE_butes.scientific_name FROM A_TREE_butes, Trees WHERE Trees.scientific_name=A_TREE_butes.scientific_name`);
   return reply.send(data)
 });
 
