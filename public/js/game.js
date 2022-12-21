@@ -71,6 +71,8 @@ async function initMap() {
         
         // CLICKING MARKER
         // Fetching QUESTION & Checking ANSWER
+        // wont work when IF the user turned off his location
+        
         window.navigator.geolocation.getCurrentPosition(async (pos1)=>{
           const dist = 0 || measureDistance( pos1.coords.latitude, pos1.coords.longitude, pos2.lat, pos2.lng )
           const ACCURACY = pos1.coords.accuracy;
@@ -192,10 +194,10 @@ async function submitAnswer(q,ans){
       document.querySelector(".navbar").classList.add("active");
       // msg.innerText = "You unlocked a new tree!" + `(${data.tree})`;
       msg.innerHTML = `<p>You unlocked a new tree!</p>
-      <p>(${data.tree})</p>`;
+      <p>(${data.scientific_name})</p>`;
       
       let pts = Number($(".pointsSpan").innerText.split("points")[0]);
-      $(".pointsSpan").innerText = pts + data.points + " points";
+      $(".pointsSpan").innerText = pts + data.points;
       
     } else {
       console.log("not correct");
