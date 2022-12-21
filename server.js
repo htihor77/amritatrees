@@ -211,11 +211,11 @@ fastify.get("/treedata", async (request, reply) => {
   return reply.send(data)
 });
 fastify.get("/treerepo", async (request, reply) => {
-  const data = await db.runQuery1(`SELECT A_TREE_butes.scientific_name FROM A_TREE_butes, Trees WHERE Trees.scientific_name=A_TREE_butes.scientific_name`);
+  const data = await db.runQuery1(`SELECT * FROM A_TREE_butes WHERE scientific_name IN (SELECT scientific_name,coords FROM Trees) `);
   return reply.send(data)
 });
 fastify.get("/treerepo_namelist", async (request, reply) => {
-  const data = await db.runQuery1(`SELECT * FROM Trees WHERE scientific_name IN (SELECT scientific_name FROM A_TREE_butes)`);
+  const data = await db.runQuery1(`SELECT * FROM Trees WHERE scientific_name IN (SELECT scientific_name FROM A_TREE_butes) ORDER BY scientific_name`);
   return reply.send(data)
 });
 
