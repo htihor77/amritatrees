@@ -107,7 +107,7 @@
     {
       "quiz_id": 16,
       "scientific_name": "Bridelia Retusa",
-      "question": "Bridelia retusa's bark can be used as poison",
+      "question": "Bridelia retusas bark can be used as poison",
       "options": "True, False",
       "answer": "True"
     },
@@ -156,21 +156,21 @@
     {
       "quiz_id": 23,
       "scientific_name": "Indian willow",
-      "question": "Indian willow's flower is used in preparing a dish",
+      "question": "Indian willows flower is used in preparing a dish",
       "options": "True, False",
       "answer": "True"
     },
     {
       "quiz_id": 24,
       "scientific_name": "Indian willow",
-      "question": "Indian willow's bark is used to treat diarrhea",
+      "question": "Indian willows bark is used to treat diarrhea",
       "options": "True, False",
       "answer": "False"
     },
     {
       "quiz_id": 25,
       "scientific_name": "Syzygium cumini",
-      "question": "Syzygium cumini's fruit looks like a blueberry",
+      "question": "Syzygium cuminis fruit looks like a blueberry",
       "options": "True, False",
       "answer": "False"
     },
@@ -184,7 +184,7 @@
     {
       "quiz_id": 27,
       "scientific_name": "Artocarpus heterophyllus",
-      "question": "Artocarpus heterophyllus's chips are a popular snack",
+      "question": "Artocarpus heterophylluss chips are a popular snack",
       "options": "True, False",
       "answer": "True"
     },
@@ -198,7 +198,7 @@
     {
       "quiz_id": 29,
       "scientific_name": "Callistemon viminalis",
-      "question": "Callistemon viminalis's flower is",
+      "question": "Callistemon viminaliss flower is",
       "options": "Bright green, bright orange, dull yellow, bright red",
       "answer": "bright red"
     },
@@ -212,35 +212,35 @@
     {
       "quiz_id": 31,
       "scientific_name": "Terminalia catappa",
-      "question": "Terminalia catappa's leaves are used by?",
+      "question": "Terminalia catappas leaves are used by?",
       "options": "Fish breeders, Bird breeders, Apiarists, Dentists",
       "answer": "Fish breeders"
     },
     {
       "quiz_id": 32,
       "scientific_name": "Terminalia catappa",
-      "question": "Terminalia catappa's fruit has how many seeds?",
+      "question": "Terminalia catappas fruit has how many seeds?",
       "options": "Two, One, More than 100, Around 10-20",
       "answer": "One"
     },
     {
       "quiz_id": 33,
       "scientific_name": "Mangifera indica",
-      "question": "Mangifera indica's fruit is shaped like a?",
+      "question": "Mangifera indicas fruit is shaped like a?",
       "options": "Kidney, Ear, brain, eye",
       "answer": "Kidney"
     },
     {
       "quiz_id": 34,
       "scientific_name": "Mangifera indica",
-      "question": "Mangifera indica's fruit's juice is bitter",
+      "question": "Mangifera indicas fruits juice is bitter",
       "options": "True, False",
       "answer": "False"
     },
     {
       "quiz_id": 35,
       "scientific_name": "Filicium decipiens",
-      "question": "Filicium decipiens's mature fruit is",
+      "question": "Filicium decipienss mature fruit is",
       "options": "Purple, Green, Red, Orange",
       "answer": "Purple"
     },
@@ -254,28 +254,28 @@
     {
       "quiz_id": 37,
       "scientific_name": "Millingtonia hortensis",
-      "question": "Millingtonia hortensis can be used as a substitute for "True" cork",
+      "question": "Millingtonia hortensis can be used as a substitute for true cork",
       "options": "True, False",
       "answer": "True"
     },
     {
       "quiz_id": 38,
       "scientific_name": "Millingtonia hortensis",
-      "question": "Millingtonia hortensis's flowers are ornamental",
+      "question": "Millingtonia hortensiss flowers are ornamental",
       "options": "True, False",
       "answer": "True"
     },
     {
       "quiz_id": 39,
       "scientific_name": "Cuban pink trumpet",
-      "question": "Cuban pink trumpet's flowers are",
+      "question": "Cuban pink trumpets flowers are",
       "options": "Pink, Purple, Bright red, Violet",
       "answer": "Pink"
     },
     {
       "quiz_id": 40,
       "scientific_name": "Cuban pink trumpet",
-      "question": "Cuban pink trumpet's flowers are used in making",
+      "question": "Cuban pink trumpets flowers are used in making",
       "options": "Coffee, tea, juice, medicinal drink",
       "answer": "tea"
     },
@@ -289,14 +289,14 @@
     {
       "quiz_id": 42,
       "scientific_name": "Grewia tilifolia",
-      "question": "Grewia tilifolia's wood is used for tool handles",
+      "question": "Grewia tilifolias wood is used for tool handles",
       "options": "True, False",
       "answer": "True"
     },
     {
       "quiz_id": 43,
       "scientific_name": "Copper Pod",
-      "question": "Copper Pod's timber is used for cabinet work",
+      "question": "Copper Pods timber is used for cabinet work",
       "options": "True, False",
       "answer": "True"
     },
@@ -317,7 +317,7 @@
     {
       "quiz_id": 46,
       "scientific_name": "Yellow cheesewood",
-      "question": "Yellow cheesewood's fruits are ",
+      "question": "Yellow cheesewoods fruits are ",
       "options": "Sweet, sour, bitter, flavorless",
       "answer": "Bitter"
     },
@@ -352,7 +352,7 @@
     {
       "quiz_id": 51,
       "scientific_name": "Kindal",
-      "question": "Kindal's timber is strong enough to be used to build ships",
+      "question": "Kindals timber is strong enough to be used to build ships",
       "options": "True, False",
       "answer": "True"
     },
@@ -373,21 +373,21 @@
     {
       "quiz_id": 54,
       "scientific_name": "Notched leaf soap nut",
-      "question": "Notched leaf soap nut's fruit can help cure migraines",
+      "question": "Notched leaf soap nuts fruit can help cure migraines",
       "options": "True, False",
       "answer": "False"
     },
     {
       "quiz_id": 55,
       "scientific_name": "Thespesia populnea",
-      "question": "Thespesia populnea's wood is used in the making of which instrument?",
+      "question": "Thespesia populneas wood is used in the making of which instrument?",
       "options": "Hourglass drum, Guitar, Maracas, Drum sticks",
       "answer": "Hourglass drum"
     },
     {
       "quiz_id": 56,
       "scientific_name": "Thespesia populnea",
-      "question": "Flower of Thespesia populnea played a part in which country's independence movement?",
+      "question": "Flower of Thespesia populnea played a part in which countrys independence movement?",
       "options": "Singapore, Malaysia, Sri Lanka, Indonesia",
       "answer": "Sri Lanka"
     },
@@ -401,14 +401,14 @@
     {
       "quiz_id": 58,
       "scientific_name": "Spanish cherry",
-      "question": "Spanish cherry's flowers are used to make green tea in",
+      "question": "Spanish cherrys flowers are used to make green tea in",
       "options": "Singapore, Malaysia, Sri Lanka, Thailand",
       "answer": "Thailand"
     },
     {
       "quiz_id": 59,
       "scientific_name": "Azadirachta indica",
-      "question": "Azadirachta indica's leaves can be placed in cupboard's to prevent insects from eating clothes",
+      "question": "Azadirachta indicas leaves can be placed in cupboards to prevent insects from eating clothes",
       "options": "True, False",
       "answer": "True"
     },
@@ -429,35 +429,35 @@
     {
       "quiz_id": 62,
       "scientific_name": "Gold shower",
-      "question": "Gold shower's yellow flowers symbolize Japanese royalty",
+      "question": "Gold showers yellow flowers symbolize Japanese royalty",
       "options": "True, False",
       "answer": "False"
     },
     {
       "quiz_id": 63,
       "scientific_name": "Ben teak",
-      "question": "Does the Ben teak's bark peel off in strips or fall off in chunks",
+      "question": "Does the Ben teaks bark peel off in strips or fall off in chunks",
       "options": "Strips, Chunks",
       "answer": "Strips"
     },
     {
       "quiz_id": 64,
       "scientific_name": "Ben teak",
-      "question": "Ben teak's scientific name is named after a naturalist from which country?",
+      "question": "Ben teaks scientific name is named after a naturalist from which country?",
       "options": "Iceland, Finland, Sweden, Switzerland",
       "answer": "Sweden"
     },
     {
       "quiz_id": 65,
       "scientific_name": "Albizia lebbeck",
-      "question": "Ancient kings wore garlands from the Albizia lebbeck's flowers to celebrate what?",
+      "question": "Ancient kings wore garlands from the Albizia lebbecks flowers to celebrate what?",
       "options": "Prosperity, Peace, Victory, Greenery",
       "answer": "Victory"
     },
     {
       "quiz_id": 66,
       "scientific_name": "Albizia lebbeck",
-      "question": "Albizia lebbeck's bark can be used to treat inflamation",
+      "question": "Albizia lebbecks bark can be used to treat inflamation",
       "options": "True, False",
       "answer": "True"
     },
@@ -471,14 +471,14 @@
     {
       "quiz_id": 68,
       "scientific_name": "Pink Lapacho",
-      "question": "Pink Lapacho can be used to cure smoker's cough",
+      "question": "Pink Lapacho can be used to cure smokers cough",
       "options": "True, False",
       "answer": "True"
     },
     {
       "quiz_id": 69,
       "scientific_name": "Indian cherry",
-      "question": "Indian cherry's fruit usually ripens from",
+      "question": "Indian cherrys fruit usually ripens from",
       "options": "November to January, August to October",
       "answer": "August to October"
     },
@@ -492,7 +492,7 @@
     {
       "quiz_id": 71,
       "scientific_name": "Costus spectabilis",
-      "question": "Costus spectabilis's flower was used in which celebrity's wedding",
+      "question": "Costus spectabiliss flower was used in which celebritys wedding",
       "options": "Meghan Markle, Amy Adams, Margot Robbie, Dakota Johnson",
       "answer": "Meghan markle"
     },
@@ -513,14 +513,14 @@
     {
       "quiz_id": 74,
       "scientific_name": "Marking nut tree",
-      "question": "Marking nut tree's fruit is similar to which fruit",
+      "question": "Marking nut trees fruit is similar to which fruit",
       "options": "Cashew, Almond, Plum, Papaya",
       "answer": "Cashew"
     },
     {
       "quiz_id": 75,
       "scientific_name": "Dinner plate tree",
-      "question": "Dinner plate tree's name comes from the fact that it's leaves look like dinner plates",
+      "question": "Dinner plate trees name comes from the fact that its leaves look like dinner plates",
       "options": "True, False",
       "answer": "False"
     },
@@ -534,7 +534,7 @@
     {
       "quiz_id": 77,
       "scientific_name": "Blue Marble tree",
-      "question": "The cleaned pits of the Blue marble tree's fruit are used to make rudraksh malas",
+      "question": "The cleaned pits of the Blue marble trees fruit are used to make rudraksh malas",
       "options": "True, False",
       "answer": "True"
     },
@@ -570,8 +570,8 @@
       "quiz_id": 82,
       "scientific_name": "Kigelia Africana",
       "question": "The planting site of Kigelia Africana should be chosen carefully because",
-      "options": "The CO2 release can be harmful, It's falling fruit is dangerous",
-      "answer": "It's falling fruit is dangerous"
+      "options": "The CO2 release can be harmful, Its falling fruit is dangerous",
+      "answer": "Its falling fruit is dangerous"
     },
     {
       "quiz_id": 83,
@@ -583,7 +583,7 @@
     {
       "quiz_id": 84,
       "scientific_name": "Weeping fig",
-      "question": "Weeping fig's trunks are sometimes braided for decorative appeal",
+      "question": "Weeping figs trunks are sometimes braided for decorative appeal",
       "options": "True, False",
       "answer": "True"
     },
@@ -611,14 +611,14 @@
     {
       "quiz_id": 88,
       "scientific_name": "West Indian Mahogany",
-      "question": "What was the West Indian Mahogany's first major use in England and Spain?",
+      "question": "What was the West Indian Mahoganys first major use in England and Spain?",
       "options": "Furniture making, Ship making, Making Buildings",
       "answer": "Ship making"
     },
     {
       "quiz_id": 89,
       "scientific_name": "Tamarind",
-      "question": "Tamarind's fruit is",
+      "question": "Tamarinds fruit is",
       "options": "Bitter, Salty, Tangy",
       "answer": "Tangy"
     },
@@ -653,7 +653,7 @@
     {
       "quiz_id": 94,
       "scientific_name": "Belliric Myrobalan",
-      "question": "Belliric Myrobalan has it's uses in Ayurveda ",
+      "question": "Belliric Myrobalan has its uses in Ayurveda ",
       "options": "True, False",
       "answer": "True"
     },
@@ -709,7 +709,7 @@
     {
       "quiz_id": 106,
       "scientific_name": "Tabebuia rosea",
-      "question": "Tabebuia rosea's can be used in Malaria treatment",
+      "question": "Tabebuia roseas can be used in Malaria treatment",
       "options": "True, False",
       "answer": "True"
     },
@@ -723,14 +723,14 @@
     {
       "quiz_id": 108,
       "scientific_name": "Silver Oak",
-      "question": "Silver Oak's is harmful as it contains Hydrogen Cyanide",
+      "question": "Silver Oaks is harmful as it contains Hydrogen Cyanide",
       "options": "True, False",
       "answer": "True"
     },
     {
       "quiz_id": 109,
       "scientific_name": "Diploknema butyracea",
-      "question": "Fat extracted from Diploknema butyracea's seeds is used in cooking",
+      "question": "Fat extracted from Diploknema butyraceas seeds is used in cooking",
       "options": "True, False",
       "answer": "True"
     },
@@ -772,7 +772,7 @@
     {
       "quiz_id": 115,
       "scientific_name": "Flame of the forest",
-      "question": "Flame of the forest is called so because of it's bright red fruit",
+      "question": "Flame of the forest is called so because of its bright red fruit",
       "options": "True, False",
       "answer": "False"
     },
@@ -800,14 +800,14 @@
     {
       "quiz_id": 119,
       "scientific_name": "Indian Tupil tree",
-      "question": "Indian Tupil tree's wood is used in the making of which instrument?",
+      "question": "Indian Tupil trees wood is used in the making of which instrument?",
       "options": "Hourglass drum, Guitar, Maracas, Drum sticks",
       "answer": "Hourglass drum"
     },
     {
       "quiz_id": 120,
       "scientific_name": "Indian Tupil tree",
-      "question": "Flower of Indian Tupil tree played a part in which country's independence movement?",
+      "question": "Flower of Indian Tupil tree played a part in which countrys independence movement?",
       "options": "Singapore, Malaysia, Sri Lanka, Indonesia",
       "answer": "Sri Lanka"
     },
@@ -836,8 +836,8 @@
       "quiz_id": 124,
       "scientific_name": "Sausage tree",
       "question": "The planting site of Sausage tree should be chosen carefully because",
-      "options": "The CO2 release can be harmful, It's falling fruit is dangerous",
-      "answer": "It's falling fruit is dangerous"
+      "options": "The CO2 release can be harmful, Its falling fruit is dangerous",
+      "answer": "Its falling fruit is dangerous"
     },
     {
       "quiz_id": 125,
@@ -849,8 +849,8 @@
     {
       "quiz_id": 126,
       "scientific_name": "Gmelina arborea",
-      "question": "Gmelina arborea's leaves have medicinal properties",
+      "question": "Gmelina arboreas leaves have medicinal properties",
       "options": "True, False",
       "answer": "False"
     }
-]
+  ]
