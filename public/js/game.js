@@ -178,6 +178,15 @@ async function initMap( command ) {
     
       let ifdevCB = $("#devCB").checked || false;
       if ( !promptOpen && !ifdevCB )  map.setCenter(pos);
+      
+      if( ifdevCB ){
+        map.setOptions({zoomControl: false, disableDoubleClickZoom: true,disableDefaultUI: true,draggable: true, scrollwheel: true, });
+      } else {
+        map.setZoom(20)
+        map.setOptions({zoomControl: false, disableDoubleClickZoom: true,disableDefaultUI: true,draggable: false, scrollwheel: false, });
+      }
+      
+      
 
       let liveLocation = $("#livelocationCB").checked || false;
       if ( liveLocation && updateTick == locationUpdateRate) {
@@ -229,6 +238,7 @@ async function submitAnswer(q,ans){
     const msg = document.createElement("p");
     if(data.correct){
       console.log("correct");
+      
       confetti();
       confetti();
       document.querySelector("#userPrompt").classList.remove("active");
