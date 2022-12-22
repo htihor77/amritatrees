@@ -1,3 +1,7 @@
+const treeSound = new Audio("https://cdn.discordapp.com/attachments/1055426492659675167/1055434259067846706/tree_rustling.mp3");
+const celebrateSnd = new Audio("https://cdn.discordapp.com/attachments/1055426492659675167/1055427357340614676/celebrate.mp3");
+const deniedSnd = new Audio("")
+
 function createUserTopbar(map){
   const div = document.createElement("div");
   div.classList = "topbar"
@@ -86,7 +90,10 @@ async function initMap( command ) {
       
   
       marker.addListener("click", () => {
-        console.log("marker clicked")
+        console.log("marker clicked");
+        
+        treeSound.play();
+        
         const pos2 = allMarkers[id]
         console.log(pos2)
         const DISTANCE_THRESHOLD = 10000000;
