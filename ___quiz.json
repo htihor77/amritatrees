@@ -37,289 +37,820 @@
     {
       "quiz_id": 6,
       "scientific_name": "Bismarckia nobilis",
-      "question": "When should these trees be pruned?",
+      "question": "When should Bismarackia nobilis be pruned?",
       "options": "Summer, Fall, Anytime of the year, January-March",
       "answer": "Anytime of the year"
     },
     {
       "quiz_id": 7,
-      "scientific_name": "Cocos nucifera",
-      "question": "Coconut tree is famous in which state of India?",
-      "options": "Kerala,Tamil Nadu,Andhra Pradesh,telangana",
-      "answer": "Kerala"
+      "scientific_name": "Pterocarpus Indicus ",
+      "question": "How tall does Pterocarpus Indicus grow?",
+      "options": "30-40m, 40-50m, 100-120m, 10-20m",
+      "answer": "30-40m"
     },
     {
       "quiz_id": 8,
-      "scientific_name": "Borassus",
-      "question": "Asian palmyra palm tree is famous in which state of India?",
-      "options": "Kerala,Tamil Nadu,Andhra Pradesh,telangana",
-      "answer": "Tamil Nadu"
+      "scientific_name": "Pterocarpus Indicus",
+      "question": "In which country do you require a permit to cut Pterocarpus Indicus?",
+      "options": "Canada, Japan, Phillipines, Indonesia",
+      "answer": "Phillipines"
     },
     {
       "quiz_id": 9,
-      "scientific_name": "Azadirachta indica",
-      "question": "Neem tree is famous in which state of India?",
-      "options": "Kerala,Tamil Nadu,Andhra Pradesh,telangana",
-      "answer": "Andhra Pradesh"
+      "scientific_name": "Millettia pinnata",
+      "question": "Millettia pinnata has a light brown bark",
+      "options": "True, False",
+      "answer": "False"
     },
     {
       "quiz_id": 10,
-      "scientific_name": "Jand",
-      "question": "Jand tree is famous in which state of India?",
-      "options": "Kerala,Tamil Nadu,Andhra Pradesh,telangana",
-      "answer": "telangana"
+      "scientific_name": "Millettia pinnata",
+      "question": "Millettia pinnata can grow at high altitudes",
+      "options": "True, False",
+      "answer": "False"
     },
     {
       "quiz_id": 11,
-      "scientific_name": "Indian sandalwood",
-      "question": "Indian sandalwood is famous in which state of India?",
-      "options": "karnataka,maharashtra,punjab,puducherry",
-      "answer": "karnataka"
+      "scientific_name": "Saraca Asoca",
+      "question": "Saraca Asoca was named after which famous king?",
+      "options": "King Prithviraj Chauhan, King Ashoka, Emperor Humayun, Alexander the Great",
+      "answer": "King Ashoka"
     },
     {
       "quiz_id": 12,
-      "scientific_name": "Mangifera indica",
-      "question": "Indian sandalwood is famous in which state of India?",
-      "options": "karnataka,maharashtra,punjab,puducherry",
-      "answer": "maharashtra"
+      "scientific_name": "Saraca Asoca",
+      "question": "The flower of Saraca Asoca is the state flower of which Indian state?",
+      "options": "Jharkhand, Uttar pradesh, Odisha, Gujarat",
+      "answer": "Odisha"
     },
     {
       "quiz_id": 13,
-      "scientific_name": "Indian rosewood",
-      "question": "Indian rosewood is famous in which state of India?",
-      "options": "karnataka,maharashtra,punjab,puducherry",
-      "answer": "punjab"
+      "scientific_name": "Ficus elastica",
+      "question": "The Ficus elastica has \"fake fruits\"",
+      "options": "True, False",
+      "answer": "True"
     },
     {
       "quiz_id": 14,
-      "scientific_name": "Indian bael",
-      "question": "Indian bael is famous in which state of India?",
-      "options": "karnataka,maharashtra,punjab,puducherry",
-      "answer": "puducherry"
+      "scientific_name": "Ficus elastica",
+      "question": "Ficus Elastica has a high tolerance to droughts",
+      "options": "True, False",
+      "answer": "True"
     },
     {
       "quiz_id": 15,
-      "scientific_name": "Azadirachta indica",
-      "question": "Neem oil has applicaition in the pharmaceutical?",
-      "options": "True,False",
-      "answer": "True "
+      "scientific_name": "Bridelia Retusa",
+      "question": "Bridelia retusa has a slow growth rate",
+      "options": "True, False",
+      "answer": "False"
     },
     {
       "quiz_id": 16,
-      "scientific_name": "Azadirachta indica",
-      "question": "Neem oil can be used as a pesticide to control the proliferation of some species of insect and mites",
-      "options": "True,False",
-      "answer": "True "
+      "scientific_name": "Bridelia Retusa",
+      "question": "Bridelia retusa's bark can be used as poison",
+      "options": "True, False",
+      "answer": "True"
     },
     {
       "quiz_id": 17,
-      "scientific_name": "Mangifera indica",
-      "question": "The tree is evergreen, often reaching 15–18 metres (50–60 feet) in height and attaining great age",
-      "options": "Mango tree ,Indian bael,Jand,Royal palm",
-      "answer": "Mango Tree"
+      "scientific_name": "Spathodea campanulata",
+      "question": "Spathodea campanulata may grow to 120ft",
+      "options": "True, False",
+      "answer": "False"
     },
     {
       "quiz_id": 18,
-      "scientific_name": "Mangifera indica",
-      "question": "This trees fruit is the national fruit of not one but three countries?",
-      "options": "Mango tree ,Indian bael,Jand,Royal palm",
-      "answer": "Mango Tree"
+      "scientific_name": "Spathodea campanulata",
+      "question": "Spathodea campanulata is an evergreen tree",
+      "options": "True, False",
+      "answer": "True"
     },
     {
       "quiz_id": 19,
-      "scientific_name": "Mangifera indica",
-      "question": "This tree is considered holy within the Buddhist faith",
-      "options": "Mango tree ,Indian bael,Jand,Royal palm",
-      "answer": "Mango Tree"
+      "scientific_name": "Alstonia Scholaris",
+      "question": "Alstonia Scholaris is a toxic plant",
+      "options": "True, False",
+      "answer": "True"
     },
     {
       "quiz_id": 20,
-      "scientific_name": "Mangifera indica",
-      "question": "How many mango tree are located near library aprox?",
-      "options": "50,100,150,125",
-      "answer": 50
+      "scientific_name": "Alstonia Scholaris",
+      "question": "In some places, the trunk of Alstonia Scholaris is three sided",
+      "options": "True, False",
+      "answer": "True"
     },
     {
       "quiz_id": 21,
-      "scientific_name": "Mangifera indica",
-      "question": "How many years mango trees can remain in production for ?",
-      "options": "5,10,40,20",
-      "answer": 20
+      "scientific_name": "Nux vomica",
+      "question": "Which of the following is not treated with Nux vomica",
+      "options": "Constipation, Migraine, Anxiety, Depression",
+      "answer": "Depression"
     },
     {
       "quiz_id": 22,
-      "scientific_name": "Putranjiva Roxburghii",
-      "question": "This is an evergreen tree up to 15m high with drooping branches?",
-      "options": "Mango tree ,Indian bael,Jand,Child life tree",
-      "answer": "Child life tree"
+      "scientific_name": "Nux vomica",
+      "question": "Even though it has medicinal properties, it is also used as rat poison",
+      "options": "True, False",
+      "answer": "True"
     },
     {
       "quiz_id": 23,
-      "scientific_name": "Terminalia arjuna",
-      "question": "Name the fruit which is widely used and consumed in ayurveda, it comes from arjun tree?",
-      "options": "Mango,Arjuna,Apple,Orange",
-      "answer": "Arjuna"
+      "scientific_name": "Indian willow",
+      "question": "Indian willow's flower is used in preparing a dish",
+      "options": "True, False",
+      "answer": "True"
     },
     {
       "quiz_id": 24,
-      "scientific_name": "Terminalia arjuna",
-      "question": "This is tree that belong to the genus Terminalia located in our campus?",
-      "options": "Mango tree ,Indian bael,Jand,Arjuna tree",
-      "answer": "Arjuna Tree"
+      "scientific_name": "Indian willow",
+      "question": "Indian willow's bark is used to treat diarrhea",
+      "options": "True, False",
+      "answer": "False"
     },
     {
       "quiz_id": 25,
-      "scientific_name": "Terminalia arjuna",
-      "question": " Flower of arjuna will appear in?",
-      "options": "sep-nov,jan-mar,nov-dec,aug-oct",
-      "answer": "sep-nov"
+      "scientific_name": "Syzygium cumini",
+      "question": "Syzygium cumini's fruit looks like a blueberry",
+      "options": "True, False",
+      "answer": "False"
     },
     {
       "quiz_id": 26,
-      "scientific_name": "Terminalia arjuna",
-      "question": "Arujna flower is well known for?",
-      "options": "cardiac tonic cork,Licorice ,Ephedra,Arnica ",
-      "answer": "cardiac tonic cork"
+      "scientific_name": "Syzygium cumini",
+      "question": "Syzygium cumini is a cheap alternative to build furniture",
+      "options": "True, False",
+      "answer": "True"
     },
     {
       "quiz_id": 27,
-      "scientific_name": "Millingtonia hortensis",
-      "question": "In which national park indian cork tree found most?",
-      "options": "Sultanpur,Bandipur,Bhadra,Corbett",
-      "answer": "Sultanpur",
-      "__EMPTY": "G"
+      "scientific_name": "Artocarpus heterophyllus",
+      "question": "Artocarpus heterophyllus's chips are a popular snack",
+      "options": "True, False",
+      "answer": "True"
     },
     {
       "quiz_id": 28,
-      "scientific_name": "Millingtonia hortensis",
-      "question": "How many years is taken for cork tree for harvesting?",
-      "options": "12,15,25,40",
-      "answer": 40
+      "scientific_name": "Artocarpus heterophyllus",
+      "question": "Artocarpus heterophyllus is the state fruit of?",
+      "options": "Gujarat, Karnataka, West Bengal, Kerala",
+      "answer": "Kerala"
     },
     {
       "quiz_id": 29,
-      "scientific_name": "Millingtonia hortensis",
-      "question": "Cork trees leaves are also used as a cheap substitute for?",
-      "options": "tobacco,Alcohol,cocaine,wine",
-      "answer": "tobacco"
+      "scientific_name": "Callistemon viminalis",
+      "question": "Callistemon viminalis's flower is",
+      "options": "Bright green, bright orange, dull yellow, bright red",
+      "answer": "bright red"
     },
     {
       "quiz_id": 30,
-      "scientific_name": "Allamanda cathartica",
-      "question": "Allamanda cathartica, commonly called",
-      "options": "Golden trumpet,Mangifera indica,Pink trumpet,pink poui",
-      "answer": "Golden trumpet"
+      "scientific_name": "Callistemon viminalis",
+      "question": "Callistemon viminalis resembles which cleaning utensil?",
+      "options": "Bottlebrush, Scrub",
+      "answer": "Bottlebrush"
     },
     {
       "quiz_id": 31,
-      "scientific_name": "Allamanda cathartica",
-      "question": "Flower color of allamanda cathartica plant?",
-      "options": "yellow,pink,green.red",
-      "answer": "yellow"
+      "scientific_name": "Terminalia catappa",
+      "question": "Terminalia catappa's leaves are used by?",
+      "options": "Fish breeders, Bird breeders, Apiarists, Dentists",
+      "answer": "Fish breeders"
     },
     {
       "quiz_id": 32,
-      "scientific_name": "Allamanda cathartica",
-      "question": "Are Allamanda seeds poisonous?",
-      "options": "yes,no",
-      "answer": "yes"
+      "scientific_name": "Terminalia catappa",
+      "question": "Terminalia catappa's fruit has how many seeds?",
+      "options": "Two, One, More than 100, Around 10-20",
+      "answer": "One"
     },
     {
       "quiz_id": 33,
-      "scientific_name": "Aloe arborescens",
-      "question": "Aloe Vera is a _____ that grows in hot, dry climates",
-      "options": "cactus-like plant,Haworthia,Stapelia,Agave",
-      "answer": "cactus-like plant"
+      "scientific_name": "Mangifera indica",
+      "question": "Mangifera indica's fruit is shaped like a?",
+      "options": "Kidney, Ear, brain, eye",
+      "answer": "Kidney"
     },
     {
       "quiz_id": 34,
-      "scientific_name": "Aloe arborescens",
-      "question": "Aloe is a cactus-like plant that grows in _____. ",
-      "options": "dry climates,cool climates,Polar climates,Temperate climates",
-      "answer": "dry climates"
+      "scientific_name": "Mangifera indica",
+      "question": "Mangifera indica's fruit's juice is bitter",
+      "options": "True, False",
+      "answer": "False"
     },
     {
       "quiz_id": 35,
-      "scientific_name": "Aloe arborescens",
-      "question": "This plants gel is widely known to relieve sunburn and help heal wounds",
-      "options": "Aloe Vera,Tusli,cactus,lily",
-      "answer": "Aloe Vera"
+      "scientific_name": "Filicium decipiens",
+      "question": "Filicium decipiens's mature fruit is",
+      "options": "Purple, Green, Red, Orange",
+      "answer": "Purple"
     },
     {
       "quiz_id": 36,
-      "scientific_name": "Aloe arborescens",
-      "question": "_____ is a stemless or very short-stemmed plant growing to 60–100 centimetres",
-      "options": "Aloe Vera,Tusli,cactus,lily",
-      "answer": "Aloe Vera"
+      "scientific_name": "Filicium decipiens",
+      "question": "Filicium refers to the roots of the tree",
+      "options": "True, False",
+      "answer": "False"
     },
     {
       "quiz_id": 37,
-      "scientific_name": "Aloe arborescens",
-      "question": "Aloe vera is a stemless or very short-stemmed plant growing to ______ tall",
-      "options": "60-100,100-120,30-40,25-50",
-      "answer": "60-100"
+      "scientific_name": "Millingtonia hortensis",
+      "question": "Millingtonia hortensis can be used as a substitute for "True" cork",
+      "options": "True, False",
+      "answer": "True"
     },
     {
       "quiz_id": 38,
-      "scientific_name": "Tabebuia rosea",
-      "question": "Tabebuia rosea, also called ______.",
-      "options": "Golden trumpet,Mangifera indica,Pink trumpet,tekoma",
-      "answer": "pink poui"
+      "scientific_name": "Millingtonia hortensis",
+      "question": "Millingtonia hortensis's flowers are ornamental",
+      "options": "True, False",
+      "answer": "True"
     },
     {
       "quiz_id": 39,
-      "scientific_name": "Tabebuia rosea",
-      "question": "Rosy trumpet tree is a neotropical tree that grows up to ___ m and can reach a diameter at breast height of up to 100 cm",
-      "options": "30,20,25,15",
-      "answer": 30
+      "scientific_name": "Cuban pink trumpet",
+      "question": "Cuban pink trumpet's flowers are",
+      "options": "Pink, Purple, Bright red, Violet",
+      "answer": "Pink"
     },
     {
       "quiz_id": 40,
-      "scientific_name": "Tabebuia rosea",
-      "question": "Rosy trumpet tree is a neotropical tree that grows up to 30 m and can reach a diameter at breast height of up to__cm.",
-      "options": "100,50,65,30,60",
-      "answer": 100
+      "scientific_name": "Cuban pink trumpet",
+      "question": "Cuban pink trumpet's flowers are used in making",
+      "options": "Coffee, tea, juice, medicinal drink",
+      "answer": "tea"
     },
     {
       "quiz_id": 41,
-      "scientific_name": "Tabebuia rosea",
-      "question": "The tree is known as ________ in Malaysia",
-      "options": "Golden trumpet,Mangifera indica,Pink trumpet,tekoma",
-      "answer": "tekoma"
+      "scientific_name": "Grewia tilifolia",
+      "question": "What part of Grewia tilifolia is used to treat fractures?",
+      "options": "Bark, Flower, Stem, Branch",
+      "answer": "Bark"
     },
     {
       "quiz_id": 42,
-      "scientific_name": "Tabebuia rosea",
-      "question": "Pink trumpet trees can be found at both the Zoo and Safari Park.",
-      "options": "True,False",
-      "answer": "True "
+      "scientific_name": "Grewia tilifolia",
+      "question": "Grewia tilifolia's wood is used for tool handles",
+      "options": "True, False",
+      "answer": "True"
     },
     {
       "quiz_id": 43,
-      "scientific_name": "Samanea saman",
-      "question": "Samanea saman, also sometimes known as the ___.",
-      "options": "Rain tree,Wild tree,Willow tree,Wind tree",
-      "answer": "Rain tree"
+      "scientific_name": "Copper Pod",
+      "question": "Copper Pod's timber is used for cabinet work",
+      "options": "True, False",
+      "answer": "True"
     },
     {
       "quiz_id": 44,
-      "scientific_name": "Samanea saman",
-      "question": "Saman is a wide-canopied tree with a large symmetrical ____.",
-      "options": "umbrella-shaped crown,Pyramidal crown,Full crowned,Layered crown,Weeping crown",
-      "answer": "umbrella-shaped crown"
+      "scientific_name": "Copper Pod",
+      "question": "Copper Pod is an ornamental tree in many parts of the world",
+      "options": "True, False",
+      "answer": "True"
     },
     {
       "quiz_id": 45,
-      "scientific_name": "Samanea saman",
-      "question": "why is Samanea saman called the Rain Tree?",
-      "options": "leaves fold up before rainy weather,Brings rain,due to dense branch,due to thick roots",
-      "answer": "leaves fold up before rainy weather"
+      "scientific_name": "Yellow cheesewood",
+      "question": "What part Yellow cheesewood is used to treat animal bites",
+      "options": "Leaf, roots, bark, sap",
+      "answer": "bark"
     },
     {
       "quiz_id": 46,
-      "scientific_name": "Samanea saman",
-      "question": "How long does the rain tree live?",
-      "options": "80-100,120-150,40-50,60-70",
-      "answer": "80-100"
+      "scientific_name": "Yellow cheesewood",
+      "question": "Yellow cheesewood's fruits are ",
+      "options": "Sweet, sour, bitter, flavorless",
+      "answer": "Bitter"
+    },
+    {
+      "quiz_id": 47,
+      "scientific_name": "Ceylon satinwood",
+      "question": "Which present day country was previously called Ceylon?",
+      "options": "Singapore, Malaysia, Sri Lanka, Indonesia",
+      "answer": "Sri Lanka"
+    },
+    {
+      "quiz_id": 48,
+      "scientific_name": "Ceylon satinwood",
+      "question": "Dried leaves of Ceylon satinwood speeds up healing process",
+      "options": "True, False",
+      "answer": "True"
+    },
+    {
+      "quiz_id": 49,
+      "scientific_name": "Royal poinciana",
+      "question": "Royal poinciana is also called flame of the forest",
+      "options": "True, False",
+      "answer": "True"
+    },
+    {
+      "quiz_id": 50,
+      "scientific_name": "Royal poinciana",
+      "question": "Can the Royal poinciana be used to give shade?",
+      "options": "Yes, No",
+      "answer": "Yes"
+    },
+    {
+      "quiz_id": 51,
+      "scientific_name": "Kindal",
+      "question": "Kindal's timber is strong enough to be used to build ships",
+      "options": "True, False",
+      "answer": "True"
+    },
+    {
+      "quiz_id": 52,
+      "scientific_name": "Kindal",
+      "question": "What makes this tree so colorful?",
+      "options": "Fruit, Flowers",
+      "answer": "Fruit"
+    },
+    {
+      "quiz_id": 53,
+      "scientific_name": "Notched leaf soap nut",
+      "question": "What part of Notched leaf soap nut has medicinal properties",
+      "options": "Fruit, Flowers,leaf,bark",
+      "answer": "Fruit"
+    },
+    {
+      "quiz_id": 54,
+      "scientific_name": "Notched leaf soap nut",
+      "question": "Notched leaf soap nut's fruit can help cure migraines",
+      "options": "True, False",
+      "answer": "False"
+    },
+    {
+      "quiz_id": 55,
+      "scientific_name": "Thespesia populnea",
+      "question": "Thespesia populnea's wood is used in the making of which instrument?",
+      "options": "Hourglass drum, Guitar, Maracas, Drum sticks",
+      "answer": "Hourglass drum"
+    },
+    {
+      "quiz_id": 56,
+      "scientific_name": "Thespesia populnea",
+      "question": "Flower of Thespesia populnea played a part in which country's independence movement?",
+      "options": "Singapore, Malaysia, Sri Lanka, Indonesia",
+      "answer": "Sri Lanka"
+    },
+    {
+      "quiz_id": 57,
+      "scientific_name": "Spanish cherry",
+      "question": "Spanish cherry is used in Ayurvedic treatment",
+      "options": "True, False",
+      "answer": "True"
+    },
+    {
+      "quiz_id": 58,
+      "scientific_name": "Spanish cherry",
+      "question": "Spanish cherry's flowers are used to make green tea in",
+      "options": "Singapore, Malaysia, Sri Lanka, Thailand",
+      "answer": "Thailand"
+    },
+    {
+      "quiz_id": 59,
+      "scientific_name": "Azadirachta indica",
+      "question": "Azadirachta indica's leaves can be placed in cupboard's to prevent insects from eating clothes",
+      "options": "True, False",
+      "answer": "True"
+    },
+    {
+      "quiz_id": 60,
+      "scientific_name": "Azadirachta indica",
+      "question": "Azadirachta indica can be used as fertilizer",
+      "options": "True, False",
+      "answer": "True"
+    },
+    {
+      "quiz_id": 61,
+      "scientific_name": "Gold shower",
+      "question": "Gold shower is the national tree for which country?",
+      "options": "Singapore, Malaysia, Sri Lanka, Thailand",
+      "answer": "Thailand"
+    },
+    {
+      "quiz_id": 62,
+      "scientific_name": "Gold shower",
+      "question": "Gold shower's yellow flowers symbolize Japanese royalty",
+      "options": "True, False",
+      "answer": "False"
+    },
+    {
+      "quiz_id": 63,
+      "scientific_name": "Ben teak",
+      "question": "Does the Ben teak's bark peel off in strips or fall off in chunks",
+      "options": "Strips, Chunks",
+      "answer": "Strips"
+    },
+    {
+      "quiz_id": 64,
+      "scientific_name": "Ben teak",
+      "question": "Ben teak's scientific name is named after a naturalist from which country?",
+      "options": "Iceland, Finland, Sweden, Switzerland",
+      "answer": "Sweden"
+    },
+    {
+      "quiz_id": 65,
+      "scientific_name": "Albizia lebbeck",
+      "question": "Ancient kings wore garlands from the Albizia lebbeck's flowers to celebrate what?",
+      "options": "Prosperity, Peace, Victory, Greenery",
+      "answer": "Victory"
+    },
+    {
+      "quiz_id": 66,
+      "scientific_name": "Albizia lebbeck",
+      "question": "Albizia lebbeck's bark can be used to treat inflamation",
+      "options": "True, False",
+      "answer": "True"
+    },
+    {
+      "quiz_id": 67,
+      "scientific_name": "Pink Lapacho",
+      "question": "Pink Lapacho is the national tree of ",
+      "options": "Paraguay, Uruguay, Argentina, Somalia",
+      "answer": "Paraguay"
+    },
+    {
+      "quiz_id": 68,
+      "scientific_name": "Pink Lapacho",
+      "question": "Pink Lapacho can be used to cure smoker's cough",
+      "options": "True, False",
+      "answer": "True"
+    },
+    {
+      "quiz_id": 69,
+      "scientific_name": "Indian cherry",
+      "question": "Indian cherry's fruit usually ripens from",
+      "options": "November to January, August to October",
+      "answer": "August to October"
+    },
+    {
+      "quiz_id": 70,
+      "scientific_name": "Indian cherry",
+      "question": "Indian cherry is a small tree",
+      "options": "True, False",
+      "answer": "True"
+    },
+    {
+      "quiz_id": 71,
+      "scientific_name": "Costus spectabilis",
+      "question": "Costus spectabilis's flower was used in which celebrity's wedding",
+      "options": "Meghan Markle, Amy Adams, Margot Robbie, Dakota Johnson",
+      "answer": "Meghan markle"
+    },
+    {
+      "quiz_id": 72,
+      "scientific_name": "Costus spectabilis",
+      "question": "Costus spectabilis is mostly found in which continent",
+      "options": "Asia, Europe, South America, Africa",
+      "answer": "Africa"
+    },
+    {
+      "quiz_id": 73,
+      "scientific_name": "Marking nut tree",
+      "question": "Marking nut tree is called marking nut tree because it was used to mark trees",
+      "options": "True, False",
+      "answer": "False"
+    },
+    {
+      "quiz_id": 74,
+      "scientific_name": "Marking nut tree",
+      "question": "Marking nut tree's fruit is similar to which fruit",
+      "options": "Cashew, Almond, Plum, Papaya",
+      "answer": "Cashew"
+    },
+    {
+      "quiz_id": 75,
+      "scientific_name": "Dinner plate tree",
+      "question": "Dinner plate tree's name comes from the fact that it's leaves look like dinner plates",
+      "options": "True, False",
+      "answer": "False"
+    },
+    {
+      "quiz_id": 76,
+      "scientific_name": "Dinner plate tree",
+      "question": "The wood of the Dinner plate tree is not strong but it is durable",
+      "options": "True, False",
+      "answer": "True"
+    },
+    {
+      "quiz_id": 77,
+      "scientific_name": "Blue Marble tree",
+      "question": "The cleaned pits of the Blue marble tree's fruit are used to make rudraksh malas",
+      "options": "True, False",
+      "answer": "True"
+    },
+    {
+      "quiz_id": 78,
+      "scientific_name": "Blue Marble tree",
+      "question": "How long does it take for the Blue Marble tree to start bearing fruit?",
+      "options": "1-2yrs, 3-4yrs, 5-6yrs, 7-8months",
+      "answer": "3-4yrs"
+    },
+    {
+      "quiz_id": 79,
+      "scientific_name": "Putranjiva roxburghii",
+      "question": "Barks and leaves of Putranjiva roxburghii are medicinal",
+      "options": "True, False",
+      "answer": "True"
+    },
+    {
+      "quiz_id": 80,
+      "scientific_name": "Putranjiva roxburghii",
+      "question": "leaves and fruits of leaves of Putranjiva roxburghii are used as medicine for rheumatism",
+      "options": "True, False",
+      "answer": "True"
+    },
+    {
+      "quiz_id": 81,
+      "scientific_name": "Kigelia Africana",
+      "question": "The dried fruit of Kigelia Africana is used to make an alcoholic drink",
+      "options": "True, False",
+      "answer": "True"
+    },
+    {
+      "quiz_id": 82,
+      "scientific_name": "Kigelia Africana",
+      "question": "The planting site of Kigelia Africana should be chosen carefully because",
+      "options": "The CO2 release can be harmful, It's falling fruit is dangerous",
+      "answer": "It's falling fruit is dangerous"
+    },
+    {
+      "quiz_id": 83,
+      "scientific_name": "Weeping fig",
+      "question": "The weeping fig is toxic for humans and animals",
+      "options": "True, False",
+      "answer": "True"
+    },
+    {
+      "quiz_id": 84,
+      "scientific_name": "Weeping fig",
+      "question": "Weeping fig's trunks are sometimes braided for decorative appeal",
+      "options": "True, False",
+      "answer": "True"
+    },
+    {
+      "quiz_id": 85,
+      "scientific_name": "Frangipani",
+      "question": "The name Frangipani comes from the noble Frangipani family of which country?",
+      "options": "France, Italy, Portugal, Greece",
+      "answer": "Italy"
+    },
+    {
+      "quiz_id": 86,
+      "scientific_name": "Frangipani",
+      "question": "The flower of Frangipani is the natural flower of which country?",
+      "options": "Laos, Sudan, Nigeria, Egypt",
+      "answer": "Laos"
+    },
+    {
+      "quiz_id": 87,
+      "scientific_name": "West Indian Mahogany",
+      "question": "West Indian Mahogany is the national tree of which country?",
+      "options": "Colombia, Aruba, Dominican republic, Venezuela",
+      "answer": "Dominican republic"
+    },
+    {
+      "quiz_id": 88,
+      "scientific_name": "West Indian Mahogany",
+      "question": "What was the West Indian Mahogany's first major use in England and Spain?",
+      "options": "Furniture making, Ship making, Making Buildings",
+      "answer": "Ship making"
+    },
+    {
+      "quiz_id": 89,
+      "scientific_name": "Tamarind",
+      "question": "Tamarind's fruit is",
+      "options": "Bitter, Salty, Tangy",
+      "answer": "Tangy"
+    },
+    {
+      "quiz_id": 90,
+      "scientific_name": "Tamarind",
+      "question": "The leaves and bark of Tamarin tree is edible",
+      "options": "True, False",
+      "answer": "True"
+    },
+    {
+      "quiz_id": 91,
+      "scientific_name": "Stereospermum colais",
+      "question": "Which part of Stereospermum colais is medicinal",
+      "options": "root, leaves, bark",
+      "answer": "root"
+    },
+    {
+      "quiz_id": 92,
+      "scientific_name": "Stereospermum colais",
+      "question": "Parts of Stereospermum colais can help asthma patients",
+      "options": "True, False",
+      "answer": "Stereospermum colais"
+    },
+    {
+      "quiz_id": 93,
+      "scientific_name": "Belliric Myrobalan",
+      "question": "The fruit of Belliric Myrobalan is used as tanning leather",
+      "options": "True, False",
+      "answer": "True"
+    },
+    {
+      "quiz_id": 94,
+      "scientific_name": "Belliric Myrobalan",
+      "question": "Belliric Myrobalan has it's uses in Ayurveda ",
+      "options": "True, False",
+      "answer": "True"
+    },
+    {
+      "quiz_id": 97,
+      "scientific_name": "Roystonea regia",
+      "question": "Roystonea regia is the national tree of?",
+      "options": "Cuba, Colombia, Venezuela, Uruguay",
+      "answer": "Cuba"
+    },
+    {
+      "quiz_id": 98,
+      "scientific_name": "Roystonea regia",
+      "question": "Roystonea regia has religious role in which?",
+      "options": "Hinduism, Christianity, Islam, Buddhism",
+      "answer": "Christianity"
+    },
+    {
+      "quiz_id": 101,
+      "scientific_name": "Bamboo",
+      "question": "Bamboo is famously the favourite food for which animal?",
+      "options": "Panda, Tiger, Giraffe, Elephant",
+      "answer": "Panda"
+    },
+    {
+      "quiz_id": 102,
+      "scientific_name": "Bamboo",
+      "question": "Bamboo is the second fastest growing land plant",
+      "options": "True, False",
+      "answer": "False"
+    },
+    {
+      "quiz_id": 103,
+      "scientific_name": "Purple orchild tree",
+      "question": "The leaves and flowers of Purple orchild tree are edible",
+      "options": "True, False",
+      "answer": "True"
+    },
+    {
+      "quiz_id": 104,
+      "scientific_name": "Purple orchild tree",
+      "question": "The flowers of Purple orchild tree can be used in pickles",
+      "options": "True, False",
+      "answer": "True"
+    },
+    {
+      "quiz_id": 105,
+      "scientific_name": "Tabebuia rosea",
+      "question": "Tabebuia rosea is the national tree of",
+      "options": "Honduras, Guatemala, El Salvador",
+      "answer": "El Salvador"
+    },
+    {
+      "quiz_id": 106,
+      "scientific_name": "Tabebuia rosea",
+      "question": "Tabebuia rosea's can be used in Malaria treatment",
+      "options": "True, False",
+      "answer": "True"
+    },
+    {
+      "quiz_id": 107,
+      "scientific_name": "Silver Oak",
+      "question": "Wood from Silver Oak is used in which instrument",
+      "options": "Ukulele, Guitar, Drum",
+      "answer": "Guitar"
+    },
+    {
+      "quiz_id": 108,
+      "scientific_name": "Silver Oak",
+      "question": "Silver Oak's is harmful as it contains Hydrogen Cyanide",
+      "options": "True, False",
+      "answer": "True"
+    },
+    {
+      "quiz_id": 109,
+      "scientific_name": "Diploknema butyracea",
+      "question": "Fat extracted from Diploknema butyracea's seeds is used in cooking",
+      "options": "True, False",
+      "answer": "True"
+    },
+    {
+      "quiz_id": 110,
+      "scientific_name": "Diploknema butyracea",
+      "question": "Diploknema butyracea has significant cultural associations in Nepal",
+      "options": "True, False",
+      "answer": "True"
+    },
+    {
+      "quiz_id": 111,
+      "scientific_name": "Haldu",
+      "question": "What part of Haldu acts as antiseptic?",
+      "options": "Leaves, fruit, flowers, Bark",
+      "answer": "Bark"
+    },
+    {
+      "quiz_id": 112,
+      "scientific_name": "Haldu",
+      "question": "Haldu flowers in",
+      "options": "June-August, September-November, April-June,March-May",
+      "answer": "June-August"
+    },
+    {
+      "quiz_id": 113,
+      "scientific_name": "Cannon-ball tree",
+      "question": "Cannon-ball tree is used in which temples",
+      "options": "Hindu, Buddhist",
+      "answer": "Hindu"
+    },
+    {
+      "quiz_id": 114,
+      "scientific_name": "Cannon-ball tree",
+      "question": "Cannon-ball tree are called so because the flowers are spherical",
+      "options": "True, False",
+      "answer": "False"
+    },
+    {
+      "quiz_id": 115,
+      "scientific_name": "Flame of the forest",
+      "question": "Flame of the forest is called so because of it's bright red fruit",
+      "options": "True, False",
+      "answer": "False"
+    },
+    {
+      "quiz_id": 116,
+      "scientific_name": "Flame of the forest",
+      "question": "Flowers of Flame of the forest were used to make colors for which festival?",
+      "options": "Diwali, Dusshera, Pongal, Holi",
+      "answer": "Holi"
+    },
+    {
+      "quiz_id": 117,
+      "scientific_name": "Peacock chaste tree",
+      "question": "Peacock chaste tree flowers in ",
+      "options": "April-May, June-July, August-September",
+      "answer": "April-May"
+    },
+    {
+      "quiz_id": 118,
+      "scientific_name": "Peacock chaste tree",
+      "question": "Bark is a useful part of Peacock chaste tree",
+      "options": "True, False",
+      "answer": "False"
+    },
+    {
+      "quiz_id": 119,
+      "scientific_name": "Indian Tupil tree",
+      "question": "Indian Tupil tree's wood is used in the making of which instrument?",
+      "options": "Hourglass drum, Guitar, Maracas, Drum sticks",
+      "answer": "Hourglass drum"
+    },
+    {
+      "quiz_id": 120,
+      "scientific_name": "Indian Tupil tree",
+      "question": "Flower of Indian Tupil tree played a part in which country's independence movement?",
+      "options": "Singapore, Malaysia, Sri Lanka, Indonesia",
+      "answer": "Sri Lanka"
+    },
+    {
+      "quiz_id": 121,
+      "scientific_name": "Terminalia arjuna",
+      "question": "In ancient times, Terminalia arjuna was used in treating",
+      "options": "Lungs, Kidneys, Heart, Liver",
+      "answer": "Liver"
+    },
+    {
+      "quiz_id": 122,
+      "scientific_name": "Terminalia arjuna",
+      "question": "Terminalia arjuna is a common avenue tree",
+      "options": "True, False",
+      "answer": "True"
+    },
+    {
+      "quiz_id": 123,
+      "scientific_name": "Sausage tree",
+      "question": "The dried fruit of Sausage tree is used to make an alcoholic drink",
+      "options": "True, False",
+      "answer": "True"
+    },
+    {
+      "quiz_id": 124,
+      "scientific_name": "Sausage tree",
+      "question": "The planting site of Sausage tree should be chosen carefully because",
+      "options": "The CO2 release can be harmful, It's falling fruit is dangerous",
+      "answer": "It's falling fruit is dangerous"
+    },
+    {
+      "quiz_id": 125,
+      "scientific_name": "Gmelina arborea",
+      "question": "The royal thrones from which country are carved from Gmelina arborea",
+      "options": "Thailand, Japan, Myanmar, Indonesia",
+      "answer": "Myanmar"
+    },
+    {
+      "quiz_id": 126,
+      "scientific_name": "Gmelina arborea",
+      "question": "Gmelina arborea's leaves have medicinal properties",
+      "options": "True, False",
+      "answer": "False"
     }
-  ]
+]
