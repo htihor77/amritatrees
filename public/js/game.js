@@ -137,6 +137,9 @@ async function initMap() {
   });
   
   
+  
+  
+  
   let locationUpdateRate = 5;
   let updateTick = 0
   const loop = () => {
@@ -245,6 +248,7 @@ function measureDistance(lat1, lon1, lat2, lon2){  // generally used geo measure
     var d = R * c;
     return d * 1000; // meters
 }
+
 
 
 
