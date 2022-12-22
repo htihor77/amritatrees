@@ -21,12 +21,7 @@ function closePrompt(){
 }
 
 async function initMap( command ) {
-  
-  if( command.key == "test" ){
-    console.log("it worked!!");
-    return;
-  }
-  
+
   const tree_icon_url = "https://cdn.discordapp.com/attachments/1027927070191403189/1039163926702719086/qmark64.png";
   const shadow_url = "https://www.transparentpng.com/download/shadow/iuqEeA-shadow-png-pic-controlled-drugs-cabinets-from-pharmacy.png";
   let map = new google.maps.Map(document.getElementById("map"),{center: { lat: 10.900016808568687, lng: 76.9028589289025 },zoom: 20,mapId: "661dd2cc98d8e9e2",mapTypeId: 'satellite',});
@@ -165,6 +160,7 @@ async function initMap( command ) {
           body: JSON.stringify(pos),
         });
       }
+      
     });}
     
     const date = new Date();
@@ -176,24 +172,32 @@ async function initMap( command ) {
     hrs = hrs > 9 ? hrs : "0" + hrs;
     mins = mins > 9 ? mins : "0" + mins;
     
-    // document.querySelector(".navbar .textDiv").innerHTML = `
-    //   <p>${day}</p>
-    //   <p>${hrs}${mins}${suffix}</p>
-    // `
-    
     document.querySelector(".navbar .textDiv p.day").innerHTML = day
     document.querySelector(".navbar .textDiv p.time .hrs").innerHTML = hrs
     document.querySelector(".navbar .textDiv p.time .mins").innerHTML = mins + "" + suffix;
     
   }
   
-  const currPosMarker = new google.maps.Marker({
-    position: { lat: 10.900016808568687, lng: 76.9028589289025 },map,
+  const currPosMarker = new google.maps.Marker({position: { lat: 10.900016808568687, lng: 76.9028589289025 },map,
     icon: "https://cdn.glitch.global/9d67ff5c-524b-467b-aa2f-2cb422728542/currPosMarker.png?v=1661892594255",
-    // position: google.maps.ControlPosition.TOP_CENTER,
   });
  
   setInterval(loop,1000);
+  
+  if( command ){
+    const key = command.key;
+    if( key == "test" ){
+      console.log("it worked!!");
+      map.setCenter( { lat: 10.900016808568687, lng: 76.9028589289025 } )
+    }
+    else if( key == "marker" ){
+      
+    }
+    
+    
+    return;
+  }
+  
 }
 
 window.initMap = initMap;
