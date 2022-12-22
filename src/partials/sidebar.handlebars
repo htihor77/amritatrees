@@ -30,7 +30,7 @@
         <div><span class="material-symbols-rounded" style="transform:translateY(3px);">volume_up</span> Sounds</div>
         <div>
           <label class="switch">
-            <input id="soundCB" type="checkbox" checked>
+            <input id="soundCB" type="checkbox" checked onclick="toggleSwitchClicked()">
             <span class="slider round"></span>
           </label>
         </div>
@@ -40,7 +40,7 @@
         <div><span class="material-symbols-rounded" style="transform:translateY(3px);">notifications</span> Notifications</div>
         <div>
           <label class="switch">
-            <input type="checkbox" disabled>
+            <input type="checkbox" onclick="toggleSwitchClicked()">
             <span class="slider round"></span>
           </label>
         </div>
@@ -51,7 +51,7 @@
         <div><span class="material-symbols-rounded" style="transform:translateY(3px);">person_pin_circle</span> Live Location</div>
         <div>
           <label class="switch">
-            <input type="checkbox" checked id="livelocationCB">
+            <input type="checkbox" checked id="livelocationCB" onclick="toggleSwitchClicked()">
             <span class="slider round"></span>
           </label>
         </div>
@@ -62,7 +62,7 @@
         <div><span class="material-symbols-rounded" style="transform:translateY(3px);">my_location</span> dev</div>
         <div>
           <label class="switch">
-            <input type="checkbox" id="devCB">
+            <input type="checkbox" id="devCB" onclick="toggleSwitchClicked()">
             <span class="slider round"></span>
           </label>
         </div>

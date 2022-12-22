@@ -1,6 +1,6 @@
 const treeSound = new Audio("https://cdn.discordapp.com/attachments/1055426492659675167/1055434259067846706/tree_rustling.mp3");
-const celebrateSnd = new Audio("https://cdn.discordapp.com/attachments/1055426492659675167/1055427357340614676/celebrate.mp3");
-const deniedSnd = new Audio("https://cdn.discordapp.com/attachments/1055426492659675167/1055428871836684359/denied.mp3")
+const celebrateSnd = new Audio("https://cdn.discordapp.com/attachments/1055426492659675167/1055608351100252330/celebrate.wav");
+const deniedSnd = new Audio("https://cdn.discordapp.com/attachments/1055426492659675167/1055608574967038032/denied.wav")
 
 function createUserTopbar(map){
   const div = document.createElement("div");
