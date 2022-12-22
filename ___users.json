@@ -5,7 +5,7 @@
     "username":"nandhu",
     "password":"pass",
     "session_id":"",
-    "points":0,
+    "points":10,
     "collected":0,
     "lat":0,
     "lng":0
@@ -16,8 +16,8 @@
     "username":"root",
     "password":"root",
     "session_id":"",
-    "points":9999999999,
-    "collected":8989898989,
+    "points":9999,
+    "collected":0,
     "lat":99.9999999,
     "lng":99.9999999
   }

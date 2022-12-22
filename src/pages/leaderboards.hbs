@@ -217,11 +217,13 @@ h1 a{
     </div>
   </div> -->
 
+    
   <div class="main">
+    <hr><br>
     {{#each points}}
     
     <div class="user">
-      <div  style="display:flex;justify-content: center;align-items: center;font-size:2rem;" class="indices"> {{@index}} </div>
+      <div  style="display:flex;justify-content: center;align-items: center;font-size:2rem;background-size: contain;font-weight:700;border-radius: 50%;" class="indices"> {{@index}} </div>
       <div class="pfp"><img src="https://as2.ftcdn.net/v2/jpg/03/49/49/79/1000_F_349497933_Ly4im8BDmHLaLzgyKg2f2yZOvJjBtlw5.jpg"></div>
       <div class="details">
         
@@ -238,6 +240,9 @@ h1 a{
     </div>
     {{/each}}
     
+    <br><hr>
+    
+    
   </div>
     
   </div>
@@ -249,11 +254,11 @@ window.addEventListener("DOMContentLoaded", async ()=>{
   console.log("page loaded");
   document.querySelectorAll(".indices").forEach(item => {
     let val = Number(item.innerText);
-    item.innerText = val + 1;
+    item.innerText = val > 2 ? val + 1 : "";
     
     if(val == 0){item.style.backgroundImage = "url('https://cdn.discordapp.com/attachments/1027927070191403189/1055592312077561876/first128.png')";}
     if(val == 1){item.style.backgroundImage = "url('https://cdn.discordapp.com/attachments/1027927070191403189/1055592401567228074/second128.png')";}
-    if(val == 2){item.style.backgroundImage = "url('https://cdn.discordapp.com/attachments/1027927070191403189/1055592312077561876/first128.png')";}
+    if(val == 2){item.style.backgroundImage = "url('https://cdn.discordapp.com/attachments/1027927070191403189/1055592427450269786/third128.png')";}
     
   });
 });
