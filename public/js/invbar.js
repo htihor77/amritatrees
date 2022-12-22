@@ -30,6 +30,9 @@ async function fetchInventoryItems(){
   
   const unlocked = respdata.unlocked;
   const locked = respdata.locked;
+  
+  $("#CardsCollected").innerText = unlocked.length + "/" + unlocked.length + 
+  
   const old_unlocked = JSON.parse(localStorage.getItem("inventoryData")) || [];
   localStorage.setItem("inventoryData", JSON.stringify(unlocked) );
   
@@ -56,7 +59,7 @@ async function fetchInventoryItems(){
     card.style.setProperty("--theme-color","#f9c04d");
     card.innerHTML = `
               <!-- <div class="img"><img src="${e.url}"></div> -->
-              <div class="img"><img src="https://cdn.discordapp.com/attachments/1027927070191403189/1039165618617860146/betterTree.png"></div>
+              <div class="img"><img src="https://cdn.discordapp.com/attachments/1027927070191403189/1055601596609859706/betterTree_tinted.png"></div>
               <div class="label">${e.scientific_name}</div>`
     
     

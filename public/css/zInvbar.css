@@ -123,6 +123,22 @@
 
 
 
+#CardsCount{
+  position:absolute;
+  height:2rem;
+  font-size:2rem;
+  line-height:2rem;
+  font-weight:800;
+  -webkit-text-stroke:2px black;
+  right:15px;bottom:15px;
+  
+  padding-right:35px;
+  background-image: url("https://cdn.discordapp.com/attachments/1027927070191403189/1039165618617860146/betterTree.png");
+  background-size: 30px 32px;
+  background-position: 100% 0px;
+  background-repeat:no-repeat;
+}
+
 
 
 
