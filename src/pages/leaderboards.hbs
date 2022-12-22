@@ -111,7 +111,19 @@ h1 a{
 .main{
   height:100%;
 }
+.main .user{
+  display:grid;
+  width:100%;
+  height:100px;
+  background-color:black;
   
+  grid-template-columns: 
+}
+  
+.main .user .pfp{
+  border-radius:50%;
+  border:solid 3px white;  
+}
   
 </style>  
 </head>
@@ -174,10 +186,11 @@ h1 a{
   </div> -->
 
   <div class="main">
+    {{#each points}}
     
     <div class="user">
-      <div>   </div>
-      <div>   </div>
+      <div> 1 </div>
+      <div><img class="pfp" src="https://as2.ftcdn.net/v2/jpg/03/49/49/79/1000_F_349497933_Ly4im8BDmHLaLzgyKg2f2yZOvJjBtlw5.jpg"></div>
       <div>
         
         <div>
@@ -190,6 +203,7 @@ h1 a{
         
       </div>
     </div>
+    {{/each}}
     
   </div>
     
