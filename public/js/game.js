@@ -21,10 +21,31 @@ function closePrompt(){
 }
 
 async function initMap( command ) {
-
+  let map;
+  
+  if( command ){
+    const key = command.key;
+    if( key == "test" ){
+      console.log("it worked!!");
+      map.setCenter( { lat: 10.900016808568687, lng: 76.9028589289025 } )
+    }
+    else if( key == "mapSettings1" ){
+      map.setOptions({zoomControl: false, disableDoubleClickZoom: true,disableDefaultUI: true,});
+    }
+    else if( key == "mapSettings2" ){
+      map.setOptions({zoomControl: false, disableDoubleClickZoom: true,disableDefaultUI: true,draggable: false, scrollwheel: false, });
+    }
+    else if( key == "check" ){
+      console.log(map);
+    }
+    
+    return;
+  }
+  
+  
   const tree_icon_url = "https://cdn.discordapp.com/attachments/1027927070191403189/1039163926702719086/qmark64.png";
   const shadow_url = "https://www.transparentpng.com/download/shadow/iuqEeA-shadow-png-pic-controlled-drugs-cabinets-from-pharmacy.png";
-  let map = new google.maps.Map(document.getElementById("map"),{center: { lat: 10.900016808568687, lng: 76.9028589289025 },zoom: 20,mapId: "661dd2cc98d8e9e2",mapTypeId: 'satellite',});
+  map = new google.maps.Map(document.getElementById("map"),{center: { lat: 10.900016808568687, lng: 76.9028589289025 },zoom: 20,mapId: "661dd2cc98d8e9e2",mapTypeId: 'satellite',});
   
   
   map.setOptions({zoomControl: false, disableDoubleClickZoom: true,disableDefaultUI: true,
@@ -183,20 +204,6 @@ async function initMap( command ) {
   });
  
   setInterval(loop,1000);
-  
-  if( command ){
-    const key = command.key;
-    if( key == "test" ){
-      console.log("it worked!!");
-      map.setCenter( { lat: 10.900016808568687, lng: 76.9028589289025 } )
-    }
-    else if( key == "marker" ){
-      
-    }
-    
-    
-    return;
-  }
   
 }
 

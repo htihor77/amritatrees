@@ -71,16 +71,7 @@ fastify.get("/", async (request, reply) => {
   }
   return reply.view("/src/pages/index.hbs", {loginBtn: loginBtn, signIn: { msg: signIn_msg, url: signIn_url } });
 });
-// fastify.get("/map", async (request, reply) => {
-//   const user = request.session.user;
-//   const data = await db.runQuery1(`SELECT * FROM Users WHERE uid=${user.uid}`)
-  
-//   const User = {
-//     username:data[0].username,
-//     points:data[0].points
-//   }
-// return reply.view("/src/pages/map.hbs", { user: User });
-// });
+
 fastify.get("/game", async (request, reply) => {
   const user = request.session.user;
   const data = await db.runQuery1(`SELECT * FROM Users WHERE uid=${user.uid}`)  
@@ -230,35 +221,8 @@ fastify.get("/repository", async (request, reply) => {
   return reply.view("/src/pages/repository.hbs", { trees: data } );
 });
 
-fastify.get("/db", async (request, reply) => {
-  const table = request.query.table;
-  
-  const data = await db.runQuery1(`SELECT * FROM ${table}`);
-  return reply.send(data)
-});
 
 
-fastify.get("/test", async (request, reply) => {
-  // SELECT tree_name,url FROM A_TREE_butes WHERE tree_name NOT IN (SELECT tree_name FROM Inventory WHERE username='${user.username}')
-  const data = await db.runQuery1("SELECT * FROM A_TREE_butes")
-  // const data = await db.runQuery1("SELECT * FROM Trees WHERE scientific_name IN (SELECT DISTINCT scientific_name FROM Quiz)")
-  // const data = await db.runQuery1("SELECT * FROM Trees INNER JOIN A_TREE_butes ON Trees.scientific_name = A_TREE_butes.scientific_name")
-  // const data = await db.runQuery1(`SELECT A_TREE_butes.scientific_name FROM A_TREE_butes,Trees WHERE A_TREE_butes.scientific_name=Trees.scientific_name`)
-  // const data = await db.runQuery1(`SELECT * FROM Trees WHERE scientific_name IN (SELECT DISTINCT A_TREE_butes.scientific_name FROM A_TREE_butes,Trees WHERE A_TREE_butes.scientific_name=Trees.scientific_name)`)
-  
-  // const data = await db.runQuery1(`SELECT DISTINCT A_TREE_butes.scientific_name FROM A_TREE_butes,Trees WHERE A_TREE_butes.scientific_name=Trees.scientific_name`)
-  // const data = await db.runQuery1(``)
-  
-  return reply.send(data).type("json")
-  // return reply.view("/src/pages/test.hbs", { } );
-});
-
-
-
-// fastify.get("/check", async (request, reply) => {
-//   utils.send_email_text("nandhakumar2058@gmail.com","email subject", "email content stuff, hello!");
-//   return reply.send("check");
-// });
 
 fastify.post("/checkinglocation", async (request, reply) => {
   
@@ -356,6 +320,25 @@ fastify.post("/setuserlocation", async (request, reply) => {
   
   await db.runQuery2(`UPDATE Users SET lat=${lat}, lng=${lng} WHERE uid=${userdata.uid}`);
   return reply.type("json").send({"status": "OK"});
+});
+
+
+
+
+
+
+
+
+fastify.get("/db", async (request, reply) => {
+  const table = request.query.table;
+  const data = await db.runQuery1(`SELECT * FROM ${table}`);
+  return reply.send(data)
+});
+
+
+fastify.get("/test", async (request, reply) => {
+  const data = await db.runQuery1("SELECT * FROM A_TREE_butes")  
+  return reply.send(data).type("json")
 });
 
 fastify.listen(

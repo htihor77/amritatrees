@@ -1,7 +1,16 @@
 function toggleInventorybar(){
   $("#invbar").classList.toggle('active');
   
-  if ( $("#invbar").classList.contains("active") ) fetchInventoryItems();
+  if ( $("#invbar").classList.contains("active") ) {
+    
+    const snd = new Audio("file.wav");
+    snd.play();
+    
+    fetchInventoryItems();
+  } else {
+    
+  }
+  
 }
 
 
