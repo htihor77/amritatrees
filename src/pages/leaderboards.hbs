@@ -119,6 +119,7 @@ h1 a{
 }
 .main .user{
   --h: 50px;
+  --m: 10px;
   display:grid;
   width:100%;
   height: var(--h);
@@ -126,7 +127,7 @@ h1 a{
   
   grid-template-columns: var(--h) var(--h) auto;
   column-gap:10px;
-  margin-bottom:10px;
+  margin-bottom:var(--m);
 }
 .main .user .pfp{
   height: var(--h);
@@ -155,6 +156,7 @@ h1 a{
   justify-content: center;
   overflow:hidden;
 }
+  
 </style>  
 </head>
 <body>
@@ -219,7 +221,7 @@ h1 a{
     {{#each points}}
     
     <div class="user">
-      <div  style="display:flex;justify-content: center;align-items: center;font-size:2rem;"> {{@index}} </div>
+      <div  style="display:flex;justify-content: center;align-items: center;font-size:2rem;" class="indices"> {{@index}} </div>
       <div class="pfp"><img src="https://as2.ftcdn.net/v2/jpg/03/49/49/79/1000_F_349497933_Ly4im8BDmHLaLzgyKg2f2yZOvJjBtlw5.jpg"></div>
       <div class="details">
         
@@ -240,4 +242,17 @@ h1 a{
     
   </div>
 </body>
+  
+<script>
+  
+window.addEventListener("DOMContentLoaded", async ()=>{
+  console.log("page loaded");
+  document.querySelectorAll(".indices").forEach(item => {
+    let val = Number(item.innerText);
+    item.innerText = val + 1;
+  });
+});
+</script>
+  
+  
 </html>
