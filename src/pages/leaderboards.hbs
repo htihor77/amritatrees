@@ -139,10 +139,10 @@ h1 a{
   width:100%;
   display:grid;
   grid-template-columns:2fr 1fr;
-  background-color:yellowgreen;
+  background-image:linear-gradient(25deg,#f9c04d,#fffa7c);
   border-radius:15px;
   padding-left:8px;
-  padding-right:5px;
+  padding-right:8px;
 }
 .main .user .details > div{
   display:flex;
@@ -215,16 +215,16 @@ h1 a{
     {{#each points}}
     
     <div class="user">
-      <div> 1 </div>
+      <div  style="display:flex;justify-content: center;align-items: center;font-size:2rem;"> {{@index}} </div>
       <div class="pfp"><img src="https://as2.ftcdn.net/v2/jpg/03/49/49/79/1000_F_349497933_Ly4im8BDmHLaLzgyKg2f2yZOvJjBtlw5.jpg"></div>
       <div class="details">
         
         <div>
           <span>{{this.username}}</span>
-          <span>  </span>
+          <span></span>
         </div>
         
-        <div>
+        <div style="text-align:right;">
             {{this.points}}
         </div>
         
