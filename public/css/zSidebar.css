@@ -74,10 +74,10 @@
 #sidebar .defaultOptions{
   --optionsSize: 1.5rem;
 /*   height: 110px; */
-  height: 30px;
+  height: 60px;
   display: grid;
   align-content: center;
-/*   grid-template-rows: repeat(3,var(--optionsSize)); */
+  grid-template-rows: repeat(2,var(--optionsSize));
   row-gap:10px;
   letter-spacing: 2px;
 
