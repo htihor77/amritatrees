@@ -139,9 +139,9 @@ fastify.get("/signup", async (request, reply) => {
   return reply.view("/src/pages/signup.hbs", {err:""});
 });
 fastify.post("/signup", async (request, reply) => {
-  let email = request.body.email;
-  let username = request.body.username;
-  const password = request.body.password;
+  let email = request.body.email.trim();
+  let username = request.body.username.trim();
+  const password = request.body.password.trim();
   
   const findEmail = await db.runQuery1(`SELECT * FROM Users WHERE email='${email}'`);
   const findUsername = await db.runQuery1(`SELECT * FROM Users WHERE username='${username}'`);
@@ -157,7 +157,7 @@ fastify.post("/signup", async (request, reply) => {
   }else{
     // new user
     console.log("new user details");
-    await db.runQuery2(`INSERT INTO Users (email,username,password,session_id,points,collected,lat,lng) VALUES ('${email}','${username}','${password}',null,0, 0,null,null)`);
+    await db.runQuery2(`INSERT INTO Users (email,username,password,session_id,points,collected,lat,lng) VALUES ('${email}','${username}','${password}',null,0, 0,10.9,76.9)`);
     return reply.view("/src/pages/login.hbs", {msg:""});
   }
   
