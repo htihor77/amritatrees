@@ -36,6 +36,7 @@ dbWrapper
         await db.run("CREATE TABLE A_TREE_butes (tree_name TEXT PRIMARY KEY, scientific_name TEXT UNIQUE, origin INTEGER, link TEXT, properties TEXT, points INTEGER DEFAULT 10, url TEXT DEFAULT 'https://cdn.discordapp.com/attachments/1027927070191403189/1039165618617860146/betterTree.png')");
         await db.run("CREATE TABLE Quiz(quiz_id INTEGER PRIMARY KEY, scientific_name TEXT, question TEXT, options TEXT, answer TEXT)");
         await db.run("CREATE TABLE Inventory(username TEXT, scientific_name TEXT)");
+        await db.run("CREATE TABLE DisabledTrees(username TEXT, scientific_name TEXT, time INTEGER)");
         
         
         users.forEach(item => {db.run(`INSERT INTO Users (email,verified,username,password,session_id,points,collected,lat,lng) VALUES ('${item.email}', ${item.verified}, '${item.username}', '${item.password}','${item.session_id}',${item.points},${item.collected},${item.lat},${item.lng})`)});
