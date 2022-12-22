@@ -233,7 +233,7 @@ async function submitAnswer(q,ans){
       document.querySelector(".navbar").classList.add("active");
       // msg.innerText = "You unlocked a new tree!" + `(${data.tree})`;
       msg.innerHTML = `<p>You unlocked a new tree!</p>
-      <p>(${data.scientific_name})</p>`;
+      <p>(${data.tree})</p>`;
       
       let pts = Number($(".pointsSpan").innerText.split("points")[0]);
       $(".pointsSpan").innerText = pts + data.points;
@@ -276,6 +276,14 @@ function measureDistance(lat1, lon1, lat2, lon2){  // generally used geo measure
     return d * 1000; // meters
 }
 
-
+function msglog(content){
+  const msg = document.createElement("p");
+  msg.innerHTML = `${content}`;
+  msg.style.textDecoration = "none";
+  $("#actionbar").appendChild(msg)
+  setTimeout( () =>{
+    msg.remove();
+  },5000)
+}
 
 
