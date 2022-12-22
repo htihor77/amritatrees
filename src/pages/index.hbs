@@ -25,6 +25,7 @@ body{
   background-size:170px;
   
   display:flex;
+  flex-direction: column;
 }
 
 nav{
@@ -77,12 +78,12 @@ body .container{
   
 .container > div{
   margin-bottom:10px;
+  background-color: white;
 }
   
-  .box{
-    display:inline;
-  }
-  
+.container > div.half{
+  width:50%;
+}
 </style>
 </head>
 <body>
@@ -101,22 +102,13 @@ body .container{
   </nav>
   
   <div class="container">
-    <div style="width:100%;padding:10px;background-color:white;">
+<!--       <img src="https://intranet.cb.amrita.edu/sites/default/files/Intranet-Logo_1.png" style="width:100%;"> -->
       
-      <div class="box">
-      <img src="https://intranet.cb.amrita.edu/sites/default/files/Intranet-Logo_1.png" style="width:100%;">
-      </div>
-      
-      <div class="box">
-        <img src="https://cdn.discordapp.com/attachments/1027927070191403189/1055253800941789234/campus.png" width="50%">        
-      </div>
-      
-      <div class="box">
-        <p>Who doesn’t love trees?</p>
-        <p>Trees are a big part of our lives, and Amrita is full of them. This is an interactive online repository of all the trees, our contribution to one of the best things about this campus.</p>
-      </div>
-      
-    </div>
+    <div>a</div>
+    <div class="half">b</div>
+    <div class="half">e</div>
+    <div>c</div>
+    <div>d</div>
 
   </div>
   
