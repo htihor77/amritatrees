@@ -20,7 +20,13 @@ function closePrompt(){
   },200)
 }
 
-async function initMap() {
+async function initMap( command ) {
+  
+  if( command.key == "test" ){
+    console.log("it worked!!");
+    return;
+  }
+  
   const tree_icon_url = "https://cdn.discordapp.com/attachments/1027927070191403189/1039163926702719086/qmark64.png";
   const shadow_url = "https://www.transparentpng.com/download/shadow/iuqEeA-shadow-png-pic-controlled-drugs-cabinets-from-pharmacy.png";
   let map = new google.maps.Map(document.getElementById("map"),{center: { lat: 10.900016808568687, lng: 76.9028589289025 },zoom: 20,mapId: "661dd2cc98d8e9e2",mapTypeId: 'satellite',});
@@ -135,10 +141,7 @@ async function initMap() {
         });
       });
   });
-  
-  
-  
-  
+
   
   let locationUpdateRate = 5;
   let updateTick = 0
