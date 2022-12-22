@@ -250,6 +250,11 @@ window.addEventListener("DOMContentLoaded", async ()=>{
   document.querySelectorAll(".indices").forEach(item => {
     let val = Number(item.innerText);
     item.innerText = val + 1;
+    
+    if(val == 0){item.style.backgroundImage = "url('https://cdn.discordapp.com/attachments/1027927070191403189/1055592312077561876/first128.png')";}
+    if(val == 1){item.style.backgroundImage = "url('https://cdn.discordapp.com/attachments/1027927070191403189/1055592401567228074/second128.png')";}
+    if(val == 2){item.style.backgroundImage = "url('https://cdn.discordapp.com/attachments/1027927070191403189/1055592312077561876/first128.png')";}
+    
   });
 });
 </script>
