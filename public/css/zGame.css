@@ -54,7 +54,10 @@
   }
 }
 
-
+.pointsSpan{
+  font-size:2rem;
+  -webkit-text-stroke:2px black;
+}
 
 
 

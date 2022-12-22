@@ -144,6 +144,14 @@ async function initMap() {
       const latlng = new google.maps.LatLng(pos.lat, pos.lng);currPosMarker.setPosition(latlng);
       let promptOpen = document.querySelector("#userPrompt").classList.contains("active");
       // if ( !promptOpen )  map.setCenter(pos);
+      let liveLocation = $("#livelocationCB").checked || false;
+      if ( liveLocation ) {
+        fetch('./setuserlocation', {
+          method: 'POST',
+          headers: {accept: 'application.json','Content-Type': 'application/json'},
+          body: JSON.stringify(pos),
+        });
+      }
     });}
     
     const date = new Date();

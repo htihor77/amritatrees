@@ -346,6 +346,14 @@ fastify.post("/checkinganswer", async (request, reply) => {
 
 
 
+fastify.post("/setuserlocation", async (request, reply) => {
+    const userdata = request.session.user;
+    const UserArr = await db.runQuery1(`SELECT username,points FROM Users WHERE uid=${userdata.uid}`);
+    const user = UserArr[0];
+  
+  console.log(request.body)
+  
+});
 
 fastify.listen(
   { port: process.env.PORT, host: "0.0.0.0" },

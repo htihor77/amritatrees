@@ -9,7 +9,7 @@
       <div class="profileDiv">
         <div><img src="https://as2.ftcdn.net/v2/jpg/03/49/49/79/1000_F_349497933_Ly4im8BDmHLaLzgyKg2f2yZOvJjBtlw5.jpg" width="80%" style="border-radius:50%;border:solid 3px white;"></div>
         <div style="width:100%;overflow:hidden;"><span>{{user.username}}</span></div>
-        <div style="width:100%;overflow:hidden;"><span class="pointsSpan">{{user.points}} </span> <img src="https://cdn.discordapp.com/attachments/1027927070191403189/1055240437943779408/mapel_points.jpg" height="24px" width="24px" style="mix-blend-mode: color-dodge;"> </div>
+        <div style="width:100%;overflow:hidden;"><span class="pointsSpan">{{user.points}} </span> <img src="https://cdn.discordapp.com/attachments/1027927070191403189/1055240437943779408/mapel_points.jpg" height="38px" width="38px" style="mix-blend-mode: color-dodge;"> </div>
       </div>
 
       <div class="defaultOptions">
@@ -46,6 +46,18 @@
         </div>
       </div>
       <hr>
+      
+      <div class="toggleable">
+        <div><span class="material-symbols-rounded" style="transform:translateY(3px);">person_pin_circle</span> Live Location</div>
+        <div>
+          <label class="switch">
+            <input type="checkbox" checked id="livelocationCB">
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+      <hr>
+      
       <div>
         <div><span class="material-symbols-rounded" style="transform:translateY(3px);">info</span><a href="./" style="text-decoration: none;color:inherit">  About our app</a></div>
       </div>
