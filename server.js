@@ -314,7 +314,7 @@ fastify.post("/checkinganswer", async (request, reply) => {
   let true_or_false = false;
   console.log(quiz);
   
-  if( quiz.answer == ans ){
+  if( quiz.answer.trim() == ans.trim() ){
     console.log("answer is correct");
     true_or_false = true;
     
@@ -347,12 +347,13 @@ fastify.post("/checkinganswer", async (request, reply) => {
 
 
 fastify.post("/setuserlocation", async (request, reply) => {
-    const userdata = request.session.user;
-    const UserArr = await db.runQuery1(`SELECT username,points FROM Users WHERE uid=${userdata.uid}`);
-    const user = UserArr[0];
+  const userdata = request.session.user;
   
-  console.log(request.body)
+  const lat = request.body.lat;
+  const lng = request.body.lng
   
+  await db.runQuery2(`UPDATE Users SET lat=${lat}, lng=${lng} WHERE uid=${userdata.uid}`);
+  return reply.type("json").send({"status": "OK"});
 });
 
 fastify.listen(

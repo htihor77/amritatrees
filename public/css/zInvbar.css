@@ -70,6 +70,21 @@
 
 /* #################################### */
 
+#invbar.active .card{
+  animation: twirl 200ms forwards;
+  transition: all 200ms;
+}
+
+@keyframes twirl{
+  0%{
+    transform: rotateY(10px);
+  }
+  100%{
+    transform: rotateY(0px);
+  }
+}
+
+
 .card{
     --theme-color: yellowgreen;
     --w: 200px;
