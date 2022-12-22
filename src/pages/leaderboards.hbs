@@ -9,7 +9,13 @@
   <link rel="stylesheet" href="./css/style.css">
   
 <style>
-
+  
+body{
+  position:relative;
+  background-image:url("https://www.onlygfx.com/wp-content/uploads/2019/06/6-leaf-pattern-3-1.png");
+  background-repeat: repeat;
+  background-size:170px;
+}
 /* Create two equal columns that floats next to each other */
 .column {
   float: left;
@@ -84,13 +90,14 @@ h1 a{
 </style>
 </head>
 <body>
+  <div id="container">
+    
   <h1><span>
 <!--     <a href="./"> -->
       <i class="fas fa-arrow-left" onclick="history.back()"></i>
 <!--     </a> -->
     </span>LEADERBOARDS<span></span></h1>
-  
-<div class="row">
+  <div class="row">
   <div class="column">
     
   
@@ -137,10 +144,9 @@ h1 a{
       {{/each}}
   </table>
     
+    </div>
   </div>
-</div>
 
-
+  </div>
 </body>
-  
 </html>
