@@ -145,3 +145,15 @@
   display:grid;
   grid-template-columns: auto min-content;
 }
+
+
+
+
+
+
+
+.pointsSpan{
+  font-size:1.8rem;
+/*   -webkit-text-stroke:2px black; */
+  font-family: "Press Start 2P";
+}

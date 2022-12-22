@@ -135,9 +135,10 @@ async function initMap() {
   });
   
   
-  
+  let locationUpdateRate = 5;
+  let updateTick = 0
   const loop = () => {
-    
+    updateTick += 1
     
     if(navigator.geolocation){navigator.geolocation.getCurrentPosition( (position)=>{
       const pos = {lat: position.coords.latitude,lng: position.coords.longitude,};
@@ -145,7 +146,8 @@ async function initMap() {
       let promptOpen = document.querySelector("#userPrompt").classList.contains("active");
       // if ( !promptOpen )  map.setCenter(pos);
       let liveLocation = $("#livelocationCB").checked || false;
-      if ( liveLocation ) {
+      if ( liveLocation && updateTick == locationUpdateRate) {
+        updateTick -= locationUpdateRate;
         fetch('./setuserlocation', {
           method: 'POST',
           headers: {accept: 'application.json','Content-Type': 'application/json'},
