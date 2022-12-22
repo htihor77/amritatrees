@@ -20,7 +20,8 @@
   left: calc( -1 * var(--sidebarWidth));
   
   display: grid;
-  grid-template-rows: min-content 5.3rem auto;
+/*   grid-template-rows: min-content 5.3rem auto; */
+  grid-template-rows: min-content 3.3rem auto;
   row-gap:25px;
 
 /*   background-color: #2c2e2e; */
