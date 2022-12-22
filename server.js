@@ -318,9 +318,9 @@ fastify.post("/checkinganswer", async (request, reply) => {
     console.log("answer is correct");
     true_or_false = true;
     
-    const val = await db.runQuery1(`SELECT EXISTS(SELECT 1 FROM Inventory WHERE scientific_name='${quiz.scientific_name}' LIMIT 1);`)
+    const val = await db.runQuery1(`SELECT EXISTS(SELECT 1 FROM Inventory WHERE scientific_name='${quiz.scientific_name}' AND username='${user.username}' LIMIT 1);`)
     const available = Object.values(val[0])[0];
-    tree = quiz.tree_name;
+    tree = quiz.scientific_name;
     console.log("available:",available)
     if( available == "0" ){
       console.log("add tree into user inventory");

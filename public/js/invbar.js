@@ -45,6 +45,9 @@ async function fetchInventoryItems(){
               <div class="img"><img src="${e.url}"></div>
               <div class="label">${e.scientific_name}</div>`
     
+    
+    card.onclick = cardClicked(e.scientific_name)
+    
     $(".cards-container").appendChild(card);
   })
   
@@ -83,7 +86,9 @@ function getDifference(array1, array2) {
   });
 }
 
-
+function cardClicked(){
+  
+}
 
 
 
