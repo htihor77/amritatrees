@@ -94,9 +94,10 @@ async function initMap( command ) {
         
         if ($("#soundCB").checked) treeSound.play();
         
+        
         const pos2 = allMarkers[id]
         console.log(pos2)
-        const DISTANCE_THRESHOLD = 10000000;
+        const DISTANCE_THRESHOLD = $("#devCB").checked ? 10000000 : 100;
         userPrompt.classList.add("active");
         document.querySelector(".navbar").classList.remove("active");
         
