@@ -25,10 +25,12 @@ async function initMap() {
   const shadow_url = "https://www.transparentpng.com/download/shadow/iuqEeA-shadow-png-pic-controlled-drugs-cabinets-from-pharmacy.png";
   let map = new google.maps.Map(document.getElementById("map"),{center: { lat: 10.900016808568687, lng: 76.9028589289025 },zoom: 20,mapId: "661dd2cc98d8e9e2",mapTypeId: 'satellite',});
   
+  
   map.setOptions({zoomControl: false, disableDoubleClickZoom: true,disableDefaultUI: true,
     // draggable: false, 
     // scrollwheel: false, 
   });
+  
   
   const allMarkers = [];
   
@@ -144,7 +146,10 @@ async function initMap() {
       const pos = {lat: position.coords.latitude,lng: position.coords.longitude,};
       const latlng = new google.maps.LatLng(pos.lat, pos.lng);currPosMarker.setPosition(latlng);
       let promptOpen = document.querySelector("#userPrompt").classList.contains("active");
-      // if ( !promptOpen )  map.setCenter(pos);
+    
+      let ifSnapCenter = $("#snapCenterCB").checked || false;
+      if ( !promptOpen && ifSnapCenter )  map.setCenter(pos);
+
       let liveLocation = $("#livelocationCB").checked || false;
       if ( liveLocation && updateTick == locationUpdateRate) {
         updateTick -= locationUpdateRate;
