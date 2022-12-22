@@ -92,7 +92,7 @@ async function initMap( command ) {
       marker.addListener("click", () => {
         console.log("marker clicked");
         
-        treeSound.play();
+        if ($("#soundCB").checked) treeSound.play();
         
         const pos2 = allMarkers[id]
         console.log(pos2)
@@ -238,7 +238,7 @@ async function submitAnswer(q,ans){
       let pts = Number($(".pointsSpan").innerText.split("points")[0]);
       $(".pointsSpan").innerText = pts + data.points;
       
-      celebrateSnd.play();
+      if ($("#soundCB").checked) celebrateSnd.play();
       
       
     } else {
@@ -249,7 +249,7 @@ async function submitAnswer(q,ans){
       msg.innerText = "Incorrect answer ☹!";
       document.querySelector("#mapContainer").classList.add("shake");
       
-      deniedSnd.play();
+      if ($("#soundCB").checked) deniedSnd.play();
       
       setTimeout( () =>{document.querySelector("#mapContainer").classList.remove("shake");},500);
     

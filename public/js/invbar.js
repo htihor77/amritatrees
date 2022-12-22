@@ -6,12 +6,12 @@ function toggleInventorybar(){
   
   if ( $("#invbar").classList.contains("active") ) {
     
-    zipperOpenSnd.play();
+    if ($("#soundCB").checked) zipperOpenSnd.play();
     
     fetchInventoryItems();
   } else {
     
-    zipperCloseSnd.play();
+    if ($("#soundCB").checked) zipperCloseSnd.play();
     
   }
   
