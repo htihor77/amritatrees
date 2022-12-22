@@ -55,7 +55,8 @@ async function fetchInventoryItems(){
     card.classList = "card";
     card.style.setProperty("--theme-color","#f9c04d");
     card.innerHTML = `
-              <div class="img"><img src="${e.url}"></div>
+              <!-- <div class="img"><img src="${e.url}"></div> -->
+              <div class="img"><img src="https://cdn.discordapp.com/attachments/1027927070191403189/1039165618617860146/betterTree.png"></div>
               <div class="label">${e.scientific_name}</div>`
     
     
@@ -69,7 +70,8 @@ async function fetchInventoryItems(){
     const card = document.createElement("div");
     card.classList = "card";
     card.innerHTML = `
-              <div class="img"><img src="${e.url}"></div>
+              <!-- <div class="img"><img src="${e.url}"></div> -->
+              <div class="img"><img src="https://cdn.discordapp.com/attachments/1027927070191403189/1039165618617860146/betterTree.png"></div>
               <div class="label">${e.scientific_name}</div>`
     
     $(".cards-container").appendChild(card);
@@ -80,7 +82,7 @@ async function fetchInventoryItems(){
     card.classList = "card";
     card.style.setProperty("--theme-color","white");
     card.innerHTML = `
-              <div class="img"><img src="${e.url}" style="filter: grayscale(100%);"></div>
+              <div class="img"><img src="https://cdn.discordapp.com/attachments/1027927070191403189/1039165618617860146/betterTree.png" style="filter: grayscale(100%);"></div>
               <div class="label">???</div>`
     
     $(".cards-container").appendChild(card);
