@@ -334,7 +334,9 @@ fastify.post("/checkinganswer", async (request, reply) => {
     }
     
   }else{
-    console.log("add cooldown for that user for",quiz.tree_name);
+    console.log("add cooldown for that user for",quiz.scientific_name);
+    // DisabledTrees
+    await db.runQuery2(`INSERT INTO DisabledTrees (username, scientific_name, time) VALUES ('${user.username}', '${quiz.scientific_name}', ${Date.now()})`)
   }
   
   return reply.type("json").send({"correct": true_or_false, "tree": tree, "points": points});
