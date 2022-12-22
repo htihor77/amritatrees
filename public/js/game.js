@@ -1,6 +1,6 @@
 const treeSound = new Audio("https://cdn.discordapp.com/attachments/1055426492659675167/1055434259067846706/tree_rustling.mp3");
 const celebrateSnd = new Audio("https://cdn.discordapp.com/attachments/1055426492659675167/1055427357340614676/celebrate.mp3");
-const deniedSnd = new Audio("")
+const deniedSnd = new Audio("https://cdn.discordapp.com/attachments/1055426492659675167/1055428871836684359/denied.mp3")
 
 function createUserTopbar(map){
   const div = document.createElement("div");
@@ -238,6 +238,9 @@ async function submitAnswer(q,ans){
       let pts = Number($(".pointsSpan").innerText.split("points")[0]);
       $(".pointsSpan").innerText = pts + data.points;
       
+      celebrateSnd.play();
+      
+      
     } else {
       console.log("not correct");
       navigator.vibrate([250,50,250]);
@@ -245,6 +248,9 @@ async function submitAnswer(q,ans){
       document.querySelector(".navbar").classList.add("active");
       msg.innerText = "Incorrect answer ☹!";
       document.querySelector("#mapContainer").classList.add("shake");
+      
+      deniedSnd.play();
+      
       setTimeout( () =>{document.querySelector("#mapContainer").classList.remove("shake");},500);
     
     }

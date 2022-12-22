@@ -1,13 +1,17 @@
+const zipperOpenSnd = new Audio("https://cdn.discordapp.com/attachments/1055426492659675167/1055434142420054016/zipper_open.mp3")
+const zipperCloseSnd = new Audio("https://cdn.discordapp.com/attachments/1055426492659675167/1055434191090761798/zipper_close.mp3")
+
 function toggleInventorybar(){
   $("#invbar").classList.toggle('active');
   
   if ( $("#invbar").classList.contains("active") ) {
     
-    const snd = new Audio("file.wav");
-    snd.play();
+    zipperOpenSnd.play();
     
     fetchInventoryItems();
   } else {
+    
+    zipperCloseSnd.play();
     
   }
   
