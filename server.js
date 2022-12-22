@@ -157,7 +157,7 @@ fastify.post("/signup", async (request, reply) => {
   }else{
     // new user
     console.log("new user details");
-    await db.runQuery2(`INSERT INTO Users (email,username,password,session_id,points,collected,lat,long) VALUES ('${email}','${username}','${password}',null,0, 0,null,null)`);
+    await db.runQuery2(`INSERT INTO Users (email,username,password,session_id,points,collected,lat,lng) VALUES ('${email}','${username}','${password}',null,0, 0,null,null)`);
     return reply.view("/src/pages/login.hbs", {msg:""});
   }
   
