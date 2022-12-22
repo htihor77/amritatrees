@@ -183,17 +183,8 @@ fastify.get("/inventory", async (request, reply) => {
 });
 
 fastify.get("/treedata", async (request, reply) => {
-  // const data = await db.runQuery1(`SELECT DISTINCT A_TREE_butes.tree_name,A_TREE_butes.scientific_name,A_TREE_butes.origin,A_TREE_butes.link,A_TREE_butes.properties,Trees.coords 
-  // FROM Trees,A_TREE_butes
-  // WHERE A_TREE_butes.scientific_name=Trees.tree_name`);
-  
-  // const data = await db.runQuery1(`SELECT DISTINCT * FROM A_TREE_butes, Trees, Quiz WHERE Trees.scientific_name=A_TREE_butes.scientific_name AND Trees.scientific_name=Quiz.scientific_name`);
   const data = await db.runQuery1(`SELECT * FROM Trees WHERE scientific_name IN (SELECT DISTINCT scientific_name FROM Quiz)`);
   
-  // , Quiz
-  // WHERE A_TREE_butes.scientific_name=Quiz.scientific_name`);
-  // WHERE Trees.tree_name LIKE A_TREE_butes.scientific_name OR Trees.tree_name LIKE A_TREE_butes.tree_name `);
-  // console.log(data);
   
   return reply.send(data)
 });
