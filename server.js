@@ -177,6 +177,8 @@ fastify.get("/inventory", async (request, reply) => {
   // params.unlocked = await db.runQuery1(`SELECT Inventory.scientific_name,A_TREE_butes.url FROM Inventory, A_TREE_butes WHERE Inventory.username='${user.username}' AND Inventory.scientific_name=A_TREE_butes.scientific_name`)
   params.unlocked = await db.runQuery1(`SELECT scientific_name FROM Inventory WHERE Inventory.username='${user.username}'`)
   params.locked = await db.runQuery1(`SELECT scientific_name,url FROM A_TREE_butes WHERE scientific_name NOT IN (SELECT scientific_name FROM Inventory WHERE username='${user.username}')`);
+  const maxTrees = await db.runQuery1("SELECT COUNT(DISTINCT scientific_name) FROM Quiz");
+  params.max = maxTrees[0]["COUNT(DISTINCT scientific_name)"]
   
   return request.query.raw
     ? reply.send(params)
@@ -189,7 +191,7 @@ fastify.get("/treedata", async (request, reply) => {
   const user = UserArr[0];
   
   // const data = await db.runQuery1(`SELECT * FROM Trees WHERE scientific_name IN (SELECT DISTINCT scientific_name FROM Quiz)`);
-  const data = await db.runQuery1(`SELECT DISTINCT scientific_name FROM Quiz WHERE WHERE scientific_name IN (SELECT scientific_name FROM Inventory)`);
+  const data = await db.runQuery1(`SELECT * FROM Trees WHERE scientific_name IN (SELECT scientific_name FROM Quiz WHERE scientific_name NOT IN (SELECT scientific_name FROM Inventory WHERE username='${user.username}'))`);
   
   return reply.send(data)
 });
@@ -338,7 +340,7 @@ fastify.get("/test", async (request, reply) => {
   // const data = await db.runQuery1(`SELECT Inventory.scientific_name,A_TREE_butes.url FROM Inventory, A_TREE_butes WHERE Inventory.username='rishi ' AND Inventory.scientific_name=A_TREE_butes.scientific_name`)
   // const data = await db.runQuery1(`SELECT Inventory.scientific_name,A_TREE_butes.url FROM Inventory INNER JOIN A_TREE_butes ON Inventory.scientific_name=A_TREE_butes.scientific_name WHERE Inventory.username='rishi '`)
   // const data = await db.runQuery1(`SELECT scientific_name FROM Inventory WHERE username='nandhu'`)
-  const data = await db.runQuery1("SELECT DISTINCT scientific_name FROM Quiz WHERE scientific_name NOT IN (SELECT scientific_name FROM Inventory WHERE username='nandhu')")
+  // const data = await db.runQuery1("SELECT COUNT(DISTINCT scientific_name) FROM Quiz")
   
   return reply.send(data).type("json")
 });
