@@ -46,7 +46,7 @@ async function fetchInventoryItems(){
               <div class="label">${e.scientific_name}</div>`
     
     
-    card.onclick = cardClicked(e.scientific_name)
+    card.onclick = ()=>{cardClicked(e.scientific_name)}
     
     $(".cards-container").appendChild(card);
   })
