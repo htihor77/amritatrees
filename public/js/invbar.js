@@ -31,7 +31,7 @@ async function fetchInventoryItems(){
   const unlocked = respdata.unlocked;
   const locked = respdata.locked;
   
-  $("#CardsCollected").innerText = unlocked.length + "/" + unlocked.length + 
+  $("#CardsCount").innerText = unlocked.length + "/" + (unlocked.length + locked.length);
   
   const old_unlocked = JSON.parse(localStorage.getItem("inventoryData")) || [];
   localStorage.setItem("inventoryData", JSON.stringify(unlocked) );
