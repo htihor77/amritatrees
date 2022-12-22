@@ -176,12 +176,14 @@ async function initMap( command ) {
       const latlng = new google.maps.LatLng(pos.lat, pos.lng);currPosMarker.setPosition(latlng);
       let promptOpen = document.querySelector("#userPrompt").classList.contains("active");
     
-      let ifSnapCenter = $("#snapCenterCB").checked || false;
-      if ( !promptOpen && ifSnapCenter )  map.setCenter(pos);
+      let ifdevCB = $("#devCB").checked || false;
+      if ( !promptOpen && !ifdevCB )  map.setCenter(pos);
 
       let liveLocation = $("#livelocationCB").checked || false;
       if ( liveLocation && updateTick == locationUpdateRate) {
         updateTick -= locationUpdateRate;
+        if( ifdevCB ) msglog( "lat:" + pos.lat + ", lng:" + pos.lng );
+        
         fetch('./setuserlocation', {
           method: 'POST',
           headers: {accept: 'application.json','Content-Type': 'application/json'},
