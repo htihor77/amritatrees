@@ -84,7 +84,10 @@ body .container{
   
 .container > div{
   margin-bottom:10px;
-  background-color: white;
+  background-color: rgba(255,255,255,0.5);
+  color:black;
+  border-radius:5px;
+  padding:5px;
 }
   
 .container > div.half{
@@ -93,12 +96,13 @@ body .container{
 </style>
 <style>
   
+.titleP:before{
+
+}
+
+  
     @media screen and (min-width: 800px) {
         #main_div{
-/*         height: auto; */
-        width: auto;
-        margin: 15px;
-        padding: 15px;
         background-color: rgba(0, 255, 0, 0.29);
         }
         #a{
@@ -130,11 +134,11 @@ body .container{
         }
     }
   
-    @media screen and (max-width: 600px){
+/*     @media screen and (max-width: 600px){
         #main_div{
         background-color: rgba(0, 255, 0, 0.29);
-        }   
-    }
+      }   
+    } */
 </style>
 </head>
 <body>
@@ -156,17 +160,18 @@ body .container{
 <!--       <img src="https://intranet.cb.amrita.edu/sites/default/files/Intranet-Logo_1.png" style="width:100%;"> -->
     
         <div class="text_img">
-            <div id="three" style="width: 100%; height: auto; padding: 0px; margin: 0px; text-align: center; display: flex; justify-content: space-around;"><p>But that's not all, join the hunt in unlocking trees by finding them and answering a short quiz. Unlocking a tree gives you points, which can be redeemed for prizes. Explore the campus and enjoy the biodiversity it offers.</p></div>
-            <div id="four" style="height: auto; width: 100%;"><img src="3rd photo.png" alt="image not found" style="max-width: 100%;"></div>
+            <div id="three" style="width: 100%; height: auto; padding: 0px; margin: 0px; text-align: center; display: flex; justify-content: space-around;"> <p class="titleP" style="font-size:2rem;"> Who doesn’t love trees? </p></div>
+            <div id="four" style="height: auto; width: 100%;"><img src="https://cdn.discordapp.com/attachments/1027927070191403189/1055727363486384148/trees500.png" alt="image not found" style="max-width: 100%;"></div>
             <!-- <h2>The Explanation</h2>
 
             <p>The default alignment is left. So if you want to change the alignment of the heading text, for example, then you can use a type selector and the CSS text-align property set to “center.” Everything else on the page — in this case, the paragraphs — will remain flushed against the left margin.</p>
             -->
             
         </div>
-        <div id="aaa">
-            <div id="five" style="width: 100%; height: auto; padding: 0px; margin: 0px; text-align: center; display: flex; justify-content: space-around;"><p>The game is simple, walk up to a tree, and tap on its icon on the map. If you're able to correctly answer the question that pops on your screen, you unlock that tree and it gets added to your inventory. All the best!</p></div>
-            <div id="six" style="height: auto; width: 100%;"><img src="4th photo.png" alt="image not found" style="max-width: 100%;"><center><img src="5th photo.png" alt="image not found" style="max-width: 100%;"></center></div>
+    
+        <div class="text_img">
+            <div id="six" style="height: auto; width: 100%;"><img src="https://cdn.discordapp.com/attachments/1027927070191403189/1055728719894958160/campus400.png" alt="image not found" style="max-width: 100%;"></div>
+            <div id="five" style="width: 100%; height: auto; padding: 0px; margin: 0px; text-align: center; display: flex; justify-content: space-around;"><p>But that's not all, join the hunt in unlocking trees by finding them and answering a short quiz. Unlocking a tree gives you points, which can be redeemed for prizes. Explore the campus and enjoy the biodiversity it offers.</p></div>
             <!-- <h2>The Explanation</h2>
 
             <p>The default alignment is left. So if you want to change the alignment of the heading text, for example, then you can use a type selector and the CSS text-align property set to “center.” Everything else on the page — in this case, the paragraphs — will remain flushed against the left margin.</p>
