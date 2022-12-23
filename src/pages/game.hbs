@@ -64,81 +64,119 @@ function confetti(){
 }
   
 const bird_url = "https://cdn.discordapp.com/attachments/1027927070191403189/1053936660582236240/bird_transparent.png";
+// function bird(){
+//   const span = document.createElement("span")
+//   span.classList = "bird";
+//   span.style.backgroundImage = `url(${bird_url})`;
+  
+//   // const randomnumber = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
+//   let unit = ""
+//   if ( window.innerWidth > window.innerHeight ) {
+//     unit = "vw";
+//   } else {
+//     unit = "vh";
+//   }
+  
+//   let degrees = Math.floor(Math.random() * 360);
+//   const radians = degrees * ( Math.PI / 180 );  
+  
+//   const x = Math.cos(radians) * 120;
+//   const y = Math.sin(radians) * 120;
+//   span.style.setProperty("--direction",degrees-90+"deg");
+  
+//   span.style.setProperty("--x1", 50 + x + unit);
+//   span.style.setProperty("--y1", 50 + y + unit);
+  
+//   span.style.setProperty("--x2", - 50 - x + unit);
+//   span.style.setProperty("--y2", - 50 - y + unit);
+
+//   console.log(x + unit,y + unit)
+  
+//   $("#container").appendChild(span);
+// }
+
+// function b(mid=20){
+//   const noise = 10;
+//   const speed = 10;
+//   const d = 100;
+//   const dm = mid | 75;
+  
+//   let unit = ""
+//   if ( window.innerWidth > window.innerHeight ) {unit = "vw";
+//   } else {unit = "vh";}
+   
+//   for (let i=0; i<360; i+=20){
+     
+//     c(i)
+     
+//   }
+   
+// }
+  
+// function c(deg=45){
+//   const d = 25;
+  
+//   let unit = ""
+//   if ( window.innerWidth > window.innerHeight ) {unit = "vw";
+//   } else {unit = "vh";}
+  
+//     const span = document.createElement("span")
+//     span.classList = "bird";
+//     span.style.backgroundImage = `url(${bird_url})`;
+      
+//       const r = deg * ( Math.PI / 180 );
+//       const x = Math.cos(r) * d;
+//       const y = Math.sin(r) * d;
+  
+//     span.style.setProperty("--direction",deg-90+"deg");
+//     span.style.setProperty("--x1", x + "vh");
+//     span.style.setProperty("--y1", y + "vh");
+  
+  
+//     $("#container").appendChild(span);
+//     setTimeout( ()=>{span.remove();},5000);
+  
+  
+// }
 function bird(){
   const span = document.createElement("span")
   span.classList = "bird";
   span.style.backgroundImage = `url(${bird_url})`;
   
-  // const randomnumber = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
-  let unit = ""
-  if ( window.innerWidth > window.innerHeight ) {
-    unit = "vw";
-  } else {
-    unit = "vh";
-  }
+  let maximum = 90;
+  let minimum = 10;
   
-  let degrees = Math.floor(Math.random() * 360);
-  const radians = degrees * ( Math.PI / 180 );  
+  const y1 = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
+  const y2 = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
   
-  const x = Math.cos(radians) * 120;
-  const y = Math.sin(radians) * 120;
-  span.style.setProperty("--direction",degrees-90+"deg");
-  
-  span.style.setProperty("--x1", 50 + x + unit);
-  span.style.setProperty("--y1", 50 + y + unit);
-  
-  span.style.setProperty("--x2", - 50 - x + unit);
-  span.style.setProperty("--y2", - 50 - y + unit);
-
-  console.log(x + unit,y + unit)
-  
-  $("#container").appendChild(span);
-}
-
-function b(mid=20){
-  const noise = 10;
-  const speed = 10;
-  const d = 100;
-  const dm = mid | 75;
-  
-  let unit = ""
-  if ( window.innerWidth > window.innerHeight ) {unit = "vw";
-  } else {unit = "vh";}
-   
-  for (let i=0; i<360; i+=20){
-     
-    c(i)
-     
-  }
-   
-}
-  
-function c(deg=45){
-  const d = 25;
-  
-  let unit = ""
-  if ( window.innerWidth > window.innerHeight ) {unit = "vw";
-  } else {unit = "vh";}
-  
-    const span = document.createElement("span")
-    span.classList = "bird";
-    span.style.backgroundImage = `url(${bird_url})`;
-      
-      const r = deg * ( Math.PI / 180 );
-      const x = Math.cos(r) * d;
-      const y = Math.sin(r) * d;
+    const deg = angle_and_distance(110,y1,-10,y2)
+    console.log(deg)
   
     span.style.setProperty("--direction",deg-90+"deg");
-    span.style.setProperty("--x1", x + "vh");
-    span.style.setProperty("--y1", y + "vh");
+  
+  span.style.setProperty("--x1", "110%");
+  span.style.setProperty("--y1", y1);
+  
+  span.style.setProperty("--x2", "-10%");
+  span.style.setProperty("--y2", y2);
   
   
     $("#container").appendChild(span);
     setTimeout( ()=>{span.remove();},5000);
   
-  
 }
   
+  
+function angle_and_distance(cx, cy, ex, ey) {
+  var dy = ey - cy;
+  var dx = ex - cx;
+  var distance = Math.sqrt( dx*dx + dy*dy );
+  var theta = Math.atan2(dy, dx); // range (-PI, PI]
+  theta *= 180 / Math.PI; // rads to degs, range (-180, 180]
+  theta += 90; // So, 0 starts from Top Middle
+  if (theta < 0) theta = 360 + theta; // range [0, 360)
+  return theta
+}
 </script>
   
 </html>
