@@ -340,7 +340,7 @@ fastify.get("/test", async (request, reply) => {
   // const data = await db.runQuery1(`SELECT Inventory.scientific_name,A_TREE_butes.url FROM Inventory, A_TREE_butes WHERE Inventory.username='rishi ' AND Inventory.scientific_name=A_TREE_butes.scientific_name`)
   // const data = await db.runQuery1(`SELECT Inventory.scientific_name,A_TREE_butes.url FROM Inventory INNER JOIN A_TREE_butes ON Inventory.scientific_name=A_TREE_butes.scientific_name WHERE Inventory.username='rishi '`)
   // const data = await db.runQuery1(`SELECT scientific_name FROM Inventory WHERE username='nandhu'`)
-  // const data = await db.runQuery1("SELECT COUNT(DISTINCT scientific_name) FROM Quiz")
+  const data = await db.runQuery1(`SELECT * FROM Trees WHERE scientific_name IN (SELECT scientific_name FROM Quiz WHERE scientific_name NOT IN (SELECT scientific_name FROM Inventory WHERE username='nandhu'))`)
   
   return reply.send(data).type("json")
 });
