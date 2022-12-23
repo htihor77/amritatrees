@@ -7,7 +7,8 @@
   <title>Amrita Trees</title>
   <link rel="stylesheet" href="./css/style.css">
   <script src="./js/app.js" defer></script>
-
+  <link href="https://fonts.googleapis.com/css?family=Lexend Deca" rel="stylesheet">
+  
 <style>
 
 body{
@@ -79,7 +80,7 @@ body .container{
   padding-right: var(--sidePadding);
 /*   overflow:scroll; */
 /*   height:400px; */
-  
+  overflow-y: scroll;
 }
   
 .container > div{
@@ -96,11 +97,18 @@ body .container{
 </style>
 <style>
   
-.titleP:before{
-
+.titleP:after{
+  content: "Trees";
+  position:absolute;
+  top:-50px;left:50%;
+  transform:translate(-50%,0);
+  font-size:3rem;
+  font-family: 'Lexend Deca', sans-serif; 
+}
+.titleP{
+  position:relative;
 }
 
-  
     @media screen and (min-width: 800px) {
         #main_div{
         background-color: rgba(0, 255, 0, 0.29);
@@ -160,25 +168,30 @@ body .container{
 <!--       <img src="https://intranet.cb.amrita.edu/sites/default/files/Intranet-Logo_1.png" style="width:100%;"> -->
     
         <div class="text_img">
-            <div id="three" style="width: 100%; height: auto; padding: 0px; margin: 0px; text-align: center; display: flex; justify-content: space-around;"> <p class="titleP" style="font-size:2rem;"> Who doesn’t love trees? </p></div>
-            <div id="four" style="height: auto; width: 100%;"><img src="https://cdn.discordapp.com/attachments/1027927070191403189/1055727363486384148/trees500.png" alt="image not found" style="max-width: 100%;"></div>
-            <!-- <h2>The Explanation</h2>
-
-            <p>The default alignment is left. So if you want to change the alignment of the heading text, for example, then you can use a type selector and the CSS text-align property set to “center.” Everything else on the page — in this case, the paragraphs — will remain flushed against the left margin.</p>
-            -->
+            <div id="one" style="width: 100%; height: auto; padding: 0px; margin: 0px; text-align: center; display: flex; justify-content: space-around;"> <p class="titleP" style="font-size:2rem;"> Who doesn’t love trees? </p></div>
+            <div id="two" style="height: auto; width: 100%;"><img src="https://cdn.discordapp.com/attachments/1027927070191403189/1055727363486384148/trees500.png" alt="image not found" style="max-width: 100%;"></div>
             
         </div>
     
         <div class="text_img">
-            <div id="six" style="height: auto; width: 100%;"><img src="https://cdn.discordapp.com/attachments/1027927070191403189/1055728719894958160/campus400.png" alt="image not found" style="max-width: 100%;"></div>
+            <div id="three" style="height: auto; width: 100%;"><img src="https://cdn.discordapp.com/attachments/1027927070191403189/1055728719894958160/campus400.png" alt="image not found" style="max-width: 100%;"></div>
+            <div id="four" style="width: 100%; height: auto; padding: 0px; margin: 0px; text-align: center; display: flex; justify-content: space-around;"><p>Trees are a big part of our lives, and Amrita is full of them. This is an interactive online repository of all the trees, our contribution to one of the best things about this campus.</p></div>
+            
+        </div>
+    
+    
+        <div class="text_img">
             <div id="five" style="width: 100%; height: auto; padding: 0px; margin: 0px; text-align: center; display: flex; justify-content: space-around;"><p>But that's not all, join the hunt in unlocking trees by finding them and answering a short quiz. Unlocking a tree gives you points, which can be redeemed for prizes. Explore the campus and enjoy the biodiversity it offers.</p></div>
-            <!-- <h2>The Explanation</h2>
-
-            <p>The default alignment is left. So if you want to change the alignment of the heading text, for example, then you can use a type selector and the CSS text-align property set to “center.” Everything else on the page — in this case, the paragraphs — will remain flushed against the left margin.</p>
-            -->
+            <div id="six" style="height: auto; width: 100%;"><img src="https://cdn.discordapp.com/attachments/1027927070191403189/1055731667463045130/3rd_photo.png" alt="image not found" style="max-width: 100%;"></div>
             
         </div>
 
+            <div class="text_img">
+            <div id="seven" style="height: auto; width: 100%;"><img src="https://cdn.discordapp.com/attachments/1027927070191403189/1055732386362568756/game.png" alt="image not found" style="max-width: 100%;"></div>
+            <div id="eight" style="width: 100%; height: auto; padding: 0px; margin: 0px; text-align: center; display: flex; justify-content: space-around;"><p>Trees are a big part of our lives, and Amrita is full of them. This is an interactive online repository of all the trees, our contribution to one of the best things about this campus.</p></div>
+            
+        </div>
+    
     <div>
       
     </div>
