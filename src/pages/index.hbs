@@ -70,8 +70,8 @@ nav div.btn:hover{
 }
 
 body .container{
-  --sidePadding:25px;
-/*   padding:15px; */
+  --sidePadding:10px;
+  padding:15px;
 /*   margin: 15px; */
 /*   margin-left: 15px;
   margin-right: 15px; */
@@ -82,13 +82,16 @@ body .container{
 /*   height:400px; */
   overflow-y: scroll;
 }
+.container::-webkit-scrollbar{width:4px;}
+.container::-webkit-scrollbar-track {background: transparent;}
+.container::-webkit-scrollbar-thumb {background: #323232;}
   
 .container > div{
   margin-bottom:10px;
   background-color: rgba(255,255,255,0.5);
   color:black;
   border-radius:5px;
-  padding:5px;
+  padding:15px;
 }
   
 .container > div.half{
@@ -98,17 +101,26 @@ body .container{
 <style>
   
 .titleP:after{
-  content: "Trees";
+  content: "Who doesn’t love trees?";
   position:absolute;
-  top:-50px;left:50%;
+  top:75px;left:50%;
+  width:200px;
   transform:translate(-50%,0);
-  font-size:3rem;
-  font-family: 'Lexend Deca', sans-serif; 
+  font-size:2rem;
+  font-family: 'Lexend Deca', sans-serif;
+  color: var(--titleColor);
 }
 .titleP{
+  --titleColor: black;
   position:relative;
+  font-size:3rem;
 }
 
+  .text_img div p{
+    font-size:1.2rem;
+    font-weight:600;
+  }
+  
     @media screen and (min-width: 800px) {
         #main_div{
         background-color: rgba(0, 255, 0, 0.29);
@@ -142,24 +154,24 @@ body .container{
         }
     }
   
-/*     @media screen and (max-width: 600px){
-        #main_div{
-        background-color: rgba(0, 255, 0, 0.29);
-      }   
-    } */
+    @media screen and (max-width: 600px){
+      .titleP{
+        --titleColor: white;
+      }  
+    }
 </style>
 </head>
 <body>
   <nav>
     
-    <div style="height:100%;display:flex;align-items:center;gap:10px;font-size:1.2rem;font-weight:700;" class="noSelect">
+    <div style="height:100%;display:flex;align-items:center;gap:10px;font-size:1rem;font-weight:700;" class="noSelect">
       <img src="https://cdn.discordapp.com/attachments/1027927070191403189/1039196270214008902/tree_favicon_transparent.png" style="height:100%;">
       AMRITA TREES
     </div>
     
     <div style="display: flex;gap: 5px;">
-      <div class="btn"><a href="./login">{{ loginBtn }}</a></div>
-      <div class="btn"><a href="./{{ signIn.url }}">{{ signIn.msg }}</a></div>
+      <div class="btn"><a href="./login">{{loginBtn}}</a></div>
+      <div class="btn"><a href="./{{ signIn.url }}">{{signIn.msg}}</a></div>
     </div>
     
   </nav>
@@ -168,7 +180,7 @@ body .container{
 <!--       <img src="https://intranet.cb.amrita.edu/sites/default/files/Intranet-Logo_1.png" style="width:100%;"> -->
     
         <div class="text_img">
-            <div id="one" style="width: 100%; height: auto; padding: 0px; margin: 0px; text-align: center; display: flex; justify-content: space-around;"> <p class="titleP" style="font-size:2rem;"> Who doesn’t love trees? </p></div>
+            <div id="one" style="width: 100%; height: auto; padding: 0px; margin: 0px; text-align: center; display: flex; justify-content: space-around;"> <p class="titleP"> Trees </p></div>
             <div id="two" style="height: auto; width: 100%;"><img src="https://cdn.discordapp.com/attachments/1027927070191403189/1055727363486384148/trees500.png" alt="image not found" style="max-width: 100%;"></div>
             
         </div>
@@ -188,14 +200,15 @@ body .container{
 
             <div class="text_img">
             <div id="seven" style="height: auto; width: 100%;"><img src="https://cdn.discordapp.com/attachments/1027927070191403189/1055732386362568756/game.png" alt="image not found" style="max-width: 100%;"></div>
-            <div id="eight" style="width: 100%; height: auto; padding: 0px; margin: 0px; text-align: center; display: flex; justify-content: space-around;"><p>Trees are a big part of our lives, and Amrita is full of them. This is an interactive online repository of all the trees, our contribution to one of the best things about this campus.</p></div>
+            <div id="eight" style="width: 100%; height: auto; padding: 0px; margin: 0px; text-align: center; display: flex; justify-content: space-around;"><p>The game is simple, walk up to a tree, and tap on its icon on the map. If you're able to correctly answer the question that pops on your screen, you unlock that tree and it gets added to your inventory. All the best!</p></div>
             
         </div>
+        
+      <br><br><br><br>
+      <br><br><br><br>
     
-    <div>
+      <div style="display:flex;justify-content:center;align-items:center;">This was a submission for the 2022 Green hackathon created by Nandhakumar, Rishi, Shriram and Rohith</div>
       
-    </div>
-
   </div>
   
 </body>
