@@ -38,7 +38,7 @@
   pointer-events:none;
   touch-action:none;
   transform: rotate(var(--direction));
-  animation: fly 5s forwards ease;
+  animation: fly 2s forwards cubic-bezier(0.4, 0, 1, 1);
   
   
   

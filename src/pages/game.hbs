@@ -166,8 +166,15 @@ function bird(){
     // setTimeout( ()=>{span.remove();},5000);
   
 }
-  
-  
+const birdSound = new Audio("https://cdn.discordapp.com/attachments/1055426492659675167/1055755009557549078/bird.wav")
+const callBird = ()=>{
+  bird();
+  if ($("#soundCB").checked) birdSound.play()
+  setTimeout(callBird,Math.floor(Math.random() * 1000) );
+}
+
+setTimeout(callBird,Math.floor(Math.random() * 1000) );
+
 function angle_and_distance(cx, cy, ex, ey) {
   var dy = ey - cy;
   var dx = ex - cx;
