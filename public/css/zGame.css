@@ -159,7 +159,7 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow:ellipsis;
-  
+  text-decoration: capitalize;
   transition:0s 125ms;
 }
 
