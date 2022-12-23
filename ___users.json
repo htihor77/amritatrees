@@ -3,22 +3,11 @@
     "email":"nandhakumar2058@gmail.com",
     "verified":0,
     "username":"nandhu",
-    "password":"pass",
+    "password":"hack4p4ssth0nw0rd",
     "session_id":"",
     "points":10,
     "collected":0,
     "lat":0,
     "lng":0
-  },
-  {
-    "email":"amritatrees@gmail.com",
-    "verified":1,
-    "username":"root",
-    "password":"root",
-    "session_id":"",
-    "points":9999,
-    "collected":0,
-    "lat":99.9999999,
-    "lng":99.9999999
   }
 ]
