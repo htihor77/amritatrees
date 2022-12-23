@@ -148,21 +148,22 @@ function bird(){
   
   const y1 = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
   const y2 = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
+  console.log(y1+"%",y2+"%")
   
     const deg = angle_and_distance(110,y1,-10,y2)
     console.log(deg)
   
-    span.style.setProperty("--direction",deg-90+"deg");
+    span.style.setProperty("--direction",deg+"deg");
   
-  span.style.setProperty("--x1", "110%");
-  span.style.setProperty("--y1", y1);
+//   span.style.setProperty("--x1", "110%");
+  span.style.setProperty("--y1", y1 + "%");
   
-  span.style.setProperty("--x2", "-10%");
-  span.style.setProperty("--y2", y2);
+//   span.style.setProperty("--x2", "-10%");
+  span.style.setProperty("--y2", y2 + "%");
   
   
     $("#container").appendChild(span);
-    setTimeout( ()=>{span.remove();},5000);
+    // setTimeout( ()=>{span.remove();},5000);
   
 }
   

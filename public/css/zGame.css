@@ -38,19 +38,19 @@
   pointer-events:none;
   touch-action:none;
   transform: rotate(var(--direction));
-/*   animation: fly 5s forwards ease; */
+  animation: fly 5s forwards ease;
   
   
   
 }
 @keyframes fly{
   0%{
-    left: calc( var(--x1) * max( var(--size1), var(--size2) ) );
-    top: calc( var(--y1) * max( var(--size1), var(--size2) ) );
+    left: 120%;
+    top: var(--y1);
   }
   100%{
-    left: calc( var(--x2) * max( var(--size1), var(--size2) ) );
-    top: calc( var(--y2) * max( var(--size1), var(--size2) ) );
+    left: -20%;
+    top: var(--y2);
   }
 }
 
