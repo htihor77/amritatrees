@@ -14,6 +14,7 @@ body{
   width:100%;
   height:100%;
   background-image:linear-gradient(-45deg,#9cfaad,#42d7a9,#00a59e);
+  font-family: 'Lexend Deca', sans-serif; 
 }
 
 .container{
@@ -68,8 +69,8 @@ nav div.btn:hover{
 }
 
 body .container{
-  --sidePadding:50px;
-  padding:15px;
+  --sidePadding:25px;
+/*   padding:15px; */
 /*   margin: 15px; */
 /*   margin-left: 15px;
   margin-right: 15px; */
@@ -94,21 +95,11 @@ body .container{
   
     @media screen and (min-width: 800px) {
         #main_div{
-        height: auto;
+/*         height: auto; */
         width: auto;
         margin: 15px;
         padding: 15px;
         background-color: rgba(0, 255, 0, 0.29);
-        }
-        h2{
-            text-align: center;
-        }
-        body{
-            margin: 0;
-            /* width: 640px; 
-            padding: 50px; */
-            font-family: 'Lexend Deca', sans-serif; 
-            color: #2E475D;    
         }
         #a{
             margin-bottom: 30px; 
@@ -119,7 +110,7 @@ body .container{
             /* justify-content: center;  */
             flex-direction: row;
         }
-        #aa{
+        .text_img{
             margin-bottom: 30px; 
             width: 100%; height: auto; 
             background-color: rgba(255, 208, 0, 0.407); 
@@ -141,31 +132,8 @@ body .container{
   
     @media screen and (max-width: 600px){
         #main_div{
-        height: auto;
-        width: auto;
-        margin: 15px;
-        padding: 15px;
         background-color: rgba(0, 255, 0, 0.29);
-        }
-        h2{
-            text-align: center;
-        }
-        body{
-            margin: 0;
-            /* width: 640px; 
-            padding: 50px; */
-            font-family: 'Lexend Deca', sans-serif; 
-            color: #2E475D;    
-        }
-        #a{
-            margin-bottom: 30px; 
-            width: 100%; height: auto; 
-            background-color: rgba(255, 208, 0, 0.407); 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            flex-direction: column;
-        }      
+        }   
     }
 </style>
 </head>
@@ -184,8 +152,28 @@ body .container{
     
   </nav>
   
-  <div class="container">
+  <div class="container" id="main_div">
 <!--       <img src="https://intranet.cb.amrita.edu/sites/default/files/Intranet-Logo_1.png" style="width:100%;"> -->
+    
+        <div class="text_img">
+            <div id="three" style="width: 100%; height: auto; padding: 0px; margin: 0px; text-align: center; display: flex; justify-content: space-around;"><p>But that's not all, join the hunt in unlocking trees by finding them and answering a short quiz. Unlocking a tree gives you points, which can be redeemed for prizes. Explore the campus and enjoy the biodiversity it offers.</p></div>
+            <div id="four" style="height: auto; width: 100%;"><img src="3rd photo.png" alt="image not found" style="max-width: 100%;"></div>
+            <!-- <h2>The Explanation</h2>
+
+            <p>The default alignment is left. So if you want to change the alignment of the heading text, for example, then you can use a type selector and the CSS text-align property set to “center.” Everything else on the page — in this case, the paragraphs — will remain flushed against the left margin.</p>
+            -->
+            
+        </div>
+        <div id="aaa">
+            <div id="five" style="width: 100%; height: auto; padding: 0px; margin: 0px; text-align: center; display: flex; justify-content: space-around;"><p>The game is simple, walk up to a tree, and tap on its icon on the map. If you're able to correctly answer the question that pops on your screen, you unlock that tree and it gets added to your inventory. All the best!</p></div>
+            <div id="six" style="height: auto; width: 100%;"><img src="4th photo.png" alt="image not found" style="max-width: 100%;"><center><img src="5th photo.png" alt="image not found" style="max-width: 100%;"></center></div>
+            <!-- <h2>The Explanation</h2>
+
+            <p>The default alignment is left. So if you want to change the alignment of the heading text, for example, then you can use a type selector and the CSS text-align property set to “center.” Everything else on the page — in this case, the paragraphs — will remain flushed against the left margin.</p>
+            -->
+            
+        </div>
+
     <div>
       
     </div>
