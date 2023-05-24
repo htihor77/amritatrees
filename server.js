@@ -314,7 +314,7 @@ fastify.post("/setuserlocation", async (request, reply) => {
   const userdata = request.session.user;
   
   const lat = request.body.lat;
-  const lng = request.body.lng
+  const lng = request.body.lng;
   
   await db.runQuery2(`UPDATE Users SET lat=${lat}, lng=${lng} WHERE uid=${userdata.uid}`);
   return reply.type("json").send({"status": "OK"});
