@@ -104,8 +104,9 @@ fastify.get("/login", async (request, reply) => {
 fastify.post("/login", async (request, reply) => {
   console.log("==================================")
   const userdata = request.body.userdata;
-  const password = utils.reverse(request.body.password);
-  console.log(username,password);
+  // const password = utils.reverse(request.body.password);
+  const password = request.body.password;
+  console.log(userdata,password);
   const user = await db.runQuery1(`SELECT * FROM Users WHERE username='${userdata}' AND password='${password}'`);
   // const user = await db.runQuery1(`SELECT * FROM Users WHERE email='${userdata}' AND password='${password}'`);
   if( user.length > 0 && userdata.length != 0 && password.length != 0){
