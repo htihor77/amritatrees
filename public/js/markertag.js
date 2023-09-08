@@ -6,7 +6,13 @@ function addMarkerTag(){
   $("#marker_prompt").classList.add('active');
   if ($("#soundCB").checked) zipperOpenSnd0.play();
   
-  
+  if ('mediaDevices' in navigator && 'getUserMedia' in navigator.mediaDevices) {
+    console.log("camera exists")
+  } else {
+    console.log("camera does not exists")
+    return;
+  }
+
   
 
 }
