@@ -5,6 +5,9 @@ function addMarkerTag(){
   console.log("add new marker")
   $("#marker_prompt").classList.add('active');
   if ($("#soundCB").checked) zipperOpenSnd0.play();
+  
+  
+  
 
 }
 
