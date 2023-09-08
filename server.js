@@ -15,6 +15,7 @@ fastify.register(require("@fastify/view"), {
       navbar: "/src/partials/navbar.handlebars",
       sidebar: "/src/partials/sidebar.handlebars",
       invbar: "/src/partials/invbar.handlebars",
+      marker_prompt: "/src/partials/marker_prompt.handlebars",
     }
   },
 });
