@@ -110,8 +110,6 @@ function cardClicked(){
 
 
 
-
-
 // window.addEventListener("DOMContentLoaded", async ()=>{
 //   console.log("page loaded");
 //   const response = await fetch("./inventory?raw=json");
