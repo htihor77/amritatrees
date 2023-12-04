@@ -1,8 +1,8 @@
-
+require('dotenv').config()
 const fs = require("fs");
 const path = require("path");
 const fastify = require("fastify")({logger: false,});
-
+const PORT = process.env.PORT || 3000
 const utils = require("./utils.js");
 
 fastify.register(require("@fastify/static"), {root: path.join(__dirname, "public"),prefix: "/",});
@@ -44,8 +44,8 @@ fastify.register(require("@fastify/session"), {
 });
 
 fastify.addHook("onRequest", (request, reply, next) => {
-  const protocol = request.raw.headers["x-forwarded-proto"].split(",")[0];
-  if (protocol === "http") {reply.redirect("https://" + request.hostname + request.url);}
+  // const protocol = request.raw.headers["x-forwarded-proto"].split(",")[0];
+  // if (protocol === "http") {reply.redirect("https://" + request.hostname + request.url);}
 
   // console.log("onRequest:",request.url);
   const sid = request.session.sessionId;
@@ -347,14 +347,18 @@ fastify.get("/test", async (request, reply) => {
   return reply.send(data).type("json")
 });
 
-fastify.listen(
-  { port: process.env.PORT, host: "0.0.0.0" },
-  function (err, address) {
-    if (err) {
-      fastify.log.error(err);
-      process.exit(1);
-    }
-    console.log(`Your app is listening on ${address}`);
-    fastify.log.info(`server listening on ${address}`);
-  }
-);
+// fastify.listen(
+//   { port: PORT, host: "127.0.0.1" },
+//   function (err, address) {
+//     if (err) {
+//       fastify.log.error(err);
+//       process.exit(1);
+//     }
+//     console.log(`Your app is listening on ${address}`);
+//     fastify.log.info(`server listening on ${address}`);
+//   }
+// );
+
+fastify.listen({port:PORT}, function(){
+  console.log("running..")
+})
