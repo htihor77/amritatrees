@@ -58,5 +58,5 @@ jobs:
         with:
           app-name: 'Amritatrees'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_3CA448B6F5AD4BCAA45D6947B110039F }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_51CE89C31AFF425789E89D413FDB766D }}
           package: .
